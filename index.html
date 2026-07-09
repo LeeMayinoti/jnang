@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDF & Proppian Morphology Explorer (3D)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 3D Force Graph CDN -->
+    <script src="//unpkg.com/3d-force-graph"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation -->
+        <header class="app-header">
+            <div class="header-logo">
+                <i class="fa-solid fa-cube logo-icon"></i>
+                <div class="logo-text">
+                    <h1>Narrative 3D Explorer</h1>
+                    <p>Ontology-Driven Knowledge Graph of "The Honey and the Flies"</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="btn-reset-layout" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrows-spin"></i> Reset Camera Position
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="main-layout">
+            <!-- Left Panel: Controls, Filters & Legends -->
+            <aside class="sidebar sidebar-left">
+                <!-- Search Box -->
+                <div class="panel-section search-section">
+                    <h3><i class="fa-solid fa-magnifying-glass"></i> Search Entities</h3>
+                    <div class="search-input-wrapper">
+                        <input type="text" id="search-input" placeholder="Search characters, roles, moves...">
+                        <button id="btn-search-clear" class="btn-clear" style="display: none;">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Story Filters -->
+                <div class="panel-section filter-section">
+                    <h3><i class="fa-solid fa-book-open"></i> Stories</h3>
+                    <div class="filter-group scrollable-filters" id="story-filters">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="story-select-all" checked>
+                            <span class="checkmark"></span>
+                            <strong>Select All Stories</strong>
+                        </label>
+                        <div class="divider"></div>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="story-checkbox" value="honey_flies" checked>
+                            <span class="checkmark"></span>
+                            The Honey and the Flies
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Node Type Filters -->
+                <div class="panel-section filter-section">
+                    <h3><i class="fa-solid fa-tags"></i> Node Type Visibility</h3>
+                    <div class="filter-group" id="node-type-filters">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="type-checkbox" value="Character" checked>
+                            <span class="checkmark color-character"></span>
+                            <span class="legend-text">Character</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="type-checkbox" value="Object" checked>
+                            <span class="checkmark color-object"></span>
+                            <span class="legend-text">Object</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="type-checkbox" value="MagicalAgent" checked>
+                            <span class="checkmark color-magical-agent"></span>
+                            <span class="legend-text">Magical Agent</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="type-checkbox" value="NarrativeFunction" checked>
+                            <span class="checkmark color-function"></span>
+                            <span class="legend-text">Narrative Function</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="type-checkbox" value="ProppianRole" checked>
+                            <span class="checkmark color-role"></span>
+                            <span class="legend-text">Proppian Role</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Statistics Box -->
+                <div class="panel-section stats-section">
+                    <h3><i class="fa-solid fa-chart-simple"></i> Graph Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-value" id="stat-total-nodes">0</span>
+                            <span class="stat-label">Nodes</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value" id="stat-total-edges">0</span>
+                            <span class="stat-label">Edges</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center Panel: Visualization viewport -->
+            <main class="viewport-container">
+                <!-- 3D Force Graph Target -->
+                <div id="network-container"></div>
+
+                <!-- Map Controls Overlay -->
+                <div class="viewport-controls">
+                    <button id="btn-help-modal" title="Show Guide" class="ctrl-btn"><i class="fa-solid fa-question"></i></button>
+                </div>
+            </main>
+
+            <!-- Right Panel: Contextual Inspector -->
+            <aside class="sidebar sidebar-right" id="inspector-sidebar">
+                <div class="inspector-header">
+                    <h2><i class="fa-solid fa-circle-info"></i> Inspector Panel</h2>
+                </div>
+                <div class="inspector-body" id="inspector-content">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+                        <h3>Explore the Narrative</h3>
+                        <p>Click on any 3D node or connection in the graph to inspect its properties, Proppian analysis, and role definitions.</p>
+                        <div class="help-box">
+                            <h4>3D Navigation:</h4>
+                            <ul>
+                                <li><strong>Left Click + Drag</strong>: Rotate camera in 3D.</li>
+                                <li><strong>Scroll Wheel</strong>: Zoom in and out.</li>
+                                <li><strong>Right Click + Drag</strong>: Pan graph.</li>
+                                <li>Click on nodes to view metadata.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Help Guide Modal -->
+    <div id="help-modal" class="modal">
+        <div class="modal-content glassmorphism">
+            <div class="modal-header">
+                <h2>Proppian Narrative & Ontology Guide</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>Theoretical Background</h3>
+                <p>This graph visualizes the narrative structure of the classic folktale <em>"The Honey and the Flies"</em> through a Resource Description Framework (RDF) ontology based on Vladimir Propp's morphology:</p>
+                <div class="theory-grid">
+                    <div class="theory-card">
+                        <h4>1. Characters & Roles</h4>
+                        <p>Individuals in the story (e.g., <strong>Glara</strong>, <strong>Woodpecker</strong>, <strong>Flies</strong>) map directly to Proppian roles (e.g., <em>False Hero</em>, <em>Successful Model</em>, <em>Helper</em>).</p>
+                    </div>
+                    <div class="theory-card">
+                        <h4>2. Narrative Functions</h4>
+                        <p>Plot segments and actions (motifemes) that progress the story, starting from the initial lack, the failed imitation, consequences, and rescue.</p>
+                    </div>
+                    <div class="theory-card">
+                        <h4>3. Objects & Magic</h4>
+                        <p>Items (e.g., <strong>Honey</strong>) and supernatural tools/skills (e.g., <strong>Whistling Magic</strong>) that trigger or resolve narrative functions.</p>
+                    </div>
+                </div>
+                <h3>Relationship Types</h3>
+                <ul>
+                    <li><strong>hasRole</strong>: Connects a character to their Proppian archetype.</li>
+                    <li><strong>performsFunction</strong>: Connects a character to a plot point they execute.</li>
+                    <li><strong>follows</strong>: Represents the chronological flow of narrative events.</li>
+                    <li><strong>lacks</strong>: Indicates a character's deficiency in objects or skills needed for success.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import compiled graph data -->
+    <script src="graph_data.js"></script>
+    <!-- Custom Logic JS -->
+    <script src="script.js"></script>
+</body>
+</html>

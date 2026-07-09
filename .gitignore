@@ -1,0 +1,22 @@
+# Environment variables
+.env
+backend/.env
+
+# Python virtual environments
+.venv/
+venv/
+backend/.venv/
+backend/venv/
+
+# Python cache & compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+backend/.pytest_cache/
+.ipynb_checkpoints/
+
+# OS specific files
+.DS_Store
+Thumbs.db

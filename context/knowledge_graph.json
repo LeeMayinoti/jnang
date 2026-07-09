@@ -1,0 +1,2461 @@
+{
+  "nodes": [
+    {
+      "id": "concept_camp",
+      "label": "The Camp",
+      "type": "Cultural_Concept",
+      "properties": {
+        "description": "Safe space, human society, egalitarian sharing, social order."
+      }
+    },
+    {
+      "id": "concept_bush",
+      "label": "The Bush",
+      "type": "Cultural_Concept",
+      "properties": {
+        "description": "Wild nature, danger, isolation, supernatural power, animal transformation."
+      }
+    },
+    {
+      "id": "concept_num",
+      "label": "N|um (Power)",
+      "type": "Cultural_Concept",
+      "properties": {
+        "description": "Shamanic medicine, healing energy, and spiritual power."
+      }
+    },
+    {
+      "id": "concept_sharing",
+      "label": "Egalitarian Distribution",
+      "type": "Cultural_Concept",
+      "properties": {
+        "description": "The core cultural requirement of sharing meat, water, and resources."
+      }
+    },
+    {
+      "id": "concept_transmutation",
+      "label": "Transmutation",
+      "type": "Cultural_Concept",
+      "properties": {
+        "description": "Human-animal zoomorphism, cyclical boundary dissolution."
+      }
+    },
+    {
+      "id": "story_1",
+      "label": "The Moon Dies and Lives Again",
+      "type": "Story",
+      "properties": {
+        "title": "The Moon Dies and Lives Again",
+        "type": "Cosmological / Mythological Narrative",
+        "speaker": "GUkxa N!a’an",
+        "recorded": "Dobe, Botswana, 1971",
+        "summary": "This story describes the waning of the moon as a death, and its re-growth as the promise of eternally renewed life.",
+        "theme": "Death, rebirth, continuity of life, cyclical time",
+        "moral": "Death is temporary or cyclical; renewal follows loss."
+      }
+    },
+    {
+      "id": "story_1_func_1",
+      "label": "1. Absentation",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Absentation",
+        "event": "Moon disappears",
+        "description": "Main figure leaves/disappears",
+        "order": 1
+      }
+    },
+    {
+      "id": "story_1_func_2",
+      "label": "2. Lack/Loss",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Lack/Loss",
+        "event": "Moon 'dies'",
+        "description": "Absence creates change",
+        "order": 2
+      }
+    },
+    {
+      "id": "story_1_func_3",
+      "label": "3. Consequence / Villainy-like state",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Consequence / Villainy-like state",
+        "event": "Darkness occurs",
+        "description": "World enters dark phase",
+        "order": 3
+      }
+    },
+    {
+      "id": "story_1_func_4",
+      "label": "4. Return",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Return",
+        "event": "Moon returns",
+        "description": "Central figure comes back",
+        "order": 4
+      }
+    },
+    {
+      "id": "story_1_func_5",
+      "label": "5. Restoration",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Restoration",
+        "event": "Moon becomes full again",
+        "description": "Recovery/completion",
+        "order": 5
+      }
+    },
+    {
+      "id": "story_1_func_6",
+      "label": "6. Recognition",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Recognition",
+        "event": "People remember prophecy",
+        "description": "Meaning understood",
+        "order": 6
+      }
+    },
+    {
+      "id": "story_1_func_7",
+      "label": "7. Renewal",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Renewal",
+        "event": "Cycle repeats",
+        "description": "Recurrent narrative closure (episodic loop)",
+        "order": 7
+      }
+    },
+    {
+      "id": "char_moon__n_ui_",
+      "label": "Moon (N!ui)",
+      "type": "Character",
+      "properties": {
+        "name": "Moon (N!ui)",
+        "explanation": "Central figure experiencing transformation and representing eternal renewal."
+      }
+    },
+    {
+      "id": "role_hero",
+      "label": "Hero",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Hero",
+        "definition": "Main character who seeks something, solves a problem, or undergoes transformation."
+      }
+    },
+    {
+      "id": "word_n!ui",
+      "label": "n!úí",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "n!úí",
+        "searchable": "n!ui",
+        "sense": "moon, month, period of menstruation;",
+        "pos": "n3 -si"
+      }
+    },
+    {
+      "id": "char_people__ju_",
+      "label": "People (Ju)",
+      "type": "Character",
+      "properties": {
+        "name": "People (Ju)",
+        "explanation": "Observe the cycle, interpret events, and hold the collective memory."
+      }
+    },
+    {
+      "id": "role_witnesses___community",
+      "label": "Witnesses / Community",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Witnesses / Community",
+        "definition": "Observe, interpret events, and hold the collective memory."
+      }
+    },
+    {
+      "id": "word_ju",
+      "label": "jú",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "jú",
+        "searchable": "ju",
+        "sense": "people.",
+        "pos": "n1 plural of jù"
+      }
+    },
+    {
+      "id": "char_darkness___night",
+      "label": "Darkness / Night",
+      "type": "Character",
+      "properties": {
+        "name": "Darkness / Night",
+        "explanation": "Represents the lack/loss of light and the temporary phase of death."
+      }
+    },
+    {
+      "id": "role_environmental_challenge",
+      "label": "Environmental Challenge",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Environmental Challenge",
+        "definition": "Represents nature's barriers or challenges (e.g. night, storm)."
+      }
+    },
+    {
+      "id": "word_|am",
+      "label": "|ám",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "|ám",
+        "searchable": "/am",
+        "sense": "be thirsty;",
+        "pos": "vi"
+      }
+    },
+    {
+      "id": "story_2",
+      "label": "The Honey and the Flies",
+      "type": "Story",
+      "properties": {
+        "title": "The Honey and the Flies",
+        "type": "Mythological Narrative",
+        "speaker": "Dahm Ti N!a’an",
+        "recorded": "Kauri, Botswana, 1971",
+        "summary": "When the god G!ara was still on the earth, he wanted to imitate the cardinal woodpecker by chopping out honey from a hive high in a tree. But he did not have the whistling magic or the ability to fly possessed by the woodpecker, so he fell to the ground and his stomach burst. Flies came and sewed up his stomach, and G!ara thanked the flies.",
+        "theme": "Humility, limits of imitation, interdependence, communal help",
+        "moral": "One should not imitate abilities they do not possess; help comes through cooperation."
+      }
+    },
+    {
+      "id": "story_2_func_1",
+      "label": "1. Preparation / Observation",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Preparation / Observation",
+        "event": "G!ara sees woodpecker harvesting honey",
+        "description": "Hero observes another model",
+        "order": 1
+      }
+    },
+    {
+      "id": "story_2_func_2",
+      "label": "2. Attempt / Counteraction",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Attempt / Counteraction",
+        "event": "G!ara imitates woodpecker",
+        "description": "Hero undertakes action",
+        "order": 2
+      }
+    },
+    {
+      "id": "story_2_func_3",
+      "label": "3. Lack / Deficiency",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Lack / Deficiency",
+        "event": "Failure to whistle magic items",
+        "description": "Missing ability or power",
+        "order": 3
+      }
+    },
+    {
+      "id": "story_2_func_4",
+      "label": "4. Test / Trial",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Test / Trial",
+        "event": "Tries to fly",
+        "description": "Hero attempts difficult action",
+        "order": 4
+      }
+    },
+    {
+      "id": "story_2_func_5",
+      "label": "5. Punishment / Villainy",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Punishment / Villainy",
+        "event": "Falls and stomach bursts",
+        "description": "Crisis occurs, displaying G!ara's vulnerability",
+        "order": 5
+      }
+    },
+    {
+      "id": "story_2_func_6",
+      "label": "6. Helper Appears",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Helper Appears",
+        "event": "Flies arrive",
+        "description": "Assistance introduced",
+        "order": 6
+      }
+    },
+    {
+      "id": "story_2_func_7",
+      "label": "7. Aid / Repair",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Aid / Repair",
+        "event": "Flies sew stomach",
+        "description": "Hero receives help from communal creatures",
+        "order": 7
+      }
+    },
+    {
+      "id": "story_2_func_8",
+      "label": "8. Resolution / Return",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Resolution / Return",
+        "event": "G!ara thanks them and rises",
+        "description": "Story resolves with restoration",
+        "order": 8
+      }
+    },
+    {
+      "id": "char_g_ara",
+      "label": "G!ara",
+      "type": "Character",
+      "properties": {
+        "name": "G!ara",
+        "explanation": "Main actor undergoing experience, creator god but subject to failure and dependency."
+      }
+    },
+    {
+      "id": "word_g//aoan",
+      "label": "g∥àòàn",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "g∥àòàn",
+        "searchable": "g//aoan",
+        "sense": "God, devil, ancestral spirit.",
+        "pos": "n2 -si"
+      }
+    },
+    {
+      "id": "char_cardinal_woodpecker____aun__aun_",
+      "label": "Cardinal Woodpecker (!'Aun!'Aun)",
+      "type": "Character",
+      "properties": {
+        "name": "Cardinal Woodpecker (!'Aun!'Aun)",
+        "explanation": "Demonstrates a skill; indirectly tests G!ara by showcasing the power of honey harvesting."
+      }
+    },
+    {
+      "id": "role_donor___model",
+      "label": "Donor / Model",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Donor / Model",
+        "definition": "A Proppian character archetype."
+      }
+    },
+    {
+      "id": "word_!'aun!'aun",
+      "label": "!'áún!'áún",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "!'áún!'áún",
+        "searchable": "!'aun!'aun",
+        "sense": "pied barbet, Tricholaema leucomelas; golden-tailed woodpecker, Campethera abingoni; Bennett's woodpecker, Campethera bennettii; cardinal woodpecker, Dendropicos fuscescens.",
+        "pos": "n2 -"
+      }
+    },
+    {
+      "id": "char_flies__zoaqzoaq_",
+      "label": "Flies (Zoaqzoaq)",
+      "type": "Character",
+      "properties": {
+        "name": "Flies (Zoaqzoaq)",
+        "explanation": "Repair and restore G!ara's split stomach through cooperative effort."
+      }
+    },
+    {
+      "id": "role_helper",
+      "label": "Helper",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Helper",
+        "definition": "Assists the hero during the journey or performs repairs/restoration."
+      }
+    },
+    {
+      "id": "word_zoanzoan",
+      "label": "zoànzoàn",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "zoànzoàn",
+        "searchable": "zoanzoan",
+        "sense": "fly, housefly.",
+        "pos": "n2 -"
+      }
+    },
+    {
+      "id": "char_g_ara_s_lack_of_ability",
+      "label": "G!ara's lack of ability",
+      "type": "Character",
+      "properties": {
+        "name": "G!ara's lack of ability",
+        "explanation": "Internal limitation that causes the downfall and requires external repair."
+      }
+    },
+    {
+      "id": "role_villain-like_force",
+      "label": "Villain-like force",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Villain-like force",
+        "definition": "A Proppian character archetype."
+      }
+    },
+    {
+      "id": "word_g!u_stomach",
+      "label": "g!ú",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "g!ú",
+        "searchable": "g!u",
+        "sense": "Stomach, belly (used in the bursting stomach of G!ara).",
+        "pos": "n5 -si"
+      }
+    },
+    {
+      "id": "story_3",
+      "label": "A Woman First Found Fire",
+      "type": "Story",
+      "properties": {
+        "title": "A Woman First Found Fire",
+        "type": "Etiological Narrative",
+        "speaker": "FAsa N!a’an",
+        "recorded": "Kauri, Botswana, 1971",
+        "summary": "The first person to find fire was a woman. She sat by the fire and fed her children cooked food, while her husband slept in the dark and ate raw food. After waiting a long time, the husband stole the fire and ran off, and since then fire has been known throughout the world. It was a woman who first found fire because 'a woman naturally is a great thing.'",
+        "theme": "Discovery, gender roles, sharing, distribution of resources",
+        "moral": "Sharing resources benefits the community; women are the foundation of societal discovery."
+      }
+    },
+    {
+      "id": "story_3_func_1",
+      "label": "1. Initial Situation",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Initial Situation",
+        "event": "Woman sits by fire and feeds cooked food to children",
+        "description": "The finder of fire uses it responsibly",
+        "order": 1
+      }
+    },
+    {
+      "id": "story_3_func_2",
+      "label": "2. Lack",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Lack",
+        "event": "Husband sleeps in dark and eats raw food",
+        "description": "The husband has no fire and suffers deficiency",
+        "order": 2
+      }
+    },
+    {
+      "id": "story_3_func_3",
+      "label": "3. Observation / Mediation",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Observation / Mediation",
+        "event": "Husband waits and watches wife",
+        "description": "The resource is discovered by the non-owner",
+        "order": 3
+      }
+    },
+    {
+      "id": "story_3_func_4",
+      "label": "4. Theft / Villainy",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Theft / Villainy",
+        "event": "Husband steals the fire",
+        "description": "The resource is taken secretly from the woman",
+        "order": 4
+      }
+    },
+    {
+      "id": "story_3_func_5",
+      "label": "5. Flight / Escape",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Flight / Escape",
+        "event": "Husband runs off and makes fire elsewhere",
+        "description": "The wrongdoer flees to establish own base",
+        "order": 5
+      }
+    },
+    {
+      "id": "story_3_func_6",
+      "label": "6. Restoration / Etiological Closure",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Restoration / Etiological Closure",
+        "event": "Fire becomes known throughout the world",
+        "description": "Resource is distributed globally; people can make fire",
+        "order": 6
+      }
+    },
+    {
+      "id": "char_woman__dshau_",
+      "label": "Woman (Dshau)",
+      "type": "Character",
+      "properties": {
+        "name": "Woman (Dshau)",
+        "explanation": "First to discover fire; nurtures children and represents primary discovery."
+      }
+    },
+    {
+      "id": "role_hero___first_finder",
+      "label": "Hero / First Finder",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Hero / First Finder",
+        "definition": "Discovers resources first, benefiting the community."
+      }
+    },
+    {
+      "id": "word_dshau",
+      "label": "dshàú",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "dshàú",
+        "searchable": "dshau",
+        "sense": "woman.",
+        "pos": "n1 -si"
+      }
+    },
+    {
+      "id": "char_husband____hoan_",
+      "label": "Husband (!'Hoan)",
+      "type": "Character",
+      "properties": {
+        "name": "Husband (!'Hoan)",
+        "explanation": "Stole fire due to jealousy or lack, leading to its dispersion."
+      }
+    },
+    {
+      "id": "role_villain___stealer",
+      "label": "Villain / Stealer",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Villain / Stealer",
+        "definition": "A Proppian character archetype."
+      }
+    },
+    {
+      "id": "word_!'hoan",
+      "label": "!'hoàn",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "!'hoàn",
+        "searchable": "!'hoan",
+        "sense": "man, husband.",
+        "pos": "n1 pl: n∥aqè"
+      }
+    },
+    {
+      "id": "char_children__da_ama_",
+      "label": "Children (Da'ama)",
+      "type": "Character",
+      "properties": {
+        "name": "Children (Da'ama)",
+        "explanation": "Nourished by the fire; represent the community."
+      }
+    },
+    {
+      "id": "role_helper___co-beneficiaries",
+      "label": "Helper / Co-beneficiaries",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Helper / Co-beneficiaries",
+        "definition": "A Proppian character archetype."
+      }
+    },
+    {
+      "id": "word_da'a",
+      "label": "dà'á",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "dà'á",
+        "searchable": "da'a",
+        "sense": "fire, firewood, light, stove;",
+        "pos": "n4 -si"
+      }
+    },
+    {
+      "id": "story_4",
+      "label": "The Elephant First Found Water",
+      "type": "Story",
+      "properties": {
+        "title": "The Elephant First Found Water",
+        "type": "Etiological / Moral Narrative",
+        "speaker": "FAsa N!a’an",
+        "recorded": "Kauri, Botswana, 1971",
+        "summary": "The elephant was the one who first found water. He hid it from people and drank it alone. But the mud from the water stuck to his ankles and his wife, the Beautiful Aardvark Girl, asked the others how he could have found water. Her brothers tracked him, saw him drinking water, drank it all up, and filled the waterhole with their urine. When the elephant returned, he tried to drink but it refused. He tried to grab his wife, but the brothers stabbed him to death with spears. The brothers were swallows that come with the rain.",
+        "theme": "Anti-hoarding, justice, communal sharing, environmental resource",
+        "moral": "Hoarding vital resources leads to destruction; sharing and community cooperation are essential for survival."
+      }
+    },
+    {
+      "id": "story_4_func_1",
+      "label": "1. Initial Situation / Lack",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Initial Situation / Lack",
+        "event": "Elephant finds water and hides it from people",
+        "description": "Water is hoarded; the community is in state of lack",
+        "order": 1
+      }
+    },
+    {
+      "id": "story_4_func_2",
+      "label": "2. Deceptive Clue",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Deceptive Clue",
+        "event": "Mud sticks to elephant's ankles",
+        "description": "Evidence of water is left behind",
+        "order": 2
+      }
+    },
+    {
+      "id": "story_4_func_3",
+      "label": "3. Interdiction / Warning",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Interdiction / Warning",
+        "event": "Wife notices mud and asks about it; elephant denies",
+        "description": "Confrontation of the hoarder",
+        "order": 3
+      }
+    },
+    {
+      "id": "story_4_func_4",
+      "label": "4. Beginning Counteraction",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Beginning Counteraction",
+        "event": "Wife alerts brothers; they track elephant's spoor",
+        "description": "Investigation of the hoarding",
+        "order": 4
+      }
+    },
+    {
+      "id": "story_4_func_5",
+      "label": "5. Observation / Receipt of Aid",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Observation / Receipt of Aid",
+        "event": "Brothers find waterhole and drink all water",
+        "description": "The source is discovered and reclaimed",
+        "order": 5
+      }
+    },
+    {
+      "id": "story_4_func_6",
+      "label": "6. Trickery / Retaliation",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Trickery / Retaliation",
+        "event": "Brothers urinate in waterhole to ruin it",
+        "description": "Stingy hoarder is taught a lesson",
+        "order": 6
+      }
+    },
+    {
+      "id": "story_4_func_7",
+      "label": "7. Frustration / Warning",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Frustration / Warning",
+        "event": "Elephant returns; urine water refuses him",
+        "description": "Consequence of hoarding",
+        "order": 7
+      }
+    },
+    {
+      "id": "story_4_func_8",
+      "label": "8. Struggle / Assault",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Struggle / Assault",
+        "event": "Elephant tries to grab wife in anger",
+        "description": "Villain attempts violence",
+        "order": 8
+      }
+    },
+    {
+      "id": "story_4_func_9",
+      "label": "9. Struggle / Victory",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Struggle / Victory",
+        "event": "Brothers stab elephant to death with spears",
+        "description": "Villain is executed by the community",
+        "order": 9
+      }
+    },
+    {
+      "id": "story_4_func_10",
+      "label": "10. Restoration / Etiological Closure",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Restoration / Etiological Closure",
+        "event": "Brothers become swallows; rain falls for all",
+        "description": "Water is freed; swallows bring the rain",
+        "order": 10
+      }
+    },
+    {
+      "id": "char_elephant___xo_",
+      "label": "Elephant (!Xo)",
+      "type": "Character",
+      "properties": {
+        "name": "Elephant (!Xo)",
+        "explanation": "Hoarded the water, lied to his wife, and was killed for his selfishness."
+      }
+    },
+    {
+      "id": "role_villain___hoarder",
+      "label": "Villain / Hoarder",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Villain / Hoarder",
+        "definition": "Hoards community resources (water/fire) and suffers community punishment."
+      }
+    },
+    {
+      "id": "word_!xo",
+      "label": "!xò",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "!xò",
+        "searchable": "!xo",
+        "sense": "be unsuccessful (esp. in a hunt, a food-gathering expedition), be miserable: Mi !xò te !aqe tama te |oa ho !ha. I was unlucky and hunted in vain and found no animals;",
+        "pos": "vi"
+      }
+    },
+    {
+      "id": "char_aardvark_girl__g_kung_homdima_",
+      "label": "Aardvark Girl (G!kunG'homdima)",
+      "type": "Character",
+      "properties": {
+        "name": "Aardvark Girl (G!kunG'homdima)",
+        "explanation": "Wife of the elephant who noticed the mud and alerted her brothers, prioritizing community over husband."
+      }
+    },
+    {
+      "id": "role_helper___dispatcher",
+      "label": "Helper / Dispatcher",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Helper / Dispatcher",
+        "definition": "A Proppian character archetype."
+      }
+    },
+    {
+      "id": "char_brothers___o_sin_",
+      "label": "Brothers (!o-sin)",
+      "type": "Character",
+      "properties": {
+        "name": "Brothers (!o-sin)",
+        "explanation": "Tracked the elephant, ruined his stash, and killed him to free the water. Transformed into swallow-birds."
+      }
+    },
+    {
+      "id": "role_hero___avengers",
+      "label": "Hero / Avengers",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Hero / Avengers",
+        "definition": "Frees community resources and enforces justice."
+      }
+    },
+    {
+      "id": "word_tzama",
+      "label": "tzàmà",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "tzàmà",
+        "searchable": "tzama",
+        "sense": "bird.",
+        "pos": "n2 -"
+      }
+    },
+    {
+      "id": "story_5",
+      "label": "The Ostrich and the Tortoise",
+      "type": "Story",
+      "properties": {
+        "title": "The Ostrich and the Tortoise",
+        "type": "Trickster / Adaptational Narrative",
+        "speaker": "N!ani F’Kun",
+        "recorded": "Tsumkwe, Namibia, 2006",
+        "summary": "Tortoise and Ostrich were arguing. Tortoise told Ostrich, 'If I cook myself, you’ll eat me.' Ostrich said he would never do that. But Tortoise fooled him into eating from a pot of cooked tortoise eggs. When he learned what he had done, Ostrich vomited, kicked the pot, and has had red, split shins ever since.",
+        "theme": "Deception, pride, broken interdiction, physical evolution",
+        "moral": "Arrogance and greed expose one to deception; actions have permanent physical consequences."
+      }
+    },
+    {
+      "id": "story_5_func_1",
+      "label": "1. Initial Situation",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Initial Situation",
+        "event": "Tortoise and Ostrich argue about eating each other",
+        "description": "Setup of conflict and competition",
+        "order": 1
+      }
+    },
+    {
+      "id": "story_5_func_2",
+      "label": "2. Test / Challenge",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Test / Challenge",
+        "event": "Tortoise challenges: 'if I cook myself you will eat me'",
+        "description": "Deceptive proposition is made",
+        "order": 2
+      }
+    },
+    {
+      "id": "story_5_func_3",
+      "label": "3. Interdiction",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Interdiction",
+        "event": "Ostrich swears: 'I will never eat you'",
+        "description": "Rule is established",
+        "order": 3
+      }
+    },
+    {
+      "id": "story_5_func_4",
+      "label": "4. Deception",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Deception",
+        "event": "Tortoise cooks his eggs in a pot",
+        "description": "Trick is set up using eggs instead of body",
+        "order": 4
+      }
+    },
+    {
+      "id": "story_5_func_5",
+      "label": "5. Violation",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Violation",
+        "event": "Ostrich finds pot and eats all eggs",
+        "description": "Ostrich breaks his word due to greed",
+        "order": 5
+      }
+    },
+    {
+      "id": "story_5_func_6",
+      "label": "6. Exposure",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Exposure",
+        "event": "Tortoise reveals Ostrich ate his eggs/himself",
+        "description": "The deceit is revealed, causing shock",
+        "order": 6
+      }
+    },
+    {
+      "id": "story_5_func_7",
+      "label": "7. Consequence",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Consequence",
+        "event": "Ostrich vomits and kicks the pot in anger",
+        "description": "Immediate physical and emotional reaction",
+        "order": 7
+      }
+    },
+    {
+      "id": "story_5_func_8",
+      "label": "8. Etiological Closure",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Etiological Closure",
+        "event": "Ostrich gets red split shins",
+        "description": "Permanent physical marker explaining ostrich shins",
+        "order": 8
+      }
+    },
+    {
+      "id": "char_tortoise__go_a_",
+      "label": "Tortoise (Go'a)",
+      "type": "Character",
+      "properties": {
+        "name": "Tortoise (Go'a)",
+        "explanation": "Clever figure who wins the argument through cunning and egg-cooking."
+      }
+    },
+    {
+      "id": "role_hero___trickster",
+      "label": "Hero / Trickster",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Hero / Trickster",
+        "definition": "A Proppian character archetype."
+      }
+    },
+    {
+      "id": "word_g//oe",
+      "label": "g∥òé",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "g∥òé",
+        "searchable": "g//oe",
+        "sense": "tortoise (large sp.).",
+        "pos": "n2 -"
+      }
+    },
+    {
+      "id": "char_ostrich__dsuu_",
+      "label": "Ostrich (Dsuu)",
+      "type": "Character",
+      "properties": {
+        "name": "Ostrich (Dsuu)",
+        "explanation": "Arrogant, easily fooled, breaks his promise and suffers physical deformation."
+      }
+    },
+    {
+      "id": "role_false_hero___target",
+      "label": "False Hero / Target",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "False Hero / Target",
+        "definition": "Prideful opponent who violates interdictions and gets tricked."
+      }
+    },
+    {
+      "id": "word_dsuu",
+      "label": "dsùú",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "dsùú",
+        "searchable": "dsuu",
+        "sense": "ostrich.",
+        "pos": "n2 -"
+      }
+    },
+    {
+      "id": "story_6",
+      "label": "Springhare Dances",
+      "type": "Story",
+      "properties": {
+        "title": "Springhare Dances",
+        "type": "Moral / Etiological Narrative",
+        "speaker": "Dahm Ti N!a’an",
+        "recorded": "Kauri, Botswana, 1971",
+        "summary": "Springhare was playing and dancing, making rhythmic sounds. God watched him and decided to fetch a dancing skin from his son !Xuma. He gave it to Springhare, who danced all day. When rain began to fall, God asked for the skin back. Springhare refused and kept dancing. The heavy rain destroyed the skin, and Springhare fled into a hole. God used a hook to pull him out and beat him with a digging stick, explaining why people hunt springhares with hooks today.",
+        "theme": "Disobedience, greed, consequences, origin of hunting practices",
+        "moral": "Refusing authority and selfishness lead to severe consequences; resources given must be respected."
+      }
+    },
+    {
+      "id": "story_6_func_1",
+      "label": "1. Initial Situation",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Initial Situation",
+        "event": "God observes Springhare playing and dancing",
+        "description": "Narrative setup",
+        "order": 1
+      }
+    },
+    {
+      "id": "story_6_func_2",
+      "label": "2. Provision / Donor Function",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Provision / Donor Function",
+        "event": "God fetches dancing skin from !Xuma",
+        "description": "Special object obtained",
+        "order": 2
+      }
+    },
+    {
+      "id": "story_6_func_3",
+      "label": "3. Receipt of Magical Aid",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Receipt of Magical Aid",
+        "event": "Dancing skin is given to Springhare",
+        "description": "Hero receives the gift",
+        "order": 3
+      }
+    },
+    {
+      "id": "story_6_func_4",
+      "label": "4. Use of Magical Object",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Use of Magical Object",
+        "event": "Springhare dances all day",
+        "description": "Object used to perform actions",
+        "order": 4
+      }
+    },
+    {
+      "id": "story_6_func_5",
+      "label": "5. Warning / Command",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Warning / Command",
+        "event": "Rain approaches and God asks for skin back",
+        "description": "Instruction given to avoid danger",
+        "order": 5
+      }
+    },
+    {
+      "id": "story_6_func_6",
+      "label": "6. Violation",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Violation",
+        "event": "Springhare refuses and continues dancing",
+        "description": "Rule is ignored due to obsession/greed",
+        "order": 6
+      }
+    },
+    {
+      "id": "story_6_func_7",
+      "label": "7. Punishment / Consequence",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Punishment / Consequence",
+        "event": "Rain destroys the dancing skin",
+        "description": "Loss of the magical object due to misbehavior",
+        "order": 7
+      }
+    },
+    {
+      "id": "story_6_func_8",
+      "label": "8. Flight / Escape",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Flight / Escape",
+        "event": "Springhare hides in a hole in fear",
+        "description": "Attempted evasion of authority",
+        "order": 8
+      }
+    },
+    {
+      "id": "story_6_func_9",
+      "label": "9. Capture / Confrontation",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Capture / Confrontation",
+        "event": "God hooks Springhare out of the hole",
+        "description": "Wrongdoer is caught using a hooking pole",
+        "order": 9
+      }
+    },
+    {
+      "id": "story_6_func_10",
+      "label": "10. Punishment",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Punishment",
+        "event": "God beats Springhare on the back with digging stick",
+        "description": "Physical justice is enacted",
+        "order": 10
+      }
+    },
+    {
+      "id": "story_6_func_11",
+      "label": "11. Etiological Closure",
+      "type": "Propp_Function",
+      "properties": {
+        "function": "Etiological Closure",
+        "event": "Humans repeat this practice to hunt springhares",
+        "description": "Origin of current cultural/hunting reality",
+        "order": 11
+      }
+    },
+    {
+      "id": "char_springhare__n_oqm_",
+      "label": "Springhare (N/oqm)",
+      "type": "Character",
+      "properties": {
+        "name": "Springhare (N/oqm)",
+        "explanation": "Central actor who is talented at dancing but succumbs to greed and disobedience, leading to punishment."
+      }
+    },
+    {
+      "id": "role_hero___false_hero",
+      "label": "Hero / False Hero",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Hero / False Hero",
+        "definition": "Talented actor who starts as hero but violates rules, becoming a warning."
+      }
+    },
+    {
+      "id": "word_n/oqm",
+      "label": "n|òqm",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "n|òqm",
+        "searchable": "n/oqm",
+        "sense": "springhare.",
+        "pos": "n2 -"
+      }
+    },
+    {
+      "id": "char_god__g_ara_",
+      "label": "God (G!ara)",
+      "type": "Character",
+      "properties": {
+        "name": "God (G!ara)",
+        "explanation": "Provides the magical skin, warns of danger, and enforces order/justice when violated."
+      }
+    },
+    {
+      "id": "role_donor___authority",
+      "label": "Donor / Authority",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Donor / Authority",
+        "definition": "A Proppian character archetype."
+      }
+    },
+    {
+      "id": "char__xuma",
+      "label": "!Xuma",
+      "type": "Character",
+      "properties": {
+        "name": "!Xuma",
+        "explanation": "God's son and the original owner/creator of the dancing skin."
+      }
+    },
+    {
+      "id": "role_indirect_donor",
+      "label": "Indirect Donor",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Indirect Donor",
+        "definition": "A Proppian character archetype."
+      }
+    },
+    {
+      "id": "char_rain",
+      "label": "Rain",
+      "type": "Character",
+      "properties": {
+        "name": "Rain",
+        "explanation": "Acts as the physical force that destroys the skin and threatens Springhare."
+      }
+    },
+    {
+      "id": "role_villain-like_force___natural_punisher",
+      "label": "Villain-like force / Natural Punisher",
+      "type": "Propp_Role",
+      "properties": {
+        "role": "Villain-like force / Natural Punisher",
+        "definition": "A Proppian character archetype."
+      }
+    },
+    {
+      "id": "word_zo",
+      "label": "zó",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "zó",
+        "searchable": "zo",
+        "sense": "honey, bee.",
+        "pos": "n4 -"
+      }
+    },
+    {
+      "id": "word_g!ai",
+      "label": "g!áí",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "g!áí",
+        "searchable": "g!ai",
+        "sense": "sew, knit.",
+        "pos": "vt"
+      }
+    },
+    {
+      "id": "word_!ai",
+      "label": "!áí",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "!áí",
+        "searchable": "!ai",
+        "sense": "die, be dead, be finished; heal (of a wound);",
+        "pos": "vi sg subj Cf. !àò"
+      }
+    },
+    {
+      "id": "word_g!u_water",
+      "label": "g!ú",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "g!ú",
+        "searchable": "g!u",
+        "sense": "Water, juice of fruits etc. (hoarded by the elephant).",
+        "pos": "n5 -si"
+      }
+    },
+    {
+      "id": "word_waq",
+      "label": "waqn",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "waqn",
+        "searchable": "waqn",
+        "sense": "gè the last: Ha o jù waqn gea tju|ho. He is the last person in the village.",
+        "pos": "adj"
+      }
+    },
+    {
+      "id": "word_!u",
+      "label": "!ù",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "!ù",
+        "searchable": "!u",
+        "sense": "bloodvrugboom, Terminalia prunioides;",
+        "pos": "n5 -si"
+      }
+    },
+    {
+      "id": "word_Gu",
+      "label": "gù",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "gù",
+        "searchable": "gu",
+        "sense": "take, catch (also of illness);",
+        "pos": "vt sg obj Cf. n|hui"
+      }
+    },
+    {
+      "id": "word_n!u",
+      "label": "n!ù",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "n!ù",
+        "searchable": "n!u",
+        "sense": "glans of the penis; egg (second element in compounds): Da'abi |u 'm dsuu n!usi. Children should not eat ostrich eggs.",
+        "pos": "n5 -si"
+      }
+    },
+    {
+      "id": "word_tshu",
+      "label": "tshù",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "tshù",
+        "searchable": "tshu",
+        "sense": "vomit.",
+        "pos": "vt"
+      }
+    },
+    {
+      "id": "word_n!ham",
+      "label": "n!hàm",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "n!hàm",
+        "searchable": "n!ham",
+        "sense": "spider, spider-web.",
+        "pos": "n2 -"
+      }
+    },
+    {
+      "id": "word_g=ui",
+      "label": "g≠úí",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "g≠úí",
+        "searchable": "g=ui",
+        "sense": "springhare hooking pole (i.e., a long jointed pole with a hook on the end which is used to hook springhares out of their burrows).",
+        "pos": "n4 -si"
+      }
+    },
+    {
+      "id": "word_n!ore",
+      "label": "n!óré",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "n!óré",
+        "searchable": "n!ore",
+        "sense": "territory, country, land (esp. that belonging to a village).",
+        "pos": "n3 -si"
+      }
+    },
+    {
+      "id": "word_n/om",
+      "label": "n|óm",
+      "type": "Linguistic_Term",
+      "properties": {
+        "entry": "n|óm",
+        "searchable": "n/om",
+        "sense": "be noisy;",
+        "pos": "vi"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "story_1",
+      "to": "concept_bush",
+      "label": "SETTING_INCLUDES",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "concept_camp",
+      "label": "SETTING_INCLUDES",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "concept_transmutation",
+      "label": "THEME_RELATED_TO",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "story_1_func_1",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 1
+      }
+    },
+    {
+      "from": "story_1",
+      "to": "story_1_func_2",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 2
+      }
+    },
+    {
+      "from": "story_1_func_1",
+      "to": "story_1_func_2",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "story_1_func_3",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 3
+      }
+    },
+    {
+      "from": "story_1_func_2",
+      "to": "story_1_func_3",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "story_1_func_4",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 4
+      }
+    },
+    {
+      "from": "story_1_func_3",
+      "to": "story_1_func_4",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "story_1_func_5",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 5
+      }
+    },
+    {
+      "from": "story_1_func_4",
+      "to": "story_1_func_5",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "story_1_func_6",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 6
+      }
+    },
+    {
+      "from": "story_1_func_5",
+      "to": "story_1_func_6",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "story_1_func_7",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 7
+      }
+    },
+    {
+      "from": "story_1_func_6",
+      "to": "story_1_func_7",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "char_moon__n_ui_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_moon__n_ui_",
+      "to": "role_hero",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Moon Dies and Lives Again"
+      }
+    },
+    {
+      "from": "char_moon__n_ui_",
+      "to": "word_n!ui",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "char_people__ju_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_people__ju_",
+      "to": "role_witnesses___community",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Moon Dies and Lives Again"
+      }
+    },
+    {
+      "from": "char_people__ju_",
+      "to": "word_ju",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_1",
+      "to": "char_darkness___night",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_darkness___night",
+      "to": "role_environmental_challenge",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Moon Dies and Lives Again"
+      }
+    },
+    {
+      "from": "char_darkness___night",
+      "to": "word_|am",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "concept_bush",
+      "label": "SETTING_INCLUDES",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "concept_camp",
+      "label": "SETTING_INCLUDES",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "story_2_func_1",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 1
+      }
+    },
+    {
+      "from": "story_2",
+      "to": "story_2_func_2",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 2
+      }
+    },
+    {
+      "from": "story_2_func_1",
+      "to": "story_2_func_2",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "story_2_func_3",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 3
+      }
+    },
+    {
+      "from": "story_2_func_2",
+      "to": "story_2_func_3",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "story_2_func_4",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 4
+      }
+    },
+    {
+      "from": "story_2_func_3",
+      "to": "story_2_func_4",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "story_2_func_5",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 5
+      }
+    },
+    {
+      "from": "story_2_func_4",
+      "to": "story_2_func_5",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "story_2_func_6",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 6
+      }
+    },
+    {
+      "from": "story_2_func_5",
+      "to": "story_2_func_6",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "story_2_func_7",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 7
+      }
+    },
+    {
+      "from": "story_2_func_6",
+      "to": "story_2_func_7",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "story_2_func_8",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 8
+      }
+    },
+    {
+      "from": "story_2_func_7",
+      "to": "story_2_func_8",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "char_g_ara",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_g_ara",
+      "to": "role_hero",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Honey and the Flies"
+      }
+    },
+    {
+      "from": "char_g_ara",
+      "to": "word_g//aoan",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "char_cardinal_woodpecker____aun__aun_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_cardinal_woodpecker____aun__aun_",
+      "to": "role_donor___model",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Honey and the Flies"
+      }
+    },
+    {
+      "from": "char_cardinal_woodpecker____aun__aun_",
+      "to": "word_!'aun!'aun",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "char_flies__zoaqzoaq_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_flies__zoaqzoaq_",
+      "to": "role_helper",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Honey and the Flies"
+      }
+    },
+    {
+      "from": "char_flies__zoaqzoaq_",
+      "to": "word_zoanzoan",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_2",
+      "to": "char_g_ara_s_lack_of_ability",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_g_ara_s_lack_of_ability",
+      "to": "role_villain-like_force",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Honey and the Flies"
+      }
+    },
+    {
+      "from": "char_g_ara_s_lack_of_ability",
+      "to": "word_g!u_stomach",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_3",
+      "to": "concept_camp",
+      "label": "SETTING_INCLUDES",
+      "properties": {}
+    },
+    {
+      "from": "story_3",
+      "to": "concept_sharing",
+      "label": "THEME_RELATED_TO",
+      "properties": {}
+    },
+    {
+      "from": "story_3",
+      "to": "story_3_func_1",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 1
+      }
+    },
+    {
+      "from": "story_3",
+      "to": "story_3_func_2",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 2
+      }
+    },
+    {
+      "from": "story_3_func_1",
+      "to": "story_3_func_2",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_3",
+      "to": "story_3_func_3",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 3
+      }
+    },
+    {
+      "from": "story_3_func_2",
+      "to": "story_3_func_3",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_3",
+      "to": "story_3_func_4",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 4
+      }
+    },
+    {
+      "from": "story_3_func_3",
+      "to": "story_3_func_4",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_3",
+      "to": "story_3_func_5",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 5
+      }
+    },
+    {
+      "from": "story_3_func_4",
+      "to": "story_3_func_5",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_3",
+      "to": "story_3_func_6",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 6
+      }
+    },
+    {
+      "from": "story_3_func_5",
+      "to": "story_3_func_6",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_3",
+      "to": "char_woman__dshau_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_woman__dshau_",
+      "to": "role_hero___first_finder",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "A Woman First Found Fire"
+      }
+    },
+    {
+      "from": "char_woman__dshau_",
+      "to": "word_dshau",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_3",
+      "to": "char_husband____hoan_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_husband____hoan_",
+      "to": "role_villain___stealer",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "A Woman First Found Fire"
+      }
+    },
+    {
+      "from": "char_husband____hoan_",
+      "to": "word_!'hoan",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_3",
+      "to": "char_children__da_ama_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_children__da_ama_",
+      "to": "role_helper___co-beneficiaries",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "A Woman First Found Fire"
+      }
+    },
+    {
+      "from": "char_children__da_ama_",
+      "to": "word_da'a",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "concept_bush",
+      "label": "SETTING_INCLUDES",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "concept_sharing",
+      "label": "THEME_RELATED_TO",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "concept_sharing",
+      "label": "THEME_RELATED_TO",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "concept_transmutation",
+      "label": "THEME_RELATED_TO",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "story_4_func_1",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 1
+      }
+    },
+    {
+      "from": "story_4",
+      "to": "story_4_func_2",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 2
+      }
+    },
+    {
+      "from": "story_4_func_1",
+      "to": "story_4_func_2",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "story_4_func_3",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 3
+      }
+    },
+    {
+      "from": "story_4_func_2",
+      "to": "story_4_func_3",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "story_4_func_4",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 4
+      }
+    },
+    {
+      "from": "story_4_func_3",
+      "to": "story_4_func_4",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "story_4_func_5",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 5
+      }
+    },
+    {
+      "from": "story_4_func_4",
+      "to": "story_4_func_5",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "story_4_func_6",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 6
+      }
+    },
+    {
+      "from": "story_4_func_5",
+      "to": "story_4_func_6",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "story_4_func_7",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 7
+      }
+    },
+    {
+      "from": "story_4_func_6",
+      "to": "story_4_func_7",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "story_4_func_8",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 8
+      }
+    },
+    {
+      "from": "story_4_func_7",
+      "to": "story_4_func_8",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "story_4_func_9",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 9
+      }
+    },
+    {
+      "from": "story_4_func_8",
+      "to": "story_4_func_9",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "story_4_func_10",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 10
+      }
+    },
+    {
+      "from": "story_4_func_9",
+      "to": "story_4_func_10",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "char_elephant___xo_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_elephant___xo_",
+      "to": "role_villain___hoarder",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Elephant First Found Water"
+      }
+    },
+    {
+      "from": "char_elephant___xo_",
+      "to": "word_!xo",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "char_aardvark_girl__g_kung_homdima_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_aardvark_girl__g_kung_homdima_",
+      "to": "role_helper___dispatcher",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Elephant First Found Water"
+      }
+    },
+    {
+      "from": "char_aardvark_girl__g_kung_homdima_",
+      "to": "word_dshau",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_4",
+      "to": "char_brothers___o_sin_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_brothers___o_sin_",
+      "to": "role_hero___avengers",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Elephant First Found Water"
+      }
+    },
+    {
+      "from": "char_brothers___o_sin_",
+      "to": "word_tzama",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_5",
+      "to": "concept_bush",
+      "label": "SETTING_INCLUDES",
+      "properties": {}
+    },
+    {
+      "from": "story_5",
+      "to": "story_5_func_1",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 1
+      }
+    },
+    {
+      "from": "story_5",
+      "to": "story_5_func_2",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 2
+      }
+    },
+    {
+      "from": "story_5_func_1",
+      "to": "story_5_func_2",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_5",
+      "to": "story_5_func_3",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 3
+      }
+    },
+    {
+      "from": "story_5_func_2",
+      "to": "story_5_func_3",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_5",
+      "to": "story_5_func_4",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 4
+      }
+    },
+    {
+      "from": "story_5_func_3",
+      "to": "story_5_func_4",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_5",
+      "to": "story_5_func_5",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 5
+      }
+    },
+    {
+      "from": "story_5_func_4",
+      "to": "story_5_func_5",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_5",
+      "to": "story_5_func_6",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 6
+      }
+    },
+    {
+      "from": "story_5_func_5",
+      "to": "story_5_func_6",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_5",
+      "to": "story_5_func_7",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 7
+      }
+    },
+    {
+      "from": "story_5_func_6",
+      "to": "story_5_func_7",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_5",
+      "to": "story_5_func_8",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 8
+      }
+    },
+    {
+      "from": "story_5_func_7",
+      "to": "story_5_func_8",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_5",
+      "to": "char_tortoise__go_a_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_tortoise__go_a_",
+      "to": "role_hero___trickster",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Ostrich and the Tortoise"
+      }
+    },
+    {
+      "from": "char_tortoise__go_a_",
+      "to": "word_g//oe",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_5",
+      "to": "char_ostrich__dsuu_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_ostrich__dsuu_",
+      "to": "role_false_hero___target",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "The Ostrich and the Tortoise"
+      }
+    },
+    {
+      "from": "char_ostrich__dsuu_",
+      "to": "word_dsuu",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "concept_bush",
+      "label": "SETTING_INCLUDES",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "concept_camp",
+      "label": "SETTING_INCLUDES",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_1",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 1
+      }
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_2",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 2
+      }
+    },
+    {
+      "from": "story_6_func_1",
+      "to": "story_6_func_2",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_3",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 3
+      }
+    },
+    {
+      "from": "story_6_func_2",
+      "to": "story_6_func_3",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_4",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 4
+      }
+    },
+    {
+      "from": "story_6_func_3",
+      "to": "story_6_func_4",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_5",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 5
+      }
+    },
+    {
+      "from": "story_6_func_4",
+      "to": "story_6_func_5",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_6",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 6
+      }
+    },
+    {
+      "from": "story_6_func_5",
+      "to": "story_6_func_6",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_7",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 7
+      }
+    },
+    {
+      "from": "story_6_func_6",
+      "to": "story_6_func_7",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_8",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 8
+      }
+    },
+    {
+      "from": "story_6_func_7",
+      "to": "story_6_func_8",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_9",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 9
+      }
+    },
+    {
+      "from": "story_6_func_8",
+      "to": "story_6_func_9",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_10",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 10
+      }
+    },
+    {
+      "from": "story_6_func_9",
+      "to": "story_6_func_10",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "story_6_func_11",
+      "label": "HAS_FUNCTION",
+      "properties": {
+        "order": 11
+      }
+    },
+    {
+      "from": "story_6_func_10",
+      "to": "story_6_func_11",
+      "label": "NEXT_FUNCTION",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "char_springhare__n_oqm_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_springhare__n_oqm_",
+      "to": "role_hero___false_hero",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "Springhare Dances"
+      }
+    },
+    {
+      "from": "char_springhare__n_oqm_",
+      "to": "word_n/oqm",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "char_god__g_ara_",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_god__g_ara_",
+      "to": "role_donor___authority",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "Springhare Dances"
+      }
+    },
+    {
+      "from": "char_god__g_ara_",
+      "to": "word_g//aoan",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "char__xuma",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char__xuma",
+      "to": "role_indirect_donor",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "Springhare Dances"
+      }
+    },
+    {
+      "from": "char__xuma",
+      "to": "word_g//aoan",
+      "label": "ASSOCIATED_WORD",
+      "properties": {}
+    },
+    {
+      "from": "story_6",
+      "to": "char_rain",
+      "label": "HAS_CHARACTER",
+      "properties": {}
+    },
+    {
+      "from": "char_rain",
+      "to": "role_villain-like_force___natural_punisher",
+      "label": "PLAYS_ROLE",
+      "properties": {
+        "story": "Springhare Dances"
+      }
+    },
+    {
+      "from": "word_n!ore",
+      "to": "concept_camp",
+      "label": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "from": "word_n/om",
+      "to": "concept_num",
+      "label": "REPRESENTS",
+      "properties": {}
+    },
+    {
+      "from": "word_g//aoan",
+      "to": "concept_num",
+      "label": "RELATED_TO",
+      "properties": {}
+    }
+  ]
+}

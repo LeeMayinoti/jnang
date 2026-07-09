@@ -1,0 +1,77 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix propp: <http://ontology.narrative.org/propp#> .
+@prefix story: <http://ontology.narrative.org/honey-flies#> .
+
+# ---------------------------------------------------------
+# SCHEMA DEFINITION (Classes & Properties)
+# ---------------------------------------------------------
+
+propp:Character a owl:Class .
+propp:Object a owl:Class .
+propp:MagicalAgent a owl:Class ; rdfs:subClassOf propp:Object .
+propp:NarrativeFunction a owl:Class .
+propp:ProppianRole a owl:Class .
+
+propp:hasRole a owl:ObjectProperty ;
+    rdfs:domain propp:Character ;
+    rdfs:range propp:ProppianRole .
+
+propp:performsFunction a owl:ObjectProperty ;
+    rdfs:domain propp:Character ;
+    rdfs:range propp:NarrativeFunction .
+
+propp:lacks a owl:ObjectProperty ;
+    rdfs:domain propp:Character ;
+    rdfs:range propp:MagicalAgent .
+
+propp:follows a owl:ObjectProperty ;
+    rdfs:domain propp:NarrativeFunction ;
+    rdfs:range propp:NarrativeFunction .
+
+# ---------------------------------------------------------
+# INSTANCE DATA: "The Honey and the Flies"
+# ---------------------------------------------------------
+
+# Characters & Objects
+story:Glara a propp:Character ;
+    propp:hasRole story:FalseHero .
+
+story:Woodpecker a propp:Character ;
+    propp:hasRole story:SuccessfulModel .
+
+story:Flies a propp:Character ;
+    propp:hasRole story:Helper .
+
+story:WhistlingMagic a propp:MagicalAgent .
+story:Honey a propp:Object .
+
+# Proppian Moves / Motifemes (Sequential)
+story:Move1_Lack a propp:NarrativeFunction ;
+    rdfs:label "Glara desires honey" .
+
+story:Move2_AttemptedImitation a propp:NarrativeFunction ;
+    rdfs:label "Glara attempts to imitate Woodpecker" ;
+    propp:follows story:Move1_Lack .
+
+story:Move3_LackOfMagic a propp:NarrativeFunction ;
+    rdfs:label "Glara fails due to lacking whistling magic" ;
+    propp:follows story:Move2_AttemptedImitation .
+
+story:Move4_Consequence a propp:NarrativeFunction ;
+    rdfs:label "Glara falls and stomach bursts" ;
+    propp:follows story:Move3_LackOfMagic .
+
+story:Move5_Rescue a propp:NarrativeFunction ;
+    rdfs:label "Flies sew up Glara's stomach" ;
+    propp:follows story:Move4_Consequence .
+
+# Connecting Characters to Functions and Objects
+story:Glara propp:performsFunction story:Move1_Lack ;
+    propp:performsFunction story:Move2_AttemptedImitation ;
+    propp:performsFunction story:Move3_LackOfMagic ;
+    propp:performsFunction story:Move4_Consequence ;
+    propp:lacks story:WhistlingMagic .
+
+story:Flies propp:performsFunction story:Move5_Rescue .

@@ -1,242 +1,256 @@
 ---
 name: jnang_agentic_narratives
-description: Guidelines and blueprints for developing a LangGraph-based multi-agent narrative generator, parser, and critic system utilizing Vladimir Propp's morphology, Claude Lévi-Strauss's spatial oppositions, and Ju|'hoansi cultural oicotypes.
+description: Guidelines and blueprints for developing a simplified LangGraph multi-agent narrative pipeline for generating, classifying, and grading Ju|'hoansi folktales using Alan Dundes' motifeme framework, Vladimir Propp's morphology, and Ju|'hoansi cultural oicotypes.
 ---
 
 # Ju|'hoansi Narrative Agentic Generator (jnang)
 
-This skill provides the architectural specification, directory structure, and code patterns for developing a multi-agent story generation and analysis system in the `jnang` repository. It bridges Western formalist analysis with indigenous oral epistemologies using a LangGraph multi-agent loop.
+This skill provides the architectural specification, directory structure, and code patterns for
+the `jnang` multi-agent narrative pipeline. The system bridges Western formalist analysis
+(Dundes, Propp, Lévi-Strauss) with indigenous Ju|'hoansi oral epistemologies using a simplified
+LangGraph linear pipeline.
 
 ---
 
 ## 1. Project Directory Structure
-
-Below is the recommended directory structure for extending `jnang` to support the multi-agent generation backend.
 
 ```
 jnang/
 ├── backend/
 │   ├── app/
 │   │   ├── __init__.py
-│   │   ├── main.py                # FastAPI server entrypoint
+│   │   ├── main.py                    # FastAPI server entrypoint
 │   │   ├── agents/
 │   │   │   ├── __init__.py
-│   │   │   ├── state.py           # LangGraph state schema definition
-│   │   │   ├── graph.py           # LangGraph workflow compilation & routing
-│   │   │   ├── classifier.py      # Agent 1: Classifier / Parser node
-│   │   │   ├── generator.py       # Agent 2: Generator / Storywriter node
-│   │   │   └── critic.py          # Agent 3: Critic / Grader node
+│   │   │   ├── state.py               # Flat LangGraph state schema (NarrativeState)
+│   │   │   ├── graph.py               # LangGraph workflow compilation & routing
+│   │   │   ├── prompt_fetcher.py      # Prompt template loader
+│   │   │   ├── prompts/
+│   │   │   │   └── __init__.py        # GENERATOR, CLASSIFIER, GRADER prompt constants
+│   │   │   └── nodes/
+│   │   │       ├── __init__.py
+│   │   │       ├── generator.py       # Agent 1: Generator / Storywriter node
+│   │   │       ├── classifier.py      # Agent 2: Classifier / Parser node
+│   │   │       └── grader.py          # Agent 3: Grader node
 │   │   ├── core/
 │   │   │   ├── __init__.py
-│   │   │   ├── config.py          # Settings and API configurations
-│   │   │   └── database.py        # Neo4j connections and local session helpers
+│   │   │   ├── config.py              # Settings and API configurations
+│   │   │   └── database.py            # Neo4j connections
 │   │   └── utils/
 │   │       ├── __init__.py
-│   │       ├── dictionary.py      # Lexicon query interface (ju_dictionary.xls)
-│   │       └── grammar.py         # Phonetics & grammar helper (book.txt)
+│   │       ├── dictionary.py          # Lexicon query interface (ju_dictionary.xls)
+│   │       └── grammar.py             # Phonetics & grammar helper (book.txt)
 │   ├── tests/
 │   │   ├── __init__.py
-│   │   ├── test_agents.py         # Unit tests for individual agents
-│   │   └── test_graph.py          # Integration tests for the LangGraph workflow
-│   ├── requirements.txt           # Python dependencies (langgraph, langchain-openai, pandas, rdflib, neo4j)
-│   └── .env                       # Local environment secrets (OpenAI API key, Neo4j configuration)
-├── context/                       # Reference materials & ontology compilation
-│   ├── data/                      # Source datasets
-│   │   ├── Ju’hoan Folktales.pdf
-│   │   ├── book.PDF               # Original grammar guide scans
-│   │   ├── book.txt               # Extracted grammar primer
-│   │   ├── gemini-code-rdf.txt    # Turtle (.ttl) format RDF story data
-│   │   ├── ju_dictionary.xls      # Ju|'hoansi searchable dictionary (4,737 rows)
-│   │   └── ju_folktales.txt       # Transcribed stories database
-│   ├── key_papers/                # Secondary academic literature
+│   │   ├── test_agents.py
+│   │   └── test_graph.py
+│   ├── requirements.txt
+│   └── .env                           # OPENAI_API_KEY, NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD
+├── context/                           # Reference materials & ontology
+│   ├── data/
+│   │   ├── Ju'hoan Folktales.pdf
+│   │   ├── book.PDF / book.txt        # Grammar primer
+│   │   ├── gemini-code-rdf.txt        # Turtle RDF story data
+│   │   ├── ju_dictionary.xls          # Ju|'hoansi dictionary (4,737 rows)
+│   │   └── ju_folktales.txt           # Transcribed stories RAG corpus
+│   ├── key_papers/
 │   │   ├── 795237035-MIT.pdf
 │   │   └── biesele1995.pdf
-│   ├── extract_kg.py              # Knowledge graph JSON generator
-│   ├── verify_kg.py               # Validation script for knowledge_graph.json
-│   └── knowledge_graph.json       # Compiled narrative ontology graph
-├── graph_data.js                  # Frontend-compatible knowledge graph payload
-├── import_rdf.py                  # CLI script to parse RDF and populate Neo4j
-├── index.html                     # 3D Force Graph UI explorer
-├── script.js                      # UI event handling & 3D rendering pipeline
-├── server.py                      # Local development server for visualization
-├── styles.css                     # Premium Glassmorphic Web UI styles
-└── skills.md                      # Development blueprint (this file)
+│   ├── extract_kg.py
+│   ├── verify_kg.py
+│   └── knowledge_graph.json
+├── graph_data.js                      # Frontend-compatible knowledge graph payload
+├── import_rdf.py                      # CLI: parse RDF → Neo4j
+├── index.html                         # 3D Force Graph UI explorer
+├── script.js                          # UI event handling & 3D rendering
+├── server.py                          # Local development server
+├── styles.css                         # Premium Glassmorphic Web UI styles
+└── skills.md                          # Development blueprint (this file)
 ```
 
 ---
 
 ## 2. Theoretical Alignment Model
 
-When generating or parsing narratives, agents must adhere to the following framework modifications to respect Ju|'hoansi oral traditions:
+### A. Alan Dundes — Canonical 8 Motifemes
+The classifier uses **only** these 8 motifemes. Short chains (2–3) are valid and expected:
 
-| Attribute | Propp's Indo-European Baseline | Ju|'hoansi Oral Tradition Modifications |
-| :--- | :--- | :--- |
-| **Sequence** | Strict linear progression ($\alpha \rightarrow \beta \rightarrow \gamma \dots$) | Episodic, symmetrical, recursive, and cyclical loops. |
-| **Role Fluidity** | Static characters (Hero, Villain, Donor, Helper) | Porous boundaries (e.g., Trickster is both Villain and Donor). |
-| **Resolution** | Individual ascension (Wedding $W^*$, Wealth, Throne) | Social restoration, sharing, and collective re-integration. |
-| **Vengeance** | Execution/destruction of the Villain | Restorative justice or integration after being taught a lesson. |
+| # | Motifeme | Description |
+|---|---|---|
+| 1 | **Lack** | A need, absence, or deficiency exists in the community |
+| 2 | **Interdiction** | A prohibition or taboo is stated by an elder or authority |
+| 3 | **Violation** | The interdiction is broken |
+| 4 | **Consequence** | A result follows the violation (punishment, transformation, loss) |
+| 5 | **Mediation** | A helper or mediator intervenes (trickster, elder, spirit) |
+| 6 | **Lack Liquidated** | The original lack is resolved |
+| 7 | **Departure** | A character leaves (camp → bush or on a journey) |
+| 8 | **Return** | A character returns (bush → camp or journey's end) |
 
-### A. Claude Lévi-Strauss: Spatial Oppositions
-Narrative behavior is governed by spatial boundaries that must be explicitly tracked:
-* **The Camp**: Represesents safety, social order, egalitarian sharing, and human society.
-* **The Bush**: Represents wild nature, danger, isolation, spirits ($g//awasi$), and supernatural power. Entering the Bush permits transmutation, metamorphosis, and breaks regular social rules.
+> **Rule**: Brevity is culturally standard. Never penalize short motifeme chains.
 
-### B. Alan Dundes: Lean Motifeme Chains
-Rather than expecting a 31-step Proppian quest, evaluate stories based on lean structural units:
-* $\text{Lack} \rightarrow \text{Lack Liquidated}$
-* $\text{Interdiction (Taboo)} \rightarrow \text{Violation} \rightarrow \text{Consequence}$
-* *Rule*: The critic must not penalize stories for being short or simple; brevity is culturally standard.
+### B. Vladimir Propp — Story Moves
+The classifier also extracts **narrative moves** (Propp-style functions expressed as verb-action phrases), e.g.:
+- "Hero receives magical object from donor"
+- "Trickster deceives community"
+- "Ancestral spirit grants healing power (n|um)"
+- "Community restores sharing order"
 
-### C. Carl von Sydow: Cultural Oicotypes
-All generic Proppian variables must map to Ju|'hoansi ecological and social realities:
-* **Magical Agent** $\rightarrow$ A magical gemsbok horn, digging stick, rain-animal, or ancestral blood.
-* **Donor/Helper** $\rightarrow$ An elder relative (grandmother), a trickster figure, or local fauna.
-* **Setting** $\rightarrow$ Red mountains, dry valleys, waterholes, and campfire circles (no castles, roads, or kingdoms).
+### C. Claude Lévi-Strauss — Spatial Oppositions
+Stories operate on a Camp ↔ Bush axis:
+- **Camp**: Safety, social order, egalitarian sharing, human community
+- **Bush**: Wild nature, danger, spirits (g//awasi), metamorphosis, supernatural power
+
+Entering the Bush unlocks transformation events; return to Camp restores social order.
+
+### D. Carl von Sydow — Cultural Oicotypes
+All generic narrative variables must map to Ju|'hoansi ecological reality:
+
+| Generic Element | Ju|'hoansi Oicotype |
+|---|---|
+| Magical agent | Gemsbok horn, digging stick, rain-animal, ancestral blood |
+| Donor / Helper | Elder relative (grandmother), trickster figure, local fauna |
+| Setting | Red mountains, dry valleys, waterholes, campfire circles |
+| Resolution | Communal restoration, sharing — NOT individual glory |
 
 ---
 
-## 3. LangGraph Multi-Agent Architecture
+## 3. LangGraph Pipeline Architecture
 
-The generation, parsing, and grading pipeline is configured as a cyclic feedback loop in LangGraph:
+The pipeline is a **simplified linear flow** with one conditional branch at the start.
+No feedback loops. No checkpointing. No reducers.
 
 ```mermaid
 graph TD
-    Start([Start]) --> Generator[Agent 2: Generator/Storywriter]
-    Generator --> Classifier[Agent 1: Classifier/Parser]
-    Classifier --> Critic[Agent 3: Critic/Grader]
-    Critic --> Condition{Is Story Approved?}
-    Condition -->|No - Under Max Iterations| Generator
-    Condition -->|Yes / Max Iterations Reached| End([End])
+    Start([__start__]) --> Router{input_story provided?}
+    Router -->|Yes| EchoInput[echo_input: copy to draft_narrative]
+    Router -->|No| Generator[Agent 1: Generator]
+    EchoInput --> Classifier[Agent 2: Classifier]
+    Generator --> Classifier
+    Classifier --> Grader[Agent 3: Grader]
+    Grader --> End([__end__])
 ```
 
-### A. State Schema
-The state object holds the current work-in-progress story, structural evaluations, and metrics.
+### A. State Schema — Flat NarrativeState
+The state is a **single flat TypedDict**. No reducers. No nested sub-dicts.
 
 ```python
 # backend/app/agents/state.py
 from typing import TypedDict, List, Dict, Any, Optional
 
-class NarrativeState(TypedDict):
-    # Inputs
-    theme: str
-    target_motifeme_skeleton: Optional[List[str]]
-    
-    # Mid-process variables
-    draft_narrative: str
-    motifeme_skeleton: List[str]
-    spatial_transitions: List[Dict[str, str]]  # e.g., [{"character": "G!ara", "from": "Camp", "to": "Bush", "line": 12}]
-    linguistic_terms: List[str]                  # Ju|'hoan terms used (validated via dictionary)
-    
-    # Critic & Feedback Loop
-    critique_report: Dict[str, Any]
-    syntactic_score: float                       # Scale 0.0 to 10.0
-    cultural_score: float                        # Scale 0.0 to 10.0
-    iteration_count: int
-    max_iterations: int
-    status: str                                  # "continue", "approved", "failed"
+class NarrativeState(TypedDict, total=False):
+    # === Input ===
+    input_story: Optional[str]    # User-supplied story — if set, skips generation
+    theme: str                    # Seed theme for the Generator
+
+    # === Agent 1 – Generator ===
+    draft_narrative: str          # The story text (generated or echoed from input_story)
+
+    # === Agent 2 – Classifier ===
+    motifemes: List[str]          # Dundes motifemes identified (from the canonical 8)
+    story_moves: List[str]        # Propp narrative functions / moves detected
+
+    # === Agent 3 – Grader ===
+    grade_report: Dict[str, Any]  # Grading output
 ```
 
-### B. Agent 1: The Classifier/Parser
-Responsible for extracting Proppian functions, custom motifemes, characters, roles, and spatial transitions.
+### B. Agent 1 — Generator / Storywriter (`nodes/generator.py`)
+Generates an authentic Ju|'hoansi folktale grounded in local ecology.
 
-* **Prompt Directive**:
-  ```markdown
-  Analyze the draft narrative and extract:
-  1. The motifeme skeleton chain (e.g. Lack -> Violation -> Consequence).
-  2. Characters and their roles. Utilize the custom role dictionary:
-     - Hero, Donor, Helper, Witnesses/Community, Environmental Challenge, False Hero/Target, Villain/Hoarder.
-  3. Spatial Transitions: Detect whenever a character moves between 'The Camp' and 'The Bush'.
-  4. Custom motifs (Escape Hatch): Tag indigenous-specific functions:
-     - [Transmutation]: Human-animal zoomorphism.
-     - [Egalitarian Distribution]: Sharing meat or water communally.
-     - [Ancestral/Nǀum Intervention]: Shamanic trance healing or life-giving magic.
+- **Reads**: `theme`
+- **Writes**: `draft_narrative`
+- **Tools**: Neo4j ontology graph, RAG corpus of transcribed stories (`ju_folktales.txt`), Ju|'hoan dictionary (`ju_dictionary.xls`)
+
+**Prompt directive**:
+1. Choose 3–6 Dundes motifemes to form the story skeleton
+2. Ground story in Ju|'hoansi oicotype (no European elements)
+3. Weave in authentic Ju|'hoan vocabulary
+4. Track Camp ↔ Bush spatial logic
+5. Resolve with communal restoration/sharing
+
+### C. Agent 2 — Classifier / Parser (`nodes/classifier.py`)
+Identifies the structural units of the narrative.
+
+- **Reads**: `draft_narrative`
+- **Writes**: `motifemes`, `story_moves`
+- **Structured output** (`ClassificationOutput` Pydantic schema):
+  ```python
+  class ClassificationOutput(BaseModel):
+      motifemes: List[str]     # Only from the canonical Dundes 8
+      story_moves: List[str]   # Propp-style verb-action function phrases
   ```
 
-### C. Agent 2: The Generator/Storywriter
-Responsible for writing and refining the story. Uses a hierarchical generation workflow.
+### D. Agent 3 — Grader (`nodes/grader.py`)
+Evaluates the folktale on two primary dimensions using a `GradeReport` Pydantic structured output.
 
-* **Prompt Directive**:
-  ```markdown
-  Generate a Ju|'hoansi story based on the provided theme.
-  Follow this strict workflow:
-  1. Outline: Draft a motifeme skeleton containing 3-6 steps (e.g., Lack -> Violation -> Consequence).
-  2. Environment: Define local variables using the Ju|'hoansi Oicotype Matrix (waterholes, campfires, red sand dunes, local fauna like springhares, woodpeckers, elephants). Do NOT use any European elements (castles, swords, gold coins, kingdoms).
-  3. Vocabulary: Incorporate authentic Ju|'hoan words (e.g., zo, g!u, da'a, n!ore) and verify their meanings in the provided dictionary context.
-  
-  If the Critic has returned feedback and a critique report, address all flagged issues, correct cultural inaccuracies (especially hoarding or individualistic greed), and output a revised narrative draft.
-  ```
+- **Reads**: `draft_narrative`, `motifemes`, `story_moves`
+- **Writes**: `grade_report`
 
-### D. Agent 3: The Critic/Grader
-Evaluates syntactic alignment, vocabulary authenticity, and cultural semantic integrity.
+**Rubric — Dimension 1: Cultural Authenticity (average of three sub-scores)**
 
-* **Prompt Directive**:
-  ```markdown
-  Evaluate the generated narrative using the following dual-scoring rubric:
-  1. Syntactic Alignment (0-10): Checks for logical narrative progression. Allow and praise brief forms (e.g., Dundes' motifeme chains).
-  2. Cultural Semantic Integrity (0-10): Ensure all elements are locally grounded.
-     - [CRITICAL CRITERIA]: Sharing is a core value. If a character hoards food/water/fire and is praised or gets away with it, give a score of 0.
-     - [CRITICAL CRITERIA]: Retributive execution of villains is not permitted unless it represents collective defense (e.g., the community slaying the hoarding elephant). Restorative justice or integration after being taught a lesson is preferred.
-     - Verify Ju|'hoan vocabulary spelling and semantics using 'ju_dictionary.xls'.
-  
-  If either score is below 8.0, document specific actionable feedback for Agent 2.
-  ```
+| Sub-score | What it measures |
+|---|---|
+| `egalitarianism_score` (0–10) | Radical equality: no hoarding, no unchallenged hierarchy, boasting absent or corrected. **[CRITICAL]: hoarding rewarded → 0** |
+| `food_sharing_score` (0–10) | Communal food/water/honey sharing explicitly drives the plot. **[CRITICAL]: hoarding goes unpunished → 0** |
+| `kinship_score` (0–10) | Ju|'hoansi kinship roles (grandmother/!ga, uncle/!o, age-mate/!xo) and marriage customs (hxaro, brideservice) are present and functionally meaningful |
+
+**Rubric — Dimension 2: Motifeme Coverage (0–10)**
+Coherence and completeness of the Dundes motifeme chain. A short clean chain (Lack → Lack Liquidated) can score 8–9. Brevity is never penalized.
+
+**Overall grade**: `Excellent` (both ≥ 8.5) | `Good` (both ≥ 7.0) | `Adequate` (both ≥ 5.0) | `Needs Work` (either < 5.0) | `Fails` (any CRITICAL triggered)
 
 ---
 
 ## 4. Code Blueprints
 
-### A. Graph Definition and Routing Logic
+### A. Graph (`graph.py`)
 
 ```python
-# backend/app/agents/graph.py
-from langgraph.graph import StateGraph, END
+from langgraph.graph import StateGraph, END, START
 from backend.app.agents.state import NarrativeState
-from backend.app.agents.classifier import classifier_node
-from backend.app.agents.generator import generator_node
-from backend.app.agents.critic import critic_node
+from backend.app.agents.nodes import generator_node, classifier_node, grader_node
 
-# Router function to determine next node
-def should_continue(state: NarrativeState):
-    if state["iteration_count"] >= state["max_iterations"]:
-        return "end"
-    if state["status"] == "approved":
-        return "end"
-    return "generate"
+def route_start(state: NarrativeState) -> str:
+    return "classifier" if state.get("input_story") else "generator"
 
-# Initialize and build the graph
+def echo_input_story(state: NarrativeState) -> dict:
+    return {"draft_narrative": state["input_story"]}
+
 workflow = StateGraph(NarrativeState)
-
-# Add Nodes
-workflow.add_node("generator", generator_node)
+workflow.add_node("generator",  generator_node)
+workflow.add_node("echo_input", echo_input_story)
 workflow.add_node("classifier", classifier_node)
-workflow.add_node("critic", critic_node)
+workflow.add_node("grader",     grader_node)
 
-# Set Entrypoint
-workflow.set_entry_point("generator")
+workflow.add_conditional_edges(START, route_start, {
+    "generator":  "generator",
+    "classifier": "echo_input",
+})
+workflow.add_edge("generator",  "classifier")
+workflow.add_edge("echo_input", "classifier")
+workflow.add_edge("classifier", "grader")
+workflow.add_edge("grader",     END)
 
-# Add Static Edges
-workflow.add_edge("generator", "classifier")
-workflow.add_edge("classifier", "critic")
-
-# Add Conditional Edges
-workflow.add_conditional_edges(
-    "critic",
-    should_continue,
-    {
-        "generate": "generator",
-        "end": END
-    }
-)
-
-# Compile the workflow
 app = workflow.compile()
 ```
 
-### B. Accessing Lexicon and Grammar Resources
-Ensure all nodes leverage the local python utilities in `backend/app/utils/` to query `ju_dictionary.xls` and `book.txt` for semantic correctness:
+### B. Running the Pipeline
 
 ```python
-# backend/app/utils/dictionary.py
+# Generate a new story from a theme
+result = app.invoke({"theme": "a boy who broke the sharing rule"})
+
+# Classify a user-provided story
+result = app.invoke({"input_story": "Long ago in the n!ore..."})
+
+print(result["draft_narrative"])
+print(result["motifemes"])
+print(result["story_moves"])
+print(result["grade_report"])
+```
+
+### C. Dictionary Utility (`utils/dictionary.py`)
+
+```python
 import pandas as pd
 from typing import Dict, Optional
 
@@ -247,16 +261,17 @@ class JuDictionary:
     def lookup(self, term: str) -> Optional[Dict[str, str]]:
         result = self.df[self.df['Searchable'].astype(str) == term]
         if result.empty:
-            result = self.df[self.df['Searchable'].astype(str).str.contains(term, case=False, na=False) |
-                             self.df['Entry'].astype(str).str.contains(term, case=False, na=False)]
-        
+            result = self.df[
+                self.df['Searchable'].astype(str).str.contains(term, case=False, na=False) |
+                self.df['Entry'].astype(str).str.contains(term, case=False, na=False)
+            ]
         if not result.empty:
             row = result.iloc[0]
             return {
-                "entry": str(row['Entry']),
+                "entry":      str(row['Entry']),
                 "searchable": str(row['Searchable']),
-                "sense": str(row['Sense']),
-                "pos": str(row['POS']) if pd.notna(row['POS']) else "N/A"
+                "sense":      str(row['Sense']),
+                "pos":        str(row['POS']) if pd.notna(row['POS']) else "N/A"
             }
         return None
 ```
@@ -265,10 +280,28 @@ class JuDictionary:
 
 ## 5. Development Guidelines & Best Practices
 
-1. **Egalitarian and Sharing Focus**: Always write agent prompts that stress the absolute requirement of *resource sharing* and *communal recovery* in narratives.
-2. **Strict Spatial Auditing**: Always output a structured tracking of Camp-Bush boundary crossings in the state. Transitions to the Bush must unlock zoomorphism or magical events.
-3. **Neo4j Ontology Syncing**: Use `import_rdf.py` as a blueprint for importing generated characters and functions into the Neo4j database, matching the schema defined in `gemini-code-rdf.txt`.
-4. **Validation via Tests**: Prior to updating any agent prompts or parameters, execute the test suite:
+1. **Flat state only**: Never add reducers or nested sub-TypedDicts to `NarrativeState`.
+   Each agent reads and writes directly to the top-level state keys.
+
+2. **Dundes motifeme discipline**: The classifier must only output motifemes from the canonical 8.
+   Do not invent custom motifeme names — custom cultural events (transmutation, n|um intervention)
+   should be captured in `story_moves` instead.
+
+3. **Egalitarian and sharing focus**: All generator prompts must stress resource sharing and
+   communal recovery. Hoarding or individualistic greed must be corrected narratively.
+
+4. **Spatial auditing in prompts**: The generator prompt must describe Camp ↔ Bush transitions.
+   Bush entry should unlock transformation or spirit events.
+
+5. **Neo4j / RAG integration**: Use `import_rdf.py` as a blueprint for importing generated
+   characters and narrative functions into Neo4j, matching the schema in `gemini-code-rdf.txt`.
+   The RAG corpus (`ju_folktales.txt`) should be indexed and queried by the Generator for
+   stylistic grounding.
+
+6. **Tests**: Run before changing any agent prompts or parameters:
    ```bash
    pytest backend/tests/
    ```
+
+7. **No feedback loop (current phase)**: The graph is linear. A cyclic grader→generator
+   refinement loop may be added in a future phase once the grader rubric is fully defined.

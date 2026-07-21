@@ -1,25 +1,26 @@
 from backend.app.agents.graph import app as graph_app
 
-def test_compiled_graph():
-    initial_state = {
-        "theme": "sharing honey",
-        "target_motifeme_skeleton": None,
-        "draft_narrative": "",
-        "motifeme_skeleton": [],
-        "spatial_transitions": [],
-        "linguistic_terms": [],
-        "critique_report": {},
-        "syntactic_score": 0.0,
-        "cultural_score": 0.0,
-        "iteration_count": 0,
-        "max_iterations": 3,
-        "status": "continue"
-    }
-    
-    # Run the compiled workflow
+
+def test_compiled_graph_generation_flow():
+    initial_state = {"theme": "sharing honey"}
     final_state = graph_app.invoke(initial_state)
-    
-    # Assertions to verify that the graph runs through and returns state updates
-    assert final_state["iteration_count"] > 0
+
+    assert "draft_narrative" in final_state
     assert len(final_state["draft_narrative"]) > 0
-    assert final_state["status"] in ["approved", "continue", "failed"]
+    assert "motifemes" in final_state
+    assert "story_moves" in final_state
+    assert "grade_report" in final_state
+    assert "overall_grade" in final_state["grade_report"]
+
+
+def test_compiled_graph_input_story_flow():
+    input_story = "In the n!ore, a young hunter broke a taboo by going into the bush alone. An elder intervened and restored peace."
+    initial_state = {"input_story": input_story}
+    final_state = graph_app.invoke(initial_state)
+
+    assert final_state["draft_narrative"] == input_story
+    assert "motifemes" in final_state
+    assert "story_moves" in final_state
+    assert "grade_report" in final_state
+    assert "overall_grade" in final_state["grade_report"]
+

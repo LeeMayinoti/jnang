@@ -1,45 +1,57 @@
 from langgraph.graph import StateGraph, END, START
 from backend.app.agents.state import NarrativeState
-from backend.app.agents.classifier import classifier_node
-from backend.app.agents.generator import generator_node
-from backend.app.agents.critic import critic_node
+from backend.app.agents.nodes import generator_node, classifier_node, grader_node
 
-# Router function to determine next node
-def should_continue(state: NarrativeState) -> str:
-    iteration_count = state.get("iteration_count", 0)
-    max_iterations = state.get("max_iterations", 3)
-    status = state.get("status", "continue")
-    
-    if iteration_count >= max_iterations:
-        return "end"
-    if status == "approved":
-        return "end"
-    return "generate"
 
-# Initialize and build the graph
+# ---------------------------------------------------------------------------
+# Routing: START → generator OR classifier
+# ---------------------------------------------------------------------------
+
+def route_start(state: NarrativeState) -> str:
+    """
+    If the user supplied a story via input_story, echo it into draft_narrative
+    and jump straight to classification. Otherwise, generate a new story first.
+    """
+    if state.get("input_story"):
+        return "classifier"
+    return "generator"
+
+
+def echo_input_story(state: NarrativeState) -> dict:
+    """
+    Passthrough node: copies input_story → draft_narrative so the rest of the
+    pipeline always reads from draft_narrative regardless of origin.
+    """
+    return {"draft_narrative": state["input_story"]}
+
+
+# ---------------------------------------------------------------------------
+# Build the graph
+# ---------------------------------------------------------------------------
+
 workflow = StateGraph(NarrativeState)
 
-# Add Nodes
+# Nodes
 workflow.add_node("generator", generator_node)
+workflow.add_node("echo_input", echo_input_story)
 workflow.add_node("classifier", classifier_node)
-workflow.add_node("critic", critic_node)
+workflow.add_node("grader", grader_node)
 
-# Set Entrypoint
-workflow.set_entry_point("generator")
-
-# Add Static Edges
-workflow.add_edge("generator", "classifier")
-workflow.add_edge("classifier", "critic")
-
-# Add Conditional Edges
+# START branches: input story provided → echo → classify; otherwise → generate → classify
 workflow.add_conditional_edges(
-    "critic",
-    should_continue,
+    START,
+    route_start,
     {
-        "generate": "generator",
-        "end": END
+        "generator": "generator",
+        "classifier": "echo_input",   # echo first so draft_narrative is always set
     }
 )
 
-# Compile the workflow
+# Linear pipeline
+workflow.add_edge("generator", "classifier")
+workflow.add_edge("echo_input", "classifier")
+workflow.add_edge("classifier", "grader")
+workflow.add_edge("grader", END)
+
+# Compile (no checkpointer — keep it simple)
 app = workflow.compile()

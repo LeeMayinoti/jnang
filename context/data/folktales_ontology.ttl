@@ -1,0 +1,365 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix propp: <http://ontology.narrative.org/propp#> .
+@prefix story1: <http://ontology.narrative.org/moon-dies#> .
+@prefix story2: <http://ontology.narrative.org/honey-flies#> .
+@prefix story3: <http://ontology.narrative.org/woman-fire#> .
+@prefix story4: <http://ontology.narrative.org/elephant-water#> .
+
+# =========================================================================
+# SCHEMA DEFINITION (Classes & Properties)
+# =========================================================================
+
+# Classes
+propp:Character a owl:Class ;
+    rdfs:label "Character" .
+
+propp:Person a owl:Class ;
+    rdfs:subClassOf propp:Character ;
+    rdfs:label "Person / Anthropomorphic Deity" .
+
+propp:Animal a owl:Class ;
+    rdfs:subClassOf propp:Character ;
+    rdfs:label "Animal / Zoomorphic Character" .
+
+propp:Object a owl:Class ;
+    rdfs:label "Object" .
+
+propp:MagicalAgent a owl:Class ;
+    rdfs:subClassOf propp:Object ;
+    rdfs:label "Magical Agent" .
+
+propp:Location a owl:Class ;
+    rdfs:label "Location" .
+
+propp:NarrativeFunction a owl:Class ;
+    rdfs:label "Narrative Function / Motifeme" .
+
+propp:ProppianRole a owl:Class ;
+    rdfs:label "Proppian Character Role" .
+
+# Object Properties
+propp:hasRole a owl:ObjectProperty ;
+    rdfs:domain propp:Character ;
+    rdfs:range propp:ProppianRole ;
+    rdfs:label "has Proppian Role" .
+
+propp:performsFunction a owl:ObjectProperty ;
+    rdfs:domain propp:Character ;
+    rdfs:range propp:NarrativeFunction ;
+    rdfs:label "performs Narrative Function" .
+
+propp:lacks a owl:ObjectProperty ;
+    rdfs:domain propp:Character ;
+    rdfs:range propp:MagicalAgent ;
+    rdfs:label "lacks Magical Agent" .
+
+propp:hasMagicalAgent a owl:ObjectProperty ;
+    rdfs:domain propp:Character ;
+    rdfs:range propp:MagicalAgent ;
+    rdfs:label "possesses Magical Agent" .
+
+propp:follows a owl:ObjectProperty ;
+    rdfs:domain propp:NarrativeFunction ;
+    rdfs:range propp:NarrativeFunction ;
+    rdfs:label "sequentially follows" .
+
+propp:occursAt a owl:ObjectProperty ;
+    rdfs:domain propp:NarrativeFunction ;
+    rdfs:range propp:Location ;
+    rdfs:label "occurs at Location" .
+
+propp:involvesObject a owl:ObjectProperty ;
+    rdfs:domain propp:NarrativeFunction ;
+    rdfs:range propp:Object ;
+    rdfs:label "involves Object" .
+
+
+# =========================================================================
+# INSTANCE DATA: Story 1 - The Moon Dies and Lives Again
+# =========================================================================
+
+# Roles
+story1:CelestialRejuvenator a propp:ProppianRole ; rdfs:label "Celestial Rejuvenator" .
+story1:MortalWitness a propp:ProppianRole ; rdfs:label "Mortal Witness" .
+
+# Characters
+story1:Moon a propp:Person ;
+    propp:hasRole story1:CelestialRejuvenator ;
+    rdfs:label "The Moon (n!ui)" .
+
+story1:Sun a propp:Person ;
+    rdfs:label "The Sun (|am)" .
+
+story1:People a propp:Person ;
+    propp:hasRole story1:MortalWitness ;
+    rdfs:label "The People (ju)" .
+
+# Objects / Concepts
+story1:Darkness a propp:Object ; rdfs:label "Darkness (djo)" .
+story1:Night a propp:Object ; rdfs:label "Middle of the night (g!u !om)" .
+
+# Magical Agents
+story1:Rejuvenation a propp:MagicalAgent ; rdfs:label "Renewability / Resurrection Magic" .
+
+# Locations
+story1:Sky a propp:Location ; rdfs:label "The Sky (g!a'ama)" .
+
+# Narrative Functions
+story1:S1_Move1_Death a propp:NarrativeFunction ;
+    rdfs:label "The Moon wanes and dies" ;
+    propp:occursAt story1:Sky .
+
+story1:S1_Move2_Darkness a propp:NarrativeFunction ;
+    rdfs:label "The Moon returns to the dark place at midnight" ;
+    propp:follows story1:S1_Move1_Death ;
+    propp:involvesObject story1:Darkness, story1:Night ;
+    propp:occursAt story1:Sky .
+
+story1:S1_Move3_SunSets a propp:NarrativeFunction ;
+    rdfs:label "The Sun goes down" ;
+    propp:follows story1:S1_Move2_Darkness ;
+    propp:occursAt story1:Sky .
+
+story1:S1_Move4_Rebirth a propp:NarrativeFunction ;
+    rdfs:label "The Moon returns, waxing into the big Moon again" ;
+    propp:follows story1:S1_Move3_SunSets ;
+    propp:occursAt story1:Sky .
+
+story1:S1_Move5_Message a propp:NarrativeFunction ;
+    rdfs:label "The Moon tells the people they will die and live again" ;
+    propp:follows story1:S1_Move4_Rebirth ;
+    propp:involvesObject story1:Rejuvenation .
+
+# Character Links
+story1:Moon propp:performsFunction story1:S1_Move1_Death, story1:S1_Move2_Darkness, story1:S1_Move4_Rebirth, story1:S1_Move5_Message ;
+    propp:hasMagicalAgent story1:Rejuvenation .
+
+story1:Sun propp:performsFunction story1:S1_Move3_SunSets .
+story1:People propp:performsFunction story1:S1_Move5_Message .
+
+
+# =========================================================================
+# INSTANCE DATA: Story 2 - The Honey and the Flies
+# =========================================================================
+
+# Roles
+story2:SkilledProvider a propp:ProppianRole ; rdfs:label "Skilled Provider / Successful Model" .
+story2:IneptImitator a propp:ProppianRole ; rdfs:label "Inept Imitator / False Hero" .
+story2:Healer a propp:ProppianRole ; rdfs:label "Healer / Donor" .
+
+# Characters
+story2:Woodpecker a propp:Animal ;
+    propp:hasRole story2:SkilledProvider ;
+    rdfs:label "Cardinal Woodpecker (!'aun!'aun)" .
+
+story2:Glara a propp:Person ;
+    propp:hasRole story2:IneptImitator ;
+    rdfs:label "The God G!ara" .
+
+story2:Flies a propp:Animal ;
+    propp:hasRole story2:Healer ;
+    rdfs:label "Flies (zoaqzoaq)" .
+
+# Objects
+story2:Honey a propp:Object ; rdfs:label "Honey (zo)" .
+story2:CarryingPole a propp:Object ; rdfs:label "Carrying Pole (!aro)" .
+story2:FlatDishes a propp:Object ; rdfs:label "Flat Dishes (tan-l'osi)" .
+
+# Magical Agents
+story2:WhistlingMagic a propp:MagicalAgent ; rdfs:label "Whistling Magic (||auhn)" .
+story2:FlightAbility a propp:MagicalAgent ; rdfs:label "Ability to fly" .
+
+# Locations
+story2:Tree a propp:Location ; rdfs:label "High Tree (Bush)" .
+story2:Ground a propp:Location ; rdfs:label "The Ground (Camp)" .
+
+# Narrative Functions
+story2:S2_Move1_Harvest a propp:NarrativeFunction ;
+    rdfs:label "Woodpecker harvests honey high in tree" ;
+    propp:involvesObject story2:Honey ;
+    propp:occursAt story2:Tree .
+
+story2:S2_Move2_WhistleDishes a propp:NarrativeFunction ;
+    rdfs:label "Woodpecker whistles carrying pole and dishes up to tree" ;
+    propp:follows story2:S2_Move1_Harvest ;
+    propp:involvesObject story2:CarryingPole, story2:FlatDishes ;
+    propp:occursAt story2:Tree .
+
+story2:S2_Move3_Imitation a propp:NarrativeFunction ;
+    rdfs:label "Glara attempts to imitate Woodpecker's harvest" ;
+    propp:follows story2:S2_Move2_WhistleDishes ;
+    propp:occursAt story2:Tree .
+
+story2:S2_Move4_Failure a propp:NarrativeFunction ;
+    rdfs:label "Glara fails to whistle up the dishes (they refuse)" ;
+    propp:follows story2:S2_Move3_Imitation ;
+    propp:occursAt story2:Tree .
+
+story2:S2_Move5_Fall a propp:NarrativeFunction ;
+    rdfs:label "Glara tries to fly but falls and his stomach bursts" ;
+    propp:follows story2:S2_Move4_Failure ;
+    propp:occursAt story2:Ground .
+
+story2:S2_Move6_Rescue a propp:NarrativeFunction ;
+    rdfs:label "Flies bite and sew up Glara's stomach" ;
+    propp:follows story2:S2_Move5_Fall ;
+    propp:occursAt story2:Ground .
+
+# Character Links
+story2:Woodpecker propp:performsFunction story2:S2_Move1_Harvest, story2:S2_Move2_WhistleDishes ;
+    propp:hasMagicalAgent story2:WhistlingMagic, story2:FlightAbility .
+
+story2:Glara propp:performsFunction story2:S2_Move3_Imitation, story2:S2_Move4_Failure, story2:S2_Move5_Fall ;
+    propp:lacks story2:WhistlingMagic, story2:FlightAbility .
+
+story2:Flies propp:performsFunction story2:S2_Move6_Rescue .
+
+
+# =========================================================================
+# INSTANCE DATA: Story 3 - A Woman First Found Fire
+# =========================================================================
+
+# Roles
+story3:FireProvider a propp:ProppianRole ; rdfs:label "Fire Finder and Provider" .
+story3:FireThief a propp:ProppianRole ; rdfs:label "Fire Thief" .
+
+# Characters
+story3:Woman a propp:Person ;
+    propp:hasRole story3:FireProvider ;
+    rdfs:label "First Woman (dshau)" .
+
+story3:Husband a propp:Person ;
+    propp:hasRole story3:FireThief ;
+    rdfs:label "The Husband (!'hoan)" .
+
+story3:Children a propp:Person ;
+    rdfs:label "The Children (si!a)" .
+
+# Objects
+story3:Fire a propp:Object ; rdfs:label "Fire (da'a)" .
+story3:CookedFood a propp:Object ; rdfs:label "Cooked Food" .
+story3:RawFood a propp:Object ; rdfs:label "Raw Food" .
+
+# Locations
+story3:CampFireSite a propp:Location ; rdfs:label "The Camp (Fire Site)" .
+story3:TheDarkness a propp:Location ; rdfs:label "The Dark (gFu n!ang)" .
+
+# Narrative Functions
+story3:S3_Move1_Discovery a propp:NarrativeFunction ;
+    rdfs:label "Woman finds fire first" ;
+    propp:involvesObject story3:Fire ;
+    propp:occursAt story3:CampFireSite .
+
+story3:S3_Move2_Nurturing a propp:NarrativeFunction ;
+    rdfs:label "Woman cooks food and feeds the children" ;
+    propp:follows story3:S3_Move1_Discovery ;
+    propp:involvesObject story3:CookedFood ;
+    propp:occursAt story3:CampFireSite .
+
+story3:S3_Move3_HusbandDeprived a propp:NarrativeFunction ;
+    rdfs:label "Husband sleeps in dark and eats raw food" ;
+    propp:follows story3:S3_Move2_Nurturing ;
+    propp:involvesObject story3:RawFood ;
+    propp:occursAt story3:TheDarkness .
+
+story3:S3_Move4_Theft a propp:NarrativeFunction ;
+    rdfs:label "Husband steals the fire from his wife" ;
+    propp:follows story3:S3_Move3_HusbandDeprived ;
+    propp:involvesObject story3:Fire ;
+    propp:occursAt story3:CampFireSite .
+
+story3:S3_Move5_Propagation a propp:NarrativeFunction ;
+    rdfs:label "Husband spreads fire throughout the world" ;
+    propp:follows story3:S3_Move4_Theft ;
+    propp:involvesObject story3:Fire .
+
+# Character Links
+story3:Woman propp:performsFunction story3:S3_Move1_Discovery, story3:S3_Move2_Nurturing .
+story3:Husband propp:performsFunction story3:S3_Move3_HusbandDeprived, story3:S3_Move4_Theft, story3:S3_Move5_Propagation .
+story3:Children propp:performsFunction story3:S3_Move2_Nurturing .
+
+
+# =========================================================================
+# INSTANCE DATA: Story 4 - The Elephant First Found Water
+# =========================================================================
+
+# Roles
+story4:ResourceHoarder a propp:ProppianRole ; rdfs:label "Resource Hoarder" .
+story4:Intermediary a propp:ProppianRole ; rdfs:label "Intermediary / Informant" .
+story4:EgalitarianDefenders a propp:ProppianRole ; rdfs:label "Egalitarian Defenders / Liberators" .
+
+# Characters
+story4:Elephant a propp:Animal ;
+    propp:hasRole story4:ResourceHoarder ;
+    rdfs:label "The Elephant (!xo)" .
+
+story4:AardvarkGirl a propp:Animal ;
+    propp:hasRole story4:Intermediary ;
+    rdfs:label "Beautiful Aardvark Girl (G!kun||homdima)" .
+
+story4:Brothers a propp:Animal ;
+    propp:hasRole story4:EgalitarianDefenders ;
+    rdfs:label "Aardvark Girl's brothers (Swallows of the rain)" .
+
+# Objects
+story4:Water a propp:Object ; rdfs:label "Water (g!u)" .
+story4:Mud a propp:Object ; rdfs:label "Mud (g‡kaa)" .
+story4:Urine a propp:Object ; rdfs:label "Urine (waq)" .
+story4:Spears a propp:Object ; rdfs:label "Spears / Spearpoints (!u!usi)" .
+
+# Magical Agents
+story4:RainmakingPower a propp:MagicalAgent ; rdfs:label "Power to fall as rain" .
+
+# Locations
+story4:SecretWaterhole a propp:Location ; rdfs:label "Secret Waterhole" .
+story4:ForestBush a propp:Location ; rdfs:label "The Bush" .
+story4:HomeCamp a propp:Location ; rdfs:label "The Camp" .
+
+# Narrative Functions
+story4:S4_Move1_Hoarding a propp:NarrativeFunction ;
+    rdfs:label "Elephant hides water and drinks alone" ;
+    propp:involvesObject story4:Water ;
+    propp:occursAt story4:SecretWaterhole .
+
+story4:S4_Move2_Exposure a propp:NarrativeFunction ;
+    rdfs:label "Mud on ankles exposes Elephant's hoarding" ;
+    propp:follows story4:S4_Move1_Hoarding ;
+    propp:involvesObject story4:Mud ;
+    propp:occursAt story4:HomeCamp .
+
+story4:S4_Move3_Tracking a propp:NarrativeFunction ;
+    rdfs:label "Brothers track Elephant to waterhole" ;
+    propp:follows story4:S4_Move2_Exposure ;
+    propp:occursAt story4:SecretWaterhole .
+
+story4:S4_Move4_Sabotage a propp:NarrativeFunction ;
+    rdfs:label "Brothers drink water and urinate in the waterhole" ;
+    propp:follows story4:S4_Move3_Tracking ;
+    propp:involvesObject story4:Urine ;
+    propp:occursAt story4:SecretWaterhole .
+
+story4:S4_Move5_Confrontation a propp:NarrativeFunction ;
+    rdfs:label "Urine refuses Elephant; Elephant attempts to grab wife with trunk" ;
+    propp:follows story4:S4_Move4_Sabotage ;
+    propp:involvesObject story4:Urine ;
+    propp:occursAt story4:SecretWaterhole .
+
+story4:S4_Move6_Slaying a propp:NarrativeFunction ;
+    rdfs:label "Brothers slay Elephant with hammered spears" ;
+    propp:follows story4:S4_Move5_Confrontation ;
+    propp:involvesObject story4:Spears ;
+    propp:occursAt story4:SecretWaterhole .
+
+story4:S4_Move7_Rainmaking a propp:NarrativeFunction ;
+    rdfs:label "Elephant dies and causes rain to fall for everyone" ;
+    propp:follows story4:S4_Move6_Slaying ;
+    propp:involvesObject story4:RainmakingPower .
+
+# Character Links
+story4:Elephant propp:performsFunction story4:S4_Move1_Hoarding, story4:S4_Move5_Confrontation, story4:S4_Move7_Rainmaking ;
+    propp:hasMagicalAgent story4:RainmakingPower .
+
+story4:AardvarkGirl propp:performsFunction story4:S4_Move2_Exposure .
+story4:Brothers propp:performsFunction story4:S4_Move3_Tracking, story4:S4_Move4_Sabotage, story4:S4_Move6_Slaying .

@@ -5,9 +5,42 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    // --- Pre-process graphData to propagate story associations ---
+    const nodeStories = {};
+    graphData.nodes.forEach(node => {
+        nodeStories[node.id] = new Set();
+        const idLower = node.id.toLowerCase();
+        
+        // Base seed rules
+        if (idLower.startsWith("s1_") || idLower === "moon" || idLower === "sun" || idLower === "people" || idLower === "darkness" || idLower === "night" || idLower === "rejuvenation" || idLower === "sky") {
+            nodeStories[node.id].add("story1");
+        }
+        if (idLower.startsWith("s2_") || idLower === "glara" || idLower === "woodpecker" || idLower === "flies" || idLower === "honey" || idLower === "carryingpole" || idLower === "flatdishes" || idLower === "whistlingmagic" || idLower === "flightability") {
+            nodeStories[node.id].add("story2");
+        }
+        if (idLower.startsWith("s3_") || idLower === "woman" || idLower === "husband" || idLower === "children" || idLower === "fire" || idLower === "cookedfood" || idLower === "rawfood" || idLower === "campfiresite" || idLower === "thedarkness") {
+            nodeStories[node.id].add("story3");
+        }
+        if (idLower.startsWith("s4_") || idLower === "elephant" || idLower === "aardvarkgirl" || idLower === "brothers" || idLower === "water" || idLower === "mud" || idLower === "urine" || idLower === "spears" || idLower === "rainmakingpower" || idLower === "secretwaterhole" || idLower === "forestbush" || idLower === "homecamp") {
+            nodeStories[node.id].add("story4");
+        }
+    });
+
+    // Propagate story associations through edges (union connected nodes' stories)
+    for (let iter = 0; iter < 4; iter++) {
+        graphData.edges.forEach(edge => {
+            const fromStories = nodeStories[edge.from];
+            const toStories = nodeStories[edge.to];
+            if (fromStories && toStories) {
+                fromStories.forEach(s => toStories.add(s));
+                toStories.forEach(s => fromStories.add(s));
+            }
+        });
+    }
+
     // --- State Variables ---
     let graph = null;
-    let activeStories = new Set(["honey_flies"]);
+    let activeStories = new Set(["story1", "story2", "story3", "story4"]);
     let activeTypes = new Set(["Character", "Object", "MagicalAgent", "NarrativeFunction", "ProppianRole"]);
     let searchQuery = "";
 
@@ -107,8 +140,17 @@ document.addEventListener("DOMContentLoaded", () => {
             // Check Type Filter
             if (!activeTypes.has(node.type)) return false;
 
-            // Check Story Filter (Story is always honey_flies here)
-            if (activeStories.size === 0) return false;
+            // Check Story Filter
+            const stories = nodeStories[node.id];
+            if (stories && stories.size > 0) {
+                let hasActiveStory = false;
+                stories.forEach(s => {
+                    if (activeStories.has(s)) hasActiveStory = true;
+                });
+                if (!hasActiveStory) return false;
+            } else if (activeStories.size === 0) {
+                return false;
+            }
 
             // Check Search Query
             if (searchQuery !== "") {

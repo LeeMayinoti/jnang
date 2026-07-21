@@ -1,20 +1,25 @@
 from typing import TypedDict, List, Dict, Any, Optional
 
-class NarrativeState(TypedDict):
-    # Inputs
-    theme: str
-    target_motifeme_skeleton: Optional[List[str]]
-    
-    # Mid-process variables
-    draft_narrative: str
-    motifeme_skeleton: List[str]
-    spatial_transitions: List[Dict[str, Any]]  # e.g., [{"character": "G!ara", "from": "Camp", "to": "Bush", "line": 12}]
-    linguistic_terms: List[str]                  # Ju|'hoan terms used (validated via dictionary)
-    
-    # Critic & Feedback Loop
-    critique_report: Dict[str, Any]
-    syntactic_score: float                       # Scale 0.0 to 10.0
-    cultural_score: float                        # Scale 0.0 to 10.0
-    iteration_count: int
-    max_iterations: int
-    status: str                                  # "continue", "approved", "failed"
+
+class NarrativeState(TypedDict, total=False):
+    """
+    FLAT NARRATIVE STATE
+    ====================
+    Flows through every node in the graph.
+    Each agent reads what it needs and writes its results directly
+    back to this flat dictionary — no nested sub-dicts, no reducers.
+    """
+
+    # === Input ===
+    input_story: Optional[str]    # User-supplied story text; if set, skip generation
+    theme: str                    # Seed theme for the Generator (used when no input_story)
+
+    # === Agent 1 – Generator ===
+    draft_narrative: str          # The story text (generated or echoed from input_story)
+
+    # === Agent 2 – Classifier ===
+    motifemes: List[str]          # Dundes motifemes identified (from the canonical 8)
+    story_moves: List[str]        # Propp narrative functions / moves detected
+
+    # === Agent 3 – Grader ===
+    grade_report: Dict[str, Any]  # Grading output (rubric direction TBD by user)

@@ -19,11 +19,17 @@ def get_local_name(uri):
 
 def parse_rdf_file():
     g = Graph()
-    ttl_path = "context/data/gemini-code-rdf.txt"
+    ttl_path = "context/data/folktales_ontology.ttl"
     print(f"Parsing RDF Turtle file: {ttl_path}")
     g.parse(ttl_path, format="turtle")
 
-    STORY_NS = "http://ontology.narrative.org/honey-flies#"
+    # Helper function to check if a URI belongs to any story instance namespace
+    # (i.e. starts with narrative ontology base but is not the schema namespace)
+    def is_story_uri(uri):
+        uri_str = str(uri)
+        return (uri_str.startswith("http://ontology.narrative.org/") and 
+                not uri_str.startswith("http://ontology.narrative.org/propp#"))
+
     nodes = {}
     edges = []
 
@@ -32,7 +38,7 @@ def parse_rdf_file():
 
     # Identify explicit types from the graph
     for s, p, o in g.triples((None, RDF.type, None)):
-        if str(s).startswith(STORY_NS) and str(o).startswith("http://ontology.narrative.org/propp#"):
+        if is_story_uri(s) and str(o).startswith("http://ontology.narrative.org/propp#"):
             uri_types[s] = get_local_name(o)
 
     # Inferred types based on property usage
@@ -42,10 +48,7 @@ def parse_rdf_file():
 
     # Gather nodes and their properties
     for s, p, o in g.triples((None, None, None)):
-        s_str = str(s)
-        
-        # Skip if subject is not in the story namespace (we only visualize instances)
-        if not s_str.startswith(STORY_NS):
+        if not is_story_uri(s):
             continue
 
         # Get subject node info
@@ -60,9 +63,8 @@ def parse_rdf_file():
 
         # If predicate is a data property / literal description
         if isinstance(o, URIRef):
-            o_str = str(o)
             # If object is not in the story namespace, it's a schema class/property, skip creating an edge
-            if not o_str.startswith(STORY_NS):
+            if not is_story_uri(o):
                 continue
                 
             o_id = get_local_name(o)
@@ -94,7 +96,7 @@ def parse_rdf_file():
     for node in nodes.values():
         if node["type"] == "Entity":
             # Check if it has a role or function
-            if node["id"].startswith("Move"):
+            if node["id"].startswith("Move") or "_Move" in node["id"]:
                 node["type"] = "NarrativeFunction"
             elif node["id"] in ["FalseHero", "SuccessfulModel", "Helper"]:
                 node["type"] = "ProppianRole"

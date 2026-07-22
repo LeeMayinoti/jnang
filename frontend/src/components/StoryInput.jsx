@@ -1,6 +1,5 @@
 import React from 'react';
 import { SAMPLE_STORIES } from '../data/themes';
-import { FileText, Cpu, BookMarked } from 'lucide-react';
 
 export default function StoryInput({ storyText, onStoryTextChange, onAnalyze, isAnalyzing }) {
   const wordCount = storyText.trim() ? storyText.trim().split(/\s+/).length : 0;
@@ -9,7 +8,7 @@ export default function StoryInput({ storyText, onStoryTextChange, onAnalyze, is
   return (
     <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2.5rem' }}>
       <div className="section-title">
-        <FileText color="#00e5ff" size={28} />
+        <i className="fa-solid fa-file-lines" style={{ color: '#00e5ff', fontSize: '1.8rem' }}></i>
         <div>
           <span>Enter or Paste Story Text</span>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 400 }}>
@@ -20,7 +19,7 @@ export default function StoryInput({ storyText, onStoryTextChange, onAnalyze, is
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
         <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
-          <BookMarked size={16} color="var(--text-muted)" />
+          <i className="fa-solid fa-bookmark" style={{ color: 'var(--text-muted)' }}></i>
           <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Quick Presets:</span>
           {SAMPLE_STORIES.map((sample) => (
             <button
@@ -29,6 +28,7 @@ export default function StoryInput({ storyText, onStoryTextChange, onAnalyze, is
               style={{ fontSize: '0.78rem', padding: '0.3rem 0.7rem' }}
               onClick={() => onStoryTextChange(sample.text)}
             >
+              <i className="fa-solid fa-book-open" style={{ marginRight: '5px' }}></i>
               Load "{sample.title}"
             </button>
           ))}
@@ -55,7 +55,7 @@ export default function StoryInput({ storyText, onStoryTextChange, onAnalyze, is
           onClick={onAnalyze}
           disabled={isAnalyzing || !storyText.trim()}
         >
-          <Cpu size={20} />
+          <i className={`fa-solid ${isAnalyzing ? 'fa-spinner fa-spin' : 'fa-microchip'}`} style={{ marginRight: '8px' }}></i>
           {isAnalyzing ? 'Analyzing Story...' : 'Analyze with Classifier & Grader Agents'}
         </button>
       </div>

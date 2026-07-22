@@ -1,5 +1,4 @@
 import React from 'react';
-import { Award, Tag, Sparkles, CheckCircle2, ChevronRight, AlertCircle } from 'lucide-react';
 
 export default function AnalysisDashboard({ motifemes, storyMoves, gradeReport }) {
   const overallScore = gradeReport?.overall_score ?? gradeReport?.final_score ?? 8.5;
@@ -10,7 +9,7 @@ export default function AnalysisDashboard({ motifemes, storyMoves, gradeReport }
   return (
     <div className="glass-panel analysis-panel">
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem' }}>
-        <Award size={24} color="var(--accent-cyan)" />
+        <i className="fa-solid fa-award" style={{ color: 'var(--accent-cyan)', fontSize: '1.6rem' }}></i>
         <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 700 }}>
           Structural & Cultural Evaluation
         </h3>
@@ -19,6 +18,7 @@ export default function AnalysisDashboard({ motifemes, storyMoves, gradeReport }
       {/* Grader Metrics */}
       <div style={{ marginBottom: '2rem' }}>
         <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1rem' }}>
+          <i className="fa-solid fa-[#00e5ff] fa-square-poll-vertical" style={{ marginRight: '6px' }}></i>
           Agent 3 — Cultural Authenticity & Grade Report
         </div>
 
@@ -69,7 +69,7 @@ export default function AnalysisDashboard({ motifemes, storyMoves, gradeReport }
       {/* Motifemes Section */}
       <div style={{ marginBottom: '2rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem' }}>
-          <Tag size={18} color="var(--accent-cyan)" />
+          <i className="fa-solid fa-tags" style={{ color: 'var(--accent-cyan)' }}></i>
           <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)' }}>
             Alan Dundes Motifeme Sequence ({motifemes?.length || 0})
           </span>
@@ -92,7 +92,7 @@ export default function AnalysisDashboard({ motifemes, storyMoves, gradeReport }
       {/* Story Moves Section */}
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem' }}>
-          <Sparkles size={18} color="var(--accent-gold)" />
+          <i className="fa-solid fa-bolt" style={{ color: 'var(--accent-gold)' }}></i>
           <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)' }}>
             Proppian Narrative Moves ({storyMoves?.length || 0})
           </span>
@@ -102,7 +102,7 @@ export default function AnalysisDashboard({ motifemes, storyMoves, gradeReport }
           <div>
             {storyMoves.map((move, idx) => (
               <div key={idx} className="story-move-item">
-                <ChevronRight size={14} inline style={{ marginRight: '6px', color: 'var(--accent-gold)' }} />
+                <i className="fa-solid fa-chevron-right" style={{ marginRight: '8px', color: 'var(--accent-gold)', fontSize: '0.75rem' }}></i>
                 <span>{move}</span>
               </div>
             ))}

@@ -1,17 +1,16 @@
 import React from 'react';
-import { Wand2, Tag, Award, CheckCircle2, Loader2 } from 'lucide-react';
 
 export default function PipelineTracker({ activeMode, currentStep, isRunning }) {
-  // Steps: 1: Generator, 2: Classifier, 3: Grader, 4: Complete
   return (
     <div className="glass-panel pipeline-tracker">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
         <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', fontWeight: 600 }}>
+          <i className="fa-solid fa-diagram-project" style={{ marginRight: '8px', color: 'var(--accent-amber)' }}></i>
           3-Agent Narrative Pipeline Execution
         </h3>
         {isRunning && (
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent-amber)', fontSize: '0.85rem' }}>
-            <Loader2 className="animate-spin" size={16} />
+            <i className="fa-solid fa-circle-notch fa-spin"></i>
             <span>Agents Processing...</span>
           </div>
         )}
@@ -21,7 +20,11 @@ export default function PipelineTracker({ activeMode, currentStep, isRunning }) 
         {/* Step 1: Generator */}
         <div className={`step-card ${activeMode === 'enter' ? 'completed' : (currentStep === 1 ? 'active' : (currentStep > 1 ? 'completed' : ''))}`}>
           <div className="step-num">
-            {currentStep > 1 || activeMode === 'enter' ? <CheckCircle2 size={20} /> : <Wand2 size={18} />}
+            {currentStep > 1 || activeMode === 'enter' ? (
+              <i className="fa-solid fa-circle-check"></i>
+            ) : (
+              <i className="fa-solid fa-wand-magic-sparkles"></i>
+            )}
           </div>
           <div className="step-info">
             <h4>Agent 1 — Story Generator</h4>
@@ -32,7 +35,11 @@ export default function PipelineTracker({ activeMode, currentStep, isRunning }) 
         {/* Step 2: Classifier */}
         <div className={`step-card ${currentStep === 2 ? 'active' : (currentStep > 2 ? 'completed' : '')}`}>
           <div className="step-num">
-            {currentStep > 2 ? <CheckCircle2 size={20} /> : <Tag size={18} />}
+            {currentStep > 2 ? (
+              <i className="fa-solid fa-circle-check"></i>
+            ) : (
+              <i className="fa-solid fa-tags"></i>
+            )}
           </div>
           <div className="step-info">
             <h4>Agent 2 — Structural Classifier</h4>
@@ -43,7 +50,11 @@ export default function PipelineTracker({ activeMode, currentStep, isRunning }) 
         {/* Step 3: Grader */}
         <div className={`step-card ${currentStep === 3 ? 'active' : (currentStep > 3 ? 'completed' : '')}`}>
           <div className="step-num">
-            {currentStep > 3 ? <CheckCircle2 size={20} /> : <Award size={18} />}
+            {currentStep > 3 ? (
+              <i className="fa-solid fa-circle-check"></i>
+            ) : (
+              <i className="fa-solid fa-award"></i>
+            )}
           </div>
           <div className="step-info">
             <h4>Agent 3 — Cultural Grader</h4>

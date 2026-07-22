@@ -1,5 +1,4 @@
 import React from 'react';
-import { Wand2, Edit3 } from 'lucide-react';
 
 export default function ModeSelector({ activeMode, onSelectMode }) {
   return (
@@ -16,11 +15,13 @@ export default function ModeSelector({ activeMode, onSelectMode }) {
         >
           <div className="mode-header">
             <div className="mode-icon">
-              <Wand2 size={26} />
+              <i className="fa-solid fa-wand-magic-sparkles" style={{ fontSize: '1.5rem' }}></i>
             </div>
             <div>
               <div className="mode-title">Generate Story</div>
-              <span className="badge-tag badge-amber">3-Agent Generator</span>
+              <span className="badge-tag badge-amber">
+                <i className="fa-solid fa-robot" style={{ marginRight: '5px' }}></i> 3-Agent Generator
+              </span>
             </div>
           </div>
           <p className="mode-description">
@@ -34,11 +35,13 @@ export default function ModeSelector({ activeMode, onSelectMode }) {
         >
           <div className="mode-header">
             <div className="mode-icon">
-              <Edit3 size={26} />
+              <i className="fa-solid fa-pen-to-square" style={{ fontSize: '1.5rem' }}></i>
             </div>
             <div>
               <div className="mode-title">Enter / Input Story</div>
-              <span className="badge-tag badge-cyan">Structural Classifier</span>
+              <span className="badge-tag badge-cyan">
+                <i className="fa-solid fa-brain" style={{ marginRight: '5px' }}></i> Structural Classifier
+              </span>
             </div>
           </div>
           <p className="mode-description">

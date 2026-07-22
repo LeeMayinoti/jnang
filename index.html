@@ -16,10 +16,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Night Sky & Fire Background -->
+    <div id="night-sky-bg" class="night-sky-bg">
+        <div class="fire-glow"></div>
+        <div id="stars-container"></div>
+        <div id="meteors-container"></div>
+        <div id="embers-container"></div>
+    </div>
+
     <div class="app-container">
         <!-- Top Navigation -->
         <header class="app-header">
             <div class="header-logo">
+                <button id="btn-toggle-sidebar" class="btn-toggle-sidebar" title="Toggle Sidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
                 <i class="fa-solid fa-cube logo-icon"></i>
                 <div class="logo-text">
                     <h1>Narrative 3D Explorer</h1>
@@ -36,10 +47,10 @@
         <!-- Main Content Area -->
         <div class="main-layout">
             <!-- Left Panel: Controls, Filters & Legends -->
-            <aside class="sidebar sidebar-left">
+            <aside class="sidebar sidebar-left" id="sidebar-left">
                 <!-- Search Box -->
-                <div class="panel-section search-section">
-                    <h3><i class="fa-solid fa-magnifying-glass"></i> Search Entities</h3>
+                <div class="panel-section search-section" title="Search Entities">
+                    <h3><i class="fa-solid fa-magnifying-glass"></i> <span>Search Entities</span></h3>
                     <div class="search-input-wrapper">
                         <input type="text" id="search-input" placeholder="Search characters, roles, moves...">
                         <button id="btn-search-clear" class="btn-clear" style="display: none;">
@@ -49,8 +60,8 @@
                 </div>
 
                 <!-- Story Filters -->
-                <div class="panel-section filter-section">
-                    <h3><i class="fa-solid fa-book-open"></i> Stories</h3>
+                <div class="panel-section filter-section" title="Stories">
+                    <h3><i class="fa-solid fa-book-open"></i> <span>Stories</span></h3>
                     <div class="filter-group scrollable-filters" id="story-filters">
                         <label class="checkbox-container">
                             <input type="checkbox" id="story-select-all" checked>
@@ -82,8 +93,8 @@
                 </div>
 
                 <!-- Node Type Filters -->
-                <div class="panel-section filter-section">
-                    <h3><i class="fa-solid fa-tags"></i> Node Type Visibility</h3>
+                <div class="panel-section filter-section" title="Node Type Visibility">
+                    <h3><i class="fa-solid fa-tags"></i> <span>Node Type Visibility</span></h3>
                     <div class="filter-group" id="node-type-filters">
                         <label class="checkbox-container">
                             <input type="checkbox" class="type-checkbox" value="Character" checked>
@@ -114,8 +125,8 @@
                 </div>
 
                 <!-- Statistics Box -->
-                <div class="panel-section stats-section">
-                    <h3><i class="fa-solid fa-chart-simple"></i> Graph Statistics</h3>
+                <div class="panel-section stats-section" title="Graph Statistics">
+                    <h3><i class="fa-solid fa-chart-simple"></i> <span>Graph Statistics</span></h3>
                     <div class="stats-grid">
                         <div class="stat-card">
                             <span class="stat-value" id="stat-total-nodes">0</span>

@@ -79,7 +79,9 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-image: radial-gradient(circle at 10% 20%, rgba(20, 20, 35, 0.5) 0%, rgba(10, 10, 15, 0.8) 90%);
+    background: transparent;
+    position: relative;
+    z-index: 1;
 }
 
 /* Header */
@@ -98,6 +100,30 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.btn-toggle-sidebar {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: 4px;
+}
+
+.btn-toggle-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.btn-toggle-sidebar:active {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .logo-icon {
@@ -183,7 +209,7 @@ body {
 /* Main Layout Grid */
 .main-layout {
     display: grid;
-    grid-template-columns: 320px 1fr 360px;
+    grid-template-columns: auto 1fr 360px;
     flex-grow: 1;
     overflow: hidden;
     position: relative;
@@ -200,6 +226,91 @@ body {
     z-index: 10;
     padding: 20px;
     gap: 20px;
+}
+
+.sidebar-left {
+    width: 320px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Left Sidebar Collapsed State */
+.sidebar-left.collapsed {
+    width: 78px;
+    padding: 20px 12px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.sidebar-left.collapsed .panel-section {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sidebar-left.collapsed .panel-section h3 {
+    margin-bottom: 0;
+    gap: 0;
+    font-size: 18px;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-secondary);
+}
+
+.sidebar-left.collapsed .panel-section h3:hover {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 0 12px var(--primary-glow);
+}
+
+/* Hide labels and inner contents when collapsed */
+.sidebar-left.collapsed .panel-section h3 span,
+.sidebar-left.collapsed .panel-section h3 i + *,
+.sidebar-left.collapsed .panel-section .search-input-wrapper,
+.sidebar-left.collapsed .panel-section .filter-group,
+.sidebar-left.collapsed .panel-section .stats-grid {
+    display: none !important;
+}
+
+/* CSS Tooltips for Collapsed state */
+.sidebar-left.collapsed .panel-section::after {
+    content: attr(title);
+    position: absolute;
+    left: 64px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-8px);
+    transition: all 0.2s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-left.collapsed .panel-section:hover::after {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .sidebar-right {
@@ -789,4 +900,121 @@ body {
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   Night Sky, Meteors (Magic UI inspired), Stars & Fire Embers Background
+   ========================================================================== */
+.night-sky-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 30%, #0c0f1d 0%, #070913 70%, #030408 100%);
+}
+
+/* Warm Fire / Campfire Horizon Glow */
+.fire-glow {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120vw;
+    height: 550px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(249, 115, 22, 0.22) 0%, rgba(239, 68, 68, 0.1) 35%, rgba(13, 17, 30, 0) 75%);
+    filter: blur(40px);
+    animation: firePulse 5s ease-in-out infinite alternate;
+}
+
+@keyframes firePulse {
+    0% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.06); }
+    100% { opacity: 0.8; transform: translateX(-48%) scale(0.97); }
+}
+
+/* Twinkling Stars */
+.star {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: starTwinkle var(--duration, 3s) ease-in-out infinite alternate;
+    opacity: var(--base-opacity, 0.4);
+}
+
+@keyframes starTwinkle {
+    0% { opacity: var(--base-opacity, 0.3); transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.4); filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.9)); }
+}
+
+/* Meteors (Magic UI standard effect translated to CSS) */
+.meteor {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 10px 2px rgba(255, 255, 255, 0.9);
+    transform: rotate(var(--angle, -215deg));
+    animation: meteorAnimation var(--duration, 3s) linear infinite;
+    animation-delay: var(--delay, 0s);
+    opacity: 0;
+}
+
+.meteor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90px;
+    height: 1px;
+    background: linear-gradient(90deg, #ffffff, rgba(249, 115, 22, 0.7), transparent);
+}
+
+@keyframes meteorAnimation {
+    0% {
+        transform: rotate(var(--angle, -215deg)) translateX(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(var(--angle, -215deg)) translateX(-700px);
+        opacity: 0;
+    }
+}
+
+/* Rising Campfire Embers */
+.ember {
+    position: absolute;
+    bottom: -10px;
+    width: var(--size, 3px);
+    height: var(--size, 3px);
+    background: var(--ember-color, #f97316);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--ember-color, #f97316);
+    animation: riseEmber var(--duration, 8s) ease-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes riseEmber {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(-50vh) translateX(var(--drift, 30px)) scale(1.2);
+        opacity: 0.75;
+    }
+    100% {
+        transform: translateY(-105vh) translateX(calc(var(--drift, 30px) * 2.2)) scale(0.2);
+        opacity: 0;
+    }
 }

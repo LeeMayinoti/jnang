@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnHelpModal = document.getElementById("btn-help-modal");
     const helpModal = document.getElementById("help-modal");
     const closeModal = document.querySelector(".close-modal");
+    const btnToggleSidebar = document.getElementById("btn-toggle-sidebar");
+    const sidebarLeft = document.getElementById("sidebar-left");
 
     const statNodes = document.getElementById("stat-total-nodes");
     const statEdges = document.getElementById("stat-total-edges");
@@ -123,12 +125,23 @@ document.addEventListener("DOMContentLoaded", () => {
         // Initial Data Load
         updateGraph();
 
-        // Adjust dimensions on window resize
-        window.addEventListener("resize", () => {
-            if (graph) {
-                graph.width(container.clientWidth).height(container.clientHeight);
-            }
-        });
+        // Adjust dimensions automatically when container size changes (e.g. sidebar toggle or window resize)
+        if (typeof ResizeObserver !== "undefined") {
+            const resizeObserver = new ResizeObserver(() => {
+                if (graph) {
+                    requestAnimationFrame(() => {
+                        graph.width(container.clientWidth).height(container.clientHeight);
+                    });
+                }
+            });
+            resizeObserver.observe(container);
+        } else {
+            window.addEventListener("resize", () => {
+                if (graph) {
+                    graph.width(container.clientWidth).height(container.clientHeight);
+                }
+            });
+        }
     }
 
     // --- Update Graph Data based on filters ---
@@ -276,6 +289,28 @@ document.addEventListener("DOMContentLoaded", () => {
     btnResetLayout.addEventListener("click", () => {
         graph.zoomToFit(1000, 100);
     });
+
+    // --- Sidebar Collapse/Expand Interaction ---
+    if (btnToggleSidebar && sidebarLeft) {
+        btnToggleSidebar.addEventListener("click", () => {
+            sidebarLeft.classList.toggle("collapsed");
+        });
+
+        // Clicking a panel-section when collapsed automatically expands the sidebar
+        const panelSections = sidebarLeft.querySelectorAll(".panel-section");
+        panelSections.forEach(section => {
+            section.addEventListener("click", (e) => {
+                if (sidebarLeft.classList.contains("collapsed")) {
+                    sidebarLeft.classList.remove("collapsed");
+                    
+                    // Focus on search input if search section was clicked
+                    if (section.classList.contains("search-section")) {
+                        setTimeout(() => searchInput.focus(), 150);
+                    }
+                }
+            });
+        });
+    }
 
     // --- Help Modal Triggers ---
     btnHelpModal.addEventListener("click", () => {
@@ -466,6 +501,60 @@ document.addEventListener("DOMContentLoaded", () => {
         inspectorContent.innerHTML = html;
     }
 
+    // --- Night Sky & Fire Background Generator ---
+    function initNightSky() {
+        const starsContainer = document.getElementById("stars-container");
+        const meteorsContainer = document.getElementById("meteors-container");
+        const embersContainer = document.getElementById("embers-container");
+
+        if (!starsContainer || !meteorsContainer || !embersContainer) return;
+
+        // Generate Twinkling Stars
+        const numStars = 65;
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement("div");
+            star.className = "star";
+            const size = Math.random() * 2 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 85}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.setProperty("--duration", `${Math.random() * 3 + 2}s`);
+            star.style.setProperty("--base-opacity", `${Math.random() * 0.5 + 0.2}`);
+            starsContainer.appendChild(star);
+        }
+
+        // Generate Meteors (Magic UI Style)
+        const numMeteors = 14;
+        for (let i = 0; i < numMeteors; i++) {
+            const meteor = document.createElement("div");
+            meteor.className = "meteor";
+            meteor.style.top = `${Math.random() * 45 - 10}%`;
+            meteor.style.left = `${Math.random() * 100}%`;
+            meteor.style.setProperty("--delay", `${Math.random() * 9}s`);
+            meteor.style.setProperty("--duration", `${Math.random() * 4 + 2.5}s`);
+            meteor.style.setProperty("--angle", `${-200 - Math.random() * 30}deg`);
+            meteorsContainer.appendChild(meteor);
+        }
+
+        // Generate Fire Embers
+        const numEmbers = 28;
+        const emberColors = ["#f97316", "#fbbf24", "#ef4444", "#fb923c"];
+        for (let i = 0; i < numEmbers; i++) {
+            const ember = document.createElement("div");
+            ember.className = "ember";
+            const size = Math.random() * 3 + 2;
+            ember.style.left = `${Math.random() * 100}%`;
+            ember.style.setProperty("--size", `${size}px`);
+            ember.style.setProperty("--duration", `${Math.random() * 7 + 5}s`);
+            ember.style.setProperty("--delay", `${Math.random() * 6}s`);
+            ember.style.setProperty("--drift", `${(Math.random() - 0.5) * 90}px`);
+            ember.style.setProperty("--ember-color", emberColors[Math.floor(Math.random() * emberColors.length)]);
+            embersContainer.appendChild(ember);
+        }
+    }
+
     // --- Start App ---
+    initNightSky();
     initGraph();
 });

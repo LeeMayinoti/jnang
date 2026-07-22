@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { PRESET_THEMES } from '../data/themes';
-import { Sparkles, Compass, Lightbulb } from 'lucide-react';
 
 export default function ThemePicker({ selectedTheme, onSelectTheme, customTheme, onCustomThemeChange, onGenerate, isGenerating }) {
   const [activeTab, setActiveTab] = useState('preset');
@@ -8,7 +7,7 @@ export default function ThemePicker({ selectedTheme, onSelectTheme, customTheme,
   return (
     <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2.5rem' }}>
       <div className="section-title">
-        <Compass color="#ff6b35" size={28} />
+        <i className="fa-solid fa-compass" style={{ color: '#ff6b35', fontSize: '1.8rem' }}></i>
         <div>
           <span>Select Narrative Theme</span>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 400 }}>
@@ -23,6 +22,7 @@ export default function ThemePicker({ selectedTheme, onSelectTheme, customTheme,
           style={activeTab === 'preset' ? { borderColor: 'var(--accent-amber)', color: 'var(--accent-amber)' } : {}}
           onClick={() => setActiveTab('preset')}
         >
+          <i className="fa-solid fa-list-check" style={{ marginRight: '6px' }}></i>
           Curated Presets ({PRESET_THEMES.length})
         </button>
         <button 
@@ -30,6 +30,7 @@ export default function ThemePicker({ selectedTheme, onSelectTheme, customTheme,
           style={activeTab === 'custom' ? { borderColor: 'var(--accent-amber)', color: 'var(--accent-amber)' } : {}}
           onClick={() => setActiveTab('custom')}
         >
+          <i className="fa-solid fa-lightbulb" style={{ marginRight: '6px' }}></i>
           Custom Prompt Seed
         </button>
       </div>
@@ -48,7 +49,9 @@ export default function ThemePicker({ selectedTheme, onSelectTheme, customTheme,
                   <div className="theme-card-header">
                     <span className="theme-card-icon">{theme.icon}</span>
                     {isSelected && (
-                      <span className="badge-tag badge-amber" style={{ margin: 0 }}>Selected</span>
+                      <span className="badge-tag badge-amber" style={{ margin: 0 }}>
+                        <i className="fa-solid fa-check" style={{ marginRight: '4px' }}></i> Selected
+                      </span>
                     )}
                   </div>
                   <h3 className="theme-card-title">{theme.title}</h3>
@@ -57,7 +60,7 @@ export default function ThemePicker({ selectedTheme, onSelectTheme, customTheme,
 
                 <div>
                   <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>
-                    Canonical Motifemes:
+                    <i className="fa-solid fa-tags" style={{ marginRight: '4px' }}></i> Canonical Motifemes:
                   </p>
                   <div className="theme-motifs">
                     {theme.motifs.map((motif, i) => (
@@ -74,7 +77,7 @@ export default function ThemePicker({ selectedTheme, onSelectTheme, customTheme,
       {activeTab === 'custom' && (
         <div className="custom-prompt-container">
           <label style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
-            <Lightbulb size={16} inline style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+            <i className="fa-solid fa-pen-nib" style={{ marginRight: '6px', color: 'var(--accent-amber)' }}></i>
             Describe your custom theme or narrative seed:
           </label>
           <textarea 
@@ -93,7 +96,7 @@ export default function ThemePicker({ selectedTheme, onSelectTheme, customTheme,
           onClick={onGenerate}
           disabled={isGenerating || (activeTab === 'custom' && !customTheme.trim())}
         >
-          <Sparkles size={20} />
+          <i className={`fa-solid ${isGenerating ? 'fa-spinner fa-spin' : 'fa-bolt'}`} style={{ marginRight: '8px' }}></i>
           {isGenerating ? 'Generating Story...' : 'Generate & Run 3-Agent Pipeline'}
         </button>
       </div>

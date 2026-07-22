@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Copy, Check, BookOpen, Download } from 'lucide-react';
 
 export default function StoryViewer({ narrativeText, themeTitle }) {
   const [copied, setCopied] = useState(false);
@@ -45,7 +44,7 @@ export default function StoryViewer({ narrativeText, themeTitle }) {
       <div className="story-header">
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent-amber)', fontSize: '0.85rem', fontWeight: 600 }}>
-            <BookOpen size={18} />
+            <i className="fa-solid fa-book-open"></i>
             <span>Narrative Output</span>
           </div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 700, marginTop: '0.2rem' }}>
@@ -55,11 +54,11 @@ export default function StoryViewer({ narrativeText, themeTitle }) {
 
         <div style={{ display: 'flex', gap: '0.5rem' }}>
           <button className="btn-secondary" onClick={handleCopy} title="Copy to clipboard">
-            {copied ? <Check size={16} color="var(--accent-emerald)" /> : <Copy size={16} />}
+            <i className={`fa-solid ${copied ? 'fa-check' : 'fa-copy'}`} style={copied ? { color: 'var(--accent-emerald)' } : {}}></i>
             {copied ? 'Copied' : 'Copy'}
           </button>
           <button className="btn-secondary" onClick={handleDownload} title="Download text">
-            <Download size={16} />
+            <i className="fa-solid fa-download"></i>
             Export
           </button>
         </div>

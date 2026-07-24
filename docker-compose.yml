@@ -18,8 +18,20 @@ services:
     volumes:
       - ./backend:/app/backend
       - ./context:/app/context
+      - chat_data:/app/data
     depends_on:
       - neo4j
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: jnang_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
     restart: unless-stopped
 
   neo4j:
@@ -36,3 +48,4 @@ services:
 
 volumes:
   neo4j_data:
+  chat_data:

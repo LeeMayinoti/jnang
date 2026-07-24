@@ -1,17 +1,10 @@
 import React from 'react';
 
-export default function Header({ isOnline, theme, onToggleTheme, onToggleSidebar }) {
+export default function Header({ isOnline, theme, onToggleTheme }) {
   return (
     <header className="header-glass">
       <div className="header-container">
         <div className="brand-section">
-          <button 
-            className="btn-toggle-sidebar" 
-            onClick={onToggleSidebar} 
-            title="Toggle Sidebar"
-          >
-            <i className="fa-solid fa-bars"></i>
-          </button>
           <div className="brand-icon-wrapper">
             <i className="fa-solid fa-wand-magic-sparkles" style={{ fontSize: '1.4rem' }}></i>
           </div>
@@ -22,9 +15,9 @@ export default function Header({ isOnline, theme, onToggleTheme, onToggleSidebar
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <button 
-            className="theme-toggle-btn" 
-            onClick={onToggleTheme} 
+          <button
+            className="theme-toggle-btn"
+            onClick={onToggleTheme}
             title="Toggle Light / Dark theme"
           >
             <i className={`fa-solid ${theme === 'light' ? 'fa-moon' : 'fa-sun'}`} style={{ color: theme === 'light' ? '#6366f1' : '#f59e0b' }}></i>

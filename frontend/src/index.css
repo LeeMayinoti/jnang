@@ -274,35 +274,15 @@ body {
   cursor: pointer;
 }
 
-.chat-sidebar.collapsed .sidebar-title span,
 .chat-sidebar.collapsed .settings-group,
 .chat-sidebar.collapsed button span {
   display: none !important;
-}
-
-.chat-sidebar.collapsed .sidebar-title {
-  justify-content: center;
-  font-size: 1.3rem;
-  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
   .chat-sidebar {
     display: none;
   }
-}
-
-.sidebar-title {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-secondary);
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .settings-group {
@@ -646,17 +626,274 @@ body {
 }
 
 /* ==========================================================================
+   Mode toggle – segmented pill for Generate / Analyze
+   ========================================================================== */
+
+.mode-toggle {
+  display: flex;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+  margin-top: 0.4rem;
+}
+
+.mode-toggle__btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.mode-toggle__btn:hover {
+  color: var(--text-primary);
+}
+
+.mode-toggle__btn.active {
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+  box-shadow: 0 2px 10px rgba(0, 229, 255, 0.3);
+}
+
+[data-theme="light"] .mode-toggle__btn.active {
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 255, 0.2);
+}
+
+/* ==========================================================================
+   Sidebar extras – divider, reset/new-chat btn
+   ========================================================================== */
+
+.sidebar-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 1rem 0;
+  flex-shrink: 0;
+}
+
+.btn-reset {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-reset:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  background: var(--bg-glass-hover);
+}
+
+/* Sidebar collapse / expand button — always visible at the bottom */
+.sidebar-collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.55rem;
+  background: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-collapse-btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  background: var(--bg-glass-hover);
+}
+
+/* ==========================================================================
+   Chat History Panel
+   ========================================================================== */
+
+.chat-history-panel {
+  margin-bottom: 0.25rem;
+  flex-shrink: 0;
+}
+
+.chat-history-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.thread-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.thread-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.thread-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thread-list::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 2px;
+}
+
+.thread-empty {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0.75rem 0;
+}
+
+.thread-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  border: 1px solid transparent;
+  min-width: 0;
+  position: relative;
+}
+
+.thread-item:hover {
+  background: var(--bg-glass-hover);
+}
+
+.thread-item:hover .thread-item__actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.thread-item.active {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-cyan);
+}
+
+.thread-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.thread-item.active .thread-icon {
+  color: var(--accent-cyan);
+}
+
+.thread-item__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.thread-item__title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.thread-item.active .thread-item__title {
+  color: var(--accent-cyan);
+}
+
+.thread-item__date {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.thread-item__actions {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.thread-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.thread-action-btn:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.thread-action-btn.danger:hover {
+  background: rgba(255, 64, 129, 0.12);
+  color: var(--accent-rose);
+}
+
+.thread-rename-input {
+  width: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--accent-cyan);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  outline: none;
+}
+
+/* ==========================================================================
    Magic UI Meteors – scoped to .chat-canvas
    ========================================================================== */
 
-/* Meteor head – a small bright dot */
+/* Meteor head — small glowing dot, size driven by CSS var */
 .meteor-head {
   pointer-events: none;
   position: absolute;
-  width: 3px;
-  height: 3px;
+  width:  var(--meteor-size, 3px);
+  height: var(--meteor-size, 3px);
   border-radius: 50%;
-  transform: rotate(-215deg);
+  /* rotate(215deg) = down-right diagonal; translateX moves in that direction */
+  transform: rotate(215deg) translateX(0);
   animation: meteor-fly var(--meteor-dur, 5s) linear infinite;
   animation-delay: var(--meteor-delay, 0s);
   opacity: 0;
@@ -665,35 +902,38 @@ body {
 
 [data-theme="dark"] .meteor-head {
   background: #ffffff;
-  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.9);
 }
 
 [data-theme="light"] .meteor-head {
-  background: #3b82f6; /* bright blue */
-  box-shadow: 0 0 4px 2px rgba(59, 130, 246, 0.4);
+  background: #3b82f6;
+  box-shadow: 0 0 6px 2px rgba(59, 130, 246, 0.6);
 }
 
-/* Meteor tail – a gradient streak behind the dot */
+/* Meteor tail — trailing gradient streak */
 .meteor-tail {
   pointer-events: none;
   position: absolute;
   top: 50%;
+  /* tail points BEHIND the head in the rotated frame (left = behind) */
+  right: 100%;
   transform: translateY(-50%);
-  width: 70px;
+  width: var(--meteor-tail-w, 80px);
   height: 1.5px;
 }
 
 [data-theme="dark"] .meteor-tail {
-  background: linear-gradient(90deg, #ffffff, transparent);
+  background: linear-gradient(to left, #ffffff, transparent);
 }
 
 [data-theme="light"] .meteor-tail {
-  background: linear-gradient(90deg, #3b82f6, transparent);
+  background: linear-gradient(to left, #3b82f6, transparent);
 }
 
 @keyframes meteor-fly {
-  0%   { transform: rotate(-215deg) translateX(0);      opacity: 1; }
-  70%  { opacity: 1; }
-  100% { transform: rotate(-215deg) translateX(-600px); opacity: 0; }
+  0%   { transform: rotate(215deg) translateX(0);       opacity: 0; }
+  8%   { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: rotate(215deg) translateX(1400px);  opacity: 0; }
 }
 

@@ -7,6 +7,7 @@ from pydantic import BaseModel, Field
 from backend.app.agents.graph import app as graph_app
 from backend.app.agents.nodes import classifier_node, generator_node, grader_node
 from backend.app.core.database import init_db
+from backend.app.core import chat_store
 
 app = FastAPI(
     title="Ju|'hoansi Narrative Agentic Generator (jnang)",
@@ -26,7 +27,12 @@ app.add_middleware(
 @app.on_event("startup")
 def startup_event():
     init_db()
+    chat_store.init()
 
+
+# ---------------------------------------------------------------------------
+# Request / Response models
+# ---------------------------------------------------------------------------
 
 class GenerateRequest(BaseModel):
     theme: Optional[str] = Field(default="sharing honey", description="Seed theme for narrative generator")
@@ -69,6 +75,20 @@ class GraderResponse(BaseModel):
     grade_report: Dict[str, Any]
 
 
+# Thread management models
+class ThreadCreateRequest(BaseModel):
+    title: Optional[str] = Field(default="New Chat")
+    mode: Optional[str] = Field(default="generate")
+
+
+class ThreadRenameRequest(BaseModel):
+    title: str
+
+
+# ---------------------------------------------------------------------------
+# Core routes
+# ---------------------------------------------------------------------------
+
 @app.get("/")
 def read_root():
     return {
@@ -84,19 +104,91 @@ def health_check():
     return {"status": "healthy"}
 
 
+# ---------------------------------------------------------------------------
+# Thread / chat history endpoints
+# ---------------------------------------------------------------------------
+
+@app.get("/threads")
+def list_threads():
+    return chat_store.list_sessions()
+
+
+@app.post("/threads", status_code=201)
+def create_thread(req: ThreadCreateRequest):
+    thread_id = str(uuid.uuid4())
+    return chat_store.create_session(thread_id, title=req.title or "New Chat", mode=req.mode or "generate")
+
+
+@app.get("/threads/{thread_id}")
+def get_thread(thread_id: str):
+    session = chat_store.get_session(thread_id)
+    if not session:
+        raise HTTPException(status_code=404, detail="Thread not found")
+    messages = chat_store.get_messages(thread_id)
+    return {**session, "messages": messages}
+
+
+@app.patch("/threads/{thread_id}")
+def rename_thread(thread_id: str, req: ThreadRenameRequest):
+    ok = chat_store.rename_session(thread_id, req.title)
+    if not ok:
+        raise HTTPException(status_code=404, detail="Thread not found")
+    return {"ok": True}
+
+
+@app.delete("/threads/{thread_id}", status_code=204)
+def delete_thread(thread_id: str):
+    ok = chat_store.delete_session(thread_id)
+    if not ok:
+        raise HTTPException(status_code=404, detail="Thread not found")
+
+
+# ---------------------------------------------------------------------------
+# Pipeline endpoints
+# ---------------------------------------------------------------------------
+
 @app.post("/generate", response_model=GenerateResponse)
 def generate_story(req: GenerateRequest):
     active_thread_id = req.thread_id or str(uuid.uuid4())
+
+    # Ensure session exists
+    if not chat_store.get_session(active_thread_id):
+        chat_store.create_session(active_thread_id)
+
     config = {"configurable": {"thread_id": active_thread_id}}
 
-    initial_state = {}
+    initial_state: Dict[str, Any] = {}
     if req.input_story:
         initial_state["input_story"] = req.input_story
     if req.theme:
         initial_state["theme"] = req.theme
 
+    # Persist user message
+    user_text = req.input_story if req.input_story else f"Generate a story about: {req.theme}"
+    chat_store.add_message(active_thread_id, "user", user_text)
+
     try:
         final_state = graph_app.invoke(initial_state, config=config)
+
+        bot_text = "Here is the finished story and pipeline analysis:"
+        payload = {
+            "story": {"title": req.theme or "Generated Story", "text": final_state.get("draft_narrative", "")},
+            "analysis": {
+                "motifemes": final_state.get("motifemes", []),
+                "moves": final_state.get("story_moves", []),
+                "grade": final_state.get("grade_report", {}),
+            },
+        }
+        chat_store.add_message(active_thread_id, "bot", bot_text, payload)
+
+        # Auto-title: first 40 chars of user prompt if still "New Chat"
+        session = chat_store.get_session(active_thread_id)
+        if session and session.get("title") in ("New Chat", ""):
+            auto_title = user_text[:40].strip()
+            chat_store.touch_session(active_thread_id, title=auto_title)
+        else:
+            chat_store.touch_session(active_thread_id)
+
         return GenerateResponse(
             draft_narrative=final_state.get("draft_narrative", ""),
             motifemes=final_state.get("motifemes", []),
@@ -140,4 +232,3 @@ def run_grader_agent(req: GraderRequest):
         return GraderResponse(grade_report=res.get("grade_report", {}))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-

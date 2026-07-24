@@ -1,3 +1,8 @@
+from __future__ import annotations
+
+import os
+from pathlib import Path
+
 from langgraph.graph import StateGraph, END, START
 from backend.app.agents.state import NarrativeState
 from backend.app.agents.nodes import generator_node, classifier_node, grader_node
@@ -53,5 +58,22 @@ workflow.add_edge("echo_input", "classifier")
 workflow.add_edge("classifier", "grader")
 workflow.add_edge("grader", END)
 
-# Compile (no checkpointer — keep it simple)
-app = workflow.compile()
+# ---------------------------------------------------------------------------
+# Compile with SQLite checkpointer for persistent thread memory
+# ---------------------------------------------------------------------------
+
+def _build_app():
+    try:
+        from langgraph.checkpoint.sqlite import SqliteSaver
+
+        db_path = Path(os.getenv("CHAT_DB_PATH", "./data/chat_history.db"))
+        db_path.parent.mkdir(parents=True, exist_ok=True)
+
+        saver = SqliteSaver.from_conn_string(str(db_path))
+        return workflow.compile(checkpointer=saver)
+    except Exception as e:
+        print(f"[graph] SqliteSaver unavailable ({e}), compiling without checkpointer.")
+        return workflow.compile()
+
+
+app = _build_app()

@@ -103,30 +103,80 @@ def get_neo4j_context(theme: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# 2. RAG context — story PDFs
+# 2. RAG context — story PDFs (theme-aware selection)
 # ---------------------------------------------------------------------------
 
-def get_rag_context(max_chars_per_story: int = 1500) -> str:
+_STOPWORDS = {
+    "the", "a", "an", "and", "of", "in", "on", "at", "to", "with", "for",
+    "from", "first", "found", "by", "is", "are", "was", "were",
+}
+
+
+def _tokenize(s: str) -> set:
+    """Lowercase, strip to alphanumerics, drop stopwords and very short tokens."""
+    import re
+
+    words = re.findall(r"[a-z0-9]+", s.lower())
+    return {w for w in words if w not in _STOPWORDS and len(w) > 2}
+
+
+def _read_pdf_text(pdf_path: Path) -> str:
+    import pypdf
+
+    reader = pypdf.PdfReader(str(pdf_path))
+    text = ""
+    for page in reader.pages:
+        text += (page.extract_text() or "") + "\n"
+    return text
+
+
+def select_relevant_stories(theme: str, top_k: int = 2) -> List[Path]:
     """
-    Reads the transcribed Ju|'hoansi story PDFs from the 'individual story files'
-    directory and returns their text as stylistic reference examples.
+    Deterministic, non-LLM relevance ranking of the RAG pool against the
+    requested theme: title-token overlap weighted 3x, body-token overlap
+    weighted 1x (titles are clean text; extracted PDF body text can have
+    ligature/OCR artifacts, so it's a weaker signal). Returns only files
+    that score > 0 — an irrelevant theme gets no RAG content rather than
+    the same fixed stories every time.
+    """
+    theme_tokens = _tokenize(theme)
+    if not theme_tokens:
+        return []
+
+    story_files = sorted(_STORIES_DIR.glob("*.pdf"))
+    scored: List[tuple] = []
+    for pdf_path in story_files:
+        title_tokens = _tokenize(pdf_path.stem)
+        try:
+            body_tokens = _tokenize(_read_pdf_text(pdf_path))
+        except Exception as e:
+            print(f"[ContextBuilder] Could not read {pdf_path.name}: {e}")
+            body_tokens = set()
+
+        score = 3 * len(theme_tokens & title_tokens) + 1 * len(theme_tokens & body_tokens)
+        if score > 0:
+            scored.append((score, pdf_path))
+
+    scored.sort(key=lambda pair: pair[0], reverse=True)
+    return [path for _, path in scored[:top_k]]
+
+
+def get_rag_context(theme: str, top_k: int = 2, max_chars_per_story: int = 1500) -> str:
+    """
+    Returns stylistic reference excerpts from the RAG pool, filtered to the
+    stories most relevant to the requested theme. Returns "" if nothing in
+    the pool scores above zero relevance for this theme — an honest "no
+    grounding available" signal rather than injecting unrelated content.
     """
     try:
-        import pypdf
-
-        story_files = sorted(_STORIES_DIR.glob("*.pdf"))
-        if not story_files:
+        selected = select_relevant_stories(theme, top_k=top_k)
+        if not selected:
             return ""
 
         excerpts: List[str] = []
-        for pdf_path in story_files:
+        for pdf_path in selected:
             try:
-                reader = pypdf.PdfReader(str(pdf_path))
-                text = ""
-                for page in reader.pages:
-                    page_text = page.extract_text() or ""
-                    text += page_text + "\n"
-                # Trim to max_chars_per_story
+                text = _read_pdf_text(pdf_path)
                 trimmed = text.strip()[:max_chars_per_story]
                 excerpts.append(f"### Story: {pdf_path.stem}\n{trimmed}")
             except Exception as e:
@@ -194,7 +244,7 @@ def build_generator_context(theme: str) -> str:
     if neo4j_ctx:
         parts.append(neo4j_ctx)
 
-    rag_ctx = get_rag_context()
+    rag_ctx = get_rag_context(theme)
     if rag_ctx:
         parts.append(rag_ctx)
 

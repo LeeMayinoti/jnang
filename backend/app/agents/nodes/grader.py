@@ -177,7 +177,7 @@ def grader_node(state: NarrativeState) -> dict:
         )
         if computed_grade != result.overall_grade:
             print(
-                f"[Grader] Grade label corrected: '{result.overall_grade}' → '{computed_grade}'"
+                f"[Grader] Grade label corrected: '{result.overall_grade}' -> '{computed_grade}'"
             )
 
         report = result.model_dump()

@@ -5,9 +5,11 @@ from neo4j import GraphDatabase
 from dotenv import load_dotenv
 
 load_dotenv()
+# Also pick up backend/.env (where the app's Neo4j credentials live)
+load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), "backend", ".env"))
 
 NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
+NEO4J_USER = os.getenv("NEO4J_USER") or os.getenv("NEO4J_USERNAME", "neo4j")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "password")
 
 def get_local_name(uri):

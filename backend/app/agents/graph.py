@@ -64,12 +64,14 @@ workflow.add_edge("grader", END)
 
 def _build_app():
     try:
+        import sqlite3
         from langgraph.checkpoint.sqlite import SqliteSaver
 
         db_path = Path(os.getenv("CHAT_DB_PATH", "./data/chat_history.db"))
         db_path.parent.mkdir(parents=True, exist_ok=True)
 
-        saver = SqliteSaver.from_conn_string(str(db_path))
+        conn = sqlite3.connect(str(db_path), check_same_thread=False)
+        saver = SqliteSaver(conn)
         return workflow.compile(checkpointer=saver)
     except Exception as e:
         print(f"[graph] SqliteSaver unavailable ({e}), compiling without checkpointer.")

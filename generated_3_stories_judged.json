@@ -1,0 +1,211 @@
+[
+ {
+  "index": 1,
+  "theme": "The discovery of wild honey in the baobab and the test of equal sharing",
+  "thread_id": "34fde0a5-4c8a-4478-bc68-2cf8bd4badfa",
+  "draft_narrative": "In the heart of the Kalahari, where the red sand dunes stretched endlessly and the baobab trees stood like wise elders, there lived a group of Ju|'hoansi people. One fine morning, under the blazing sun, the elders gathered around the campfire, sharing stories and laughter. Among them was an old man, !gàa, known for his wisdom and keen sense of adventure.\n\nOne day, as the sun began to set, !gàa decided to venture into the Bush, seeking the hidden treasures of nature. As he wandered deeper into the wilderness, he stumbled upon a massive baobab tree. Its thick trunk and wide branches beckoned him closer. Intrigued, he noticed a humming sound coming from high above. To his delight, he discovered a hive filled with sweet, golden honey. \n\nFilled with excitement, !gàa shouted, \"I have found honey! Come, my people!\" His voice echoed through the Bush, and soon the camp was filled with curious faces. His age-mate, !xo, and a few hunters hurried to his side, eager to taste the sweet reward.\n\nHowever, as they all gazed up at the hive, a deep concern arose. \"This honey is precious,\" said !xo. \"We must share it equally, for too much greed brings trouble.\" The others nodded, knowing well the tales of past misfortunes when one took more than their share.\n\n!gàa climbed the baobab, using his strength to chop the hive down. Golden honey dripped from the comb as he carefully lowered it to the ground. The sweet aroma filled the air, drawing even more people from the camp. Children squealed with delight as the honey glistened in the fading light.\n\nAs they gathered around, anticipation grew. But !gàa, lost in the thrill of discovery, thought of keeping the honey for himself. He imagined the sweetness rolling on his tongue, but then he remembered the words of his grandmother, !ga. \"To share is to live,\" she used to say. \"Hoarding brings sorrow.\"\n\nWith this wisdom in mind, he called the group to attention. \"Let us test our hearts. Each of us shall take only a small portion, and together we will enjoy it.\" \n\n!xo stepped forward. \"Let us sit in a circle, for it is under the vast sky that we decide how to share this treasure.\" They formed a circle, and !gàa began to scoop the honey into small pieces of bark for everyone.\n\nAs the first taste of honey filled their mouths, laughter erupted. The sweetness brought joy, and they felt the warmth of community wrapping around them like a blanket. Each person shared stories and laughter, and the honey flowed freely among them.\n\nBut then, from the shadows of the baobab, a mischievous springhare appeared, watching with keen eyes. It seemed to be waiting for a moment of greed. One of the hunters, caught up in the sweetness, took a larger scoop than the rest. The moment he did, the springhare leapt forward and stole the remaining honey.\n\nGasps filled the air, and the joy turned to dismay. \"See how greed invites trouble?\" exclaimed !xo. \"We must go after it together, for it is our communal spirit that keeps us strong.\"\n\nThey chased the springhare through the Bush, their laughter echoing as they ran. The springhare darted among the bushes, and with a clever twist, it led them to a hidden waterhole. There, the springhare paused, dropping the honey into the water. It splashed around, swirling the honey into the glistening surface. \n\nRealizing the trickster's game, the people stopped and laughed. \"We have learned a lesson today,\" said !gàa, smiling. \"Together, we can overcome even the most cunning of tricksters.\"\n\nThey gathered around the waterhole, scooping up the honey-infused water. It was sweeter than they had imagined, and they all shared in the bounty, their hearts light with the joy of togetherness. \n\nAs the stars twinkled above, they returned to their camp, their spirits high, knowing that it was their unity and sharing that turned a simple find into a truly memorable feast. The wise words of !ga echoed in their hearts, and they promised to always share what they found, for in sharing, they found the true essence of life.",
+  "motifemes": [
+   "Lack",
+   "Interdiction",
+   "Violation",
+   "Consequence",
+   "Mediation",
+   "Lack Liquidated",
+   "Return"
+  ],
+  "story_moves": [
+   "!gàa ventures into the Bush seeking treasure",
+   "!gàa discovers honey in the baobab tree",
+   "!gàa calls the people to share the honey",
+   "!xo warns against greed and suggests sharing",
+   "!gàa decides to share the honey equally",
+   "A hunter takes too much honey and the springhare steals it",
+   "The community chases the springhare",
+   "The springhare leads them to a waterhole",
+   "The community learns a lesson about sharing and unity",
+   "They return to the camp with honey-infused water"
+  ],
+  "grade_report": {
+   "egalitarianism_score": 10.0,
+   "food_sharing_score": 10.0,
+   "kinship_score": 10.0,
+   "cultural_authenticity_score": 10.0,
+   "motifeme_score": 9.0,
+   "overall_grade": "Excellent",
+   "comments": "The story beautifully embodies Ju|'hoansi cultural values of egalitarianism, food sharing, and kinship. The characters engage in communal decision-making, and the importance of sharing is emphasized throughout. The narrative effectively illustrates the consequences of greed and the joy of unity. The kinship roles are clearly defined, with !gàa and !xo representing wisdom and caution, respectively. The motifeme chain is coherent, with a clear progression from lack to resolution, though it could be slightly more developed in terms of the chase sequence.",
+   "suggestions": [
+    "Consider expanding on the chase sequence to enhance the motifeme chain.",
+    "Incorporate more dialogue that reflects the kinship roles and relationships among the characters."
+   ]
+  },
+  "independent_judge": {
+   "egalitarianism_score": 10.0,
+   "food_sharing_score": 10.0,
+   "kinship_score": 10.0,
+   "cultural_authenticity_score": 10.0,
+   "motifeme_score": 10.0,
+   "detected_motifemes": [
+    "Lack",
+    "Interdiction",
+    "Violation",
+    "Consequence",
+    "Mediation",
+    "Lack Liquidated",
+    "Return"
+   ],
+   "overall_grade": "Excellent",
+   "comments": "This story is an outstanding example of Ju|'hoansi cultural values and narrative structure. Egalitarianism is central, with the story explicitly correcting greed and emphasizing equal sharing. The communal sharing of honey and honey-infused water is a driving force of the plot, and the consequences of hoarding are immediately demonstrated. The use of specific kinship terms like '!gàa' (old man), '!xo' (age-mate), and '!ga' (grandmother) is authentic and functional, with the grandmother's wisdom playing a pivotal role. The narrative follows a clear and coherent chain of motifemes, from the initial lack of shared harmony due to greed, through interdiction, violation, consequence, and mediation, leading to a satisfying liquidation of the lack and a return to communal understanding. The springhare trickster figure effectively serves as a catalyst for the lesson learned.",
+   "suggestions": [],
+   "used_fallback": false,
+   "judge_model": "gemini-2.5-flash"
+  },
+  "deterministic_checks": {
+   "trope_free": true,
+   "flagged_terms": [],
+   "total_glossed_terms": 0,
+   "verified_glossed_terms": 0,
+   "verified_ratio": 0.0,
+   "unverified_terms": []
+  }
+ },
+ {
+  "index": 2,
+  "theme": "The Great Eland hunt, the owner of the arrow, and hxaro gift exchange",
+  "thread_id": "2f3c720d-822d-484b-8c61-60d90d664a6a",
+  "draft_narrative": "In a time long ago, when the sun still danced upon the red sand dunes of the Kalahari, there lived a wise elder named !n!ama. He was known for his sharp eyes and steady hands, which crafted the finest arrows in the land. His arrows could pierce the heart of a great eland, the noble creature that roamed the bush, its spirit intertwined with the very essence of the earth.\n\nOne day, as the sun rose high over the waterhole, !n!ama gathered the young hunters of the camp. Among them was his grandson, !o, whose heart beat with the thrill of the hunt. “Today, we will seek the great eland,” !n!ama declared, “but remember, only the owner of the arrow shall claim the prize.” The hunters nodded, understanding the weight of their elder's words.\n\nAs they ventured into the bush, the air was filled with excitement and anticipation. !o was determined to prove himself, and he held tightly to an arrow gifted to him by his grandmother, !ga. It was said that this arrow was blessed by the g//awasi (ancestral spirits), giving it an unmatched power. But as they moved deeper into the wild, !n!ama noticed a lack of water. The waterholes were drying up, and the animals were restless.\n\n“Let us pause and share what we have,” suggested !n!ama, remembering the teachings of hxaro, the gift exchange that strengthened bonds within the community. The hunters sat around a small fire, sharing dried meat and the last of their water, as the sun began to set. Each hunter offered something, and in return, they received stories of past hunts and laughter that echoed through the bush.\n\nWith their spirits lifted and their bellies full, they resumed their search. But as dusk fell, !o's determination turned into impatience. He wandered away from the group, thinking only of his glory. He spotted a lone eland drinking from a hidden pool. With his heart racing, he notched his grandmother's arrow and took aim. But in his haste, he violated the sacred bond of the hunt, forgetting the teachings of his elder.\n\nAs he released the arrow, it flew true but struck the earth instead of the eland. The ground trembled, and from it emerged a spirit of the bush, shimmering like the stars. “You have acted alone, young hunter,” the spirit spoke, its voice echoing like distant thunder. “The hunt is not yours alone; it belongs to all who share in the hunt.” With that, the spirit vanished, leaving !o shaken and alone.\n\nRealizing his mistake, !o hurried back to his grandfather and the other hunters. “I have strayed,” he confessed, “and in my greed, I have disturbed the balance.” !n!ama, with his wise eyes filled with understanding, placed a hand on his grandson’s shoulder. “You have learned a valuable lesson, !o. The hunt is a community effort, where we all share in the bounty or the loss.”\n\nThe next day, they set out again, and this time, !o carried not only his arrow but his humility. When they found the eland grazing peacefully, they worked together as a team. !n!ama led the charge, and as the eland moved, !o took his shot. The arrow flew true, striking the great beast. Together, they honored the spirit of the eland and expressed gratitude for the gift of life.\n\nUpon their return to the camp, they shared the meat with all, ensuring everyone had a part in the feast. The hunters laughed and danced around the fire, their hearts united in the knowledge that true strength lies in community and sharing.\n\nAnd so, the tale of the great eland hunt became a cherished story, passed down through generations, reminding all that in the heart of the bush, amidst the wild and the transformative, the bonds of kinship and the spirit of sharing are the true treasures of life.",
+  "motifemes": [
+   "Lack",
+   "Violation",
+   "Consequence",
+   "Lack Liquidated",
+   "Return"
+  ],
+  "story_moves": [
+   "Elder gathers young hunters for the hunt",
+   "!o receives blessed arrow from grandmother",
+   "Hunters share food and water to strengthen bonds",
+   "!o wanders away and violates the sacred bond of the hunt",
+   "Spirit of the bush appears to teach !o a lesson",
+   "!o confesses his mistake to !n!ama",
+   "Hunters work together to successfully hunt the eland",
+   "Community shares the meat and celebrates together"
+  ],
+  "grade_report": {
+   "egalitarianism_score": 8.0,
+   "food_sharing_score": 9.0,
+   "kinship_score": 9.0,
+   "cultural_authenticity_score": 8.67,
+   "motifeme_score": 9.0,
+   "overall_grade": "Excellent",
+   "comments": "The story effectively embodies Ju|'hoansi values of egalitarianism, particularly through the communal effort in the hunt and the correction of !o's initial selfishness. The emphasis on sharing food and resources is central to the narrative, showcasing the importance of community. Kinship roles are clearly defined, with !n!ama as the elder and !o as the grandson, and the narrative reflects authentic social structures. The motifeme chain is coherent and culturally grounded, illustrating the journey from lack to resolution through community and shared experiences.",
+   "suggestions": [
+    "Consider further emphasizing the communal aspect of the hunt by including more interactions among the hunters before the hunt.",
+    "Explore additional kinship roles or relationships to deepen the narrative's connection to Ju|'hoansi social structures."
+   ]
+  },
+  "independent_judge": {
+   "egalitarianism_score": 9.5,
+   "food_sharing_score": 10.0,
+   "kinship_score": 10.0,
+   "cultural_authenticity_score": 9.83,
+   "motifeme_score": 9.5,
+   "detected_motifemes": [
+    "Lack",
+    "Interdiction",
+    "Violation",
+    "Consequence",
+    "Mediation",
+    "Lack Liquidated",
+    "Return"
+   ],
+   "overall_grade": "Excellent",
+   "comments": "The story demonstrates an exceptional understanding and integration of Ju|'hoansi cultural values. Egalitarianism is central, with the protagonist's individual ambition being explicitly corrected in favor of communal effort. Food sharing is not just present but drives the narrative's moral and resolution. The use of specific kinship terms (!o, !ga) and the explicit mention of hxaro and g//awasi spirits further enhance its authenticity. The narrative structure follows a clear and coherent chain of Dundes' motifemes, from lack and violation to mediation and ultimate liquidation, providing a satisfying and culturally resonant resolution.",
+   "suggestions": [],
+   "used_fallback": false,
+   "judge_model": "gemini-2.5-flash"
+  },
+  "deterministic_checks": {
+   "trope_free": true,
+   "flagged_terms": [],
+   "total_glossed_terms": 1,
+   "verified_glossed_terms": 0,
+   "verified_ratio": 0.0,
+   "unverified_terms": [
+    "g//awasi"
+   ]
+  }
+ },
+ {
+  "index": 3,
+  "theme": "The drought, the sacred rain-animal at the waterhole, and the healing trance dance",
+  "thread_id": "cfda6636-092e-404a-9b8a-08b861e4a862",
+  "draft_narrative": "In the heart of the Kalahari, where the sun scorched the red sand dunes, a great drought came upon the land. The waterholes dried, and the animals grew weak. The elders gathered around the flickering campfire, their faces lined with worry. Among them was !ga (grandmother) N!xao, known for her wisdom and her connection to the spirits of the land.\n\n“Without water, we all suffer,” she said, her voice steady like the wind that whispered through the branches. “We must call upon the sacred rain-animal, the !gà!n (rain-animal), who brings the rain. But we must do so with respect.”\n\nThe people decided to hold a trance dance, a powerful ritual to summon the spirit of the !gà!n. They gathered in the cool dusk, the air filled with the earthy scent of the bush. The drumming began, echoing in the stillness, as the dancers moved in rhythm, their feet touching the ground in a sacred connection to the earth.\n\nAs they danced, the spirits of the ancestors, the g//awasi, joined them. They were the guardians of the land, and their presence was felt in the gentle breeze that danced through the trees. The dancers, lost in their trance, called out to the !gà!n, their voices rising like the clouds that brought rain.\n\nBut deep in the heart of the bush, a young hunter named !o (uncle) Khum found himself restless. He had not participated in the dance, believing his strength as a hunter would bring more to the community. Driven by pride, he set off alone to search for the sacred rain-animal, thinking he could capture it and command the rains.\n\nAs Khum wandered deeper into the bush, the landscape shifted. The vibrant colors dimmed, and shadows loomed larger. He soon realized he was lost, surrounded by the whispers of the spirits who warned him of his arrogance. “Return, !o Khum, return to your people,” they whispered, but he ignored their calls.\n\nMeanwhile, back at the waterhole, the trance dance reached its peak. The community felt the energy ebb and flow like the tide. Suddenly, a gentle rumble echoed across the land, and dark clouds began to gather overhead. The people rejoiced, singing praises to the !gà!n for responding to their call.\n\nBut !o Khum remained lost, his heart heavy with regret. As he stumbled upon a clearing, he saw the magnificent !gà!n grazing peacefully. In his eagerness, he lunged forward, but the sacred rain-animal vanished, leaving him empty-handed. The ground trembled, and a flash of lightning illuminated the sky.\n\nRealizing his folly, Khum fell to his knees. “I am sorry, !gà!n, for my pride,” he cried out, tears mingling with the dust. At that moment, the spirit of the rain-animal appeared before him, and in a voice like thunder, it spoke, “The rain comes not from capturing but from community and respect.”\n\nAs the first drops of rain began to fall, Khum felt a surge of energy. He raced back to his people, the rhythm of the trance dance guiding his way. When he arrived, the water flowed from the sky, filling the dry waterhole, and the community gathered, celebrating the return of life.\n\nIn the days that followed, they shared the bounty of nature, teaching the young ones the importance of unity and humility. !ga N!xao smiled, her heart full as she watched the children play by the waterhole, their laughter echoing like the songs of the birds.\n\nThus, the drought was lifted, and the sacred rain-animal was honored once more, not as a trophy, but as a spirit to be revered. The community learned that true strength lies in togetherness, and the dance continued, a reminder to always respect the spirits of the land.",
+  "motifemes": [
+   "Lack",
+   "Violation",
+   "Consequence",
+   "Mediation",
+   "Lack Liquidated",
+   "Return"
+  ],
+  "story_moves": [
+   "Elders gather to discuss the drought",
+   "Community holds trance dance to summon rain-animal",
+   "Young hunter sets off alone, ignoring the call to return",
+   "Spirits warn hunter of his arrogance",
+   "Hunter encounters the sacred rain-animal but fails to capture it",
+   "Hunter realizes his folly and seeks forgiveness",
+   "Rain begins to fall as the hunter returns to his people",
+   "Community celebrates the return of life and shares the bounty"
+  ],
+  "grade_report": {
+   "egalitarianism_score": 8.0,
+   "food_sharing_score": 8.0,
+   "kinship_score": 9.0,
+   "cultural_authenticity_score": 8.33,
+   "motifeme_score": 9.0,
+   "overall_grade": "Good",
+   "comments": "The story effectively embodies Ju|'hoansi values of community and respect for nature. The character of !ga N!xao represents wisdom and kinship, while the community's trance dance illustrates their collective effort to address the drought. The young hunter's journey reflects the consequences of pride and the importance of humility. Food sharing is depicted in the community's celebration after the rain, emphasizing unity. However, the hunter's initial individualism contrasts with the communal values, which is resolved by the end.",
+   "suggestions": [
+    "Emphasize the communal sharing of food more explicitly during the celebration.",
+    "Consider integrating more kinship roles in the narrative to enhance the social structure representation."
+   ]
+  },
+  "independent_judge": {
+   "egalitarianism_score": 9.0,
+   "food_sharing_score": 5.0,
+   "kinship_score": 6.0,
+   "cultural_authenticity_score": 6.7,
+   "motifeme_score": 9.5,
+   "detected_motifemes": [
+    "Lack",
+    "Interdiction",
+    "Violation",
+    "Consequence",
+    "Mediation",
+    "Lack Liquidated",
+    "Return"
+   ],
+   "overall_grade": "Adequate",
+   "comments": "The story presents a clear narrative arc that effectively reinforces egalitarian principles by correcting the prideful actions of a character. The use of the !gà!n and the trance dance adds cultural flavor. The motifeme chain is very strong and coherent. However, the depiction of food sharing is vague and not central to the plot, and while kinship terms are used, their narrative function beyond simple identification is somewhat limited.",
+   "suggestions": [
+    "To strengthen food sharing themes, explicitly describe the communal sharing of specific resources (e.g., meat from a hunt, gathered plants) after the drought ends, detailing who receives portions.",
+    "To enhance kinship integration, consider having !o Khum's actions or his eventual repentance directly involve or impact specific kin (e.g., his nieces/nephews, or !ga N!xao directly guiding him as a grandmother).",
+    "While the correction of pride is excellent, further subtle demonstrations of situational leadership or collective decision-making could reinforce egalitarianism even more."
+   ],
+   "used_fallback": false,
+   "judge_model": "gemini-2.5-flash"
+  },
+  "deterministic_checks": {
+   "trope_free": true,
+   "flagged_terms": [],
+   "total_glossed_terms": 3,
+   "verified_glossed_terms": 1,
+   "verified_ratio": 0.333,
+   "unverified_terms": [
+    "!ga",
+    "!n"
+   ]
+  }
+ }
+]

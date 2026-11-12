@@ -6,6 +6,20 @@
 @prefix story2: <http://ontology.narrative.org/honey-flies#> .
 @prefix story3: <http://ontology.narrative.org/woman-fire#> .
 @prefix story4: <http://ontology.narrative.org/elephant-water#> .
+@prefix story8: <http://ontology.narrative.org/sun-child#> .
+@prefix story9: <http://ontology.narrative.org/tamsa-bird#> .
+@prefix story10: <http://ontology.narrative.org/tug-of-war#> .
+@prefix story11: <http://ontology.narrative.org/eyes-on-ankles#> .
+@prefix story12: <http://ontology.narrative.org/two-boys-lions#> .
+@prefix story13: <http://ontology.narrative.org/haregirl-moon#> .
+@prefix story14: <http://ontology.narrative.org/elephant-girl#> .
+
+# NOTE: Stories 5-7 (The Ostrich and the Tortoise, Springhare Dances, Ducks and
+# People) are deliberately NOT formalized here -- they are held-out evaluation
+# stories (see backend/app/eval/themes.py). Prefix numbers follow book chapters.
+#
+# NOTE: import_rdf.py keys Neo4j nodes on the URI local name only, so every
+# local name must be unique across ALL stories (hence suffixes like _S8).
 
 # =========================================================================
 # SCHEMA DEFINITION (Classes & Properties)
@@ -363,3 +377,742 @@ story4:Elephant propp:performsFunction story4:S4_Move1_Hoarding, story4:S4_Move5
 
 story4:AardvarkGirl propp:performsFunction story4:S4_Move2_Exposure .
 story4:Brothers propp:performsFunction story4:S4_Move3_Tracking, story4:S4_Move4_Sabotage, story4:S4_Move6_Slaying .
+
+
+
+# =========================================================================
+# INSTANCE DATA: Story 8 - The Sun's Child
+# =========================================================================
+
+# Roles
+story8:DepartingProvider a propp:ProppianRole ; rdfs:label "Departing Provider / Celestial Mother" .
+story8:GreedyChild a propp:ProppianRole ; rdfs:label "Greedy, Refusing Child" .
+
+# Characters
+story8:SunMother a propp:Person ;
+    propp:hasRole story8:DepartingProvider ;
+    rdfs:label "The Sun as a woman (|am)" .
+
+story8:SunChild a propp:Person ;
+    propp:hasRole story8:GreedyChild ;
+    rdfs:label "The Sun's child (da'ama)" .
+
+# Objects
+story8:Tortoise_S8 a propp:Object ; rdfs:label "Roasted tortoise (zam)" .
+story8:RaisinBerries_S8 a propp:Object ; rdfs:label "Raisin berries" .
+story8:SkinCloak_S8 a propp:Object ; rdfs:label "Skin cloak (kaross)" .
+
+# Magical Agents
+story8:SkyLeap a propp:MagicalAgent ; rdfs:label "Power to leap into the sky and become the sun" .
+story8:SunbirdTransformation a propp:MagicalAgent ; rdfs:label "Transformation into the white-bellied sunbird" .
+
+# Locations
+story8:Shade_S8 a propp:Location ; rdfs:label "The Shade (!hari)" .
+story8:Sky_S8 a propp:Location ; rdfs:label "The Sky" .
+
+# Narrative Functions
+story8:S8_Move1_Roast a propp:NarrativeFunction ;
+    rdfs:label "The Sun, still a person, roasts a tortoise and shares it with her son" ;
+    propp:involvesObject story8:Tortoise_S8 .
+
+story8:S8_Move2_Greed a propp:NarrativeFunction ;
+    rdfs:label "The son wants to eat all the meat himself and cries" ;
+    propp:follows story8:S8_Move1_Roast ;
+    propp:involvesObject story8:Tortoise_S8 .
+
+story8:S8_Move3_LeftInShade a propp:NarrativeFunction ;
+    rdfs:label "The Sun leaves the crying child in the shade and gathers raisin berries" ;
+    propp:follows story8:S8_Move2_Greed ;
+    propp:involvesObject story8:RaisinBerries_S8 ;
+    propp:occursAt story8:Shade_S8 .
+
+story8:S8_Move4_Refusal a propp:NarrativeFunction ;
+    rdfs:label "On her return the child is still crying and refuses to be picked up" ;
+    propp:follows story8:S8_Move3_LeftInShade ;
+    propp:occursAt story8:Shade_S8 .
+
+story8:S8_Move5_Ascension a propp:NarrativeFunction ;
+    rdfs:label "The Sun tucks her cloak between her legs, jumps into the sky and becomes the sun" ;
+    propp:follows story8:S8_Move4_Refusal ;
+    propp:involvesObject story8:SkinCloak_S8, story8:SkyLeap ;
+    propp:occursAt story8:Sky_S8 .
+
+story8:S8_Move6_Sunbird a propp:NarrativeFunction ;
+    rdfs:label "The child becomes the white-bellied sunbird, forever crying 'Wah, wah, wah!'" ;
+    propp:follows story8:S8_Move5_Ascension ;
+    propp:involvesObject story8:SunbirdTransformation .
+
+# Character Links
+story8:SunMother propp:performsFunction story8:S8_Move1_Roast, story8:S8_Move3_LeftInShade, story8:S8_Move5_Ascension ;
+    propp:hasMagicalAgent story8:SkyLeap .
+
+story8:SunChild propp:performsFunction story8:S8_Move2_Greed, story8:S8_Move4_Refusal, story8:S8_Move6_Sunbird ;
+    propp:hasMagicalAgent story8:SunbirdTransformation .
+
+
+# =========================================================================
+# INSTANCE DATA: Story 9 - The Tamsa Bird
+# =========================================================================
+
+# Roles
+story9:SelfishHusband a propp:ProppianRole ; rdfs:label "Selfish Husband / Villain" .
+story9:DeprivedWives a propp:ProppianRole ; rdfs:label "Deprived Wives" .
+story9:RefusingVictim a propp:ProppianRole ; rdfs:label "Reluctant Dancer / Victim" .
+
+# Characters
+story9:God_S9 a propp:Person ;
+    propp:hasRole story9:SelfishHusband ;
+    rdfs:label "The God (husband of the two hornbill wives)" .
+
+story9:GreyHornbill a propp:Animal ;
+    propp:hasRole story9:DeprivedWives ;
+    rdfs:label "Grey hornbill wife (Tockus nasutus)" .
+
+story9:YellowBilledHornbill a propp:Animal ;
+    propp:hasRole story9:DeprivedWives ;
+    rdfs:label "Yellow-billed hornbill wife (Tockus flavirostris)" .
+
+story9:TallWoman a propp:Person ;
+    propp:hasRole story9:RefusingVictim ;
+    rdfs:label "The tall woman across the fire" .
+
+# Objects
+story9:GxaruRoots_S9 a propp:Object ; rdfs:label "g||xaru roots (Lapeirousia bainesii)" .
+story9:Sack_S9 a propp:Object ; rdfs:label "Hanging sack (claimed to hold sand)" .
+story9:WoodenPaddle_S9 a propp:Object ; rdfs:label "Long wooden paddle" .
+story9:Bangles_S9 a propp:Object ; rdfs:label "Clinking bangles" .
+
+# Locations
+story9:Bush_S9 a propp:Location ; rdfs:label "The Bush (digging grounds)" .
+story9:DanceFire_S9 a propp:Location ; rdfs:label "The Dance Circle by the Fire" .
+
+# Narrative Functions
+story9:S9_Move1_Gathering a propp:NarrativeFunction ;
+    rdfs:label "The god digs g||xaru roots and fills a sack" ;
+    propp:involvesObject story9:GxaruRoots_S9, story9:Sack_S9 ;
+    propp:occursAt story9:Bush_S9 .
+
+story9:S9_Move2_Deception a propp:NarrativeFunction ;
+    rdfs:label "Refusing to share, the god hangs the sack and pretends it holds sand" ;
+    propp:follows story9:S9_Move1_Gathering ;
+    propp:involvesObject story9:Sack_S9 .
+
+story9:S9_Move3_SecretEating a propp:NarrativeFunction ;
+    rdfs:label "During the dance the god secretly eats g||xaru from the sack" ;
+    propp:follows story9:S9_Move2_Deception ;
+    propp:involvesObject story9:GxaruRoots_S9 ;
+    propp:occursAt story9:DanceFire_S9 .
+
+story9:S9_Move4_PreparesWeapon a propp:NarrativeFunction ;
+    rdfs:label "The god prepares a long wooden paddle and lays it by" ;
+    propp:follows story9:S9_Move3_SecretEating ;
+    propp:involvesObject story9:WoodenPaddle_S9 .
+
+story9:S9_Move5_Demand a propp:NarrativeFunction ;
+    rdfs:label "The god rejects his wives as dancers and calls for the tall woman" ;
+    propp:follows story9:S9_Move4_PreparesWeapon ;
+    propp:occursAt story9:DanceFire_S9 .
+
+story9:S9_Move6_Refusals a propp:NarrativeFunction ;
+    rdfs:label "The tall woman ignores him and keeps singing; he refuses another dancer and calls again" ;
+    propp:follows story9:S9_Move5_Demand ;
+    propp:occursAt story9:DanceFire_S9 .
+
+story9:S9_Move7_Dance a propp:NarrativeFunction ;
+    rdfs:label "Much later the tall woman, bangles clinking, comes and dances with him" ;
+    propp:follows story9:S9_Move6_Refusals ;
+    propp:involvesObject story9:Bangles_S9 ;
+    propp:occursAt story9:DanceFire_S9 .
+
+story9:S9_Move8_Murder a propp:NarrativeFunction ;
+    rdfs:label "The god beats her stomach with the paddle, throws her down, and she dies" ;
+    propp:follows story9:S9_Move7_Dance ;
+    propp:involvesObject story9:WoodenPaddle_S9 ;
+    propp:occursAt story9:DanceFire_S9 .
+
+story9:S9_Move9_SelfPraise a propp:NarrativeFunction ;
+    rdfs:label "The dance breaks up; alone, the god praises himself: 'This is how I do things!'" ;
+    propp:follows story9:S9_Move8_Murder ;
+    propp:occursAt story9:DanceFire_S9 .
+
+# Character Links
+story9:God_S9 propp:performsFunction story9:S9_Move1_Gathering, story9:S9_Move2_Deception, story9:S9_Move3_SecretEating, story9:S9_Move4_PreparesWeapon, story9:S9_Move5_Demand, story9:S9_Move8_Murder, story9:S9_Move9_SelfPraise .
+
+story9:GreyHornbill propp:performsFunction story9:S9_Move5_Demand .
+story9:YellowBilledHornbill propp:performsFunction story9:S9_Move5_Demand .
+story9:TallWoman propp:performsFunction story9:S9_Move6_Refusals, story9:S9_Move7_Dance .
+
+
+# =========================================================================
+# INSTANCE DATA: Story 10 - Tug-of-War
+# =========================================================================
+
+# Roles
+story10:OriginalOwner a propp:ProppianRole ; rdfs:label "Original Owner / Dupe" .
+story10:Usurper a propp:ProppianRole ; rdfs:label "Usurper / Trickster-Victor" .
+
+# Characters
+story10:OmaOma a propp:Person ;
+    propp:hasRole story10:OriginalOwner ;
+    rdfs:label "|'Oma|'Oma (a Ju|'hoan man)" .
+
+story10:BlackMan a propp:Person ;
+    propp:hasRole story10:Usurper ;
+    rdfs:label "The Black man (newcomer)" .
+
+# Objects
+story10:Cattle_S10 a propp:Object ; rdfs:label "The first cattle" .
+story10:Milk_S10 a propp:Object ; rdfs:label "Milk" .
+story10:Pot_S10 a propp:Object ; rdfs:label "Cooking pot" .
+story10:LeatherRiem a propp:Object ; rdfs:label "Leather riem (thong)" .
+story10:String_S10 a propp:Object ; rdfs:label "Piece of string" .
+story10:Crops_S10 a propp:Object ; rdfs:label "Sorghum and maize" .
+story10:RaisinBerries_S10 a propp:Object ; rdfs:label "Three kinds of raisin berries" .
+
+# Locations
+story10:Bush_S10 a propp:Location ; rdfs:label "The Bush (open grazing, no kraal)" .
+story10:Village_S10 a propp:Location ; rdfs:label "The Village" .
+
+# Narrative Functions
+story10:S10_Move1_Ownership a propp:NarrativeFunction ;
+    rdfs:label "|'Oma|'Oma owns the first cattle and herds them alone without a kraal" ;
+    propp:involvesObject story10:Cattle_S10 ;
+    propp:occursAt story10:Bush_S10 .
+
+story10:S10_Move2_Inquiry a propp:NarrativeFunction ;
+    rdfs:label "A Black man arrives and asks whose cattle they are" ;
+    propp:follows story10:S10_Move1_Ownership ;
+    propp:involvesObject story10:Cattle_S10 ;
+    propp:occursAt story10:Bush_S10 .
+
+story10:S10_Move3_HerdToVillage a propp:NarrativeFunction ;
+    rdfs:label "They herd the cattle to the village together to spend the night" ;
+    propp:follows story10:S10_Move2_Inquiry ;
+    propp:involvesObject story10:Cattle_S10 ;
+    propp:occursAt story10:Village_S10 .
+
+story10:S10_Move4_Milking a propp:NarrativeFunction ;
+    rdfs:label "Afraid of the cow, |'Oma|'Oma has the Black man tie her with a riem to milk her" ;
+    propp:follows story10:S10_Move3_HerdToVillage ;
+    propp:involvesObject story10:Milk_S10, story10:LeatherRiem ;
+    propp:occursAt story10:Village_S10 .
+
+story10:S10_Move5_PotRefusal a propp:NarrativeFunction ;
+    rdfs:label "|'Oma|'Oma declines to share the milk, offering only to scrape the pot" ;
+    propp:follows story10:S10_Move4_Milking ;
+    propp:involvesObject story10:Pot_S10, story10:Milk_S10 ;
+    propp:occursAt story10:Village_S10 .
+
+story10:S10_Move6_TugOfWar a propp:NarrativeFunction ;
+    rdfs:label "They pull opposite ends of a riem tied to a string; it breaks" ;
+    propp:follows story10:S10_Move5_PotRefusal ;
+    propp:involvesObject story10:LeatherRiem, story10:String_S10 ;
+    propp:occursAt story10:Village_S10 .
+
+story10:S10_Move7_Usurpation a propp:NarrativeFunction ;
+    rdfs:label "Holding the riem, the Black man keeps the cattle and makes |'Oma|'Oma his servant" ;
+    propp:follows story10:S10_Move6_TugOfWar ;
+    propp:involvesObject story10:Cattle_S10, story10:LeatherRiem .
+
+story10:S10_Move8_Origin a propp:NarrativeFunction ;
+    rdfs:label "|'Oma|'Oma forages raisin berries while the Black man farms sorghum and maize and eats beef and milk" ;
+    propp:follows story10:S10_Move7_Usurpation ;
+    propp:involvesObject story10:RaisinBerries_S10, story10:Crops_S10 .
+
+# Character Links
+story10:OmaOma propp:performsFunction story10:S10_Move1_Ownership, story10:S10_Move3_HerdToVillage, story10:S10_Move5_PotRefusal, story10:S10_Move6_TugOfWar, story10:S10_Move8_Origin .
+
+story10:BlackMan propp:performsFunction story10:S10_Move2_Inquiry, story10:S10_Move3_HerdToVillage, story10:S10_Move4_Milking, story10:S10_Move6_TugOfWar, story10:S10_Move7_Usurpation, story10:S10_Move8_Origin .
+
+
+# =========================================================================
+# INSTANCE DATA: Story 11 - Eyes-on-his-Ankles
+# =========================================================================
+
+# Roles
+story11:AnomalousBeing a propp:ProppianRole ; rdfs:label "Anomalous Being / Victim" .
+story11:Investigator a propp:ProppianRole ; rdfs:label "Investigator / Villain" .
+
+# Characters
+story11:EyesOnAnkles a propp:Person ;
+    propp:hasRole story11:AnomalousBeing ;
+    rdfs:label "Eyes-on-his-Ankles" .
+
+story11:Companion_S11 a propp:Person ;
+    propp:hasRole story11:Investigator ;
+    rdfs:label "The other man (digging companion)" .
+
+# Objects
+story11:GxaruRoots_S11 a propp:Object ; rdfs:label "g||xaru roots (Lapeirousia bainesii)" .
+story11:Sand_S11 a propp:Object ; rdfs:label "Flicked sand" .
+story11:HotPaddle_S11 a propp:Object ; rdfs:label "Long wooden paddle heated in the fire" .
+
+# Magical Agents
+story11:AnkleEyes a propp:MagicalAgent ; rdfs:label "Eyes placed on the ankles" .
+
+# Locations
+story11:DiggingGround_S11 a propp:Location ; rdfs:label "The Digging Grounds" .
+story11:Campfire_S11 a propp:Location ; rdfs:label "The Night Camp Fire" .
+
+# Narrative Functions
+story11:S11_Move1_Digging a propp:NarrativeFunction ;
+    rdfs:label "Two men dig g||xaru roots together" ;
+    propp:involvesObject story11:GxaruRoots_S11 ;
+    propp:occursAt story11:DiggingGround_S11 .
+
+story11:S11_Move2_Suspicion a propp:NarrativeFunction ;
+    rdfs:label "At night the companion sees Eyes-on-his-Ankles has no eyes on his face" ;
+    propp:follows story11:S11_Move1_Digging ;
+    propp:occursAt story11:Campfire_S11 .
+
+story11:S11_Move3_Test a propp:NarrativeFunction ;
+    rdfs:label "He flicks sand on face, wrists, then ankles, where the eyes blink" ;
+    propp:follows story11:S11_Move2_Suspicion ;
+    propp:involvesObject story11:Sand_S11, story11:AnkleEyes ;
+    propp:occursAt story11:Campfire_S11 .
+
+story11:S11_Move4_Ruse a propp:NarrativeFunction ;
+    rdfs:label "Next evening the companion offers to roast the roots and heats a wooden paddle" ;
+    propp:follows story11:S11_Move3_Test ;
+    propp:involvesObject story11:GxaruRoots_S11, story11:HotPaddle_S11 ;
+    propp:occursAt story11:Campfire_S11 .
+
+story11:S11_Move5_Wariness a propp:NarrativeFunction ;
+    rdfs:label "Eyes-on-his-Ankles drops bundles of roots but tries to stand far away" ;
+    propp:follows story11:S11_Move4_Ruse ;
+    propp:involvesObject story11:GxaruRoots_S11 ;
+    propp:occursAt story11:Campfire_S11 .
+
+story11:S11_Move6_Killing a propp:NarrativeFunction ;
+    rdfs:label "The companion burns his ankle-eyes open with the hot paddle and roasts him with the roots" ;
+    propp:follows story11:S11_Move5_Wariness ;
+    propp:involvesObject story11:HotPaddle_S11, story11:AnkleEyes ;
+    propp:occursAt story11:Campfire_S11 .
+
+# Character Links
+story11:EyesOnAnkles propp:performsFunction story11:S11_Move1_Digging, story11:S11_Move5_Wariness ;
+    propp:hasMagicalAgent story11:AnkleEyes .
+
+story11:Companion_S11 propp:performsFunction story11:S11_Move1_Digging, story11:S11_Move2_Suspicion, story11:S11_Move3_Test, story11:S11_Move4_Ruse, story11:S11_Move6_Killing .
+
+
+# =========================================================================
+# INSTANCE DATA: Story 12 - The Two Boys and the Lions
+# =========================================================================
+
+# Roles
+story12:SeekerFather a propp:ProppianRole ; rdfs:label "Seeker / Rescuing Father" .
+story12:VictimHeroes a propp:ProppianRole ; rdfs:label "Victimized Heroes" .
+story12:Villains_S12 a propp:ProppianRole ; rdfs:label "Villains" .
+story12:TrackingHelper a propp:ProppianRole ; rdfs:label "Helper / Guide" .
+story12:FailedSummoners a propp:ProppianRole ; rdfs:label "Failed Helpers (summoning attempts)" .
+
+# Characters
+story12:God_S12 a propp:Person ;
+    propp:hasRole story12:SeekerFather ;
+    rdfs:label "The God (father of !Xuma and Kha||'an)" .
+
+story12:Xuma a propp:Person ;
+    propp:hasRole story12:VictimHeroes ;
+    rdfs:label "!Xuma (god's son)" .
+
+story12:KhaGan a propp:Person ;
+    propp:hasRole story12:VictimHeroes ;
+    rdfs:label "Kha||'an (god's son)" .
+
+story12:Lions_S12 a propp:Animal ;
+    propp:hasRole story12:Villains_S12 ;
+    rdfs:label "The Lions (n!hai)" .
+
+story12:Turtle_S12 a propp:Animal ;
+    propp:hasRole story12:TrackingHelper ;
+    rdfs:label "The Turtle (coal tester)" .
+
+story12:Birds_S12 a propp:Animal ;
+    propp:hasRole story12:FailedSummoners ;
+    rdfs:label "Pied babblers and other birds" .
+
+story12:DancingAnimals_S12 a propp:Animal ;
+    propp:hasRole story12:FailedSummoners ;
+    rdfs:label "The animals who dance in turn" .
+
+# Objects
+story12:Eland_S12 a propp:Object ; rdfs:label "Eland (n!ang)" .
+story12:Chyme_S12 a propp:Object ; rdfs:label "The eland's stomach contents (chyme)" .
+story12:Coals_S12 a propp:Object ; rdfs:label "Coals of the boys' trail fires" .
+
+# Magical Agents
+story12:Meteor a propp:MagicalAgent ; rdfs:label "Meteor: 'the fire that hangs in the sky and kills people'" .
+
+# Locations
+story12:Trail_S12 a propp:Location ; rdfs:label "The Trail of Campfires" .
+story12:ElandDeathPlace a propp:Location ; rdfs:label "The Eland's Death Place" .
+story12:HomeVillage_S12 a propp:Location ; rdfs:label "The Home Village" .
+
+# Narrative Functions
+story12:S12_Move1_Hunt a propp:NarrativeFunction ;
+    rdfs:label "!Xuma and Kha||'an go hunting and kill an eland" ;
+    propp:involvesObject story12:Eland_S12 ;
+    propp:occursAt story12:ElandDeathPlace .
+
+story12:S12_Move2_Villainy a propp:NarrativeFunction ;
+    rdfs:label "Lions kill the boys and bury them in the eland's chyme" ;
+    propp:follows story12:S12_Move1_Hunt ;
+    propp:involvesObject story12:Chyme_S12 ;
+    propp:occursAt story12:ElandDeathPlace .
+
+story12:S12_Move3_Tracking a propp:NarrativeFunction ;
+    rdfs:label "The god tracks his sons; the turtle puts his head into each fire's coals" ;
+    propp:follows story12:S12_Move2_Villainy ;
+    propp:involvesObject story12:Coals_S12 ;
+    propp:occursAt story12:Trail_S12 .
+
+story12:S12_Move4_HotCoals a propp:NarrativeFunction ;
+    rdfs:label "At the last fire the coals burn the turtle's head: the death place is near" ;
+    propp:follows story12:S12_Move3_Tracking ;
+    propp:involvesObject story12:Coals_S12 ;
+    propp:occursAt story12:Trail_S12 .
+
+story12:S12_Move5_Pretense a propp:NarrativeFunction ;
+    rdfs:label "The god sees his sons in the chyme but pretends not to" ;
+    propp:follows story12:S12_Move4_HotCoals ;
+    propp:involvesObject story12:Chyme_S12 ;
+    propp:occursAt story12:ElandDeathPlace .
+
+story12:S12_Move6_BirdsSing a propp:NarrativeFunction ;
+    rdfs:label "Pied babblers and other birds sing, but the boys do not emerge" ;
+    propp:follows story12:S12_Move5_Pretense ;
+    propp:occursAt story12:ElandDeathPlace .
+
+story12:S12_Move7_AnimalsDance a propp:NarrativeFunction ;
+    rdfs:label "All the animals dance in turn, but the boys still do not emerge" ;
+    propp:follows story12:S12_Move6_BirdsSing ;
+    propp:occursAt story12:ElandDeathPlace .
+
+story12:S12_Move8_Meteor a propp:NarrativeFunction ;
+    rdfs:label "The god hangs a meteor in a tree and calls it down; it blasts the chyme open" ;
+    propp:follows story12:S12_Move7_AnimalsDance ;
+    propp:involvesObject story12:Meteor, story12:Chyme_S12 ;
+    propp:occursAt story12:ElandDeathPlace .
+
+story12:S12_Move9_Resurrection a propp:NarrativeFunction ;
+    rdfs:label "!Xuma and Kha||'an jump out of the chyme alive" ;
+    propp:follows story12:S12_Move8_Meteor ;
+    propp:occursAt story12:ElandDeathPlace .
+
+story12:S12_Move10_Feast a propp:NarrativeFunction ;
+    rdfs:label "They cook and eat the eland and take the rest home; the lions get none" ;
+    propp:follows story12:S12_Move9_Resurrection ;
+    propp:involvesObject story12:Eland_S12 ;
+    propp:occursAt story12:HomeVillage_S12 .
+
+# Character Links
+story12:God_S12 propp:performsFunction story12:S12_Move3_Tracking, story12:S12_Move5_Pretense, story12:S12_Move8_Meteor, story12:S12_Move10_Feast ;
+    propp:hasMagicalAgent story12:Meteor .
+
+story12:Xuma propp:performsFunction story12:S12_Move1_Hunt, story12:S12_Move9_Resurrection, story12:S12_Move10_Feast .
+story12:KhaGan propp:performsFunction story12:S12_Move1_Hunt, story12:S12_Move9_Resurrection, story12:S12_Move10_Feast .
+story12:Lions_S12 propp:performsFunction story12:S12_Move2_Villainy .
+story12:Turtle_S12 propp:performsFunction story12:S12_Move3_Tracking, story12:S12_Move4_HotCoals .
+story12:Birds_S12 propp:performsFunction story12:S12_Move6_BirdsSing .
+story12:DancingAnimals_S12 propp:performsFunction story12:S12_Move7_AnimalsDance .
+
+
+# =========================================================================
+# INSTANCE DATA: Story 13 - The Haregirl and the Moon
+# =========================================================================
+
+# Roles
+story13:ImmortalityGiver a propp:ProppianRole ; rdfs:label "Immortality Giver / Punisher" .
+story13:FalseMessenger a propp:ProppianRole ; rdfs:label "False Messenger" .
+story13:Deceivers a propp:ProppianRole ; rdfs:label "Deceivers" .
+
+# Characters
+story13:OldMoon a propp:Person ;
+    propp:hasRole story13:ImmortalityGiver ;
+    rdfs:label "Old man Moon" .
+
+story13:Haregirl a propp:Animal ;
+    propp:hasRole story13:FalseMessenger ;
+    rdfs:label "The Haregirl" .
+
+story13:Women_S13 a propp:Person ;
+    propp:hasRole story13:Deceivers ;
+    rdfs:label "The other women" .
+
+story13:People_S13 a propp:Person ;
+    rdfs:label "The People (when the animals were still people)" .
+
+# Objects
+story13:RaisinBerries_S13 a propp:Object ; rdfs:label "Raisin berries (red ripe / white unripe)" .
+story13:Urine_S13 a propp:Object ; rdfs:label "The women's urine in the waterhole" .
+story13:AmaBulb a propp:Object ; rdfs:label "!ama bulb" .
+story13:DiggingStick_S13 a propp:Object ; rdfs:label "Digging stick" .
+story13:Tortoise_S13 a propp:Object ; rdfs:label "Tortoise (Moon's bait)" .
+story13:Axe_S13 a propp:Object ; rdfs:label "Axe" .
+story13:GemsbokCloak a propp:Object ; rdfs:label "Charred female gemsbok skin cloak" .
+
+# Magical Agents
+story13:AnsweringUrine a propp:MagicalAgent ; rdfs:label "Urine commanded to answer in the women's place" .
+story13:MoonRenewal a propp:MagicalAgent ; rdfs:label "Moon's power to die and live again" .
+
+# Locations
+story13:MoonHole a propp:Location ; rdfs:label "Moon's hole in the ground" .
+story13:AbandonedVillage a propp:Location ; rdfs:label "The Abandoned Village (raisin berry patch)" .
+story13:NewVillage a propp:Location ; rdfs:label "The New Village" .
+
+# Narrative Functions
+story13:S13_Move1_Disappearance a propp:NarrativeFunction ;
+    rdfs:label "Old man Moon goes down into a hole; the people think he has died" ;
+    propp:occursAt story13:MoonHole .
+
+story13:S13_Move2_Relocation a propp:NarrativeFunction ;
+    rdfs:label "The waterhole dies and the people move to another village" ;
+    propp:follows story13:S13_Move1_Disappearance ;
+    propp:occursAt story13:NewVillage .
+
+story13:S13_Move3_Deception a propp:NarrativeFunction ;
+    rdfs:label "The women trick the haregirl into gathering unripe white berries and send her back" ;
+    propp:follows story13:S13_Move2_Relocation ;
+    propp:involvesObject story13:RaisinBerries_S13 ;
+    propp:occursAt story13:AbandonedVillage .
+
+story13:S13_Move4_Abandonment a propp:NarrativeFunction ;
+    rdfs:label "The women piss in the waterhole, tell the piss to answer for them, and leave" ;
+    propp:follows story13:S13_Move3_Deception ;
+    propp:involvesObject story13:Urine_S13, story13:AnsweringUrine ;
+    propp:occursAt story13:AbandonedVillage .
+
+story13:S13_Move5_FalseAnswer a propp:NarrativeFunction ;
+    rdfs:label "The haregirl calls out and the piss answers" ;
+    propp:follows story13:S13_Move4_Abandonment ;
+    propp:involvesObject story13:AnsweringUrine ;
+    propp:occursAt story13:AbandonedVillage .
+
+story13:S13_Move6_Enticement a propp:NarrativeFunction ;
+    rdfs:label "Moon, with a tortoise, entices the frightened haregirl to give him her !ama bulb" ;
+    propp:follows story13:S13_Move5_FalseAnswer ;
+    propp:involvesObject story13:Tortoise_S13, story13:AmaBulb ;
+    propp:occursAt story13:MoonHole .
+
+story13:S13_Move7_Capture a propp:NarrativeFunction ;
+    rdfs:label "She offers the bulb on her digging stick; Moon pulls her into the hole" ;
+    propp:follows story13:S13_Move6_Enticement ;
+    propp:involvesObject story13:AmaBulb, story13:DiggingStick_S13 ;
+    propp:occursAt story13:MoonHole .
+
+story13:S13_Move8_Message a propp:NarrativeFunction ;
+    rdfs:label "Moon: tell the people that when they die they will imitate me and live again" ;
+    propp:follows story13:S13_Move7_Capture ;
+    propp:involvesObject story13:MoonRenewal ;
+    propp:occursAt story13:MoonHole .
+
+story13:S13_Move9_DistortedMessage a propp:NarrativeFunction ;
+    rdfs:label "The haregirl tells the people that the dead will not return and their flesh will smell" ;
+    propp:follows story13:S13_Move8_Message ;
+    propp:occursAt story13:NewVillage .
+
+story13:S13_Move10_Punishment a propp:NarrativeFunction ;
+    rdfs:label "Angry Moon splits her mouth with an axe: why the hare has a split lip" ;
+    propp:follows story13:S13_Move9_DistortedMessage ;
+    propp:involvesObject story13:Axe_S13 ;
+    propp:occursAt story13:MoonHole .
+
+story13:S13_Move11_Retaliation a propp:NarrativeFunction ;
+    rdfs:label "She throws her charred gemsbok cloak on Moon's face: the marks on the moon" ;
+    propp:follows story13:S13_Move10_Punishment ;
+    propp:involvesObject story13:GemsbokCloak ;
+    propp:occursAt story13:MoonHole .
+
+# Character Links
+story13:OldMoon propp:performsFunction story13:S13_Move1_Disappearance, story13:S13_Move6_Enticement, story13:S13_Move7_Capture, story13:S13_Move8_Message, story13:S13_Move10_Punishment ;
+    propp:hasMagicalAgent story13:MoonRenewal .
+
+story13:Haregirl propp:performsFunction story13:S13_Move5_FalseAnswer, story13:S13_Move7_Capture, story13:S13_Move9_DistortedMessage, story13:S13_Move11_Retaliation .
+story13:Women_S13 propp:performsFunction story13:S13_Move3_Deception, story13:S13_Move4_Abandonment ;
+    propp:hasMagicalAgent story13:AnsweringUrine .
+story13:People_S13 propp:performsFunction story13:S13_Move2_Relocation, story13:S13_Move9_DistortedMessage .
+
+
+# =========================================================================
+# INSTANCE DATA: Story 14 - The Beautiful Elephant Girl
+# =========================================================================
+
+# Roles
+story14:Heroine a propp:ProppianRole ; rdfs:label "Heroine / Victim-Avenger" .
+story14:Villain_S14 a propp:ProppianRole ; rdfs:label "Villain (sky-born younger brother)" .
+story14:ComplicitHusband a propp:ProppianRole ; rdfs:label "Complicit Husband" .
+story14:Donor_S14 a propp:ProppianRole ; rdfs:label "Donor / Restorer" .
+story14:FailedAvengers a propp:ProppianRole ; rdfs:label "Failed Avengers" .
+story14:Recognizer a propp:ProppianRole ; rdfs:label "Recognizer" .
+
+# Characters
+story14:ElephantGirl a propp:Person ;
+    propp:hasRole story14:Heroine ;
+    rdfs:label "The Beautiful Elephant Girl" .
+
+story14:Husband_S14 a propp:Person ;
+    propp:hasRole story14:ComplicitHusband ;
+    rdfs:label "Elephant girl's husband (older brother)" .
+
+story14:YoungerBrother_S14 a propp:Person ;
+    propp:hasRole story14:Villain_S14 ;
+    rdfs:label "The younger brother (leapt from his mother's womb)" .
+
+story14:MotherInLaw_S14 a propp:Person ;
+    rdfs:label "The brothers' mother" .
+
+story14:Grandmother_S14 a propp:Person ;
+    propp:hasRole story14:Donor_S14 ;
+    rdfs:label "Elephant girl's grandmother" .
+
+story14:Daughter_S14 a propp:Person ;
+    propp:hasRole story14:Recognizer ;
+    rdfs:label "Elephant girl's daughter" .
+
+story14:ElephantBrothers a propp:Person ;
+    propp:hasRole story14:FailedAvengers ;
+    rdfs:label "Elephant girl's brothers" .
+
+story14:VillageWomen_S14 a propp:Person ;
+    rdfs:label "The women of the village" .
+
+# Objects
+story14:Ochre_S14 a propp:Object ; rdfs:label "Ground ochre (and fat)" .
+story14:Thorn_S14 a propp:Object ; rdfs:label "Thorn in the foot" .
+story14:Shoes_S14 a propp:Object ; rdfs:label "The younger brother's shoes" .
+story14:MetalAwl a propp:Object ; rdfs:label "Metal awl in the skin apron's waistband" .
+story14:BloodDroplets a propp:Object ; rdfs:label "Droplets of the elephant girl's blood" .
+story14:Jar_S14 a propp:Object ; rdfs:label "Jar / skin bag (growing vessel)" .
+story14:RoastedFlesh_S14 a propp:Object ; rdfs:label "The elephant girl's roasted flesh" .
+story14:Spears_S14 a propp:Object ; rdfs:label "Spears of the elephant girl's brothers" .
+story14:CopperRings a propp:Object ; rdfs:label "Copper rings and ornaments" .
+
+# Magical Agents
+story14:SkyBirth a propp:MagicalAgent ; rdfs:label "Sky-born power (a 'sky's thing')" .
+story14:VultureShoes a propp:MagicalAgent ; rdfs:label "Shoes turned into vultures" .
+story14:OpeningAnthill a propp:MagicalAgent ; rdfs:label "Power to command the anthill to open and close" .
+story14:GomhayaPerching a propp:MagicalAgent ; rdfs:label "Perching on spear points like the Gomhaya bird" .
+story14:BloodWind a propp:MagicalAgent ; rdfs:label "Little wind carrying droplets of blood" .
+story14:BloodRegrowth a propp:MagicalAgent ; rdfs:label "Regrowing a woman from her blood" .
+story14:GemsbokHorn a propp:MagicalAgent ; rdfs:label "Magical gemsbok horn" .
+
+# Locations
+story14:MotherVillage_S14 a propp:Location ; rdfs:label "The Mother's Village" .
+story14:EldersVillage a propp:Location ; rdfs:label "Village of the Old People" .
+story14:Anthill_S14 a propp:Location ; rdfs:label "The Anthill" .
+story14:InLawsVillage a propp:Location ; rdfs:label "The In-laws' Village" .
+
+# Narrative Functions
+story14:S14_Move1_Marriage a propp:NarrativeFunction ;
+    rdfs:label "The older brother marries the elephant girl; she bears a daughter at his mother's village" ;
+    propp:occursAt story14:MotherVillage_S14 .
+
+story14:S14_Move2_Journey a propp:NarrativeFunction ;
+    rdfs:label "The couple plan to visit elderly relatives to ask gifts for the child" ;
+    propp:follows story14:S14_Move1_Marriage ;
+    propp:occursAt story14:MotherVillage_S14 .
+
+story14:S14_Move3_SkyBirth a propp:NarrativeFunction ;
+    rdfs:label "The younger brother leaps from his mother's womb, is rubbed with ochre, and joins the journey" ;
+    propp:follows story14:S14_Move2_Journey ;
+    propp:involvesObject story14:Ochre_S14, story14:SkyBirth ;
+    propp:occursAt story14:MotherVillage_S14 .
+
+story14:S14_Move4_Warning a propp:NarrativeFunction ;
+    rdfs:label "The elephant girl tells her grandmother of her distrust and foretells the blood-wind" ;
+    propp:follows story14:S14_Move3_SkyBirth ;
+    propp:involvesObject story14:BloodWind .
+
+story14:S14_Move5_ThornRuse a propp:NarrativeFunction ;
+    rdfs:label "At an anthill the younger brother feigns a thorn and sends his shoes off as vultures, sending his brother away" ;
+    propp:follows story14:S14_Move4_Warning ;
+    propp:involvesObject story14:Thorn_S14, story14:Shoes_S14, story14:VultureShoes ;
+    propp:occursAt story14:Anthill_S14 .
+
+story14:S14_Move6_Murder a propp:NarrativeFunction ;
+    rdfs:label "He asks the elephant girl to remove the thorn with her awl, then kills her with it" ;
+    propp:follows story14:S14_Move5_ThornRuse ;
+    propp:involvesObject story14:MetalAwl ;
+    propp:occursAt story14:Anthill_S14 .
+
+story14:S14_Move7_BloodWind a propp:NarrativeFunction ;
+    rdfs:label "A little wind carries her blood to the grandmother, who keeps it in a jar" ;
+    propp:follows story14:S14_Move6_Murder ;
+    propp:involvesObject story14:BloodDroplets, story14:Jar_S14, story14:BloodWind .
+
+story14:S14_Move8_Cannibalism a propp:NarrativeFunction ;
+    rdfs:label "The younger brother roasts her; the husband returns and is pressed into eating his wife" ;
+    propp:follows story14:S14_Move7_BloodWind ;
+    propp:involvesObject story14:RoastedFlesh_S14 ;
+    propp:occursAt story14:Anthill_S14 .
+
+story14:S14_Move9_AnthillHiding a propp:NarrativeFunction ;
+    rdfs:label "As her brothers approach, the anthill opens to hide the husband and closes" ;
+    propp:follows story14:S14_Move8_Cannibalism ;
+    propp:involvesObject story14:OpeningAnthill ;
+    propp:occursAt story14:Anthill_S14 .
+
+story14:S14_Move10_FailedRevenge a propp:NarrativeFunction ;
+    rdfs:label "The younger brother perches on their spear points like a Gomhaya bird and defeats them" ;
+    propp:follows story14:S14_Move9_AnthillHiding ;
+    propp:involvesObject story14:Spears_S14, story14:GomhayaPerching ;
+    propp:occursAt story14:Anthill_S14 .
+
+story14:S14_Move11_Accusation a propp:NarrativeFunction ;
+    rdfs:label "The brothers return home with the meat; the people accuse them of a great wrong" ;
+    propp:follows story14:S14_Move10_FailedRevenge ;
+    propp:involvesObject story14:RoastedFlesh_S14 ;
+    propp:occursAt story14:EldersVillage .
+
+story14:S14_Move12_Regrowth a propp:NarrativeFunction ;
+    rdfs:label "The grandmother secretly grows the blood, splitting vessel after vessel, into a woman" ;
+    propp:follows story14:S14_Move11_Accusation ;
+    propp:involvesObject story14:Jar_S14, story14:BloodRegrowth .
+
+story14:S14_Move13_Adornment a propp:NarrativeFunction ;
+    rdfs:label "While the women gather, the grandmother dresses her in ochre and copper rings" ;
+    propp:follows story14:S14_Move12_Regrowth ;
+    propp:involvesObject story14:Ochre_S14, story14:CopperRings .
+
+story14:S14_Move14_Recognition a propp:NarrativeFunction ;
+    rdfs:label "The daughter recognizes her mother's laugh and nurses: 'The old people give you life'" ;
+    propp:follows story14:S14_Move13_Adornment .
+
+story14:S14_Move15_Donation a propp:NarrativeFunction ;
+    rdfs:label "The frightened killers return; the grandmother secretly gives her a magical gemsbok horn" ;
+    propp:follows story14:S14_Move14_Recognition ;
+    propp:involvesObject story14:GemsbokHorn .
+
+story14:S14_Move16_Journey a propp:NarrativeFunction ;
+    rdfs:label "She travels with them to the in-laws, asking about every landmark on the way" ;
+    propp:follows story14:S14_Move15_Donation .
+
+story14:S14_Move17_Vengeance a propp:NarrativeFunction ;
+    rdfs:label "She blows the horn and the brothers' village is broken apart and flattened" ;
+    propp:follows story14:S14_Move16_Journey ;
+    propp:involvesObject story14:GemsbokHorn ;
+    propp:occursAt story14:InLawsVillage .
+
+story14:S14_Move18_Return a propp:NarrativeFunction ;
+    rdfs:label "The beautiful elephant girl walks home" ;
+    propp:follows story14:S14_Move17_Vengeance .
+
+# Character Links
+story14:ElephantGirl propp:performsFunction story14:S14_Move1_Marriage, story14:S14_Move2_Journey, story14:S14_Move4_Warning, story14:S14_Move14_Recognition, story14:S14_Move16_Journey, story14:S14_Move17_Vengeance, story14:S14_Move18_Return ;
+    propp:hasMagicalAgent story14:GemsbokHorn .
+
+story14:Husband_S14 propp:performsFunction story14:S14_Move1_Marriage, story14:S14_Move2_Journey, story14:S14_Move8_Cannibalism, story14:S14_Move9_AnthillHiding, story14:S14_Move11_Accusation .
+
+story14:YoungerBrother_S14 propp:performsFunction story14:S14_Move3_SkyBirth, story14:S14_Move5_ThornRuse, story14:S14_Move6_Murder, story14:S14_Move8_Cannibalism, story14:S14_Move9_AnthillHiding, story14:S14_Move10_FailedRevenge, story14:S14_Move11_Accusation ;
+    propp:hasMagicalAgent story14:SkyBirth, story14:VultureShoes, story14:OpeningAnthill, story14:GomhayaPerching .
+
+story14:MotherInLaw_S14 propp:performsFunction story14:S14_Move3_SkyBirth .
+
+story14:Grandmother_S14 propp:performsFunction story14:S14_Move7_BloodWind, story14:S14_Move12_Regrowth, story14:S14_Move13_Adornment, story14:S14_Move15_Donation ;
+    propp:hasMagicalAgent story14:BloodRegrowth .
+
+story14:Daughter_S14 propp:performsFunction story14:S14_Move14_Recognition .
+story14:ElephantBrothers propp:performsFunction story14:S14_Move10_FailedRevenge ;
+    propp:lacks story14:GomhayaPerching .
+story14:VillageWomen_S14 propp:performsFunction story14:S14_Move11_Accusation, story14:S14_Move14_Recognition .

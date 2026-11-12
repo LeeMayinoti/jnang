@@ -1,4 +1,4 @@
-/* jnang — chat interface (ai_poc design language colours & type) */
+/* jnang — chat interface (Ju|'hoansi San Kalahari ochre, eggshell & charcoal palette) */
 
 @font-face {
   font-family: 'Montserrat-Medium';
@@ -14,74 +14,74 @@
   font-style: normal;
 }
 
-/* Light Theme (ai_poc Canvas) */
+/* Light Theme — Kalahari Sandstone & Red Ochre */
 :root, [data-theme="light"] {
-  --bg:            #f4f6f8;
-  --bg-sidebar:    #ffffff;
-  --surface:       #ffffff;
-  --surface-2:     #e8eaed;
-  --hover:         #f8fafc;
-  --border:        #e8eaed;
-  --border-strong: #d0d4dc;
+  --bg:            #f6f0e4;
+  --bg-sidebar:    #efe6d5;
+  --surface:       #fcf9f2;
+  --surface-2:     #e7dbc6;
+  --hover:         #eadfcf;
+  --border:        #ddd0b8;
+  --border-strong: #c7b496;
 
-  --text:   #00002d;
-  --text-2: #5f6368;
-  --text-3: #9aa0a6;
+  --text:   #221914;
+  --text-2: #5c4a3d;
+  --text-3: #8d7968;
 
-  --accent:      #0000ff;
-  --accent-2:    #6544fe;
-  --accent-soft: rgba(0, 0, 255, 0.05);
-  --accent-line: rgba(0, 0, 255, 0.15);
-  --on-accent:   #ffffff;
+  --accent:      #a84224;
+  --accent-2:    #c88a2b;
+  --accent-soft: rgba(168, 66, 36, 0.08);
+  --accent-line: rgba(168, 66, 36, 0.24);
+  --on-accent:   #fcf9f2;
 
-  --brand-bg: #00002d;
-  --brand-fg: #dbff55;
+  --brand-bg: #2d1d16;
+  --brand-fg: #eed9b7;
 
-  --user-bubble: #e6e6ff;
-  --user-text:   #0000ff;
+  --user-bubble: #ede0cb;
+  --user-text:   #7d2f18;
 
-  --good: #10b981;
-  --warn: #ea580c;
-  --bad:  #ff7f6a;
+  --good: #4e6e42;
+  --warn: #c87d20;
+  --bad:  #b53d2b;
 
-  --shadow-composer: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --shadow-card:     0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-send:     0 2px 8px rgba(0, 0, 255, 0.2);
+  --shadow-composer: 0 4px 14px rgba(34, 25, 20, 0.07);
+  --shadow-card:     0 1px 3px rgba(34, 25, 20, 0.06);
+  --shadow-send:     0 2px 8px rgba(168, 66, 36, 0.25);
 }
 
-/* Dark Theme */
+/* Dark Theme — Kalahari Night Hearth & Rock Shelter */
 [data-theme="dark"] {
-  --bg:            #0a0c10;
-  --bg-sidebar:    #12161f;
-  --surface:       #12161f;
-  --surface-2:     #1a202c;
-  --hover:         rgba(35, 45, 63, 0.8);
-  --border:        rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.16);
+  --bg:            #14100d;
+  --bg-sidebar:    #1b1511;
+  --surface:       #1e1713;
+  --surface-2:     #2a211b;
+  --hover:         rgba(58, 44, 34, 0.72);
+  --border:        rgba(238, 217, 183, 0.10);
+  --border-strong: rgba(238, 217, 183, 0.20);
 
-  --text:   #f8fafc;
-  --text-2: #94a3b8;
-  --text-3: #64748b;
+  --text:   #f5ece0;
+  --text-2: #c4b39d;
+  --text-3: #8a7967;
 
-  --accent:      #00e5ff;
-  --accent-2:    #b388ff;
-  --accent-soft: rgba(0, 229, 255, 0.08);
-  --accent-line: rgba(0, 229, 255, 0.25);
-  --on-accent:   #0a0c10;
+  --accent:      #d9683b;
+  --accent-2:    #e4a843;
+  --accent-soft: rgba(217, 104, 59, 0.12);
+  --accent-line: rgba(217, 104, 59, 0.30);
+  --on-accent:   #14100d;
 
-  --brand-bg: #00002d;
-  --brand-fg: #dbff55;
+  --brand-bg: #2d1d16;
+  --brand-fg: #eed9b7;
 
-  --user-bubble: rgba(0, 229, 255, 0.12);
-  --user-text:   #00e5ff;
+  --user-bubble: rgba(217, 104, 59, 0.15);
+  --user-text:   #f2a47e;
 
-  --good: #00e676;
-  --warn: #f7b801;
-  --bad:  #ff4081;
+  --good: #7fa66b;
+  --warn: #e4a843;
+  --bad:  #e06553;
 
-  --shadow-composer: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --shadow-card:     0 4px 12px rgba(0, 0, 0, 0.25);
-  --shadow-send:     0 2px 10px rgba(0, 229, 255, 0.3);
+  --shadow-composer: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-card:     0 4px 12px rgba(0, 0, 0, 0.30);
+  --shadow-send:     0 2px 10px rgba(217, 104, 59, 0.32);
 }
 
 :root {
@@ -149,7 +149,7 @@ button {
 .bead--brand {
   color: var(--brand-fg);
   background: var(--brand-bg);
-  box-shadow: 0 0 0 5px var(--brand-bg), 0 0 12px 5px rgba(219, 255, 85, 0.25);
+  box-shadow: 0 0 0 5px var(--brand-bg), 0 0 12px 5px rgba(238, 217, 183, 0.2);
 }
 
 /* ==========================================================================
@@ -469,7 +469,50 @@ button {
   width: 100%;
   max-width: var(--column-w);
   margin: auto;
-  padding: 2rem 0 4rem;
+  padding: 1.5rem 0 3.5rem;
+}
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+.hero-banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  display: block;
+}
+
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 16, 13, 0.72) 0%,
+    rgba(20, 16, 13, 0.18) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.hero-banner__caption {
+  position: absolute;
+  left: 0.9rem;
+  bottom: 0.65rem;
+  z-index: 1;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: #f5ece0;
+  opacity: 0.92;
 }
 
 .empty__title {
@@ -503,19 +546,47 @@ button {
 .starter {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  padding: 0.85rem 1rem;
+  padding: 0;
   text-align: left;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: transparent;
+  background: var(--surface);
+  overflow: hidden;
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
+  transition: background 0.15s, border-color 0.15s, transform 0.18s var(--ease);
 }
 
 .starter:hover {
   background: var(--surface);
   border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.starter__media {
+  width: 100%;
+  height: 92px;
+  overflow: hidden;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.starter__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s var(--ease);
+}
+
+.starter:hover .starter__media img {
+  transform: scale(1.04);
+}
+
+.starter__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.75rem 0.9rem 0.85rem;
 }
 
 .starter__title {

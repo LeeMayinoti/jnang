@@ -7,7 +7,9 @@ export const PRESET_THEMES = [
     description: 'A tale of wild honey discovery, testing communal obligations, and correcting selfish hoarding.',
     motifs: ['Lack', 'Interdiction', 'Violation', 'Consequence', 'Lack Liquidated'],
     defaultPrompt: 'sharing wild honey (zo) found in a hollow baobab tree',
-    culturalNote: 'In Ju|\'hoansi tradition, honey is a highly prized gift that must be shared equitably with the camp.'
+    culturalNote: 'In Ju|\'hoansi tradition, honey is a highly prized gift that must be shared equitably with the camp.',
+    image: '/images/baobab-namibia.jpg',
+    imageAlt: 'Baobab tree in Namibia, traditional home of wild honeybees'
   },
   {
     id: 'moon_life',
@@ -16,7 +18,9 @@ export const PRESET_THEMES = [
     description: 'An ancient origin myth explaining why humans die permanently while the Moon perishes and dies only to rise again.',
     motifs: ['Interdiction', 'Violation', 'Consequence', 'Departure', 'Return'],
     defaultPrompt: 'The Moon dies and lives again, sending the Hare with a message of immortality to humans',
-    culturalNote: 'Highlights the sacred cosmic order and the role of animal messengers in Kalahari folklore.'
+    culturalNote: 'Highlights the sacred cosmic order and the role of animal messengers in Kalahari folklore.',
+    image: '/images/kalahari-dunes.jpg',
+    imageAlt: 'Red sand dunes and savanna bush of the Kalahari'
   },
   {
     id: 'trickster_waterhole',
@@ -25,7 +29,9 @@ export const PRESET_THEMES = [
     description: 'A comical yet cautionary tale featuring the cunning trickster animal trying to fool camp elders for water rights.',
     motifs: ['Lack', 'Violation', 'Mediation', 'Consequence'],
     defaultPrompt: 'A trickster springhare attempting to hide the secret waterhole from the thirsty community',
-    culturalNote: 'Trickster stories teach wisdom, humility, and the importance of ecological harmony.'
+    culturalNote: 'Trickster stories teach wisdom, humility, and the importance of ecological harmony.',
+    image: '/images/san-rock-art.jpg',
+    imageAlt: 'San rock art paintings in ochre and white kaolin at Brandberg, Namibia'
   },
   {
     id: 'fire_origin',
@@ -34,7 +40,9 @@ export const PRESET_THEMES = [
     description: 'How a brave woman first discovered fire beneath the bark of a tree and shared its warmth with the n!ore.',
     motifs: ['Lack', 'Mediation', 'Lack Liquidated', 'Return'],
     defaultPrompt: 'A woman first found fire under the armpit of the sacred bird and brought warmth to camp',
-    culturalNote: 'The campfire (da) represents the heart of Ju|\'hoansi social gathering and story sharing.'
+    culturalNote: 'The campfire (da) represents the heart of Ju|\'hoansi social gathering and story sharing.',
+    image: '/images/tsumkwe-juhoansi.jpg',
+    imageAlt: 'Ju|\'hoansi San elders in Tsumkwe, Nyae Nyae, Namibia'
   },
   {
     id: 'elephant_water',
@@ -43,7 +51,9 @@ export const PRESET_THEMES = [
     description: 'The giant elephant holds back the desert rain until smaller animals join forces through communal mediation.',
     motifs: ['Lack', 'Interdiction', 'Mediation', 'Lack Liquidated'],
     defaultPrompt: 'The Great Elephant holding the water reservoir until small birds negotiate sharing',
-    culturalNote: 'Demonstrates how collective strength overcomes individual domination in desert survival.'
+    culturalNote: 'Demonstrates how collective strength overcomes individual domination in desert survival.',
+    image: '/images/ostrich-beads.jpg',
+    imageAlt: 'Traditional San ostrich eggshell beadwork necklace'
   }
 ];
 
@@ -52,6 +62,8 @@ export const SAMPLE_STORIES = [
     id: 'sample_honey',
     title: 'The Story of Honey and the Greedy Hunter',
     theme: 'sharing honey',
+    image: '/images/baobab-namibia.jpg',
+    imageAlt: 'Baobab tree in Namibia, traditional home of wild honeybees',
     text: `Long ago, in the red sand n!ore (territory) near the pans, a hunter named /Gao went into the bush to search for game. Instead of game, he heard the sharp call of the honeyguide bird. Following the bird to a giant baobab tree, he found a hive brimming with golden zo (honey).
 
 Instead of returning to camp to bring his age-mates (!xo) and relatives as customary, /Gao ate until his belly was full and hid the remaining honeycomb under dry leaves. He swore the honeyguide to secrecy.
@@ -64,6 +76,8 @@ The elders brought /Gao to the tree the next morning, retrieved the remaining ho
     id: 'sample_moon',
     title: 'Why the Moon Dies and Lives Again',
     theme: 'immortality myth',
+    image: '/images/kalahari-dunes.jpg',
+    imageAlt: 'Red sand dunes and savanna bush of the Kalahari',
     text: `In the old days when animals were people, the Moon looked down upon the humans in the camp and felt deep pity because they feared death. The Moon called the Hare and said: "Go to the humans and tell them: 'As I die and dying live again, so shall you die and dying live again.'"
 
 The Hare ran quickly across the dunes, but on the way he grew distracted by sweet roots. When he arrived at the camp, he mixed up the Moon's message and told the people: "As I die and dying perish forever, so shall you die and dying perish forever."

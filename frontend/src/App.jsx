@@ -504,6 +504,17 @@ export default function App() {
         {isEmpty ? (
           <div className="empty">
             <div className="empty__inner">
+              <figure className="hero-banner">
+                <img
+                  src="/images/san-rock-art.jpg"
+                  alt="San rock art in red haematite ochre, white kaolin, and charcoal from Brandberg, Namibia"
+                  className="hero-banner__img"
+                />
+                <figcaption className="hero-banner__caption">
+                  Brandberg San rock art · haematite ochre, kaolin &amp; charcoal
+                </figcaption>
+              </figure>
+
               <h1 className="empty__title">
                 {activeMode === 'generate' ? 'Which story shall we tell?' : 'Which story shall we read?'}
               </h1>
@@ -519,14 +530,28 @@ export default function App() {
                 {activeMode === 'generate'
                   ? PRESET_THEMES.map((t) => (
                       <button key={t.id} className="starter" onClick={() => runGenerationPipeline(t.title, t.defaultPrompt, t.motifs)}>
-                        <span className="starter__title">{t.title}</span>
-                        <span className="starter__desc">{t.description}</span>
+                        {t.image && (
+                          <div className="starter__media">
+                            <img src={t.image} alt={t.imageAlt || t.title} loading="lazy" />
+                          </div>
+                        )}
+                        <div className="starter__body">
+                          <span className="starter__title">{t.title}</span>
+                          <span className="starter__desc">{t.description}</span>
+                        </div>
                       </button>
                     ))
                   : SAMPLE_STORIES.map((s) => (
                       <button key={s.id} className="starter" onClick={() => runAnalysisPipeline(s.title, s.text)}>
-                        <span className="starter__title">{s.title}</span>
-                        <span className="starter__desc">{s.text}</span>
+                        {s.image && (
+                          <div className="starter__media">
+                            <img src={s.image} alt={s.imageAlt || s.title} loading="lazy" />
+                          </div>
+                        )}
+                        <div className="starter__body">
+                          <span className="starter__title">{s.title}</span>
+                          <span className="starter__desc">{s.text}</span>
+                        </div>
                       </button>
                     ))}
               </div>

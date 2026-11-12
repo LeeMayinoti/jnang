@@ -504,17 +504,6 @@ export default function App() {
         {isEmpty ? (
           <div className="empty">
             <div className="empty__inner">
-              <figure className="hero-banner">
-                <img
-                  src="/images/san-rock-art.jpg"
-                  alt="San rock art in red haematite ochre, white kaolin, and charcoal from Brandberg, Namibia"
-                  className="hero-banner__img"
-                />
-                <figcaption className="hero-banner__caption">
-                  Brandberg San rock art · haematite ochre, kaolin &amp; charcoal
-                </figcaption>
-              </figure>
-
               <h1 className="empty__title">
                 {activeMode === 'generate' ? 'Which story shall we tell?' : 'Which story shall we read?'}
               </h1>

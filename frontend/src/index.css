@@ -1,4 +1,4 @@
-/* jnang — chat interface (Ju|'hoansi San Kalahari ochre, eggshell & charcoal palette) */
+/* jnang — chat interface (Ostrich-eggshell beads, sage-olive glass & charcoal silhouette palette) */
 
 @font-face {
   font-family: 'Montserrat-Medium';
@@ -14,74 +14,78 @@
   font-style: normal;
 }
 
-/* Light Theme — Kalahari Sandstone & Red Ochre */
+/* Light Theme — Sage-Olive & Ostrich-Eggshell Ivory */
 :root, [data-theme="light"] {
-  --bg:            #f6f0e4;
-  --bg-sidebar:    #efe6d5;
-  --surface:       #fcf9f2;
-  --surface-2:     #e7dbc6;
-  --hover:         #eadfcf;
-  --border:        #ddd0b8;
-  --border-strong: #c7b496;
+  --bg:            #dfe4da;
+  --bg-sidebar:    #e8ebe3;
+  --surface:       rgba(248, 245, 238, 0.90);
+  --surface-2:     #d2d8cc;
+  --hover:         rgba(74, 86, 71, 0.10);
+  --border:        rgba(55, 63, 58, 0.15);
+  --border-strong: rgba(55, 63, 58, 0.28);
 
-  --text:   #221914;
-  --text-2: #5c4a3d;
-  --text-3: #8d7968;
+  --text:   #1d231e;
+  --text-2: #4a5647;
+  --text-3: #727d6e;
 
-  --accent:      #a84224;
-  --accent-2:    #c88a2b;
-  --accent-soft: rgba(168, 66, 36, 0.08);
-  --accent-line: rgba(168, 66, 36, 0.24);
-  --on-accent:   #fcf9f2;
+  --accent:      #4a5647;
+  --accent-2:    #808a7c;
+  --accent-soft: rgba(74, 86, 71, 0.10);
+  --accent-line: rgba(74, 86, 71, 0.28);
+  --on-accent:   #f6f2ea;
 
-  --brand-bg: #2d1d16;
-  --brand-fg: #eed9b7;
+  --brand-bg: #373f3a;
+  --brand-fg: #ece5d8;
 
-  --user-bubble: #ede0cb;
-  --user-text:   #7d2f18;
+  --user-bubble: #4a5647;
+  --user-text:   #f6f2ea;
 
-  --good: #4e6e42;
-  --warn: #c87d20;
-  --bad:  #b53d2b;
+  --good: #4a6b44;
+  --warn: #9e7b3b;
+  --bad:  #a64d3e;
 
-  --shadow-composer: 0 4px 14px rgba(34, 25, 20, 0.07);
-  --shadow-card:     0 1px 3px rgba(34, 25, 20, 0.06);
-  --shadow-send:     0 2px 8px rgba(168, 66, 36, 0.25);
+  --chat-overlay: rgba(232, 235, 227, 0.78);
+
+  --shadow-composer: 0 4px 16px rgba(29, 35, 30, 0.10);
+  --shadow-card:     0 2px 6px rgba(29, 35, 30, 0.08);
+  --shadow-send:     0 2px 8px rgba(74, 86, 71, 0.28);
 }
 
-/* Dark Theme — Kalahari Night Hearth & Rock Shelter */
+/* Dark Theme — Deep Olive Shelter & Ostrich-Eggshell Bone */
 [data-theme="dark"] {
-  --bg:            #14100d;
-  --bg-sidebar:    #1b1511;
-  --surface:       #1e1713;
-  --surface-2:     #2a211b;
-  --hover:         rgba(58, 44, 34, 0.72);
-  --border:        rgba(238, 217, 183, 0.10);
-  --border-strong: rgba(238, 217, 183, 0.20);
+  --bg:            #181d17;
+  --bg-sidebar:    #1f261e;
+  --surface:       rgba(34, 41, 33, 0.88);
+  --surface-2:     #2c352b;
+  --hover:         rgba(128, 138, 124, 0.18);
+  --border:        rgba(236, 229, 216, 0.14);
+  --border-strong: rgba(236, 229, 216, 0.26);
 
-  --text:   #f5ece0;
-  --text-2: #c4b39d;
-  --text-3: #8a7967;
+  --text:   #f3ede2;
+  --text-2: #c6cbbd;
+  --text-3: #8f9789;
 
-  --accent:      #d9683b;
-  --accent-2:    #e4a843;
-  --accent-soft: rgba(217, 104, 59, 0.12);
-  --accent-line: rgba(217, 104, 59, 0.30);
-  --on-accent:   #14100d;
+  --accent:      #d8ceb8;
+  --accent-2:    #8fa189;
+  --accent-soft: rgba(216, 206, 184, 0.13);
+  --accent-line: rgba(216, 206, 184, 0.30);
+  --on-accent:   #181d17;
 
-  --brand-bg: #2d1d16;
-  --brand-fg: #eed9b7;
+  --brand-bg: #373f3a;
+  --brand-fg: #ece5d8;
 
-  --user-bubble: rgba(217, 104, 59, 0.15);
-  --user-text:   #f2a47e;
+  --user-bubble: rgba(74, 86, 71, 0.84);
+  --user-text:   #f5f0e6;
 
-  --good: #7fa66b;
-  --warn: #e4a843;
-  --bad:  #e06553;
+  --good: #8fb384;
+  --warn: #d4b475;
+  --bad:  #d47a6a;
+
+  --chat-overlay: rgba(20, 25, 20, 0.76);
 
   --shadow-composer: 0 8px 24px rgba(0, 0, 0, 0.45);
-  --shadow-card:     0 4px 12px rgba(0, 0, 0, 0.30);
-  --shadow-send:     0 2px 10px rgba(217, 104, 59, 0.32);
+  --shadow-card:     0 4px 14px rgba(0, 0, 0, 0.32);
+  --shadow-send:     0 2px 10px rgba(216, 206, 184, 0.25);
 }
 
 :root {
@@ -361,11 +365,41 @@ button {
    ========================================================================== */
 
 .main {
+  position: relative;
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  background: var(--bg);
+  background-color: var(--bg);
+  overflow: hidden;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/ostrich-beads.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  transform: scale(1.03);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.main::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--chat-overlay);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.main > * {
+  position: relative;
+  z-index: 1;
 }
 
 .topbar {
@@ -551,6 +585,8 @@ button {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   overflow: hidden;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s, transform 0.18s var(--ease);
@@ -796,6 +832,8 @@ button {
   border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-card);
   overflow: hidden;
 }
@@ -845,6 +883,8 @@ button {
   border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-card);
   padding: 1rem 1.25rem 1.25rem;
 }
@@ -1001,6 +1041,8 @@ button {
   border: 1px solid var(--border);
   border-radius: 22px;
   background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-composer);
   transition: border-color 0.15s;
 }

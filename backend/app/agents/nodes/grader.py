@@ -13,6 +13,7 @@ from typing import List
 from pydantic import BaseModel, Field
 from backend.app.agents.state import NarrativeState
 from backend.app.agents.prompts import GRADER_SYSTEM_PROMPT, GRADER_USER_PROMPT
+from backend.app.utils.context_builder import get_grader_graph_context
 
 
 # ---------------------------------------------------------------------------
@@ -154,10 +155,12 @@ def grader_node(state: NarrativeState) -> dict:
         structured_llm = llm.with_structured_output(GradeReport)
 
         moves_str = "\n- ".join(story_moves) if story_moves else "None detected"
+        graph_ctx = get_grader_graph_context(motifemes)
         user_prompt = GRADER_USER_PROMPT.format(
             draft_narrative=draft,
             motifemes=", ".join(motifemes) if motifemes else "None detected",
             story_moves=moves_str,
+            graph_context=graph_ctx,
         )
 
         messages = [

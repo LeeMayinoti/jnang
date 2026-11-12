@@ -23,3 +23,6 @@ class NarrativeState(TypedDict, total=False):
 
     # === Agent 3 – Grader ===
     grade_report: Dict[str, Any]  # Grading output (rubric direction TBD by user)
+
+    # === Archive ===
+    archived_story_id: Optional[str]  # Neo4j :Story id if persisted

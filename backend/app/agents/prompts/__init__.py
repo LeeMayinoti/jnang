@@ -82,7 +82,9 @@ Return ONLY valid JSON. No markdown. No code fences.
 
 CLASSIFIER_USER_PROMPT = """Classify this Ju|'hoansi story:
 
-{draft_narrative}"""
+{draft_narrative}
+
+{graph_context}"""
 
 
 # ---------------------------------------------------------------------------
@@ -124,12 +126,15 @@ This dimension has three equally-weighted sub-criteria. Average them for the fin
      (kings, lords, noble lineages).
 
 ────────────────────────────────────────────
-DIMENSION 2 — MOTIFEME COVERAGE (0–10)
+DIMENSION 2 — MOTIFEME & STRUCTURAL COVERAGE (0–10)
 ────────────────────────────────────────────
-Does the story use a coherent, well-formed Dundes motifeme chain?
-- Full marks (9–10): A clear chain of 3+ motifemes that logically connect and resolve.
+Does the story use a coherent, well-formed Dundes motifeme chain, Proppian move progression,
+and Lévi-Strauss Camp ↔ Bush spatial logic?
+- Full marks (9–10): A clear chain of 3+ motifemes that logically connect and resolve,
+  with authentic Camp ↔ Bush transitions and coherent Proppian moves.
 - Good marks (7–8): 2 motifemes with a clear cause-and-effect relationship.
-- Partial marks (4–6): Motifemes are present but the chain is incomplete or disconnected.
+- Partial marks (4–6): Motifemes are present but the chain is incomplete, out of order
+  (e.g. Violation without Interdiction, Return without Departure), or disconnected.
 - Low marks (1–3): Only one motifeme detectable, or chain is contradictory.
 - Zero: No identifiable motifeme structure.
 
@@ -169,4 +174,6 @@ GRADER_USER_PROMPT = """Grade this Ju|'hoansi folktale:
 === CLASSIFIER ANALYSIS ===
 Motifemes detected: {motifemes}
 Story moves:
-- {story_moves}"""
+- {story_moves}
+
+{graph_context}"""

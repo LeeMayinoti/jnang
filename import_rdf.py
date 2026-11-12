@@ -139,34 +139,95 @@ def import_to_neo4j(nodes, edges):
         return False
 
     with driver.session() as session:
-        # Clear existing graph data
-        print("Clearing existing graph data from Neo4j...")
-        session.run("MATCH (n) DETACH DELETE n")
+        from backend.app.utils.graph_schema import (
+            CANONICAL_LOCATION_DOMAINS,
+            CANONICAL_MOVE_MOTIFEMES,
+            CANONICAL_STORIES,
+            DUNDES_MOTIFEME_DEFS,
+            extract_story_id,
+            infer_location_domain,
+            infer_oicotype_category,
+        )
 
-        # Create nodes
-        print("Importing nodes...")
+        # Remove only stale canonical relationships/links if desired? No—use idempotent MERGE
+        # so archived generated/user_submitted stories are NEVER deleted.
+        print("Seeding canonical :Motifeme nodes...")
+        for motifeme_name, desc in DUNDES_MOTIFEME_DEFS.items():
+            session.run(
+                """
+                MERGE (m:Motifeme {id: $id})
+                SET m.label = $id, m.type = 'Motifeme', m.description = $desc
+                """,
+                {"id": motifeme_name, "desc": desc},
+            )
+
+        print("Seeding canonical :Story nodes...")
+        for story_id, meta in CANONICAL_STORIES.items():
+            session.run(
+                """
+                MERGE (s:Story {id: $id})
+                SET s.label = $title,
+                    s.title = $title,
+                    s.theme = $theme,
+                    s.type = 'Story',
+                    s.source = 'canonical',
+                    s.status = 'accepted'
+                """,
+                {"id": story_id, "title": meta["title"], "theme": meta["theme"]},
+            )
+
+        # Create/merge nodes idempotently
+        print("Importing canonical nodes (idempotent MERGE)...")
         for node in nodes:
             label = node["type"]
             # Neo4j labels must be valid identifiers, fallback to Entity if empty
             if not label:
                 label = "Entity"
-            
+
             # Build cypher query to merge node
             query = f"""
             MERGE (n:{label} {{id: $id}})
-            SET n.label = $label, n.type = $type
+            SET n.label = $label, n.type = $type, n.source = coalesce(n.source, 'canonical')
             """
-            # Add other properties dynamically
             params = {
                 "id": node["id"],
                 "label": node["label"],
-                "type": node["type"]
+                "type": node["type"],
             }
+            if label == "Location":
+                domain = CANONICAL_LOCATION_DOMAINS.get(node["id"], infer_location_domain(node["label"]))
+                query += ", n.domain = $domain"
+                params["domain"] = domain
+            elif label in ("Person", "Animal", "Object", "MagicalAgent", "ProppianRole"):
+                query += ", n.oicotype = $oicotype"
+                params["oicotype"] = infer_oicotype_category(label)
+
             for k, v in node["properties"].items():
                 query += f", n.{k} = $prop_{k}"
                 params[f"prop_{k}"] = v
-            
+
             session.run(query, params)
+
+            # Link NarrativeFunction to its :Story and :Motifeme
+            if label == "NarrativeFunction":
+                story_id = extract_story_id(node["id"])
+                if story_id and story_id in CANONICAL_STORIES:
+                    session.run(
+                        """
+                        MATCH (s:Story {id: $story_id}), (nf:NarrativeFunction {id: $nf_id})
+                        MERGE (s)-[:HAS_MOVE]->(nf)
+                        """,
+                        {"story_id": story_id, "nf_id": node["id"]},
+                    )
+                motifeme = CANONICAL_MOVE_MOTIFEMES.get(node["id"])
+                if motifeme:
+                    session.run(
+                        """
+                        MATCH (nf:NarrativeFunction {id: $nf_id}), (m:Motifeme {id: $motifeme})
+                        MERGE (nf)-[:INSTANTIATES]->(m)
+                        """,
+                        {"nf_id": node["id"], "motifeme": motifeme},
+                    )
 
         # Create edges
         print("Importing relationships...")
@@ -175,7 +236,7 @@ def import_to_neo4j(nodes, edges):
             # Convert predicate to standard uppercase UPPER_CASE relationship type
             # E.g. performsFunction -> PERFORMS_FUNCTION
             upper_rel_type = "".join([f"_{c}" if c.isupper() else c for c in rel_type]).upper().strip("_")
-            
+
             query = f"""
             MATCH (a {{id: $from_id}}), (b {{id: $to_id}})
             MERGE (a)-[r:{upper_rel_type}]->(b)

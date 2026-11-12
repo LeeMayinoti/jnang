@@ -10,6 +10,7 @@ from typing import List
 from pydantic import BaseModel, Field
 from backend.app.agents.state import NarrativeState
 from backend.app.agents.prompts import CLASSIFIER_SYSTEM_PROMPT, CLASSIFIER_USER_PROMPT
+from backend.app.utils.context_builder import get_classifier_graph_context
 
 
 # ---------------------------------------------------------------------------
@@ -92,9 +93,10 @@ def classifier_node(state: NarrativeState) -> dict:
         llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, openai_api_key=api_key)
         structured_llm = llm.with_structured_output(ClassificationOutput)
 
+        graph_ctx = get_classifier_graph_context()
         messages = [
             ("system", CLASSIFIER_SYSTEM_PROMPT),
-            ("user", CLASSIFIER_USER_PROMPT.format(draft_narrative=draft)),
+            ("user", CLASSIFIER_USER_PROMPT.format(draft_narrative=draft, graph_context=graph_ctx)),
         ]
 
         print("[Classifier] Invoking LLM for structured classification...")

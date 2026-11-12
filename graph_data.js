@@ -6,7 +6,8 @@ const graphData = {
       "label": "Brothers track Elephant to waterhole",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Brothers track Elephant to waterhole"
+        "description": "Brothers track Elephant to waterhole",
+        "source": "canonical"
       }
     },
     {
@@ -14,7 +15,9 @@ const graphData = {
       "label": "The Beautiful Elephant Girl",
       "type": "Person",
       "properties": {
-        "description": "The Beautiful Elephant Girl"
+        "oicotype": "SocialActor",
+        "description": "The Beautiful Elephant Girl",
+        "source": "canonical"
       }
     },
     {
@@ -22,7 +25,8 @@ const graphData = {
       "label": "The elephant girl tells her grandmother of her distrust and foretells the blood-wind",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The elephant girl tells her grandmother of her distrust and foretells the blood-wind"
+        "description": "The elephant girl tells her grandmother of her distrust and foretells the blood-wind",
+        "source": "canonical"
       }
     },
     {
@@ -30,7 +34,9 @@ const graphData = {
       "label": "Secret Waterhole",
       "type": "Location",
       "properties": {
-        "description": "Secret Waterhole"
+        "domain": "Bush",
+        "description": "Secret Waterhole",
+        "source": "canonical"
       }
     },
     {
@@ -38,7 +44,9 @@ const graphData = {
       "label": "|'Oma|'Oma (a Ju|'hoan man)",
       "type": "Person",
       "properties": {
-        "description": "|'Oma|'Oma (a Ju|'hoan man)"
+        "oicotype": "SocialActor",
+        "description": "|'Oma|'Oma (a Ju|'hoan man)",
+        "source": "canonical"
       }
     },
     {
@@ -46,7 +54,8 @@ const graphData = {
       "label": "|'Oma|'Oma declines to share the milk, offering only to scrape the pot",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "|'Oma|'Oma declines to share the milk, offering only to scrape the pot"
+        "description": "|'Oma|'Oma declines to share the milk, offering only to scrape the pot",
+        "source": "canonical"
       }
     },
     {
@@ -54,7 +63,8 @@ const graphData = {
       "label": "Old man Moon goes down into a hole; the people think he has died",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Old man Moon goes down into a hole; the people think he has died"
+        "description": "Old man Moon goes down into a hole; the people think he has died",
+        "source": "canonical"
       }
     },
     {
@@ -62,7 +72,9 @@ const graphData = {
       "label": "The People (when the animals were still people)",
       "type": "Person",
       "properties": {
-        "description": "The People (when the animals were still people)"
+        "oicotype": "SocialActor",
+        "description": "The People (when the animals were still people)",
+        "source": "canonical"
       }
     },
     {
@@ -70,7 +82,8 @@ const graphData = {
       "label": "Angry Moon splits her mouth with an axe: why the hare has a split lip",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Angry Moon splits her mouth with an axe: why the hare has a split lip"
+        "description": "Angry Moon splits her mouth with an axe: why the hare has a split lip",
+        "source": "canonical"
       }
     },
     {
@@ -78,7 +91,9 @@ const graphData = {
       "label": "The women of the village",
       "type": "Person",
       "properties": {
-        "description": "The women of the village"
+        "oicotype": "SocialActor",
+        "description": "The women of the village",
+        "source": "canonical"
       }
     },
     {
@@ -86,7 +101,9 @@ const graphData = {
       "label": "Elephant girl's husband (older brother)",
       "type": "Person",
       "properties": {
-        "description": "Elephant girl's husband (older brother)"
+        "oicotype": "SocialActor",
+        "description": "Elephant girl's husband (older brother)",
+        "source": "canonical"
       }
     },
     {
@@ -94,7 +111,8 @@ const graphData = {
       "label": "The couple plan to visit elderly relatives to ask gifts for the child",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The couple plan to visit elderly relatives to ask gifts for the child"
+        "description": "The couple plan to visit elderly relatives to ask gifts for the child",
+        "source": "canonical"
       }
     },
     {
@@ -102,7 +120,9 @@ const graphData = {
       "label": "Ability to fly",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Ability to fly"
+        "oicotype": "SupernaturalAgent",
+        "description": "Ability to fly",
+        "source": "canonical"
       }
     },
     {
@@ -110,7 +130,8 @@ const graphData = {
       "label": "Woman cooks food and feeds the children",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Woman cooks food and feeds the children"
+        "description": "Woman cooks food and feeds the children",
+        "source": "canonical"
       }
     },
     {
@@ -118,7 +139,9 @@ const graphData = {
       "label": "The Lions (n!hai)",
       "type": "Animal",
       "properties": {
-        "description": "The Lions (n!hai)"
+        "oicotype": "KalahariFauna",
+        "description": "The Lions (n!hai)",
+        "source": "canonical"
       }
     },
     {
@@ -126,7 +149,8 @@ const graphData = {
       "label": "Lions kill the boys and bury them in the eland's chyme",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Lions kill the boys and bury them in the eland's chyme"
+        "description": "Lions kill the boys and bury them in the eland's chyme",
+        "source": "canonical"
       }
     },
     {
@@ -134,7 +158,9 @@ const graphData = {
       "label": "The Mother's Village",
       "type": "Location",
       "properties": {
-        "description": "The Mother's Village"
+        "domain": "Camp",
+        "description": "The Mother's Village",
+        "source": "canonical"
       }
     },
     {
@@ -142,7 +168,8 @@ const graphData = {
       "label": "A Black man arrives and asks whose cattle they are",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "A Black man arrives and asks whose cattle they are"
+        "description": "A Black man arrives and asks whose cattle they are",
+        "source": "canonical"
       }
     },
     {
@@ -150,7 +177,8 @@ const graphData = {
       "label": "|'Oma|'Oma owns the first cattle and herds them alone without a kraal",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "|'Oma|'Oma owns the first cattle and herds them alone without a kraal"
+        "description": "|'Oma|'Oma owns the first cattle and herds them alone without a kraal",
+        "source": "canonical"
       }
     },
     {
@@ -158,7 +186,8 @@ const graphData = {
       "label": "During the dance the god secretly eats g||xaru from the sack",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "During the dance the god secretly eats g||xaru from the sack"
+        "description": "During the dance the god secretly eats g||xaru from the sack",
+        "source": "canonical"
       }
     },
     {
@@ -166,7 +195,8 @@ const graphData = {
       "label": "Woodpecker harvests honey high in tree",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Woodpecker harvests honey high in tree"
+        "description": "Woodpecker harvests honey high in tree",
+        "source": "canonical"
       }
     },
     {
@@ -174,7 +204,9 @@ const graphData = {
       "label": "Departing Provider / Celestial Mother",
       "type": "ProppianRole",
       "properties": {
-        "description": "Departing Provider / Celestial Mother"
+        "oicotype": "NarrativeRole",
+        "description": "Departing Provider / Celestial Mother",
+        "source": "canonical"
       }
     },
     {
@@ -182,7 +214,8 @@ const graphData = {
       "label": "|'Oma|'Oma forages raisin berries while the Black man farms sorghum and maize and eats beef and milk",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "|'Oma|'Oma forages raisin berries while the Black man farms sorghum and maize and eats beef and milk"
+        "description": "|'Oma|'Oma forages raisin berries while the Black man farms sorghum and maize and eats beef and milk",
+        "source": "canonical"
       }
     },
     {
@@ -190,7 +223,8 @@ const graphData = {
       "label": "The god prepares a long wooden paddle and lays it by",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The god prepares a long wooden paddle and lays it by"
+        "description": "The god prepares a long wooden paddle and lays it by",
+        "source": "canonical"
       }
     },
     {
@@ -198,7 +232,9 @@ const graphData = {
       "label": "The younger brother (leapt from his mother's womb)",
       "type": "Person",
       "properties": {
-        "description": "The younger brother (leapt from his mother's womb)"
+        "oicotype": "SocialActor",
+        "description": "The younger brother (leapt from his mother's womb)",
+        "source": "canonical"
       }
     },
     {
@@ -206,7 +242,8 @@ const graphData = {
       "label": "As her brothers approach, the anthill opens to hide the husband and closes",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "As her brothers approach, the anthill opens to hide the husband and closes"
+        "description": "As her brothers approach, the anthill opens to hide the husband and closes",
+        "source": "canonical"
       }
     },
     {
@@ -214,7 +251,8 @@ const graphData = {
       "label": "The god tracks his sons; the turtle puts his head into each fire's coals",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The god tracks his sons; the turtle puts his head into each fire's coals"
+        "description": "The god tracks his sons; the turtle puts his head into each fire's coals",
+        "source": "canonical"
       }
     },
     {
@@ -222,7 +260,9 @@ const graphData = {
       "label": "Mud (g\u2021kaa)",
       "type": "Object",
       "properties": {
-        "description": "Mud (g\u2021kaa)"
+        "oicotype": "SubsistenceItem",
+        "description": "Mud (g\u2021kaa)",
+        "source": "canonical"
       }
     },
     {
@@ -230,7 +270,9 @@ const graphData = {
       "label": "First Woman (dshau)",
       "type": "Person",
       "properties": {
-        "description": "First Woman (dshau)"
+        "oicotype": "SocialActor",
+        "description": "First Woman (dshau)",
+        "source": "canonical"
       }
     },
     {
@@ -238,7 +280,9 @@ const graphData = {
       "label": "Fire Finder and Provider",
       "type": "ProppianRole",
       "properties": {
-        "description": "Fire Finder and Provider"
+        "oicotype": "NarrativeRole",
+        "description": "Fire Finder and Provider",
+        "source": "canonical"
       }
     },
     {
@@ -246,7 +290,9 @@ const graphData = {
       "label": "Celestial Rejuvenator",
       "type": "ProppianRole",
       "properties": {
-        "description": "Celestial Rejuvenator"
+        "oicotype": "NarrativeRole",
+        "description": "Celestial Rejuvenator",
+        "source": "canonical"
       }
     },
     {
@@ -254,7 +300,9 @@ const graphData = {
       "label": "Eyes-on-his-Ankles",
       "type": "Person",
       "properties": {
-        "description": "Eyes-on-his-Ankles"
+        "oicotype": "SocialActor",
+        "description": "Eyes-on-his-Ankles",
+        "source": "canonical"
       }
     },
     {
@@ -262,7 +310,8 @@ const graphData = {
       "label": "At an anthill the younger brother feigns a thorn and sends his shoes off as vultures, sending his brother away",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "At an anthill the younger brother feigns a thorn and sends his shoes off as vultures, sending his brother away"
+        "description": "At an anthill the younger brother feigns a thorn and sends his shoes off as vultures, sending his brother away",
+        "source": "canonical"
       }
     },
     {
@@ -270,7 +319,9 @@ const graphData = {
       "label": "Shoes turned into vultures",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Shoes turned into vultures"
+        "oicotype": "SupernaturalAgent",
+        "description": "Shoes turned into vultures",
+        "source": "canonical"
       }
     },
     {
@@ -278,7 +329,9 @@ const graphData = {
       "label": "Thorn in the foot",
       "type": "Object",
       "properties": {
-        "description": "Thorn in the foot"
+        "oicotype": "SubsistenceItem",
+        "description": "Thorn in the foot",
+        "source": "canonical"
       }
     },
     {
@@ -286,7 +339,9 @@ const graphData = {
       "label": "The Turtle (coal tester)",
       "type": "Animal",
       "properties": {
-        "description": "The Turtle (coal tester)"
+        "oicotype": "KalahariFauna",
+        "description": "The Turtle (coal tester)",
+        "source": "canonical"
       }
     },
     {
@@ -294,7 +349,8 @@ const graphData = {
       "label": "At the last fire the coals burn the turtle's head: the death place is near",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "At the last fire the coals burn the turtle's head: the death place is near"
+        "description": "At the last fire the coals burn the turtle's head: the death place is near",
+        "source": "canonical"
       }
     },
     {
@@ -302,7 +358,9 @@ const graphData = {
       "label": "Pied babblers and other birds",
       "type": "Animal",
       "properties": {
-        "description": "Pied babblers and other birds"
+        "oicotype": "KalahariFauna",
+        "description": "Pied babblers and other birds",
+        "source": "canonical"
       }
     },
     {
@@ -310,7 +368,9 @@ const graphData = {
       "label": "Eyes placed on the ankles",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Eyes placed on the ankles"
+        "oicotype": "SupernaturalAgent",
+        "description": "Eyes placed on the ankles",
+        "source": "canonical"
       }
     },
     {
@@ -318,7 +378,8 @@ const graphData = {
       "label": "!Xuma and Kha||'an jump out of the chyme alive",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "!Xuma and Kha||'an jump out of the chyme alive"
+        "description": "!Xuma and Kha||'an jump out of the chyme alive",
+        "source": "canonical"
       }
     },
     {
@@ -326,7 +387,9 @@ const graphData = {
       "label": "The Eland's Death Place",
       "type": "Location",
       "properties": {
-        "description": "The Eland's Death Place"
+        "domain": "Bush",
+        "description": "The Eland's Death Place",
+        "source": "canonical"
       }
     },
     {
@@ -334,7 +397,9 @@ const graphData = {
       "label": "Piece of string",
       "type": "Object",
       "properties": {
-        "description": "Piece of string"
+        "oicotype": "SubsistenceItem",
+        "description": "Piece of string",
+        "source": "canonical"
       }
     },
     {
@@ -342,7 +407,8 @@ const graphData = {
       "label": "Eyes-on-his-Ankles drops bundles of roots but tries to stand far away",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Eyes-on-his-Ankles drops bundles of roots but tries to stand far away"
+        "description": "Eyes-on-his-Ankles drops bundles of roots but tries to stand far away",
+        "source": "canonical"
       }
     },
     {
@@ -350,7 +416,9 @@ const graphData = {
       "label": "!ama bulb",
       "type": "Object",
       "properties": {
-        "description": "!ama bulb"
+        "oicotype": "SubsistenceItem",
+        "description": "!ama bulb",
+        "source": "canonical"
       }
     },
     {
@@ -358,7 +426,9 @@ const graphData = {
       "label": "The other man (digging companion)",
       "type": "Person",
       "properties": {
-        "description": "The other man (digging companion)"
+        "oicotype": "SocialActor",
+        "description": "The other man (digging companion)",
+        "source": "canonical"
       }
     },
     {
@@ -366,7 +436,8 @@ const graphData = {
       "label": "He flicks sand on face, wrists, then ankles, where the eyes blink",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "He flicks sand on face, wrists, then ankles, where the eyes blink"
+        "description": "He flicks sand on face, wrists, then ankles, where the eyes blink",
+        "source": "canonical"
       }
     },
     {
@@ -374,7 +445,9 @@ const graphData = {
       "label": "Three kinds of raisin berries",
       "type": "Object",
       "properties": {
-        "description": "Three kinds of raisin berries"
+        "oicotype": "SubsistenceItem",
+        "description": "Three kinds of raisin berries",
+        "source": "canonical"
       }
     },
     {
@@ -382,7 +455,8 @@ const graphData = {
       "label": "Refusing to share, the god hangs the sack and pretends it holds sand",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Refusing to share, the god hangs the sack and pretends it holds sand"
+        "description": "Refusing to share, the god hangs the sack and pretends it holds sand",
+        "source": "canonical"
       }
     },
     {
@@ -390,7 +464,8 @@ const graphData = {
       "label": "He asks the elephant girl to remove the thorn with her awl, then kills her with it",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "He asks the elephant girl to remove the thorn with her awl, then kills her with it"
+        "description": "He asks the elephant girl to remove the thorn with her awl, then kills her with it",
+        "source": "canonical"
       }
     },
     {
@@ -398,7 +473,8 @@ const graphData = {
       "label": "Woodpecker whistles carrying pole and dishes up to tree",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Woodpecker whistles carrying pole and dishes up to tree"
+        "description": "Woodpecker whistles carrying pole and dishes up to tree",
+        "source": "canonical"
       }
     },
     {
@@ -406,7 +482,9 @@ const graphData = {
       "label": "Carrying Pole (!aro)",
       "type": "Object",
       "properties": {
-        "description": "Carrying Pole (!aro)"
+        "oicotype": "SubsistenceItem",
+        "description": "Carrying Pole (!aro)",
+        "source": "canonical"
       }
     },
     {
@@ -414,7 +492,9 @@ const graphData = {
       "label": "The Village",
       "type": "Location",
       "properties": {
-        "description": "The Village"
+        "domain": "Camp",
+        "description": "The Village",
+        "source": "canonical"
       }
     },
     {
@@ -422,7 +502,8 @@ const graphData = {
       "label": "The women trick the haregirl into gathering unripe white berries and send her back",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The women trick the haregirl into gathering unripe white berries and send her back"
+        "description": "The women trick the haregirl into gathering unripe white berries and send her back",
+        "source": "canonical"
       }
     },
     {
@@ -430,7 +511,8 @@ const graphData = {
       "label": "The waterhole dies and the people move to another village",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The waterhole dies and the people move to another village"
+        "description": "The waterhole dies and the people move to another village",
+        "source": "canonical"
       }
     },
     {
@@ -438,7 +520,9 @@ const graphData = {
       "label": "Moon's hole in the ground",
       "type": "Location",
       "properties": {
-        "description": "Moon's hole in the ground"
+        "domain": "Liminal",
+        "description": "Moon's hole in the ground",
+        "source": "canonical"
       }
     },
     {
@@ -446,7 +530,9 @@ const graphData = {
       "label": "Elephant girl's brothers",
       "type": "Person",
       "properties": {
-        "description": "Elephant girl's brothers"
+        "oicotype": "SocialActor",
+        "description": "Elephant girl's brothers",
+        "source": "canonical"
       }
     },
     {
@@ -454,7 +540,9 @@ const graphData = {
       "label": "Failed Avengers",
       "type": "ProppianRole",
       "properties": {
-        "description": "Failed Avengers"
+        "oicotype": "NarrativeRole",
+        "description": "Failed Avengers",
+        "source": "canonical"
       }
     },
     {
@@ -462,7 +550,8 @@ const graphData = {
       "label": "While the women gather, the grandmother dresses her in ochre and copper rings",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "While the women gather, the grandmother dresses her in ochre and copper rings"
+        "description": "While the women gather, the grandmother dresses her in ochre and copper rings",
+        "source": "canonical"
       }
     },
     {
@@ -470,7 +559,8 @@ const graphData = {
       "label": "All the animals dance in turn, but the boys still do not emerge",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "All the animals dance in turn, but the boys still do not emerge"
+        "description": "All the animals dance in turn, but the boys still do not emerge",
+        "source": "canonical"
       }
     },
     {
@@ -478,7 +568,9 @@ const graphData = {
       "label": "The Dark (gFu n!ang)",
       "type": "Location",
       "properties": {
-        "description": "The Dark (gFu n!ang)"
+        "domain": "Liminal",
+        "description": "The Dark (gFu n!ang)",
+        "source": "canonical"
       }
     },
     {
@@ -486,7 +578,9 @@ const graphData = {
       "label": "The other women",
       "type": "Person",
       "properties": {
-        "description": "The other women"
+        "oicotype": "SocialActor",
+        "description": "The other women",
+        "source": "canonical"
       }
     },
     {
@@ -494,7 +588,8 @@ const graphData = {
       "label": "The god hangs a meteor in a tree and calls it down; it blasts the chyme open",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The god hangs a meteor in a tree and calls it down; it blasts the chyme open"
+        "description": "The god hangs a meteor in a tree and calls it down; it blasts the chyme open",
+        "source": "canonical"
       }
     },
     {
@@ -502,7 +597,8 @@ const graphData = {
       "label": "The Moon returns to the dark place at midnight",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The Moon returns to the dark place at midnight"
+        "description": "The Moon returns to the dark place at midnight",
+        "source": "canonical"
       }
     },
     {
@@ -510,7 +606,8 @@ const graphData = {
       "label": "The beautiful elephant girl walks home",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The beautiful elephant girl walks home"
+        "description": "The beautiful elephant girl walks home",
+        "source": "canonical"
       }
     },
     {
@@ -518,7 +615,9 @@ const graphData = {
       "label": "The younger brother's shoes",
       "type": "Object",
       "properties": {
-        "description": "The younger brother's shoes"
+        "oicotype": "SubsistenceItem",
+        "description": "The younger brother's shoes",
+        "source": "canonical"
       }
     },
     {
@@ -526,7 +625,8 @@ const graphData = {
       "label": "The women piss in the waterhole, tell the piss to answer for them, and leave",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The women piss in the waterhole, tell the piss to answer for them, and leave"
+        "description": "The women piss in the waterhole, tell the piss to answer for them, and leave",
+        "source": "canonical"
       }
     },
     {
@@ -534,7 +634,8 @@ const graphData = {
       "label": "The son wants to eat all the meat himself and cries",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The son wants to eat all the meat himself and cries"
+        "description": "The son wants to eat all the meat himself and cries",
+        "source": "canonical"
       }
     },
     {
@@ -542,7 +643,8 @@ const graphData = {
       "label": "The god digs g||xaru roots and fills a sack",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The god digs g||xaru roots and fills a sack"
+        "description": "The god digs g||xaru roots and fills a sack",
+        "source": "canonical"
       }
     },
     {
@@ -550,7 +652,9 @@ const graphData = {
       "label": "Investigator / Villain",
       "type": "ProppianRole",
       "properties": {
-        "description": "Investigator / Villain"
+        "oicotype": "NarrativeRole",
+        "description": "Investigator / Villain",
+        "source": "canonical"
       }
     },
     {
@@ -558,7 +662,8 @@ const graphData = {
       "label": "On her return the child is still crying and refuses to be picked up",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "On her return the child is still crying and refuses to be picked up"
+        "description": "On her return the child is still crying and refuses to be picked up",
+        "source": "canonical"
       }
     },
     {
@@ -566,7 +671,8 @@ const graphData = {
       "label": "The Sun leaves the crying child in the shade and gathers raisin berries",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The Sun leaves the crying child in the shade and gathers raisin berries"
+        "description": "The Sun leaves the crying child in the shade and gathers raisin berries",
+        "source": "canonical"
       }
     },
     {
@@ -574,7 +680,9 @@ const graphData = {
       "label": "Urine (waq)",
       "type": "Object",
       "properties": {
-        "description": "Urine (waq)"
+        "oicotype": "SubsistenceItem",
+        "description": "Urine (waq)",
+        "source": "canonical"
       }
     },
     {
@@ -582,7 +690,8 @@ const graphData = {
       "label": "At night the companion sees Eyes-on-his-Ankles has no eyes on his face",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "At night the companion sees Eyes-on-his-Ankles has no eyes on his face"
+        "description": "At night the companion sees Eyes-on-his-Ankles has no eyes on his face",
+        "source": "canonical"
       }
     },
     {
@@ -590,7 +699,9 @@ const graphData = {
       "label": "The Night Camp Fire",
       "type": "Location",
       "properties": {
-        "description": "The Night Camp Fire"
+        "domain": "Camp",
+        "description": "The Night Camp Fire",
+        "source": "canonical"
       }
     },
     {
@@ -598,7 +709,8 @@ const graphData = {
       "label": "Elephant hides water and drinks alone",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Elephant hides water and drinks alone"
+        "description": "Elephant hides water and drinks alone",
+        "source": "canonical"
       }
     },
     {
@@ -606,7 +718,9 @@ const graphData = {
       "label": "The women's urine in the waterhole",
       "type": "Object",
       "properties": {
-        "description": "The women's urine in the waterhole"
+        "oicotype": "SubsistenceItem",
+        "description": "The women's urine in the waterhole",
+        "source": "canonical"
       }
     },
     {
@@ -614,7 +728,9 @@ const graphData = {
       "label": "Elephant girl's daughter",
       "type": "Person",
       "properties": {
-        "description": "Elephant girl's daughter"
+        "oicotype": "SocialActor",
+        "description": "Elephant girl's daughter",
+        "source": "canonical"
       }
     },
     {
@@ -622,7 +738,9 @@ const graphData = {
       "label": "Power to command the anthill to open and close",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Power to command the anthill to open and close"
+        "oicotype": "SupernaturalAgent",
+        "description": "Power to command the anthill to open and close",
+        "source": "canonical"
       }
     },
     {
@@ -630,7 +748,8 @@ const graphData = {
       "label": "Holding the riem, the Black man keeps the cattle and makes |'Oma|'Oma his servant",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Holding the riem, the Black man keeps the cattle and makes |'Oma|'Oma his servant"
+        "description": "Holding the riem, the Black man keeps the cattle and makes |'Oma|'Oma his servant",
+        "source": "canonical"
       }
     },
     {
@@ -638,7 +757,9 @@ const graphData = {
       "label": "Leather riem (thong)",
       "type": "Object",
       "properties": {
-        "description": "Leather riem (thong)"
+        "oicotype": "SubsistenceItem",
+        "description": "Leather riem (thong)",
+        "source": "canonical"
       }
     },
     {
@@ -646,7 +767,9 @@ const graphData = {
       "label": "The Camp",
       "type": "Location",
       "properties": {
-        "description": "The Camp"
+        "domain": "Camp",
+        "description": "The Camp",
+        "source": "canonical"
       }
     },
     {
@@ -654,7 +777,9 @@ const graphData = {
       "label": "The Sky (g!a'ama)",
       "type": "Location",
       "properties": {
-        "description": "The Sky (g!a'ama)"
+        "domain": "Liminal",
+        "description": "The Sky (g!a'ama)",
+        "source": "canonical"
       }
     },
     {
@@ -662,7 +787,9 @@ const graphData = {
       "label": "Old man Moon",
       "type": "Person",
       "properties": {
-        "description": "Old man Moon"
+        "oicotype": "SocialActor",
+        "description": "Old man Moon",
+        "source": "canonical"
       }
     },
     {
@@ -670,7 +797,8 @@ const graphData = {
       "label": "Brothers slay Elephant with hammered spears",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Brothers slay Elephant with hammered spears"
+        "description": "Brothers slay Elephant with hammered spears",
+        "source": "canonical"
       }
     },
     {
@@ -678,7 +806,9 @@ const graphData = {
       "label": "Spears / Spearpoints (!u!usi)",
       "type": "Object",
       "properties": {
-        "description": "Spears / Spearpoints (!u!usi)"
+        "oicotype": "SubsistenceItem",
+        "description": "Spears / Spearpoints (!u!usi)",
+        "source": "canonical"
       }
     },
     {
@@ -686,7 +816,8 @@ const graphData = {
       "label": "Two men dig g||xaru roots together",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Two men dig g||xaru roots together"
+        "description": "Two men dig g||xaru roots together",
+        "source": "canonical"
       }
     },
     {
@@ -694,7 +825,8 @@ const graphData = {
       "label": "The grandmother secretly grows the blood, splitting vessel after vessel, into a woman",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The grandmother secretly grows the blood, splitting vessel after vessel, into a woman"
+        "description": "The grandmother secretly grows the blood, splitting vessel after vessel, into a woman",
+        "source": "canonical"
       }
     },
     {
@@ -702,7 +834,9 @@ const graphData = {
       "label": "The Bush",
       "type": "Location",
       "properties": {
-        "description": "The Bush"
+        "domain": "Bush",
+        "description": "The Bush",
+        "source": "canonical"
       }
     },
     {
@@ -710,7 +844,9 @@ const graphData = {
       "label": "Anomalous Being / Victim",
       "type": "ProppianRole",
       "properties": {
-        "description": "Anomalous Being / Victim"
+        "oicotype": "NarrativeRole",
+        "description": "Anomalous Being / Victim",
+        "source": "canonical"
       }
     },
     {
@@ -718,7 +854,9 @@ const graphData = {
       "label": "Original Owner / Dupe",
       "type": "ProppianRole",
       "properties": {
-        "description": "Original Owner / Dupe"
+        "oicotype": "NarrativeRole",
+        "description": "Original Owner / Dupe",
+        "source": "canonical"
       }
     },
     {
@@ -726,7 +864,9 @@ const graphData = {
       "label": "The Elephant (!xo)",
       "type": "Animal",
       "properties": {
-        "description": "The Elephant (!xo)"
+        "oicotype": "KalahariFauna",
+        "description": "The Elephant (!xo)",
+        "source": "canonical"
       }
     },
     {
@@ -734,7 +874,9 @@ const graphData = {
       "label": "Power to fall as rain",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Power to fall as rain"
+        "oicotype": "SupernaturalAgent",
+        "description": "Power to fall as rain",
+        "source": "canonical"
       }
     },
     {
@@ -742,7 +884,8 @@ const graphData = {
       "label": "Husband steals the fire from his wife",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Husband steals the fire from his wife"
+        "description": "Husband steals the fire from his wife",
+        "source": "canonical"
       }
     },
     {
@@ -750,7 +893,8 @@ const graphData = {
       "label": "Husband sleeps in dark and eats raw food",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Husband sleeps in dark and eats raw food"
+        "description": "Husband sleeps in dark and eats raw food",
+        "source": "canonical"
       }
     },
     {
@@ -758,7 +902,9 @@ const graphData = {
       "label": "The Anthill",
       "type": "Location",
       "properties": {
-        "description": "The Anthill"
+        "domain": "Bush",
+        "description": "The Anthill",
+        "source": "canonical"
       }
     },
     {
@@ -766,7 +912,9 @@ const graphData = {
       "label": "The Haregirl",
       "type": "Animal",
       "properties": {
-        "description": "The Haregirl"
+        "oicotype": "KalahariFauna",
+        "description": "The Haregirl",
+        "source": "canonical"
       }
     },
     {
@@ -774,7 +922,8 @@ const graphData = {
       "label": "The child becomes the white-bellied sunbird, forever crying 'Wah, wah, wah!'",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The child becomes the white-bellied sunbird, forever crying 'Wah, wah, wah!'"
+        "description": "The child becomes the white-bellied sunbird, forever crying 'Wah, wah, wah!'",
+        "source": "canonical"
       }
     },
     {
@@ -782,7 +931,9 @@ const graphData = {
       "label": "Transformation into the white-bellied sunbird",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Transformation into the white-bellied sunbird"
+        "oicotype": "SupernaturalAgent",
+        "description": "Transformation into the white-bellied sunbird",
+        "source": "canonical"
       }
     },
     {
@@ -790,7 +941,8 @@ const graphData = {
       "label": "They cook and eat the eland and take the rest home; the lions get none",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "They cook and eat the eland and take the rest home; the lions get none"
+        "description": "They cook and eat the eland and take the rest home; the lions get none",
+        "source": "canonical"
       }
     },
     {
@@ -798,7 +950,8 @@ const graphData = {
       "label": "The haregirl tells the people that the dead will not return and their flesh will smell",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The haregirl tells the people that the dead will not return and their flesh will smell"
+        "description": "The haregirl tells the people that the dead will not return and their flesh will smell",
+        "source": "canonical"
       }
     },
     {
@@ -806,7 +959,9 @@ const graphData = {
       "label": "Copper rings and ornaments",
       "type": "Object",
       "properties": {
-        "description": "Copper rings and ornaments"
+        "oicotype": "SubsistenceItem",
+        "description": "Copper rings and ornaments",
+        "source": "canonical"
       }
     },
     {
@@ -814,7 +969,9 @@ const graphData = {
       "label": "Fire (da'a)",
       "type": "Object",
       "properties": {
-        "description": "Fire (da'a)"
+        "oicotype": "SubsistenceItem",
+        "description": "Fire (da'a)",
+        "source": "canonical"
       }
     },
     {
@@ -822,7 +979,9 @@ const graphData = {
       "label": "The Moon (n!ui)",
       "type": "Person",
       "properties": {
-        "description": "The Moon (n!ui)"
+        "oicotype": "SocialActor",
+        "description": "The Moon (n!ui)",
+        "source": "canonical"
       }
     },
     {
@@ -830,7 +989,8 @@ const graphData = {
       "label": "The Moon wanes and dies",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The Moon wanes and dies"
+        "description": "The Moon wanes and dies",
+        "source": "canonical"
       }
     },
     {
@@ -838,7 +998,9 @@ const graphData = {
       "label": "The Shade (!hari)",
       "type": "Location",
       "properties": {
-        "description": "The Shade (!hari)"
+        "domain": "Liminal",
+        "description": "The Shade (!hari)",
+        "source": "canonical"
       }
     },
     {
@@ -846,7 +1008,9 @@ const graphData = {
       "label": "Hanging sack (claimed to hold sand)",
       "type": "Object",
       "properties": {
-        "description": "Hanging sack (claimed to hold sand)"
+        "oicotype": "SubsistenceItem",
+        "description": "Hanging sack (claimed to hold sand)",
+        "source": "canonical"
       }
     },
     {
@@ -854,7 +1018,9 @@ const graphData = {
       "label": "Tortoise (Moon's bait)",
       "type": "Object",
       "properties": {
-        "description": "Tortoise (Moon's bait)"
+        "oicotype": "SubsistenceItem",
+        "description": "Tortoise (Moon's bait)",
+        "source": "canonical"
       }
     },
     {
@@ -862,7 +1028,8 @@ const graphData = {
       "label": "Pied babblers and other birds sing, but the boys do not emerge",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Pied babblers and other birds sing, but the boys do not emerge"
+        "description": "Pied babblers and other birds sing, but the boys do not emerge",
+        "source": "canonical"
       }
     },
     {
@@ -870,7 +1037,9 @@ const graphData = {
       "label": "The Trail of Campfires",
       "type": "Location",
       "properties": {
-        "description": "The Trail of Campfires"
+        "domain": "Liminal",
+        "description": "The Trail of Campfires",
+        "source": "canonical"
       }
     },
     {
@@ -878,7 +1047,9 @@ const graphData = {
       "label": "Whistling Magic (||auhn)",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Whistling Magic (||auhn)"
+        "oicotype": "SupernaturalAgent",
+        "description": "Whistling Magic (||auhn)",
+        "source": "canonical"
       }
     },
     {
@@ -886,7 +1057,9 @@ const graphData = {
       "label": "The Digging Grounds",
       "type": "Location",
       "properties": {
-        "description": "The Digging Grounds"
+        "domain": "Bush",
+        "description": "The Digging Grounds",
+        "source": "canonical"
       }
     },
     {
@@ -894,7 +1067,9 @@ const graphData = {
       "label": "Perching on spear points like the Gomhaya bird",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Perching on spear points like the Gomhaya bird"
+        "oicotype": "SupernaturalAgent",
+        "description": "Perching on spear points like the Gomhaya bird",
+        "source": "canonical"
       }
     },
     {
@@ -902,7 +1077,9 @@ const graphData = {
       "label": "The People (ju)",
       "type": "Person",
       "properties": {
-        "description": "The People (ju)"
+        "oicotype": "SocialActor",
+        "description": "The People (ju)",
+        "source": "canonical"
       }
     },
     {
@@ -910,7 +1087,8 @@ const graphData = {
       "label": "Brothers drink water and urinate in the waterhole",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Brothers drink water and urinate in the waterhole"
+        "description": "Brothers drink water and urinate in the waterhole",
+        "source": "canonical"
       }
     },
     {
@@ -918,7 +1096,9 @@ const graphData = {
       "label": "Little wind carrying droplets of blood",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Little wind carrying droplets of blood"
+        "oicotype": "SupernaturalAgent",
+        "description": "Little wind carrying droplets of blood",
+        "source": "canonical"
       }
     },
     {
@@ -926,7 +1106,8 @@ const graphData = {
       "label": "They pull opposite ends of a riem tied to a string; it breaks",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "They pull opposite ends of a riem tied to a string; it breaks"
+        "description": "They pull opposite ends of a riem tied to a string; it breaks",
+        "source": "canonical"
       }
     },
     {
@@ -934,7 +1115,8 @@ const graphData = {
       "label": "Elephant dies and causes rain to fall for everyone",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Elephant dies and causes rain to fall for everyone"
+        "description": "Elephant dies and causes rain to fall for everyone",
+        "source": "canonical"
       }
     },
     {
@@ -942,7 +1124,9 @@ const graphData = {
       "label": "Aardvark Girl's brothers (Swallows of the rain)",
       "type": "Animal",
       "properties": {
-        "description": "Aardvark Girl's brothers (Swallows of the rain)"
+        "oicotype": "KalahariFauna",
+        "description": "Aardvark Girl's brothers (Swallows of the rain)",
+        "source": "canonical"
       }
     },
     {
@@ -950,7 +1134,9 @@ const graphData = {
       "label": "Egalitarian Defenders / Liberators",
       "type": "ProppianRole",
       "properties": {
-        "description": "Egalitarian Defenders / Liberators"
+        "oicotype": "NarrativeRole",
+        "description": "Egalitarian Defenders / Liberators",
+        "source": "canonical"
       }
     },
     {
@@ -958,7 +1144,9 @@ const graphData = {
       "label": "Urine commanded to answer in the women's place",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Urine commanded to answer in the women's place"
+        "oicotype": "SupernaturalAgent",
+        "description": "Urine commanded to answer in the women's place",
+        "source": "canonical"
       }
     },
     {
@@ -966,7 +1154,8 @@ const graphData = {
       "label": "Afraid of the cow, |'Oma|'Oma has the Black man tie her with a riem to milk her",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Afraid of the cow, |'Oma|'Oma has the Black man tie her with a riem to milk her"
+        "description": "Afraid of the cow, |'Oma|'Oma has the Black man tie her with a riem to milk her",
+        "source": "canonical"
       }
     },
     {
@@ -974,21 +1163,28 @@ const graphData = {
       "label": "Long wooden paddle heated in the fire",
       "type": "Object",
       "properties": {
-        "description": "Long wooden paddle heated in the fire"
+        "oicotype": "SubsistenceItem",
+        "description": "Long wooden paddle heated in the fire",
+        "source": "canonical"
       }
     },
     {
       "id": "Deceivers",
       "label": "Deceivers",
       "type": "ProppianRole",
-      "properties": {}
+      "properties": {
+        "oicotype": "NarrativeRole",
+        "source": "canonical"
+      }
     },
     {
       "id": "BloodRegrowth",
       "label": "Regrowing a woman from her blood",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Regrowing a woman from her blood"
+        "oicotype": "SupernaturalAgent",
+        "description": "Regrowing a woman from her blood",
+        "source": "canonical"
       }
     },
     {
@@ -996,7 +1192,9 @@ const graphData = {
       "label": "Deprived Wives",
       "type": "ProppianRole",
       "properties": {
-        "description": "Deprived Wives"
+        "oicotype": "NarrativeRole",
+        "description": "Deprived Wives",
+        "source": "canonical"
       }
     },
     {
@@ -1004,7 +1202,8 @@ const graphData = {
       "label": "The younger brother roasts her; the husband returns and is pressed into eating his wife",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The younger brother roasts her; the husband returns and is pressed into eating his wife"
+        "description": "The younger brother roasts her; the husband returns and is pressed into eating his wife",
+        "source": "canonical"
       }
     },
     {
@@ -1012,7 +1211,9 @@ const graphData = {
       "label": "!Xuma (god's son)",
       "type": "Person",
       "properties": {
-        "description": "!Xuma (god's son)"
+        "oicotype": "SocialActor",
+        "description": "!Xuma (god's son)",
+        "source": "canonical"
       }
     },
     {
@@ -1020,7 +1221,8 @@ const graphData = {
       "label": "The god sees his sons in the chyme but pretends not to",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The god sees his sons in the chyme but pretends not to"
+        "description": "The god sees his sons in the chyme but pretends not to",
+        "source": "canonical"
       }
     },
     {
@@ -1028,7 +1230,8 @@ const graphData = {
       "label": "They herd the cattle to the village together to spend the night",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "They herd the cattle to the village together to spend the night"
+        "description": "They herd the cattle to the village together to spend the night",
+        "source": "canonical"
       }
     },
     {
@@ -1036,7 +1239,8 @@ const graphData = {
       "label": "The haregirl calls out and the piss answers",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The haregirl calls out and the piss answers"
+        "description": "The haregirl calls out and the piss answers",
+        "source": "canonical"
       }
     },
     {
@@ -1044,7 +1248,9 @@ const graphData = {
       "label": "Cooking pot",
       "type": "Object",
       "properties": {
-        "description": "Cooking pot"
+        "oicotype": "SubsistenceItem",
+        "description": "Cooking pot",
+        "source": "canonical"
       }
     },
     {
@@ -1052,7 +1258,9 @@ const graphData = {
       "label": "Failed Helpers (summoning attempts)",
       "type": "ProppianRole",
       "properties": {
-        "description": "Failed Helpers (summoning attempts)"
+        "oicotype": "NarrativeRole",
+        "description": "Failed Helpers (summoning attempts)",
+        "source": "canonical"
       }
     },
     {
@@ -1060,7 +1268,9 @@ const graphData = {
       "label": "Fire Thief",
       "type": "ProppianRole",
       "properties": {
-        "description": "Fire Thief"
+        "oicotype": "NarrativeRole",
+        "description": "Fire Thief",
+        "source": "canonical"
       }
     },
     {
@@ -1068,7 +1278,9 @@ const graphData = {
       "label": "The Sun's child (da'ama)",
       "type": "Person",
       "properties": {
-        "description": "The Sun's child (da'ama)"
+        "oicotype": "SocialActor",
+        "description": "The Sun's child (da'ama)",
+        "source": "canonical"
       }
     },
     {
@@ -1076,7 +1288,9 @@ const graphData = {
       "label": "False Messenger",
       "type": "ProppianRole",
       "properties": {
-        "description": "False Messenger"
+        "oicotype": "NarrativeRole",
+        "description": "False Messenger",
+        "source": "canonical"
       }
     },
     {
@@ -1084,7 +1298,9 @@ const graphData = {
       "label": "Healer / Donor",
       "type": "ProppianRole",
       "properties": {
-        "description": "Healer / Donor"
+        "oicotype": "NarrativeRole",
+        "description": "Healer / Donor",
+        "source": "canonical"
       }
     },
     {
@@ -1092,7 +1308,9 @@ const graphData = {
       "label": "Flat Dishes (tan-l'osi)",
       "type": "Object",
       "properties": {
-        "description": "Flat Dishes (tan-l'osi)"
+        "oicotype": "SubsistenceItem",
+        "description": "Flat Dishes (tan-l'osi)",
+        "source": "canonical"
       }
     },
     {
@@ -1100,7 +1318,9 @@ const graphData = {
       "label": "The God (father of !Xuma and Kha||'an)",
       "type": "Person",
       "properties": {
-        "description": "The God (father of !Xuma and Kha||'an)"
+        "oicotype": "SocialActor",
+        "description": "The God (father of !Xuma and Kha||'an)",
+        "source": "canonical"
       }
     },
     {
@@ -1108,7 +1328,9 @@ const graphData = {
       "label": "The elephant girl's roasted flesh",
       "type": "Object",
       "properties": {
-        "description": "The elephant girl's roasted flesh"
+        "oicotype": "SubsistenceItem",
+        "description": "The elephant girl's roasted flesh",
+        "source": "canonical"
       }
     },
     {
@@ -1116,7 +1338,9 @@ const graphData = {
       "label": "The Black man (newcomer)",
       "type": "Person",
       "properties": {
-        "description": "The Black man (newcomer)"
+        "oicotype": "SocialActor",
+        "description": "The Black man (newcomer)",
+        "source": "canonical"
       }
     },
     {
@@ -1124,7 +1348,9 @@ const graphData = {
       "label": "The God (husband of the two hornbill wives)",
       "type": "Person",
       "properties": {
-        "description": "The God (husband of the two hornbill wives)"
+        "oicotype": "SocialActor",
+        "description": "The God (husband of the two hornbill wives)",
+        "source": "canonical"
       }
     },
     {
@@ -1132,7 +1358,9 @@ const graphData = {
       "label": "The Husband (!'hoan)",
       "type": "Person",
       "properties": {
-        "description": "The Husband (!'hoan)"
+        "oicotype": "SocialActor",
+        "description": "The Husband (!'hoan)",
+        "source": "canonical"
       }
     },
     {
@@ -1140,7 +1368,9 @@ const graphData = {
       "label": "The God G!ara",
       "type": "Person",
       "properties": {
-        "description": "The God G!ara"
+        "oicotype": "SocialActor",
+        "description": "The God G!ara",
+        "source": "canonical"
       }
     },
     {
@@ -1148,7 +1378,8 @@ const graphData = {
       "label": "The Sun tucks her cloak between her legs, jumps into the sky and becomes the sun",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The Sun tucks her cloak between her legs, jumps into the sky and becomes the sun"
+        "description": "The Sun tucks her cloak between her legs, jumps into the sky and becomes the sun",
+        "source": "canonical"
       }
     },
     {
@@ -1156,7 +1387,9 @@ const graphData = {
       "label": "Cardinal Woodpecker (!'aun!'aun)",
       "type": "Animal",
       "properties": {
-        "description": "Cardinal Woodpecker (!'aun!'aun)"
+        "oicotype": "KalahariFauna",
+        "description": "Cardinal Woodpecker (!'aun!'aun)",
+        "source": "canonical"
       }
     },
     {
@@ -1164,7 +1397,8 @@ const graphData = {
       "label": "Glara fails to whistle up the dishes (they refuse)",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Glara fails to whistle up the dishes (they refuse)"
+        "description": "Glara fails to whistle up the dishes (they refuse)",
+        "source": "canonical"
       }
     },
     {
@@ -1172,7 +1406,9 @@ const graphData = {
       "label": "Spears of the elephant girl's brothers",
       "type": "Object",
       "properties": {
-        "description": "Spears of the elephant girl's brothers"
+        "oicotype": "SubsistenceItem",
+        "description": "Spears of the elephant girl's brothers",
+        "source": "canonical"
       }
     },
     {
@@ -1180,7 +1416,9 @@ const graphData = {
       "label": "The brothers' mother",
       "type": "Person",
       "properties": {
-        "description": "The brothers' mother"
+        "oicotype": "SocialActor",
+        "description": "The brothers' mother",
+        "source": "canonical"
       }
     },
     {
@@ -1188,7 +1426,8 @@ const graphData = {
       "label": "Mud on ankles exposes Elephant's hoarding",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Mud on ankles exposes Elephant's hoarding"
+        "description": "Mud on ankles exposes Elephant's hoarding",
+        "source": "canonical"
       }
     },
     {
@@ -1196,7 +1435,9 @@ const graphData = {
       "label": "The tall woman across the fire",
       "type": "Person",
       "properties": {
-        "description": "The tall woman across the fire"
+        "oicotype": "SocialActor",
+        "description": "The tall woman across the fire",
+        "source": "canonical"
       }
     },
     {
@@ -1204,7 +1445,9 @@ const graphData = {
       "label": "g||xaru roots (Lapeirousia bainesii)",
       "type": "Object",
       "properties": {
-        "description": "g||xaru roots (Lapeirousia bainesii)"
+        "oicotype": "SubsistenceItem",
+        "description": "g||xaru roots (Lapeirousia bainesii)",
+        "source": "canonical"
       }
     },
     {
@@ -1212,7 +1455,8 @@ const graphData = {
       "label": "Glara attempts to imitate Woodpecker's harvest",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Glara attempts to imitate Woodpecker's harvest"
+        "description": "Glara attempts to imitate Woodpecker's harvest",
+        "source": "canonical"
       }
     },
     {
@@ -1220,7 +1464,8 @@ const graphData = {
       "label": "Next evening the companion offers to roast the roots and heats a wooden paddle",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Next evening the companion offers to roast the roots and heats a wooden paddle"
+        "description": "Next evening the companion offers to roast the roots and heats a wooden paddle",
+        "source": "canonical"
       }
     },
     {
@@ -1228,7 +1473,8 @@ const graphData = {
       "label": "The frightened killers return; the grandmother secretly gives her a magical gemsbok horn",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The frightened killers return; the grandmother secretly gives her a magical gemsbok horn"
+        "description": "The frightened killers return; the grandmother secretly gives her a magical gemsbok horn",
+        "source": "canonical"
       }
     },
     {
@@ -1236,7 +1482,9 @@ const graphData = {
       "label": "Inept Imitator / False Hero",
       "type": "ProppianRole",
       "properties": {
-        "description": "Inept Imitator / False Hero"
+        "oicotype": "NarrativeRole",
+        "description": "Inept Imitator / False Hero",
+        "source": "canonical"
       }
     },
     {
@@ -1244,7 +1492,8 @@ const graphData = {
       "label": "The god rejects his wives as dancers and calls for the tall woman",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The god rejects his wives as dancers and calls for the tall woman"
+        "description": "The god rejects his wives as dancers and calls for the tall woman",
+        "source": "canonical"
       }
     },
     {
@@ -1252,7 +1501,9 @@ const graphData = {
       "label": "The Dance Circle by the Fire",
       "type": "Location",
       "properties": {
-        "description": "The Dance Circle by the Fire"
+        "domain": "Camp",
+        "description": "The Dance Circle by the Fire",
+        "source": "canonical"
       }
     },
     {
@@ -1260,7 +1511,9 @@ const graphData = {
       "label": "Yellow-billed hornbill wife (Tockus flavirostris)",
       "type": "Animal",
       "properties": {
-        "description": "Yellow-billed hornbill wife (Tockus flavirostris)"
+        "oicotype": "KalahariFauna",
+        "description": "Yellow-billed hornbill wife (Tockus flavirostris)",
+        "source": "canonical"
       }
     },
     {
@@ -1268,7 +1521,8 @@ const graphData = {
       "label": "Husband spreads fire throughout the world",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Husband spreads fire throughout the world"
+        "description": "Husband spreads fire throughout the world",
+        "source": "canonical"
       }
     },
     {
@@ -1276,7 +1530,9 @@ const graphData = {
       "label": "Greedy, Refusing Child",
       "type": "ProppianRole",
       "properties": {
-        "description": "Greedy, Refusing Child"
+        "oicotype": "NarrativeRole",
+        "description": "Greedy, Refusing Child",
+        "source": "canonical"
       }
     },
     {
@@ -1284,7 +1540,9 @@ const graphData = {
       "label": "The first cattle",
       "type": "Object",
       "properties": {
-        "description": "The first cattle"
+        "oicotype": "SubsistenceItem",
+        "description": "The first cattle",
+        "source": "canonical"
       }
     },
     {
@@ -1292,7 +1550,8 @@ const graphData = {
       "label": "Moon, with a tortoise, entices the frightened haregirl to give him her !ama bulb",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Moon, with a tortoise, entices the frightened haregirl to give him her !ama bulb"
+        "description": "Moon, with a tortoise, entices the frightened haregirl to give him her !ama bulb",
+        "source": "canonical"
       }
     },
     {
@@ -1300,7 +1559,9 @@ const graphData = {
       "label": "Milk",
       "type": "Object",
       "properties": {
-        "description": "Milk"
+        "oicotype": "SubsistenceItem",
+        "description": "Milk",
+        "source": "canonical"
       }
     },
     {
@@ -1308,7 +1569,9 @@ const graphData = {
       "label": "Villains",
       "type": "ProppianRole",
       "properties": {
-        "description": "Villains"
+        "oicotype": "NarrativeRole",
+        "description": "Villains",
+        "source": "canonical"
       }
     },
     {
@@ -1316,7 +1579,9 @@ const graphData = {
       "label": "Long wooden paddle",
       "type": "Object",
       "properties": {
-        "description": "Long wooden paddle"
+        "oicotype": "SubsistenceItem",
+        "description": "Long wooden paddle",
+        "source": "canonical"
       }
     },
     {
@@ -1324,7 +1589,9 @@ const graphData = {
       "label": "The Bush (open grazing, no kraal)",
       "type": "Location",
       "properties": {
-        "description": "The Bush (open grazing, no kraal)"
+        "domain": "Bush",
+        "description": "The Bush (open grazing, no kraal)",
+        "source": "canonical"
       }
     },
     {
@@ -1332,7 +1599,9 @@ const graphData = {
       "label": "The Abandoned Village (raisin berry patch)",
       "type": "Location",
       "properties": {
-        "description": "The Abandoned Village (raisin berry patch)"
+        "domain": "Liminal",
+        "description": "The Abandoned Village (raisin berry patch)",
+        "source": "canonical"
       }
     },
     {
@@ -1340,7 +1609,8 @@ const graphData = {
       "label": "The younger brother leaps from his mother's womb, is rubbed with ochre, and joins the journey",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The younger brother leaps from his mother's womb, is rubbed with ochre, and joins the journey"
+        "description": "The younger brother leaps from his mother's womb, is rubbed with ochre, and joins the journey",
+        "source": "canonical"
       }
     },
     {
@@ -1348,7 +1618,9 @@ const graphData = {
       "label": "Ground ochre (and fat)",
       "type": "Object",
       "properties": {
-        "description": "Ground ochre (and fat)"
+        "oicotype": "SubsistenceItem",
+        "description": "Ground ochre (and fat)",
+        "source": "canonical"
       }
     },
     {
@@ -1356,7 +1628,8 @@ const graphData = {
       "label": "She travels with them to the in-laws, asking about every landmark on the way",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "She travels with them to the in-laws, asking about every landmark on the way"
+        "description": "She travels with them to the in-laws, asking about every landmark on the way",
+        "source": "canonical"
       }
     },
     {
@@ -1364,7 +1637,8 @@ const graphData = {
       "label": "The Sun goes down",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The Sun goes down"
+        "description": "The Sun goes down",
+        "source": "canonical"
       }
     },
     {
@@ -1372,7 +1646,9 @@ const graphData = {
       "label": "Middle of the night (g!u !om)",
       "type": "Object",
       "properties": {
-        "description": "Middle of the night (g!u !om)"
+        "oicotype": "SubsistenceItem",
+        "description": "Middle of the night (g!u !om)",
+        "source": "canonical"
       }
     },
     {
@@ -1380,7 +1656,8 @@ const graphData = {
       "label": "!Xuma and Kha||'an go hunting and kill an eland",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "!Xuma and Kha||'an go hunting and kill an eland"
+        "description": "!Xuma and Kha||'an go hunting and kill an eland",
+        "source": "canonical"
       }
     },
     {
@@ -1388,7 +1665,8 @@ const graphData = {
       "label": "Woman finds fire first",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Woman finds fire first"
+        "description": "Woman finds fire first",
+        "source": "canonical"
       }
     },
     {
@@ -1396,7 +1674,9 @@ const graphData = {
       "label": "Renewability / Resurrection Magic",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Renewability / Resurrection Magic"
+        "oicotype": "SupernaturalAgent",
+        "description": "Renewability / Resurrection Magic",
+        "source": "canonical"
       }
     },
     {
@@ -1404,7 +1684,9 @@ const graphData = {
       "label": "Sorghum and maize",
       "type": "Object",
       "properties": {
-        "description": "Sorghum and maize"
+        "oicotype": "SubsistenceItem",
+        "description": "Sorghum and maize",
+        "source": "canonical"
       }
     },
     {
@@ -1412,7 +1694,8 @@ const graphData = {
       "label": "The daughter recognizes her mother's laugh and nurses: 'The old people give you life'",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The daughter recognizes her mother's laugh and nurses: 'The old people give you life'"
+        "description": "The daughter recognizes her mother's laugh and nurses: 'The old people give you life'",
+        "source": "canonical"
       }
     },
     {
@@ -1420,7 +1703,9 @@ const graphData = {
       "label": "Resource Hoarder",
       "type": "ProppianRole",
       "properties": {
-        "description": "Resource Hoarder"
+        "oicotype": "NarrativeRole",
+        "description": "Resource Hoarder",
+        "source": "canonical"
       }
     },
     {
@@ -1428,7 +1713,9 @@ const graphData = {
       "label": "Coals of the boys' trail fires",
       "type": "Object",
       "properties": {
-        "description": "Coals of the boys' trail fires"
+        "oicotype": "SubsistenceItem",
+        "description": "Coals of the boys' trail fires",
+        "source": "canonical"
       }
     },
     {
@@ -1436,7 +1723,9 @@ const graphData = {
       "label": "Flicked sand",
       "type": "Object",
       "properties": {
-        "description": "Flicked sand"
+        "oicotype": "SubsistenceItem",
+        "description": "Flicked sand",
+        "source": "canonical"
       }
     },
     {
@@ -1444,7 +1733,9 @@ const graphData = {
       "label": "Complicit Husband",
       "type": "ProppianRole",
       "properties": {
-        "description": "Complicit Husband"
+        "oicotype": "NarrativeRole",
+        "description": "Complicit Husband",
+        "source": "canonical"
       }
     },
     {
@@ -1452,7 +1743,8 @@ const graphData = {
       "label": "The tall woman ignores him and keeps singing; he refuses another dancer and calls again",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The tall woman ignores him and keeps singing; he refuses another dancer and calls again"
+        "description": "The tall woman ignores him and keeps singing; he refuses another dancer and calls again",
+        "source": "canonical"
       }
     },
     {
@@ -1460,7 +1752,8 @@ const graphData = {
       "label": "Glara tries to fly but falls and his stomach bursts",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Glara tries to fly but falls and his stomach bursts"
+        "description": "Glara tries to fly but falls and his stomach bursts",
+        "source": "canonical"
       }
     },
     {
@@ -1468,7 +1761,8 @@ const graphData = {
       "label": "Urine refuses Elephant; Elephant attempts to grab wife with trunk",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Urine refuses Elephant; Elephant attempts to grab wife with trunk"
+        "description": "Urine refuses Elephant; Elephant attempts to grab wife with trunk",
+        "source": "canonical"
       }
     },
     {
@@ -1476,7 +1770,9 @@ const graphData = {
       "label": "Metal awl in the skin apron's waistband",
       "type": "Object",
       "properties": {
-        "description": "Metal awl in the skin apron's waistband"
+        "oicotype": "SubsistenceItem",
+        "description": "Metal awl in the skin apron's waistband",
+        "source": "canonical"
       }
     },
     {
@@ -1484,7 +1780,9 @@ const graphData = {
       "label": "High Tree (Bush)",
       "type": "Location",
       "properties": {
-        "description": "High Tree (Bush)"
+        "domain": "Bush",
+        "description": "High Tree (Bush)",
+        "source": "canonical"
       }
     },
     {
@@ -1492,7 +1790,9 @@ const graphData = {
       "label": "Raisin berries",
       "type": "Object",
       "properties": {
-        "description": "Raisin berries"
+        "oicotype": "SubsistenceItem",
+        "description": "Raisin berries",
+        "source": "canonical"
       }
     },
     {
@@ -1500,7 +1800,9 @@ const graphData = {
       "label": "Donor / Restorer",
       "type": "ProppianRole",
       "properties": {
-        "description": "Donor / Restorer"
+        "oicotype": "NarrativeRole",
+        "description": "Donor / Restorer",
+        "source": "canonical"
       }
     },
     {
@@ -1508,7 +1810,8 @@ const graphData = {
       "label": "She throws her charred gemsbok cloak on Moon's face: the marks on the moon",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "She throws her charred gemsbok cloak on Moon's face: the marks on the moon"
+        "description": "She throws her charred gemsbok cloak on Moon's face: the marks on the moon",
+        "source": "canonical"
       }
     },
     {
@@ -1516,7 +1819,8 @@ const graphData = {
       "label": "Much later the tall woman, bangles clinking, comes and dances with him",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Much later the tall woman, bangles clinking, comes and dances with him"
+        "description": "Much later the tall woman, bangles clinking, comes and dances with him",
+        "source": "canonical"
       }
     },
     {
@@ -1524,7 +1828,8 @@ const graphData = {
       "label": "A little wind carries her blood to the grandmother, who keeps it in a jar",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "A little wind carries her blood to the grandmother, who keeps it in a jar"
+        "description": "A little wind carries her blood to the grandmother, who keeps it in a jar",
+        "source": "canonical"
       }
     },
     {
@@ -1532,7 +1837,9 @@ const graphData = {
       "label": "The Ground (Camp)",
       "type": "Location",
       "properties": {
-        "description": "The Ground (Camp)"
+        "domain": "Camp",
+        "description": "The Ground (Camp)",
+        "source": "canonical"
       }
     },
     {
@@ -1540,7 +1847,9 @@ const graphData = {
       "label": "Grey hornbill wife (Tockus nasutus)",
       "type": "Animal",
       "properties": {
-        "description": "Grey hornbill wife (Tockus nasutus)"
+        "oicotype": "KalahariFauna",
+        "description": "Grey hornbill wife (Tockus nasutus)",
+        "source": "canonical"
       }
     },
     {
@@ -1548,7 +1857,8 @@ const graphData = {
       "label": "She blows the horn and the brothers' village is broken apart and flattened",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "She blows the horn and the brothers' village is broken apart and flattened"
+        "description": "She blows the horn and the brothers' village is broken apart and flattened",
+        "source": "canonical"
       }
     },
     {
@@ -1556,7 +1866,9 @@ const graphData = {
       "label": "Droplets of the elephant girl's blood",
       "type": "Object",
       "properties": {
-        "description": "Droplets of the elephant girl's blood"
+        "oicotype": "SubsistenceItem",
+        "description": "Droplets of the elephant girl's blood",
+        "source": "canonical"
       }
     },
     {
@@ -1564,7 +1876,9 @@ const graphData = {
       "label": "Moon's power to die and live again",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Moon's power to die and live again"
+        "oicotype": "SupernaturalAgent",
+        "description": "Moon's power to die and live again",
+        "source": "canonical"
       }
     },
     {
@@ -1572,7 +1886,9 @@ const graphData = {
       "label": "Meteor: 'the fire that hangs in the sky and kills people'",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Meteor: 'the fire that hangs in the sky and kills people'"
+        "oicotype": "SupernaturalAgent",
+        "description": "Meteor: 'the fire that hangs in the sky and kills people'",
+        "source": "canonical"
       }
     },
     {
@@ -1580,7 +1896,9 @@ const graphData = {
       "label": "Beautiful Aardvark Girl (G!kun||homdima)",
       "type": "Animal",
       "properties": {
-        "description": "Beautiful Aardvark Girl (G!kun||homdima)"
+        "oicotype": "KalahariFauna",
+        "description": "Beautiful Aardvark Girl (G!kun||homdima)",
+        "source": "canonical"
       }
     },
     {
@@ -1588,7 +1906,9 @@ const graphData = {
       "label": "Intermediary / Informant",
       "type": "ProppianRole",
       "properties": {
-        "description": "Intermediary / Informant"
+        "oicotype": "NarrativeRole",
+        "description": "Intermediary / Informant",
+        "source": "canonical"
       }
     },
     {
@@ -1596,7 +1916,9 @@ const graphData = {
       "label": "The In-laws' Village",
       "type": "Location",
       "properties": {
-        "description": "The In-laws' Village"
+        "domain": "Camp",
+        "description": "The In-laws' Village",
+        "source": "canonical"
       }
     },
     {
@@ -1604,7 +1926,8 @@ const graphData = {
       "label": "The older brother marries the elephant girl; she bears a daughter at his mother's village",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The older brother marries the elephant girl; she bears a daughter at his mother's village"
+        "description": "The older brother marries the elephant girl; she bears a daughter at his mother's village",
+        "source": "canonical"
       }
     },
     {
@@ -1612,7 +1935,9 @@ const graphData = {
       "label": "Selfish Husband / Villain",
       "type": "ProppianRole",
       "properties": {
-        "description": "Selfish Husband / Villain"
+        "oicotype": "NarrativeRole",
+        "description": "Selfish Husband / Villain",
+        "source": "canonical"
       }
     },
     {
@@ -1620,7 +1945,9 @@ const graphData = {
       "label": "The Sky",
       "type": "Location",
       "properties": {
-        "description": "The Sky"
+        "domain": "Liminal",
+        "description": "The Sky",
+        "source": "canonical"
       }
     },
     {
@@ -1628,7 +1955,8 @@ const graphData = {
       "label": "The Moon returns, waxing into the big Moon again",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The Moon returns, waxing into the big Moon again"
+        "description": "The Moon returns, waxing into the big Moon again",
+        "source": "canonical"
       }
     },
     {
@@ -1636,7 +1964,9 @@ const graphData = {
       "label": "Honey (zo)",
       "type": "Object",
       "properties": {
-        "description": "Honey (zo)"
+        "oicotype": "SubsistenceItem",
+        "description": "Honey (zo)",
+        "source": "canonical"
       }
     },
     {
@@ -1644,7 +1974,9 @@ const graphData = {
       "label": "Usurper / Trickster-Victor",
       "type": "ProppianRole",
       "properties": {
-        "description": "Usurper / Trickster-Victor"
+        "oicotype": "NarrativeRole",
+        "description": "Usurper / Trickster-Victor",
+        "source": "canonical"
       }
     },
     {
@@ -1652,7 +1984,8 @@ const graphData = {
       "label": "Flies bite and sew up Glara's stomach",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Flies bite and sew up Glara's stomach"
+        "description": "Flies bite and sew up Glara's stomach",
+        "source": "canonical"
       }
     },
     {
@@ -1660,7 +1993,9 @@ const graphData = {
       "label": "Magical gemsbok horn",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Magical gemsbok horn"
+        "oicotype": "SupernaturalAgent",
+        "description": "Magical gemsbok horn",
+        "source": "canonical"
       }
     },
     {
@@ -1668,7 +2003,9 @@ const graphData = {
       "label": "Water (g!u)",
       "type": "Object",
       "properties": {
-        "description": "Water (g!u)"
+        "oicotype": "SubsistenceItem",
+        "description": "Water (g!u)",
+        "source": "canonical"
       }
     },
     {
@@ -1676,7 +2013,9 @@ const graphData = {
       "label": "Skilled Provider / Successful Model",
       "type": "ProppianRole",
       "properties": {
-        "description": "Skilled Provider / Successful Model"
+        "oicotype": "NarrativeRole",
+        "description": "Skilled Provider / Successful Model",
+        "source": "canonical"
       }
     },
     {
@@ -1684,7 +2023,9 @@ const graphData = {
       "label": "Village of the Old People",
       "type": "Location",
       "properties": {
-        "description": "Village of the Old People"
+        "domain": "Camp",
+        "description": "Village of the Old People",
+        "source": "canonical"
       }
     },
     {
@@ -1692,7 +2033,9 @@ const graphData = {
       "label": "The Camp (Fire Site)",
       "type": "Location",
       "properties": {
-        "description": "The Camp (Fire Site)"
+        "domain": "Camp",
+        "description": "The Camp (Fire Site)",
+        "source": "canonical"
       }
     },
     {
@@ -1700,7 +2043,9 @@ const graphData = {
       "label": "Axe",
       "type": "Object",
       "properties": {
-        "description": "Axe"
+        "oicotype": "SubsistenceItem",
+        "description": "Axe",
+        "source": "canonical"
       }
     },
     {
@@ -1708,7 +2053,9 @@ const graphData = {
       "label": "Helper / Guide",
       "type": "ProppianRole",
       "properties": {
-        "description": "Helper / Guide"
+        "oicotype": "NarrativeRole",
+        "description": "Helper / Guide",
+        "source": "canonical"
       }
     },
     {
@@ -1716,7 +2063,8 @@ const graphData = {
       "label": "The god beats her stomach with the paddle, throws her down, and she dies",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The god beats her stomach with the paddle, throws her down, and she dies"
+        "description": "The god beats her stomach with the paddle, throws her down, and she dies",
+        "source": "canonical"
       }
     },
     {
@@ -1724,7 +2072,9 @@ const graphData = {
       "label": "Seeker / Rescuing Father",
       "type": "ProppianRole",
       "properties": {
-        "description": "Seeker / Rescuing Father"
+        "oicotype": "NarrativeRole",
+        "description": "Seeker / Rescuing Father",
+        "source": "canonical"
       }
     },
     {
@@ -1732,7 +2082,9 @@ const graphData = {
       "label": "The eland's stomach contents (chyme)",
       "type": "Object",
       "properties": {
-        "description": "The eland's stomach contents (chyme)"
+        "oicotype": "SubsistenceItem",
+        "description": "The eland's stomach contents (chyme)",
+        "source": "canonical"
       }
     },
     {
@@ -1740,7 +2092,9 @@ const graphData = {
       "label": "Eland (n!ang)",
       "type": "Object",
       "properties": {
-        "description": "Eland (n!ang)"
+        "oicotype": "SubsistenceItem",
+        "description": "Eland (n!ang)",
+        "source": "canonical"
       }
     },
     {
@@ -1748,7 +2102,8 @@ const graphData = {
       "label": "Moon: tell the people that when they die they will imitate me and live again",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "Moon: tell the people that when they die they will imitate me and live again"
+        "description": "Moon: tell the people that when they die they will imitate me and live again",
+        "source": "canonical"
       }
     },
     {
@@ -1756,7 +2111,9 @@ const graphData = {
       "label": "Heroine / Victim-Avenger",
       "type": "ProppianRole",
       "properties": {
-        "description": "Heroine / Victim-Avenger"
+        "oicotype": "NarrativeRole",
+        "description": "Heroine / Victim-Avenger",
+        "source": "canonical"
       }
     },
     {
@@ -1764,7 +2121,9 @@ const graphData = {
       "label": "The Sun (|am)",
       "type": "Person",
       "properties": {
-        "description": "The Sun (|am)"
+        "oicotype": "SocialActor",
+        "description": "The Sun (|am)",
+        "source": "canonical"
       }
     },
     {
@@ -1772,7 +2131,8 @@ const graphData = {
       "label": "The companion burns his ankle-eyes open with the hot paddle and roasts him with the roots",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The companion burns his ankle-eyes open with the hot paddle and roasts him with the roots"
+        "description": "The companion burns his ankle-eyes open with the hot paddle and roasts him with the roots",
+        "source": "canonical"
       }
     },
     {
@@ -1780,7 +2140,9 @@ const graphData = {
       "label": "Sky-born power (a 'sky's thing')",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Sky-born power (a 'sky's thing')"
+        "oicotype": "SupernaturalAgent",
+        "description": "Sky-born power (a 'sky's thing')",
+        "source": "canonical"
       }
     },
     {
@@ -1788,7 +2150,9 @@ const graphData = {
       "label": "Villain (sky-born younger brother)",
       "type": "ProppianRole",
       "properties": {
-        "description": "Villain (sky-born younger brother)"
+        "oicotype": "NarrativeRole",
+        "description": "Villain (sky-born younger brother)",
+        "source": "canonical"
       }
     },
     {
@@ -1796,7 +2160,9 @@ const graphData = {
       "label": "Raw Food",
       "type": "Object",
       "properties": {
-        "description": "Raw Food"
+        "oicotype": "SubsistenceItem",
+        "description": "Raw Food",
+        "source": "canonical"
       }
     },
     {
@@ -1804,7 +2170,9 @@ const graphData = {
       "label": "Power to leap into the sky and become the sun",
       "type": "MagicalAgent",
       "properties": {
-        "description": "Power to leap into the sky and become the sun"
+        "oicotype": "SupernaturalAgent",
+        "description": "Power to leap into the sky and become the sun",
+        "source": "canonical"
       }
     },
     {
@@ -1812,7 +2180,9 @@ const graphData = {
       "label": "Skin cloak (kaross)",
       "type": "Object",
       "properties": {
-        "description": "Skin cloak (kaross)"
+        "oicotype": "SubsistenceItem",
+        "description": "Skin cloak (kaross)",
+        "source": "canonical"
       }
     },
     {
@@ -1820,7 +2190,9 @@ const graphData = {
       "label": "Flies (zoaqzoaq)",
       "type": "Animal",
       "properties": {
-        "description": "Flies (zoaqzoaq)"
+        "oicotype": "KalahariFauna",
+        "description": "Flies (zoaqzoaq)",
+        "source": "canonical"
       }
     },
     {
@@ -1828,7 +2200,9 @@ const graphData = {
       "label": "Charred female gemsbok skin cloak",
       "type": "Object",
       "properties": {
-        "description": "Charred female gemsbok skin cloak"
+        "oicotype": "SubsistenceItem",
+        "description": "Charred female gemsbok skin cloak",
+        "source": "canonical"
       }
     },
     {
@@ -1836,21 +2210,28 @@ const graphData = {
       "label": "Clinking bangles",
       "type": "Object",
       "properties": {
-        "description": "Clinking bangles"
+        "oicotype": "SubsistenceItem",
+        "description": "Clinking bangles",
+        "source": "canonical"
       }
     },
     {
       "id": "Recognizer",
       "label": "Recognizer",
       "type": "ProppianRole",
-      "properties": {}
+      "properties": {
+        "oicotype": "NarrativeRole",
+        "source": "canonical"
+      }
     },
     {
       "id": "Jar_S14",
       "label": "Jar / skin bag (growing vessel)",
       "type": "Object",
       "properties": {
-        "description": "Jar / skin bag (growing vessel)"
+        "oicotype": "SubsistenceItem",
+        "description": "Jar / skin bag (growing vessel)",
+        "source": "canonical"
       }
     },
     {
@@ -1858,7 +2239,9 @@ const graphData = {
       "label": "g||xaru roots (Lapeirousia bainesii)",
       "type": "Object",
       "properties": {
-        "description": "g||xaru roots (Lapeirousia bainesii)"
+        "oicotype": "SubsistenceItem",
+        "description": "g||xaru roots (Lapeirousia bainesii)",
+        "source": "canonical"
       }
     },
     {
@@ -1866,7 +2249,9 @@ const graphData = {
       "label": "The Home Village",
       "type": "Location",
       "properties": {
-        "description": "The Home Village"
+        "domain": "Camp",
+        "description": "The Home Village",
+        "source": "canonical"
       }
     },
     {
@@ -1874,7 +2259,8 @@ const graphData = {
       "label": "The dance breaks up; alone, the god praises himself: 'This is how I do things!'",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The dance breaks up; alone, the god praises himself: 'This is how I do things!'"
+        "description": "The dance breaks up; alone, the god praises himself: 'This is how I do things!'",
+        "source": "canonical"
       }
     },
     {
@@ -1882,7 +2268,9 @@ const graphData = {
       "label": "Mortal Witness",
       "type": "ProppianRole",
       "properties": {
-        "description": "Mortal Witness"
+        "oicotype": "NarrativeRole",
+        "description": "Mortal Witness",
+        "source": "canonical"
       }
     },
     {
@@ -1890,7 +2278,9 @@ const graphData = {
       "label": "Darkness (djo)",
       "type": "Object",
       "properties": {
-        "description": "Darkness (djo)"
+        "oicotype": "SubsistenceItem",
+        "description": "Darkness (djo)",
+        "source": "canonical"
       }
     },
     {
@@ -1898,7 +2288,9 @@ const graphData = {
       "label": "Cooked Food",
       "type": "Object",
       "properties": {
-        "description": "Cooked Food"
+        "oicotype": "SubsistenceItem",
+        "description": "Cooked Food",
+        "source": "canonical"
       }
     },
     {
@@ -1906,7 +2298,9 @@ const graphData = {
       "label": "The animals who dance in turn",
       "type": "Animal",
       "properties": {
-        "description": "The animals who dance in turn"
+        "oicotype": "KalahariFauna",
+        "description": "The animals who dance in turn",
+        "source": "canonical"
       }
     },
     {
@@ -1914,7 +2308,9 @@ const graphData = {
       "label": "Reluctant Dancer / Victim",
       "type": "ProppianRole",
       "properties": {
-        "description": "Reluctant Dancer / Victim"
+        "oicotype": "NarrativeRole",
+        "description": "Reluctant Dancer / Victim",
+        "source": "canonical"
       }
     },
     {
@@ -1922,7 +2318,9 @@ const graphData = {
       "label": "Roasted tortoise (zam)",
       "type": "Object",
       "properties": {
-        "description": "Roasted tortoise (zam)"
+        "oicotype": "SubsistenceItem",
+        "description": "Roasted tortoise (zam)",
+        "source": "canonical"
       }
     },
     {
@@ -1930,7 +2328,9 @@ const graphData = {
       "label": "The New Village",
       "type": "Location",
       "properties": {
-        "description": "The New Village"
+        "domain": "Camp",
+        "description": "The New Village",
+        "source": "canonical"
       }
     },
     {
@@ -1938,7 +2338,9 @@ const graphData = {
       "label": "The Bush (digging grounds)",
       "type": "Location",
       "properties": {
-        "description": "The Bush (digging grounds)"
+        "domain": "Bush",
+        "description": "The Bush (digging grounds)",
+        "source": "canonical"
       }
     },
     {
@@ -1946,7 +2348,9 @@ const graphData = {
       "label": "Immortality Giver / Punisher",
       "type": "ProppianRole",
       "properties": {
-        "description": "Immortality Giver / Punisher"
+        "oicotype": "NarrativeRole",
+        "description": "Immortality Giver / Punisher",
+        "source": "canonical"
       }
     },
     {
@@ -1954,7 +2358,9 @@ const graphData = {
       "label": "Victimized Heroes",
       "type": "ProppianRole",
       "properties": {
-        "description": "Victimized Heroes"
+        "oicotype": "NarrativeRole",
+        "description": "Victimized Heroes",
+        "source": "canonical"
       }
     },
     {
@@ -1962,7 +2368,9 @@ const graphData = {
       "label": "Raisin berries (red ripe / white unripe)",
       "type": "Object",
       "properties": {
-        "description": "Raisin berries (red ripe / white unripe)"
+        "oicotype": "SubsistenceItem",
+        "description": "Raisin berries (red ripe / white unripe)",
+        "source": "canonical"
       }
     },
     {
@@ -1970,7 +2378,84 @@ const graphData = {
       "label": "The Children (si!a)",
       "type": "Person",
       "properties": {
-        "description": "The Children (si!a)"
+        "oicotype": "SocialActor",
+        "description": "The Children (si!a)",
+        "source": "canonical"
+      }
+    },
+    {
+      "id": "Lack",
+      "label": "Lack",
+      "type": "Motifeme",
+      "properties": {
+        "description": "A need, absence, hoarding, or deficiency exists in the community."
+      }
+    },
+    {
+      "id": "Interdiction",
+      "label": "Interdiction",
+      "type": "Motifeme",
+      "properties": {
+        "description": "A prohibition, warning, or taboo is stated by an elder or authority."
+      }
+    },
+    {
+      "id": "Violation",
+      "label": "Violation",
+      "type": "Motifeme",
+      "properties": {
+        "description": "The interdiction, taboo, or communal sharing norm is broken."
+      }
+    },
+    {
+      "id": "Consequence",
+      "label": "Consequence",
+      "type": "Motifeme",
+      "properties": {
+        "description": "A result follows the violation (punishment, transformation, loss, or death)."
+      }
+    },
+    {
+      "id": "Mediation",
+      "label": "Mediation",
+      "type": "Motifeme",
+      "properties": {
+        "description": "A helper, trickster, elder, or ancestral spirit intervenes."
+      }
+    },
+    {
+      "id": "Lack Liquidated",
+      "label": "Lack Liquidated",
+      "type": "Motifeme",
+      "properties": {
+        "description": "The original lack is resolved and communal sharing or life is restored."
+      }
+    },
+    {
+      "id": "Departure",
+      "label": "Departure",
+      "type": "Motifeme",
+      "properties": {
+        "description": "A character leaves camp for the bush or embarks on a journey."
+      }
+    },
+    {
+      "id": "Return",
+      "label": "Return",
+      "type": "Motifeme",
+      "properties": {
+        "description": "A character returns from the bush or journey to camp or home."
+      }
+    },
+    {
+      "id": "S1",
+      "label": "The Moon Dies and Lives Again",
+      "type": "Story",
+      "properties": {
+        "theme": "death rebirth moon cycle",
+        "source": "canonical",
+        "title": "The Moon Dies and Lives Again",
+        "status": "accepted"
       }
     },
     {
@@ -1978,7 +2463,8 @@ const graphData = {
       "label": "The brothers return home with the meat; the people accuse them of a great wrong",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The brothers return home with the meat; the people accuse them of a great wrong"
+        "description": "The brothers return home with the meat; the people accuse them of a great wrong",
+        "source": "canonical"
       }
     },
     {
@@ -1986,7 +2472,8 @@ const graphData = {
       "label": "The younger brother perches on their spear points like a Gomhaya bird and defeats them",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The younger brother perches on their spear points like a Gomhaya bird and defeats them"
+        "description": "The younger brother perches on their spear points like a Gomhaya bird and defeats them",
+        "source": "canonical"
       }
     },
     {
@@ -1994,7 +2481,8 @@ const graphData = {
       "label": "The Moon tells the people they will die and live again",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The Moon tells the people they will die and live again"
+        "description": "The Moon tells the people they will die and live again",
+        "source": "canonical"
       }
     },
     {
@@ -2002,7 +2490,8 @@ const graphData = {
       "label": "She offers the bulb on her digging stick; Moon pulls her into the hole",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "She offers the bulb on her digging stick; Moon pulls her into the hole"
+        "description": "She offers the bulb on her digging stick; Moon pulls her into the hole",
+        "source": "canonical"
       }
     },
     {
@@ -2010,7 +2499,9 @@ const graphData = {
       "label": "Digging stick",
       "type": "Object",
       "properties": {
-        "description": "Digging stick"
+        "oicotype": "SubsistenceItem",
+        "description": "Digging stick",
+        "source": "canonical"
       }
     },
     {
@@ -2018,7 +2509,9 @@ const graphData = {
       "label": "The Sun as a woman (|am)",
       "type": "Person",
       "properties": {
-        "description": "The Sun as a woman (|am)"
+        "oicotype": "SocialActor",
+        "description": "The Sun as a woman (|am)",
+        "source": "canonical"
       }
     },
     {
@@ -2026,7 +2519,8 @@ const graphData = {
       "label": "The Sun, still a person, roasts a tortoise and shares it with her son",
       "type": "NarrativeFunction",
       "properties": {
-        "description": "The Sun, still a person, roasts a tortoise and shares it with her son"
+        "description": "The Sun, still a person, roasts a tortoise and shares it with her son",
+        "source": "canonical"
       }
     },
     {
@@ -2034,7 +2528,9 @@ const graphData = {
       "label": "Kha||'an (god's son)",
       "type": "Person",
       "properties": {
-        "description": "Kha||'an (god's son)"
+        "oicotype": "SocialActor",
+        "description": "Kha||'an (god's son)",
+        "source": "canonical"
       }
     },
     {
@@ -2042,7 +2538,119 @@ const graphData = {
       "label": "Elephant girl's grandmother",
       "type": "Person",
       "properties": {
-        "description": "Elephant girl's grandmother"
+        "oicotype": "SocialActor",
+        "description": "Elephant girl's grandmother",
+        "source": "canonical"
+      }
+    },
+    {
+      "id": "S2",
+      "label": "The Honey and the Flies",
+      "type": "Story",
+      "properties": {
+        "theme": "sharing honey imitation whistling magic",
+        "source": "canonical",
+        "title": "The Honey and the Flies",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "S3",
+      "label": "A Woman First Found Fire",
+      "type": "Story",
+      "properties": {
+        "theme": "fire cooking sharing theft",
+        "source": "canonical",
+        "title": "A Woman First Found Fire",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "S4",
+      "label": "The Elephant First Found Water",
+      "type": "Story",
+      "properties": {
+        "theme": "water hoarding rainmaking sharing",
+        "source": "canonical",
+        "title": "The Elephant First Found Water",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "S8",
+      "label": "The Sun's Child",
+      "type": "Story",
+      "properties": {
+        "theme": "greed sharing sun child transformation",
+        "source": "canonical",
+        "title": "The Sun's Child",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "S9",
+      "label": "The God and the Dance",
+      "type": "Story",
+      "properties": {
+        "theme": "secret eating hoarding dance punishment",
+        "source": "canonical",
+        "title": "The God and the Dance",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "S10",
+      "label": "Tug-of-War",
+      "type": "Story",
+      "properties": {
+        "theme": "cattle sharing refusal foraging usurpation",
+        "source": "canonical",
+        "title": "Tug-of-War",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "S11",
+      "label": "Eyes-on-his-Ankles",
+      "type": "Story",
+      "properties": {
+        "theme": "digging roots deception monster bush",
+        "source": "canonical",
+        "title": "Eyes-on-his-Ankles",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "S12",
+      "label": "The Two Boys and the Lions",
+      "type": "Story",
+      "properties": {
+        "theme": "hunting eland lions resurrection tracking",
+        "source": "canonical",
+        "title": "The Two Boys and the Lions",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "S13",
+      "label": "The Haregirl and the Moon",
+      "type": "Story",
+      "properties": {
+        "theme": "abandonment waterhole moon death message",
+        "source": "canonical",
+        "title": "The Haregirl and the Moon",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "S14",
+      "label": "The Beautiful Elephant Girl",
+      "type": "Story",
+      "properties": {
+        "theme": "kinship murder blood regrowth vengeance",
+        "source": "canonical",
+        "title": "The Beautiful Elephant Girl",
+        "status": "accepted"
       }
     }
   ],
@@ -4121,6 +4729,916 @@ const graphData = {
       "from": "S13_Move4_Abandonment",
       "to": "S13_Move3_Deception",
       "label": "follows"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move17_Vengeance",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move17_Vengeance",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move16_Journey",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move16_Journey",
+      "to": "Departure",
+      "label": "instantiates"
+    },
+    {
+      "from": "S4",
+      "to": "S4_Move3_Tracking",
+      "label": "has_move"
+    },
+    {
+      "from": "S4_Move3_Tracking",
+      "to": "Departure",
+      "label": "instantiates"
+    },
+    {
+      "from": "S4",
+      "to": "S4_Move2_Exposure",
+      "label": "has_move"
+    },
+    {
+      "from": "S4_Move2_Exposure",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S10",
+      "to": "S10_Move3_HerdToVillage",
+      "label": "has_move"
+    },
+    {
+      "from": "S10_Move3_HerdToVillage",
+      "to": "Return",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move1_Marriage",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move1_Marriage",
+      "to": "Lack Liquidated",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move8_Cannibalism",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move8_Cannibalism",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S10",
+      "to": "S10_Move5_PotRefusal",
+      "label": "has_move"
+    },
+    {
+      "from": "S10_Move5_PotRefusal",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S4",
+      "to": "S4_Move1_Hoarding",
+      "label": "has_move"
+    },
+    {
+      "from": "S4_Move1_Hoarding",
+      "to": "Lack",
+      "label": "instantiates"
+    },
+    {
+      "from": "S12",
+      "to": "S12_Move10_Feast",
+      "label": "has_move"
+    },
+    {
+      "from": "S12_Move10_Feast",
+      "to": "Return",
+      "label": "instantiates"
+    },
+    {
+      "from": "S3",
+      "to": "S3_Move4_Theft",
+      "label": "has_move"
+    },
+    {
+      "from": "S3_Move4_Theft",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move9_AnthillHiding",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move9_AnthillHiding",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S10",
+      "to": "S10_Move8_Origin",
+      "label": "has_move"
+    },
+    {
+      "from": "S10_Move8_Origin",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move3_SkyBirth",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move3_SkyBirth",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S3",
+      "to": "S3_Move3_HusbandDeprived",
+      "label": "has_move"
+    },
+    {
+      "from": "S3_Move3_HusbandDeprived",
+      "to": "Lack",
+      "label": "instantiates"
+    },
+    {
+      "from": "S10",
+      "to": "S10_Move7_Usurpation",
+      "label": "has_move"
+    },
+    {
+      "from": "S10_Move7_Usurpation",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S10",
+      "to": "S10_Move6_TugOfWar",
+      "label": "has_move"
+    },
+    {
+      "from": "S10_Move6_TugOfWar",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S2",
+      "to": "S2_Move6_Rescue",
+      "label": "has_move"
+    },
+    {
+      "from": "S2_Move6_Rescue",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S4",
+      "to": "S4_Move7_Rainmaking",
+      "label": "has_move"
+    },
+    {
+      "from": "S4_Move7_Rainmaking",
+      "to": "Lack Liquidated",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move9_DistortedMessage",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move9_DistortedMessage",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move7_BloodWind",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move7_BloodWind",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move10_FailedRevenge",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move10_FailedRevenge",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S10",
+      "to": "S10_Move1_Ownership",
+      "label": "has_move"
+    },
+    {
+      "from": "S10_Move1_Ownership",
+      "to": "Lack",
+      "label": "instantiates"
+    },
+    {
+      "from": "S2",
+      "to": "S2_Move3_Imitation",
+      "label": "has_move"
+    },
+    {
+      "from": "S2_Move3_Imitation",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move6_Enticement",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move6_Enticement",
+      "to": "Interdiction",
+      "label": "instantiates"
+    },
+    {
+      "from": "S11",
+      "to": "S11_Move3_Test",
+      "label": "has_move"
+    },
+    {
+      "from": "S11_Move3_Test",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move5_ThornRuse",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move5_ThornRuse",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move1_Disappearance",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move1_Disappearance",
+      "to": "Lack",
+      "label": "instantiates"
+    },
+    {
+      "from": "S2",
+      "to": "S2_Move1_Harvest",
+      "label": "has_move"
+    },
+    {
+      "from": "S2_Move1_Harvest",
+      "to": "Lack",
+      "label": "instantiates"
+    },
+    {
+      "from": "S9",
+      "to": "S9_Move7_Dance",
+      "label": "has_move"
+    },
+    {
+      "from": "S9_Move7_Dance",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move11_Retaliation",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move11_Retaliation",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S9",
+      "to": "S9_Move8_Murder",
+      "label": "has_move"
+    },
+    {
+      "from": "S9_Move8_Murder",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move8_Message",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move8_Message",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S11",
+      "to": "S11_Move1_Digging",
+      "label": "has_move"
+    },
+    {
+      "from": "S11_Move1_Digging",
+      "to": "Departure",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move4_Abandonment",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move4_Abandonment",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move2_Journey",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move2_Journey",
+      "to": "Departure",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move10_Punishment",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move10_Punishment",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move14_Recognition",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move14_Recognition",
+      "to": "Return",
+      "label": "instantiates"
+    },
+    {
+      "from": "S4",
+      "to": "S4_Move5_Confrontation",
+      "label": "has_move"
+    },
+    {
+      "from": "S4_Move5_Confrontation",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move13_Adornment",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move13_Adornment",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S9",
+      "to": "S9_Move2_Deception",
+      "label": "has_move"
+    },
+    {
+      "from": "S9_Move2_Deception",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S1",
+      "to": "S1_Move3_SunSets",
+      "label": "has_move"
+    },
+    {
+      "from": "S1_Move3_SunSets",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S9",
+      "to": "S9_Move3_SecretEating",
+      "label": "has_move"
+    },
+    {
+      "from": "S9_Move3_SecretEating",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S4",
+      "to": "S4_Move4_Sabotage",
+      "label": "has_move"
+    },
+    {
+      "from": "S4_Move4_Sabotage",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S8",
+      "to": "S8_Move6_Sunbird",
+      "label": "has_move"
+    },
+    {
+      "from": "S8_Move6_Sunbird",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move2_Relocation",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move2_Relocation",
+      "to": "Departure",
+      "label": "instantiates"
+    },
+    {
+      "from": "S3",
+      "to": "S3_Move5_Propagation",
+      "label": "has_move"
+    },
+    {
+      "from": "S3_Move5_Propagation",
+      "to": "Lack Liquidated",
+      "label": "instantiates"
+    },
+    {
+      "from": "S11",
+      "to": "S11_Move4_Ruse",
+      "label": "has_move"
+    },
+    {
+      "from": "S11_Move4_Ruse",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S12",
+      "to": "S12_Move3_Tracking",
+      "label": "has_move"
+    },
+    {
+      "from": "S12_Move3_Tracking",
+      "to": "Departure",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move5_FalseAnswer",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move5_FalseAnswer",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S3",
+      "to": "S3_Move2_Nurturing",
+      "label": "has_move"
+    },
+    {
+      "from": "S3_Move2_Nurturing",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S2",
+      "to": "S2_Move4_Failure",
+      "label": "has_move"
+    },
+    {
+      "from": "S2_Move4_Failure",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move18_Return",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move18_Return",
+      "to": "Return",
+      "label": "instantiates"
+    },
+    {
+      "from": "S10",
+      "to": "S10_Move4_Milking",
+      "label": "has_move"
+    },
+    {
+      "from": "S10_Move4_Milking",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S10",
+      "to": "S10_Move2_Inquiry",
+      "label": "has_move"
+    },
+    {
+      "from": "S10_Move2_Inquiry",
+      "to": "Departure",
+      "label": "instantiates"
+    },
+    {
+      "from": "S12",
+      "to": "S12_Move2_Villainy",
+      "label": "has_move"
+    },
+    {
+      "from": "S12_Move2_Villainy",
+      "to": "Lack",
+      "label": "instantiates"
+    },
+    {
+      "from": "S12",
+      "to": "S12_Move1_Hunt",
+      "label": "has_move"
+    },
+    {
+      "from": "S12_Move1_Hunt",
+      "to": "Departure",
+      "label": "instantiates"
+    },
+    {
+      "from": "S8",
+      "to": "S8_Move1_Roast",
+      "label": "has_move"
+    },
+    {
+      "from": "S8_Move1_Roast",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S9",
+      "to": "S9_Move9_SelfPraise",
+      "label": "has_move"
+    },
+    {
+      "from": "S9_Move9_SelfPraise",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move7_Capture",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move7_Capture",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S12",
+      "to": "S12_Move5_Pretense",
+      "label": "has_move"
+    },
+    {
+      "from": "S12_Move5_Pretense",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S1",
+      "to": "S1_Move2_Darkness",
+      "label": "has_move"
+    },
+    {
+      "from": "S1_Move2_Darkness",
+      "to": "Departure",
+      "label": "instantiates"
+    },
+    {
+      "from": "S2",
+      "to": "S2_Move2_WhistleDishes",
+      "label": "has_move"
+    },
+    {
+      "from": "S2_Move2_WhistleDishes",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S12",
+      "to": "S12_Move7_AnimalsDance",
+      "label": "has_move"
+    },
+    {
+      "from": "S12_Move7_AnimalsDance",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S1",
+      "to": "S1_Move5_Message",
+      "label": "has_move"
+    },
+    {
+      "from": "S1_Move5_Message",
+      "to": "Lack Liquidated",
+      "label": "instantiates"
+    },
+    {
+      "from": "S3",
+      "to": "S3_Move1_Discovery",
+      "label": "has_move"
+    },
+    {
+      "from": "S3_Move1_Discovery",
+      "to": "Lack Liquidated",
+      "label": "instantiates"
+    },
+    {
+      "from": "S11",
+      "to": "S11_Move5_Wariness",
+      "label": "has_move"
+    },
+    {
+      "from": "S11_Move5_Wariness",
+      "to": "Interdiction",
+      "label": "instantiates"
+    },
+    {
+      "from": "S1",
+      "to": "S1_Move1_Death",
+      "label": "has_move"
+    },
+    {
+      "from": "S1_Move1_Death",
+      "to": "Lack",
+      "label": "instantiates"
+    },
+    {
+      "from": "S13",
+      "to": "S13_Move3_Deception",
+      "label": "has_move"
+    },
+    {
+      "from": "S13_Move3_Deception",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S12",
+      "to": "S12_Move6_BirdsSing",
+      "label": "has_move"
+    },
+    {
+      "from": "S12_Move6_BirdsSing",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S9",
+      "to": "S9_Move5_Demand",
+      "label": "has_move"
+    },
+    {
+      "from": "S9_Move5_Demand",
+      "to": "Interdiction",
+      "label": "instantiates"
+    },
+    {
+      "from": "S11",
+      "to": "S11_Move2_Suspicion",
+      "label": "has_move"
+    },
+    {
+      "from": "S11_Move2_Suspicion",
+      "to": "Lack",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move6_Murder",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move6_Murder",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S8",
+      "to": "S8_Move5_Ascension",
+      "label": "has_move"
+    },
+    {
+      "from": "S8_Move5_Ascension",
+      "to": "Departure",
+      "label": "instantiates"
+    },
+    {
+      "from": "S8",
+      "to": "S8_Move4_Refusal",
+      "label": "has_move"
+    },
+    {
+      "from": "S8_Move4_Refusal",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S8",
+      "to": "S8_Move3_LeftInShade",
+      "label": "has_move"
+    },
+    {
+      "from": "S8_Move3_LeftInShade",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move11_Accusation",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move11_Accusation",
+      "to": "Lack",
+      "label": "instantiates"
+    },
+    {
+      "from": "S8",
+      "to": "S8_Move2_Greed",
+      "label": "has_move"
+    },
+    {
+      "from": "S8_Move2_Greed",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S9",
+      "to": "S9_Move4_PreparesWeapon",
+      "label": "has_move"
+    },
+    {
+      "from": "S9_Move4_PreparesWeapon",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S11",
+      "to": "S11_Move6_Killing",
+      "label": "has_move"
+    },
+    {
+      "from": "S11_Move6_Killing",
+      "to": "Lack Liquidated",
+      "label": "instantiates"
+    },
+    {
+      "from": "S9",
+      "to": "S9_Move6_Refusals",
+      "label": "has_move"
+    },
+    {
+      "from": "S9_Move6_Refusals",
+      "to": "Violation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S2",
+      "to": "S2_Move5_Fall",
+      "label": "has_move"
+    },
+    {
+      "from": "S2_Move5_Fall",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S1",
+      "to": "S1_Move4_Rebirth",
+      "label": "has_move"
+    },
+    {
+      "from": "S1_Move4_Rebirth",
+      "to": "Return",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move12_Regrowth",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move12_Regrowth",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move4_Warning",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move4_Warning",
+      "to": "Interdiction",
+      "label": "instantiates"
+    },
+    {
+      "from": "S12",
+      "to": "S12_Move4_HotCoals",
+      "label": "has_move"
+    },
+    {
+      "from": "S12_Move4_HotCoals",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S4",
+      "to": "S4_Move6_Slaying",
+      "label": "has_move"
+    },
+    {
+      "from": "S4_Move6_Slaying",
+      "to": "Consequence",
+      "label": "instantiates"
+    },
+    {
+      "from": "S12",
+      "to": "S12_Move9_Resurrection",
+      "label": "has_move"
+    },
+    {
+      "from": "S12_Move9_Resurrection",
+      "to": "Lack Liquidated",
+      "label": "instantiates"
+    },
+    {
+      "from": "S9",
+      "to": "S9_Move1_Gathering",
+      "label": "has_move"
+    },
+    {
+      "from": "S9_Move1_Gathering",
+      "to": "Lack",
+      "label": "instantiates"
+    },
+    {
+      "from": "S12",
+      "to": "S12_Move8_Meteor",
+      "label": "has_move"
+    },
+    {
+      "from": "S12_Move8_Meteor",
+      "to": "Mediation",
+      "label": "instantiates"
+    },
+    {
+      "from": "S14",
+      "to": "S14_Move15_Donation",
+      "label": "has_move"
+    },
+    {
+      "from": "S14_Move15_Donation",
+      "to": "Mediation",
+      "label": "instantiates"
     }
   ]
 };

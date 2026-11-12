@@ -6,6 +6,7 @@ from pathlib import Path
 from langgraph.graph import StateGraph, END, START
 from backend.app.agents.state import NarrativeState
 from backend.app.agents.nodes import generator_node, classifier_node, grader_node
+from backend.app.utils.graph_archive import archive_story_to_neo4j
 
 
 # ---------------------------------------------------------------------------
@@ -30,6 +31,14 @@ def echo_input_story(state: NarrativeState) -> dict:
     return {"draft_narrative": state["input_story"]}
 
 
+def archive_node(state: NarrativeState) -> dict:
+    """
+    Persists the evaluated story and its structural graph into Neo4j.
+    """
+    story_id = archive_story_to_neo4j(state)
+    return {"archived_story_id": story_id}
+
+
 # ---------------------------------------------------------------------------
 # Build the graph
 # ---------------------------------------------------------------------------
@@ -41,6 +50,7 @@ workflow.add_node("generator", generator_node)
 workflow.add_node("echo_input", echo_input_story)
 workflow.add_node("classifier", classifier_node)
 workflow.add_node("grader", grader_node)
+workflow.add_node("archive", archive_node)
 
 # START branches: input story provided → echo → classify; otherwise → generate → classify
 workflow.add_conditional_edges(
@@ -56,7 +66,8 @@ workflow.add_conditional_edges(
 workflow.add_edge("generator", "classifier")
 workflow.add_edge("echo_input", "classifier")
 workflow.add_edge("classifier", "grader")
-workflow.add_edge("grader", END)
+workflow.add_edge("grader", "archive")
+workflow.add_edge("archive", END)
 
 # ---------------------------------------------------------------------------
 # Compile with SQLite checkpointer for persistent thread memory

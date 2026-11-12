@@ -25,80 +25,202 @@ _STORIES_DIR = _DATA_DIR / "individual story files"
 # 1. Neo4j context
 # ---------------------------------------------------------------------------
 
+def _get_neo4j_session():
+    """Returns an active Neo4j session or None if Neo4j is unavailable."""
+    from backend.app.core.database import db_conn
+    from backend.app.core.config import settings
+
+    if db_conn._driver is None:
+        db_conn.connect(settings.NEO4J_URI, settings.NEO4J_USERNAME, settings.NEO4J_PASSWORD)
+    return db_conn.get_session()
+
+
 def get_neo4j_context(theme: str) -> str:
     """
-    Queries the Neo4j ontology graph for characters, relations, and narrative
-    events that are relevant to the given theme.
-    Returns a formatted string for prompt injection, or an empty string if
-    Neo4j is unavailable.
+    Queries the Neo4j ontology graph for canonical :Story arcs matching `theme`,
+    traversing their FOLLOWS move chains, Dundes :Motifeme tags, Camp/Bush
+    :Location domains, and Sydow oicotype entities.
+    Returns a formatted string for prompt injection, or "" if Neo4j is unavailable.
     """
     try:
-        from backend.app.core.database import db_conn
-        from backend.app.core.config import settings
+        session = _get_neo4j_session()
+        if session is None:
+            return ""
 
-        if db_conn._driver is None:
-            db_conn.connect(settings.NEO4J_URI, settings.NEO4J_USERNAME, settings.NEO4J_PASSWORD)
+        tokens = list(_tokenize(theme))
+        with session as s:
+            stories = s.run(
+                """
+                MATCH (st:Story {source: 'canonical'})
+                OPTIONAL MATCH (st)-[:HAS_MOVE]->(nf:NarrativeFunction)
+                WITH st, collect(DISTINCT nf) AS moves
+                WITH st, moves,
+                     size([t IN $tokens WHERE
+                           toLower(coalesce(st.theme, '') + ' ' + coalesce(st.title, '')) CONTAINS t
+                           OR any(m IN moves WHERE toLower(coalesce(m.label, '')) CONTAINS t)]) AS score
+                RETURN st.id AS id, st.title AS title, st.theme AS theme, score
+                ORDER BY score DESC, st.id ASC
+                LIMIT 2
+                """,
+                tokens=tokens,
+            ).data()
 
-        session = db_conn.get_session()
+            if not stories:
+                return ""
+
+            lines = ["## Ontology Structural Context (Neo4j Canonical Arcs)"]
+            for st in stories:
+                lines.append(f"\n### Reference Arc: {st['title']} ({st['id']})")
+                moves = s.run(
+                    """
+                    MATCH (st:Story {id: $sid})-[:HAS_MOVE]->(nf:NarrativeFunction)
+                    OPTIONAL MATCH (nf)-[:INSTANTIATES]->(mot:Motifeme)
+                    OPTIONAL MATCH (nf)-[:OCCURS_AT]->(loc:Location)
+                    OPTIONAL MATCH (nf)-[:INVOLVES_OBJECT|HAS_MAGICAL_AGENT]->(obj)
+                    OPTIONAL MATCH (actor)-[:PERFORMS_FUNCTION]->(nf)
+                    WITH nf, mot,
+                         collect(DISTINCT coalesce(loc.label, '') + ' [' + coalesce(loc.domain, 'Liminal') + ']') AS locs,
+                         collect(DISTINCT obj.label) AS objs,
+                         collect(DISTINCT actor.label) AS actors
+                    OPTIONAL MATCH (nf)-[:FOLLOWS]->(prev:NarrativeFunction)
+                    RETURN nf.id AS id, nf.label AS label, mot.id AS motifeme,
+                           locs, objs, actors, count(prev) AS has_prev
+                    ORDER BY nf.id ASC
+                    """,
+                    sid=st["id"],
+                ).data()
+
+                # (after)-[:FOLLOWS]->(before) in this ontology, so chronological order is before -> after
+                next_map = {}
+                if moves:
+                    edges = s.run(
+                        """
+                        MATCH (st:Story {id: $sid})-[:HAS_MOVE]->(after:NarrativeFunction)-[:FOLLOWS]->(before:NarrativeFunction)
+                        RETURN before.id AS prev_id, after.id AS next_id
+                        """,
+                        sid=st["id"],
+                    ).data()
+                    for e in edges:
+                        next_map[e["prev_id"]] = e["next_id"]
+
+                by_id = {m["id"]: m for m in moves}
+                ordered = []
+                roots = [m["id"] for m in moves if m["has_prev"] == 0]
+                seen = set()
+                cur = roots[0] if roots else (moves[0]["id"] if moves else None)
+                while cur and cur not in seen and cur in by_id:
+                    seen.add(cur)
+                    ordered.append(by_id[cur])
+                    cur = next_map.get(cur)
+                for m in moves:
+                    if m["id"] not in seen:
+                        ordered.append(m)
+
+                motifeme_chain = [m["motifeme"] for m in ordered if m.get("motifeme")]
+                if motifeme_chain:
+                    lines.append("Motifeme pattern: " + " → ".join(motifeme_chain))
+                for m in ordered[:8]:
+                    mot_tag = f"[{m['motifeme']}] " if m.get("motifeme") else ""
+                    loc_str = ", ".join(l for l in m["locs"] if l.strip(" []"))
+                    extras = []
+                    if loc_str:
+                        extras.append(f"at {loc_str}")
+                    if m["actors"]:
+                        extras.append("actors: " + ", ".join(m["actors"][:3]))
+                    if m["objs"]:
+                        extras.append("items: " + ", ".join(m["objs"][:3]))
+                    extra_txt = f" ({'; '.join(extras)})" if extras else ""
+                    lines.append(f"- {mot_tag}{m['label']}{extra_txt}")
+
+            return "\n".join(lines)
+
+    except Exception as e:
+        print(f"[ContextBuilder] Neo4j unavailable: {e}")
+        return ""
+
+
+def get_classifier_graph_context() -> str:
+    """
+    Retrieves canonical Dundes :Motifeme definitions and sample Ju|'hoansi
+    NarrativeFunction moves from Neo4j to ground Agent 2 (Classifier).
+    """
+    try:
+        session = _get_neo4j_session()
         if session is None:
             return ""
 
         with session as s:
-            # Introspect the graph schema to find the actual property key used for node labels
-            # (some graphs use rdfs__label, uri, or other keys instead of 'name')
-            result = s.run(
+            rows = s.run(
                 """
-                MATCH (n)
-                WHERE any(key IN keys(n) WHERE toLower(toString(n[key])) CONTAINS toLower($theme))
-                OPTIONAL MATCH (n)-[r]->(m)
-                WITH n, r, m, keys(n)[0] AS pk
-                RETURN toString(n[pk]) AS entity,
-                       type(r) AS relation,
-                       CASE WHEN m IS NOT NULL THEN toString(m[keys(m)[0]]) ELSE null END AS target,
-                       '' AS description
-                LIMIT 20
-                """,
-                theme=theme,
-            )
-            rows = result.data()
-
-        if not rows:
-            # Broader fallback — pull a sample of any nodes
-            with db_conn.get_session() as s:
-                result = s.run(
-                    """
-                    MATCH (n)
-                    WHERE size(keys(n)) > 0
-                    OPTIONAL MATCH (n)-[r]->(m)
-                    WITH n, r, m, keys(n)[0] AS pk
-                    RETURN toString(n[pk]) AS entity,
-                           type(r) AS relation,
-                           CASE WHEN m IS NOT NULL THEN toString(m[keys(m)[0]]) ELSE null END AS target,
-                           '' AS description
-                    LIMIT 15
-                    """
-                )
-                rows = result.data()
+                MATCH (m:Motifeme)
+                OPTIONAL MATCH (nf:NarrativeFunction)-[:INSTANTIATES]->(m)
+                WHERE nf.id STARTS WITH 'S'
+                WITH m, collect(DISTINCT nf.label)[0..2] AS examples
+                RETURN m.id AS motifeme, m.description AS description, examples
+                ORDER BY m.id
+                """
+            ).data()
 
         if not rows:
             return ""
 
-        lines = ["## Ontology Context (Neo4j)"]
-        for row in rows:
-            entity = row.get("entity", "?")
-            relation = row.get("relation")
-            target = row.get("target")
-            desc = row.get("description", "")
-            if relation and target:
-                lines.append(f"- {entity} --[{relation}]--> {target}")
-            elif desc:
-                lines.append(f"- {entity}: {desc}")
-            else:
-                lines.append(f"- {entity}")
+        lines = ["## Canonical Motifeme Grounding (Neo4j)"]
+        for r in rows:
+            ex = "; ".join(r["examples"]) if r["examples"] else "—"
+            lines.append(f"- **{r['motifeme']}**: {r['description']} (e.g. {ex})")
         return "\n".join(lines)
 
     except Exception as e:
-        print(f"[ContextBuilder] Neo4j unavailable: {e}")
+        print(f"[ContextBuilder] Classifier Neo4j context unavailable: {e}")
+        return ""
+
+
+def get_grader_graph_context(motifemes: List[str]) -> str:
+    """
+    Retrieves canonical motifeme transition patterns and Camp/Bush spatial
+    reference data from Neo4j to ground Agent 3 (Grader).
+    """
+    try:
+        session = _get_neo4j_session()
+        if session is None:
+            return ""
+
+        with session as s:
+            transitions = s.run(
+                """
+                MATCH (after:NarrativeFunction)-[:FOLLOWS]->(before:NarrativeFunction),
+                      (before)-[:INSTANTIATES]->(m1:Motifeme),
+                      (after)-[:INSTANTIATES]->(m2:Motifeme)
+                WHERE before.id STARTS WITH 'S' AND after.id STARTS WITH 'S'
+                RETURN m1.id AS from_m, m2.id AS to_m, count(*) AS freq
+                ORDER BY freq DESC
+                LIMIT 15
+                """
+            ).data()
+            camp_bush = s.run(
+                """
+                MATCH (l:Location)
+                WHERE l.domain IS NOT NULL
+                RETURN l.domain AS domain, collect(DISTINCT l.label)[0..4] AS samples
+                """
+            ).data()
+
+        if not transitions and not camp_bush:
+            return ""
+
+        lines = ["## Canonical Structural Reference (Neo4j)"]
+        if transitions:
+            trans_str = ", ".join(f"{t['from_m']}→{t['to_m']} ({t['freq']}x)" for t in transitions[:10])
+            lines.append(f"Common canonical motifeme transitions: {trans_str}")
+        if camp_bush:
+            for row in camp_bush:
+                lines.append(f"Spatial domain [{row['domain']}]: {', '.join(row['samples'])}")
+        if motifemes:
+            lines.append(f"Candidate story motifeme chain: {' → '.join(motifemes)}")
+        return "\n".join(lines)
+
+    except Exception as e:
+        print(f"[ContextBuilder] Grader Neo4j context unavailable: {e}")
         return ""
 
 

@@ -8,6 +8,7 @@ from backend.app.agents.graph import app as graph_app
 from backend.app.agents.nodes import classifier_node, generator_node, grader_node
 from backend.app.core.database import init_db
 from backend.app.core import chat_store
+from backend.app.utils.context_builder import get_graph_preview
 
 app = FastAPI(
     title="Ju|'hoansi Narrative Agentic Generator (jnang)",
@@ -104,6 +105,11 @@ def health_check():
     return {"status": "healthy"}
 
 
+@app.get("/graph/preview")
+def graph_preview(theme: str = "sharing honey"):
+    return get_graph_preview(theme)
+
+
 # ---------------------------------------------------------------------------
 # Thread / chat history endpoints
 # ---------------------------------------------------------------------------
@@ -171,6 +177,7 @@ def generate_story(req: GenerateRequest):
         final_state = graph_app.invoke(initial_state, config=config)
 
         bot_text = "Here is the finished story and pipeline analysis:"
+        lineage = get_graph_preview(req.theme or "sharing honey") if not req.input_story else None
         payload = {
             "story": {"title": req.theme or "Generated Story", "text": final_state.get("draft_narrative", "")},
             "analysis": {
@@ -178,6 +185,7 @@ def generate_story(req: GenerateRequest):
                 "moves": final_state.get("story_moves", []),
                 "grade": final_state.get("grade_report", {}),
             },
+            **({"lineage": lineage} if lineage else {}),
         }
         chat_store.add_message(active_thread_id, "bot", bot_text, payload)
 

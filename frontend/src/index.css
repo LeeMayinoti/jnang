@@ -1150,6 +1150,188 @@ button {
   }
 }
 
+/* ---------------------------------------------------------------------------
+   Narrative Constellation (minimalist Neo4j traversal visualizer)
+   --------------------------------------------------------------------------- */
+
+.constellation {
+  margin: 0.35rem 0 0.75rem;
+}
+
+.constellation__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--text-2);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.constellation__pill:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.constellation__pill-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--text-3);
+  margin-left: 0.15rem;
+}
+
+.constellation__frame {
+  margin-top: 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at 25% 35%, var(--accent-soft), transparent 60%),
+    radial-gradient(ellipse at 78% 55%, var(--hover), transparent 55%),
+    var(--surface);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.constellation__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 128px;
+}
+
+.constellation__dust {
+  fill: var(--text-3);
+  opacity: 0.35;
+}
+
+.constellation__edge {
+  stroke: var(--accent-line);
+  stroke-width: 0.85;
+  fill: none;
+  transition: stroke 0.35s var(--ease), opacity 0.35s var(--ease);
+}
+
+.constellation__edge--faint {
+  opacity: 0.35;
+  stroke-dasharray: 2 3;
+}
+
+.constellation__edge.is-lit {
+  stroke: var(--accent);
+  stroke-width: 1.1;
+  opacity: 0.85;
+}
+
+.constellation__edge.is-forming {
+  stroke: var(--accent-2);
+  stroke-dasharray: 3 3;
+  animation: constellation-flow 2.4s linear infinite;
+}
+
+.constellation__bridge-bg {
+  fill: none;
+  stroke: var(--border-strong);
+  stroke-width: 0.75;
+  stroke-dasharray: 2 3;
+  opacity: 0.55;
+}
+
+.constellation__bridge-pulse {
+  fill: none;
+  stroke: var(--warn);
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-dasharray: 18 180;
+  animation: bridge-travel 1.4s ease-in-out infinite;
+}
+
+.constellation__dot {
+  fill: var(--text-2);
+  transition: fill 0.3s var(--ease), r 0.3s var(--ease);
+}
+
+.constellation__star.is-target .constellation__dot {
+  fill: var(--accent);
+}
+
+.constellation__star.is-active .constellation__dot {
+  fill: var(--warn);
+}
+
+.constellation__flare {
+  stroke: var(--accent);
+  stroke-width: 0.75;
+  stroke-linecap: round;
+  opacity: 0.8;
+}
+
+.constellation__star.is-active .constellation__flare {
+  stroke: var(--warn);
+  opacity: 0.95;
+}
+
+.constellation__halo {
+  fill: var(--warn);
+  opacity: 0.16;
+  animation: halo-breathe 1.3s ease-in-out infinite;
+}
+
+.constellation__corner {
+  fill: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+}
+
+.constellation__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.42rem 0.8rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.72rem;
+  color: var(--text-3);
+}
+
+.constellation__source {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-2);
+}
+
+.constellation__chain {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-3);
+}
+
+@keyframes constellation-flow {
+  from { stroke-dashoffset: 24; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes bridge-travel {
+  0%   { stroke-dashoffset: 200; opacity: 0.15; }
+  50%  { opacity: 0.95; }
+  100% { stroke-dashoffset: 0; opacity: 0.2; }
+}
+
+@keyframes halo-breathe {
+  0%, 100% { opacity: 0.12; }
+  50%      { opacity: 0.3; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

@@ -3,6 +3,7 @@ import { ArrowUp, Plus, PanelLeftClose } from 'lucide-react';
 import Header from './components/Header';
 import ChatHistoryPanel from './components/ChatHistoryPanel';
 import PipelineBeads from './components/PipelineBeads';
+import NarrativeConstellation from './components/NarrativeConstellation';
 import StoryCard from './components/StoryCard';
 import EvaluationCard from './components/EvaluationCard';
 import { PRESET_THEMES, SAMPLE_STORIES } from './data/themes';
@@ -141,6 +142,7 @@ export default function App() {
         ...(m.payload?.story    ? { story: m.payload.story }       : {}),
         ...(m.payload?.analysis ? { analysis: m.payload.analysis } : {}),
         ...(m.payload?.options  ? { options: m.payload.options }   : {}),
+        ...(m.payload?.lineage  ? { graphPreview: m.payload.lineage, run: 'generate' } : {}),
       }));
       setMessages(rebuilt);
     } catch (_) {}
@@ -269,6 +271,14 @@ export default function App() {
 
     try {
       if (isBackendOnline) {
+        // Fire lightweight Neo4j constellation preview in parallel while generation runs
+        fetch(`/api/graph/preview?theme=${encodeURIComponent(promptString)}`)
+          .then((r) => (r.ok ? r.json() : null))
+          .then((preview) => {
+            if (preview?.sources?.length) updateBot({ graphPreview: preview });
+          })
+          .catch(() => {});
+
         const threadId = currentThreadId || await createNewThread('generate');
         const res = await fetch('/api/generate', {
           method: 'POST',
@@ -558,6 +568,16 @@ export default function App() {
                     <div className="msg__content">
                       {msg.run && !msg.error && (
                         <PipelineBeads run={msg.run} step={msg.pending ? pipelineStep : 4} />
+                      )}
+
+                      {msg.run === 'generate' && !msg.error && (
+                        <NarrativeConstellation
+                          preview={msg.graphPreview}
+                          pending={Boolean(msg.pending)}
+                          step={msg.pending ? pipelineStep : 4}
+                          resultMotifemes={msg.analysis?.motifemes || []}
+                          resultMoves={msg.analysis?.moves || []}
+                        />
                       )}
 
                       {msg.text && (

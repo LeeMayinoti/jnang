@@ -35,6 +35,138 @@ def _get_neo4j_session():
     return db_conn.get_session()
 
 
+def _fetch_canonical_story_arcs(theme: str, limit: int = 2) -> List[dict]:
+    """
+    Fetches and chronologically orders canonical :Story move arcs matching `theme`.
+    Returns a list of dicts: {id, title, theme, moves: [...]}.
+    """
+    session = _get_neo4j_session()
+    if session is None:
+        return []
+
+    tokens = list(_tokenize(theme))
+    with session as s:
+        stories = s.run(
+            """
+            MATCH (st:Story {source: 'canonical'})
+            OPTIONAL MATCH (st)-[:HAS_MOVE]->(nf:NarrativeFunction)
+            WITH st, collect(DISTINCT nf) AS moves
+            WITH st, moves,
+                 size([t IN $tokens WHERE
+                       toLower(coalesce(st.theme, '') + ' ' + coalesce(st.title, '')) CONTAINS t
+                       OR any(m IN moves WHERE toLower(coalesce(m.label, '')) CONTAINS t)]) AS score
+            RETURN st.id AS id, st.title AS title, st.theme AS theme, score
+            ORDER BY score DESC, st.id ASC
+            LIMIT $limit
+            """,
+            tokens=tokens,
+            limit=limit,
+        ).data()
+
+        arcs = []
+        for st in stories:
+            moves = s.run(
+                """
+                MATCH (st:Story {id: $sid})-[:HAS_MOVE]->(nf:NarrativeFunction)
+                OPTIONAL MATCH (nf)-[:INSTANTIATES]->(mot:Motifeme)
+                OPTIONAL MATCH (nf)-[:OCCURS_AT]->(loc:Location)
+                OPTIONAL MATCH (nf)-[:INVOLVES_OBJECT|HAS_MAGICAL_AGENT]->(obj)
+                OPTIONAL MATCH (actor)-[:PERFORMS_FUNCTION]->(nf)
+                WITH nf, mot,
+                     collect(DISTINCT coalesce(loc.label, '') + ' [' + coalesce(loc.domain, 'Liminal') + ']') AS locs,
+                     collect(DISTINCT coalesce(loc.domain, 'Liminal')) AS domains,
+                     collect(DISTINCT obj.label) AS objs,
+                     collect(DISTINCT actor.label) AS actors
+                OPTIONAL MATCH (nf)-[:FOLLOWS]->(prev:NarrativeFunction)
+                RETURN nf.id AS id, nf.label AS label, mot.id AS motifeme,
+                       locs, domains, objs, actors, count(prev) AS has_prev
+                ORDER BY nf.id ASC
+                """,
+                sid=st["id"],
+            ).data()
+
+            # (after)-[:FOLLOWS]->(before) in this ontology, so chronological order is before -> after
+            next_map = {}
+            if moves:
+                edges = s.run(
+                    """
+                    MATCH (st:Story {id: $sid})-[:HAS_MOVE]->(after:NarrativeFunction)-[:FOLLOWS]->(before:NarrativeFunction)
+                    RETURN before.id AS prev_id, after.id AS next_id
+                    """,
+                    sid=st["id"],
+                ).data()
+                for e in edges:
+                    next_map[e["prev_id"]] = e["next_id"]
+
+            by_id = {m["id"]: m for m in moves}
+            ordered = []
+            roots = [m["id"] for m in moves if m["has_prev"] == 0]
+            seen = set()
+            cur = roots[0] if roots else (moves[0]["id"] if moves else None)
+            while cur and cur not in seen and cur in by_id:
+                seen.add(cur)
+                ordered.append(by_id[cur])
+                cur = next_map.get(cur)
+            for m in moves:
+                if m["id"] not in seen:
+                    ordered.append(m)
+
+            arcs.append({
+                "id": st["id"],
+                "title": st["title"],
+                "theme": st["theme"],
+                "moves": ordered,
+            })
+
+        return arcs
+
+
+def get_graph_preview(theme: str) -> dict:
+    """
+    Returns a compact JSON-serializable subgraph preview for the UI constellation
+    animation while the pipeline runs.
+    """
+    try:
+        arcs = _fetch_canonical_story_arcs(theme, limit=2)
+        if not arcs:
+            return {"sources": [], "motifemes": [], "entities": []}
+
+        sources = []
+        motifemes = []
+        entities = []
+        seen_entities = set()
+        for arc in arcs:
+            compact_moves = []
+            for m in arc["moves"][:7]:
+                domain = (m.get("domains") or ["Liminal"])[0]
+                compact_moves.append({
+                    "id": m["id"],
+                    "label": m["label"],
+                    "motifeme": m.get("motifeme") or "Mediation",
+                    "domain": domain,
+                })
+                if m.get("motifeme"):
+                    motifemes.append(m["motifeme"])
+                for ent in (m.get("actors") or []) + (m.get("objs") or []):
+                    if ent and ent not in seen_entities:
+                        seen_entities.add(ent)
+                        entities.append(ent)
+            sources.append({
+                "id": arc["id"],
+                "title": arc["title"],
+                "moves": compact_moves,
+            })
+
+        return {
+            "sources": sources,
+            "motifemes": motifemes[:8],
+            "entities": entities[:8],
+        }
+    except Exception as e:
+        print(f"[ContextBuilder] Graph preview unavailable: {e}")
+        return {"sources": [], "motifemes": [], "entities": []}
+
+
 def get_neo4j_context(theme: str) -> str:
     """
     Queries the Neo4j ontology graph for canonical :Story arcs matching `theme`,
@@ -43,96 +175,31 @@ def get_neo4j_context(theme: str) -> str:
     Returns a formatted string for prompt injection, or "" if Neo4j is unavailable.
     """
     try:
-        session = _get_neo4j_session()
-        if session is None:
+        arcs = _fetch_canonical_story_arcs(theme, limit=2)
+        if not arcs:
             return ""
 
-        tokens = list(_tokenize(theme))
-        with session as s:
-            stories = s.run(
-                """
-                MATCH (st:Story {source: 'canonical'})
-                OPTIONAL MATCH (st)-[:HAS_MOVE]->(nf:NarrativeFunction)
-                WITH st, collect(DISTINCT nf) AS moves
-                WITH st, moves,
-                     size([t IN $tokens WHERE
-                           toLower(coalesce(st.theme, '') + ' ' + coalesce(st.title, '')) CONTAINS t
-                           OR any(m IN moves WHERE toLower(coalesce(m.label, '')) CONTAINS t)]) AS score
-                RETURN st.id AS id, st.title AS title, st.theme AS theme, score
-                ORDER BY score DESC, st.id ASC
-                LIMIT 2
-                """,
-                tokens=tokens,
-            ).data()
+        lines = ["## Ontology Structural Context (Neo4j Canonical Arcs)"]
+        for st in arcs:
+            lines.append(f"\n### Reference Arc: {st['title']} ({st['id']})")
+            ordered = st["moves"]
+            motifeme_chain = [m["motifeme"] for m in ordered if m.get("motifeme")]
+            if motifeme_chain:
+                lines.append("Motifeme pattern: " + " → ".join(motifeme_chain))
+            for m in ordered[:8]:
+                mot_tag = f"[{m['motifeme']}] " if m.get("motifeme") else ""
+                loc_str = ", ".join(l for l in m["locs"] if l.strip(" []"))
+                extras = []
+                if loc_str:
+                    extras.append(f"at {loc_str}")
+                if m["actors"]:
+                    extras.append("actors: " + ", ".join(m["actors"][:3]))
+                if m["objs"]:
+                    extras.append("items: " + ", ".join(m["objs"][:3]))
+                extra_txt = f" ({'; '.join(extras)})" if extras else ""
+                lines.append(f"- {mot_tag}{m['label']}{extra_txt}")
 
-            if not stories:
-                return ""
-
-            lines = ["## Ontology Structural Context (Neo4j Canonical Arcs)"]
-            for st in stories:
-                lines.append(f"\n### Reference Arc: {st['title']} ({st['id']})")
-                moves = s.run(
-                    """
-                    MATCH (st:Story {id: $sid})-[:HAS_MOVE]->(nf:NarrativeFunction)
-                    OPTIONAL MATCH (nf)-[:INSTANTIATES]->(mot:Motifeme)
-                    OPTIONAL MATCH (nf)-[:OCCURS_AT]->(loc:Location)
-                    OPTIONAL MATCH (nf)-[:INVOLVES_OBJECT|HAS_MAGICAL_AGENT]->(obj)
-                    OPTIONAL MATCH (actor)-[:PERFORMS_FUNCTION]->(nf)
-                    WITH nf, mot,
-                         collect(DISTINCT coalesce(loc.label, '') + ' [' + coalesce(loc.domain, 'Liminal') + ']') AS locs,
-                         collect(DISTINCT obj.label) AS objs,
-                         collect(DISTINCT actor.label) AS actors
-                    OPTIONAL MATCH (nf)-[:FOLLOWS]->(prev:NarrativeFunction)
-                    RETURN nf.id AS id, nf.label AS label, mot.id AS motifeme,
-                           locs, objs, actors, count(prev) AS has_prev
-                    ORDER BY nf.id ASC
-                    """,
-                    sid=st["id"],
-                ).data()
-
-                # (after)-[:FOLLOWS]->(before) in this ontology, so chronological order is before -> after
-                next_map = {}
-                if moves:
-                    edges = s.run(
-                        """
-                        MATCH (st:Story {id: $sid})-[:HAS_MOVE]->(after:NarrativeFunction)-[:FOLLOWS]->(before:NarrativeFunction)
-                        RETURN before.id AS prev_id, after.id AS next_id
-                        """,
-                        sid=st["id"],
-                    ).data()
-                    for e in edges:
-                        next_map[e["prev_id"]] = e["next_id"]
-
-                by_id = {m["id"]: m for m in moves}
-                ordered = []
-                roots = [m["id"] for m in moves if m["has_prev"] == 0]
-                seen = set()
-                cur = roots[0] if roots else (moves[0]["id"] if moves else None)
-                while cur and cur not in seen and cur in by_id:
-                    seen.add(cur)
-                    ordered.append(by_id[cur])
-                    cur = next_map.get(cur)
-                for m in moves:
-                    if m["id"] not in seen:
-                        ordered.append(m)
-
-                motifeme_chain = [m["motifeme"] for m in ordered if m.get("motifeme")]
-                if motifeme_chain:
-                    lines.append("Motifeme pattern: " + " → ".join(motifeme_chain))
-                for m in ordered[:8]:
-                    mot_tag = f"[{m['motifeme']}] " if m.get("motifeme") else ""
-                    loc_str = ", ".join(l for l in m["locs"] if l.strip(" []"))
-                    extras = []
-                    if loc_str:
-                        extras.append(f"at {loc_str}")
-                    if m["actors"]:
-                        extras.append("actors: " + ", ".join(m["actors"][:3]))
-                    if m["objs"]:
-                        extras.append("items: " + ", ".join(m["objs"][:3]))
-                    extra_txt = f" ({'; '.join(extras)})" if extras else ""
-                    lines.append(f"- {mot_tag}{m['label']}{extra_txt}")
-
-            return "\n".join(lines)
+        return "\n".join(lines)
 
     except Exception as e:
         print(f"[ContextBuilder] Neo4j unavailable: {e}")

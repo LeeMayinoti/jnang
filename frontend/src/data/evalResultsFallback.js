@@ -1,0 +1,1423 @@
+export const EVAL_RESULTS_FALLBACK = {
+  "rows": [
+    {
+      "run_id": "e750c47c-5bdf-416d-ba52-68dd11d2f0db",
+      "timestamp_utc": "2026-11-13T03:21:08.338957+00:00",
+      "theme_id": "sharing_honey",
+      "theme_source": "preset",
+      "theme_prompt": "sharing wild honey (zo) found in a hollow baobab tree",
+      "arm": "baseline",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [],
+      "rag_context_included": false,
+      "neo4j_context_used": false,
+      "draft_narrative": "In the heart of the Kalahari, where the sun baked the earth and the wind whispered secrets through the grasses, there stood an ancient baobab tree. Its stout trunk was a guardian of life, and its branches reached toward the heavens, offering shade to weary travelers. Among the Ju|'hoansi San people, this tree was known as the Tree of Abundance, for it held a treasure that brought joy to all who sought it: wild honey.\n\nOne bright morning, a young boy named !Xoma ventured out with his spear and bow to explore the land. As he wandered, he spotted the familiar silhouette of the baobab tree against the azure sky. Drawn by a sweet fragrance that danced on the breeze, !Xoma approached the tree and noticed a swarm of bees buzzing around a hollow in its trunk.\n\nWith a heart full of excitement, !Xoma remembered the stories of the elders who spoke of the sweetness of the honey and the warmth of sharing it with friends and family. He knew he could take the honey for himself, but the teachings of his people echoed in his mind: “The greatest joy lies in sharing.”\n\nDetermined to gather enough honey for everyone, !Xoma climbed the sturdy branches of the baobab tree. The bees swarmed angrily, but he moved with respect, knowing they were protectors of the treasure. Gently, he harvested the honeycomb, carefully avoiding the buzzing guardians. With his basket full, he made his way down, his heart swelling with pride and excitement.\n\nAs he reached the ground, !Xoma thought of his friends and family. He ran back to the village, calling out to his peers, “Come! Come! I have found wild honey in the great baobab tree!” His voice rang through the air, and soon, his friends gathered, their eyes wide with anticipation.\n\nTogether, they formed a circle under the shade of the baobab tree. !Xoma shared the honey among them, each friend receiving a generous portion. They dipped their fingers into the golden sweetness, laughter spilling from their lips as they tasted the rich flavor. The honey was thick and warm, a gift from the earth that bound them together in gratitude and joy.\n\nAs they feasted, an elder approached, his wise eyes twinkling with delight. He watched the children share their spoils, and a smile creased his weathered face. “You have learned well, young !Xoma,” he said. “Honey is not just a treat; it is a bond of kinship. When shared, it multiplies the joy and brings us closer together.”\n\nThat evening, as the sun sank low and painted the sky in hues of orange and purple, the village gathered around a fire. They sang songs of the land and danced, their hearts filled with the sweetness of the honey and the warmth of community. The honey flowed like the stories shared that night, and the laughter echoed through the Kalahari, a testament to the power of sharing.\n\nFrom that day forward, !Xoma was known not just as a boy who found honey, but as a boy who understood the true essence of abundance. And the baobab tree became a gathering place, where stories were shared, friendships flourished, and honey flowed freely among the Ju|'hoansi people, a symbol of their unity and love for one another. And so, the legacy of the sweetest treasure continued, woven into the fabric of their lives, a reminder that the best things in life are those we share.",
+      "draft_char_len": 3276,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Interdiction",
+        "Departure",
+        "Lack Liquidated",
+        "Return"
+      ],
+      "story_moves": [
+        "!Xoma ventures out to explore the land",
+        "!Xoma approaches the baobab tree and sees the bees",
+        "!Xoma remembers the teachings of sharing",
+        "!Xoma climbs the baobab tree to gather honey",
+        "!Xoma runs back to the village to share the honey",
+        "!Xoma shares the honey with his friends",
+        "Elder praises !Xoma for understanding the essence of abundance",
+        "Community gathers to celebrate and share stories around the fire"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 10.0,
+        "food_sharing_score": 10.0,
+        "kinship_score": 10.0,
+        "cultural_authenticity_score": 10.0,
+        "motifeme_score": 9.0,
+        "overall_grade": "Excellent",
+        "comments": "The story beautifully embodies Ju|'hoansi cultural values of egalitarianism, as !Xoma shares the honey with his friends without seeking personal gain or recognition. The communal aspect of food sharing is central to the narrative, highlighting the joy and unity it brings to the community. Kinship roles are respected, with the elder acknowledging !Xoma's understanding of abundance and the importance of sharing. The motifeme structure is coherent, with a clear progression from lack to abundance, although it could benefit from a more explicit interdiction moment.",
+        "suggestions": [
+          "Consider adding a moment where !Xoma faces a challenge or warning before gathering the honey to strengthen the interdiction aspect.",
+          "Incorporate more specific kinship terms to deepen the cultural authenticity, such as referencing specific family roles during the sharing scene."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 10.0,
+        "food_sharing_score": 10.0,
+        "kinship_score": 5.0,
+        "cultural_authenticity_score": 8.33,
+        "motifeme_score": 9.0,
+        "detected_motifemes": [
+          "Lack",
+          "Mediation",
+          "Lack Liquidated"
+        ],
+        "overall_grade": "Good",
+        "comments": "The story excels in portraying core Ju|'hoansi values of egalitarianism and communal food sharing, which are central to the narrative and its resolution. The motifeme structure is clear and logically progresses from an implicit lack to its successful liquidation through the protagonist's actions. The narrative effectively conveys the importance of sharing as a bond of kinship and community.",
+        "suggestions": [
+          "To further enhance cultural authenticity, consider incorporating specific Ju|'hoansi kinship terms (e.g., !ga, !o, !xo) for characters like the elder or other family members, rather than generic terms. This would ground the story more deeply in the specific social structures of the culture."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "357fd49b-915d-41de-a0e5-ce5b69bd114d",
+      "timestamp_utc": "2026-11-13T03:21:40.731562+00:00",
+      "theme_id": "sharing_honey",
+      "theme_source": "preset",
+      "theme_prompt": "sharing wild honey (zo) found in a hollow baobab tree",
+      "arm": "full_jnang",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [
+        "The honey and the flies",
+        "The Elephant First Found Water"
+      ],
+      "rag_context_included": true,
+      "neo4j_context_used": true,
+      "draft_narrative": "In the heart of the Kalahari, where the sun kissed the red sand dunes, there lived a wise grandmother named !ga Kxai. She was known throughout the n!ore (territory) for her stories and her ability to find the sweetest zo (honey) hidden in the towering baobab trees. One day, as the sun rose high, !ga Kxai called her family to gather around the campfire.\n\n“Today, we will share in the sweetness of life,” she announced, her voice carrying the warmth of the sun. “But first, we must find the honey.”\n\nThe children, filled with excitement, followed their grandmother as she led them into the Bush. They walked until they came upon a magnificent baobab tree, its trunk wide and welcoming. High above, they could see the cardinal woodpecker, !'aun!'aun, tapping away, harvesting the honey from a hidden hive.\n\n“Look, children!” exclaimed !ga Kxai. “The woodpecker knows how to gather honey. We must learn from him.”\n\nBut as they watched, an eager young boy named !o Karo, wanting to impress his friends, decided he would climb the tree and gather the honey himself. Ignoring his grandmother’s warning to wait, he scrambled up the trunk.\n\n“Wait, !o Karo!” she cried, but he was already too high. “You must learn the song of the woodpecker first!”\n\nIn his haste, !o Karo tried to whistle like the woodpecker, but the sweet notes escaped him. Instead of drawing the honey down, he slipped and fell. The ground shook as he landed, and his stomach hurt from the fall. The other children gasped, and !ga Kxai rushed to his side.\n\n“Ah, my child,” she said softly, “in your eagerness, you have forgotten the way of sharing.” \n\nAs if responding to her words, a swarm of flies, the zoaqzoaq, appeared and buzzed around him. They began to bite gently, and to !o Karo's surprise, they stitched his wounds with their tiny bodies, healing him as they worked. \n\nGrateful for the flies’ help, !o Karo learned an important lesson. “I should have listened to you, !ga Kxai. I wanted the honey for myself, but now I see the value of sharing.”\n\n!ga Kxai smiled and gathered everyone close. “Let us not forget the woodpecker’s song. We will sing together, and this time, we will share the sweetness of the honey as a family.” \n\nThe children joined hands and sang with their grandmother, their voices rising like the wind through the branches. The cardinal woodpecker heard their song and, enchanted, flew down, bringing the honey with him. Together, they filled their flat dishes, tan-l'osi, with the golden sweetness.\n\nAs they shared the honey, their laughter filled the air, sweetening the moment even more than the honey itself. They learned that the joy of sharing brought them closer together, weaving their spirits like the threads of a beautiful tapestry.\n\nAnd so, under the shade of the baobab tree, the family celebrated. They feasted on honey and shared stories, knowing that true wealth lay not in hoarding but in the bonds of kinship and the joy of sharing with one another.",
+      "draft_char_len": 2961,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Interdiction",
+        "Violation",
+        "Consequence",
+        "Mediation",
+        "Lack Liquidated",
+        "Departure",
+        "Return"
+      ],
+      "story_moves": [
+        "!ga Kxai gathers family around the campfire",
+        "!o Karo climbs the baobab tree against grandmother's warning",
+        "!o Karo falls from the tree and is hurt",
+        "Flies stitch !o Karo's wounds and heal him",
+        "!o Karo learns the importance of sharing",
+        "Family sings together and attracts the woodpecker",
+        "Woodpecker brings honey for the family to share"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 10.0,
+        "food_sharing_score": 10.0,
+        "kinship_score": 10.0,
+        "cultural_authenticity_score": 10.0,
+        "motifeme_score": 9.0,
+        "overall_grade": "Excellent",
+        "comments": "The story beautifully embodies Ju|'hoansi cultural values of egalitarianism, food sharing, and kinship. !ga Kxai serves as a wise elder without asserting dominance, and the lesson learned by !o Karo emphasizes the importance of sharing over individual gain. The communal gathering around the campfire and the eventual sharing of honey highlight the significance of collective joy and resources. The kinship roles are clearly defined, with !ga Kxai as the grandmother guiding her family. The motifeme structure is coherent, with a clear progression from lack to resolution, although it could be slightly more explicit in transitions.",
+        "suggestions": [
+          "Consider enhancing the transitions between motifemes to make the chain even clearer.",
+          "Explore additional kinship roles or relationships to deepen the narrative's cultural richness."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 10.0,
+        "food_sharing_score": 10.0,
+        "kinship_score": 9.0,
+        "cultural_authenticity_score": 9.67,
+        "motifeme_score": 9.5,
+        "detected_motifemes": [
+          "Lack",
+          "Interdiction",
+          "Violation",
+          "Consequence",
+          "Mediation",
+          "Lack Liquidated"
+        ],
+        "overall_grade": "Excellent",
+        "comments": "This story is an excellent example of a Ju|'hoansi folktale. It powerfully conveys the core cultural values of egalitarianism and communal food sharing, making these themes central to the plot and resolution. The character of !o Karo, initially seeking individual gain, is gently corrected, reinforcing the community's values. The use of specific kinship terms like '!ga' and '!o', along with cultural references like 'n!ore' and 'zo', significantly enhances its authenticity. The narrative structure is robust, following a clear and logical progression of six motifemes, from the initial 'Lack' of honey to its 'Lack Liquidated' through collective effort and sharing.",
+        "suggestions": [
+          "While the use of '!o' for a young boy is present, clarifying the precise kinship relationship (e.g., grandson, nephew) or ensuring '!o' is used in its most common Ju|'hoansi context could further refine the authenticity of the kinship terminology, though its current usage is not a major detractor."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 2,
+        "verified_glossed_terms": 2,
+        "verified_ratio": 1.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "6b2f68cc-9ade-4a2b-a76b-4850fa1c46f9",
+      "timestamp_utc": "2026-11-13T03:22:04.607621+00:00",
+      "theme_id": "moon_life",
+      "theme_source": "preset",
+      "theme_prompt": "The Moon dies and lives again, sending the Hare with a message of immortality to humans",
+      "arm": "baseline",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [],
+      "rag_context_included": false,
+      "neo4j_context_used": false,
+      "draft_narrative": "In the time before time, when the world was young and the stars still whispered secrets in the night, there lived a great spirit known as the Moon. She hung high in the sky, watching over the Earth and its creatures with a gentle glow. Her light brought comfort to the weary and guided the lost through the dark.\n\nOne fateful night, the Moon felt a heaviness in her heart. She had watched over the world for so long, and the weight of her duty began to tire her. “I can no longer shine as I once did,” she sighed, her silver beams flickering like a candle in the wind. “Perhaps it is time for me to rest.”\n\nWith that, the Moon began to fade, her brightness dimming until she was but a sliver of light. The animals below looked up in confusion, sensing something was amiss. One among them, a quick-witted Hare, noticed the change and felt a stirring in his spirit. “I must speak to the Moon,” he declared, bounding over the dunes to where her light still flickered faintly.\n\nAs Hare reached the edge of the world, he called out, “Great Moon, do not leave us in darkness! Your light brings life to the night!”\n\nThe Moon, now a mere whisper in the sky, heard Hare’s plea. “Dear Hare,” she replied, her voice soft like the breeze, “I must rest. But all is not lost. I shall die, only to be reborn. I will return, and with me, I will carry a message of immortality.”\n\nHare’s ears perked up. “What is this message?” he asked, his curiosity piqued.\n\n“The message is for the humans below,” the Moon explained. “They often forget that life is a cycle, that death does not mean the end, but a transformation. When I return, I want you to tell them that they, too, shall live again, just as I will.”\n\nHare nodded solemnly, understanding the importance of her words. “I will carry your message, Great Moon. I will not let it fade.”\n\nWith a final shimmer, the Moon vanished from the sky, leaving the world cloaked in darkness. The animals mourned her absence, but Hare knew he must keep his promise. He hopped back to his village, where the humans gathered around the fire, their faces shadowed by worry.\n\n“Listen!” Hare shouted, leaping onto a rock to gain their attention. “I have spoken to the Moon. She has told me she will die, but she will return. And with her, she brings a message of immortality.”\n\nThe humans paused, their hearts heavy with doubt. “How can this be?” one elder asked. “We see death all around us. Our loved ones do not return.”\n\nHare, with the spirit of the Moon within him, spoke with passion. “The Moon told me that life is a circle, that in death we become part of the earth, the sky, the stars. We are never truly gone, only transformed. Just as the Moon will rise again, so shall we.”\n\nThe humans listened, their fears slowly dissipating like morning mist. They began to understand that life continues in many forms, and that the essence of those they had lost would forever remain in the world around them.\n\nDays turned into weeks, and weeks into months. The Moon, in her time of rest, renewed her spirit, gathering strength from the cosmos. And one night, as the humans gathered to share stories under the blanket of stars, a brilliant glow emerged on the horizon.\n\nThe Moon returned, brighter than ever, casting her silvery light upon the earth. The humans rejoiced, for they remembered Hare’s words and felt a warmth in their hearts. They danced and celebrated, understanding now that the cycle of life was a gift, a beautiful dance of beginnings and endings.\n\nFrom that day forth, whenever the Moon rose in the sky, the humans would look up and remember the message Hare had brought. They would share stories of those who had passed, knowing that they lived on in the hearts of the living, just as the Moon continued to shine upon them.\n\nAnd so, the story of the Moon and the message of immortality lived on, passed down through generations, reminding all who heard it that life is a journey, and in every ending, there is a new beginning.",
+      "draft_char_len": 3961,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Departure",
+        "Mediation",
+        "Consequence",
+        "Return",
+        "Lack Liquidated"
+      ],
+      "story_moves": [
+        "Moon feels burden of duty and begins to fade",
+        "Hare decides to speak to the Moon",
+        "Hare receives message of immortality from the Moon",
+        "Hare shares the Moon's message with the humans",
+        "Humans begin to understand the cycle of life",
+        "Moon returns, brighter than ever",
+        "Humans celebrate and remember the message of the Moon"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 0.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 0.0,
+        "motifeme_score": 9.0,
+        "overall_grade": "Fails",
+        "comments": "The story lacks any representation of Ju|'hoansi cultural values such as egalitarianism, food sharing, and kinship. The characters are not grounded in Ju|'hoansi social structures, and there is no communal sharing of resources depicted. The narrative focuses on a spiritual message rather than the communal and egalitarian aspects central to Ju|'hoansi culture. While the motifeme structure is coherent and well-formed, it does not align with the cultural authenticity expected in Ju|'hoansi folktales.",
+        "suggestions": [
+          "Incorporate characters that reflect Ju|'hoansi kinship roles and social structures.",
+          "Include themes of communal food sharing and resource distribution among the characters.",
+          "Ensure that the narrative embodies the principle of radical equality, avoiding any hierarchical dynamics."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 3.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 1.0,
+        "motifeme_score": 8.0,
+        "detected_motifemes": [
+          "Lack",
+          "Mediation",
+          "Lack Liquidated"
+        ],
+        "overall_grade": "Fails",
+        "comments": "The story presents a clear and coherent narrative with a well-defined motifeme structure, effectively conveying a message about cycles of life and death. However, it completely lacks elements of Ju|'hoansi cultural authenticity. There is no depiction of food sharing, no specific Ju|'hoansi kinship roles, and the concept of a 'great spirit' like the Moon, along with an 'elder' figure, suggests a hierarchical structure rather than the radical egalitarianism characteristic of Ju|'hoansi culture.",
+        "suggestions": [
+          "Integrate explicit communal food sharing into the narrative, perhaps as a response to the Moon's absence or as a celebration of her return, emphasizing its importance to the community.",
+          "Introduce specific Ju|'hoansi kinship terms (e.g., !ga, !o, !xo) for human characters and have these roles influence their interactions or decisions.",
+          "Reframe the Moon's role to be less of a 'great spirit' with inherent authority and more as a natural entity or a being whose actions are understood and perhaps even influenced by the collective actions or pleas of the community, aligning with egalitarian principles.",
+          "Ensure that any leadership roles, such as the 'elder,' are portrayed as situational and consensus-based, rather than implying a permanent hierarchy."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "e42180b3-fbaf-4464-8d27-086cff60e3ac",
+      "timestamp_utc": "2026-11-13T03:22:29.187553+00:00",
+      "theme_id": "moon_life",
+      "theme_source": "preset",
+      "theme_prompt": "The Moon dies and lives again, sending the Hare with a message of immortality to humans",
+      "arm": "full_jnang",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [
+        "The Moon Dies and Lives Again",
+        "The Haregirl and the Moon"
+      ],
+      "rag_context_included": true,
+      "neo4j_context_used": true,
+      "draft_narrative": "In the beginning, when the sky was still close to the earth and the Moon (n!ui) shone brightly, the people of the Kalahari lived in harmony with the bush and its creatures. But one fateful night, as the Moon began to wane, it slipped into a dark hole in the ground, leaving the people confused and wondering if their old man Moon had died.\n\nLack of light brought sadness to the people (ju), and they gathered at the waterhole to discuss their plight. “Without the Moon, who will guide us in the dark?” asked an elder, his voice heavy with worry. They decided to leave their camp and move to a new village, hoping for the return of the Moon.\n\nAs they settled in the New Village, the sun (|am) sank low, casting long shadows over the red sand dunes. The women, driven by hunger and the memory of sweet raisin berries, spoke of returning to the abandoned village. However, unbeknownst to them, the Moon had not truly died; it was simply resting in the depths of its hole.\n\nOne day, the haregirl, a clever and curious youth, joined the women as they ventured back to the old village. They tricked her into gathering unripe white berries, while they feasted on the ripe ones. Deceived and alone, the haregirl returned to find the women gone. She called out, but only the sound of her voice echoed back, for the women had played a trick on her, commanding the waterhole to answer her call with their discarded urine.\n\nDesperate for guidance, the haregirl wandered near the hole where the Moon had disappeared. There, she met Old Man Moon and a tortoise, who sat quietly at its entrance. The Moon, with a twinkle in his eye, called out to the haregirl. “Do you fear me, young one? I have a message for your people.”\n\nThough frightened, the haregirl listened. “The people believe I am dead, but I will return. Tell them that death is not the end; they too will die and rise again, just like I will.” The haregirl, feeling the weight of this important message, offered her last !ama bulb (bulb) to the Moon as a token of gratitude.\n\nWith a sudden pull, the Moon drew her into the hole, showing her the wonders of the sky and the cycle of life. She saw the darkness transform into light, and the Moon regained its brightness. When she emerged, she had changed. The spirits of the night whispered to her, filling her with wisdom.\n\nReturning to the New Village, the haregirl shared her experience with her people. “Old Man Moon has told us that even when we die, we will come back to life—just like he does each month,” she proclaimed. The people gathered around her, their hearts swelling with hope.\n\nThe elders listened, and with tears in their eyes, they understood the message of renewal and immortality. They celebrated the haregirl's return and the promise of the Moon’s cycle. Together, they shared food and stories around the campfire, their laughter echoing into the night, for they knew they would never truly be lost.\n\nFrom that day on, they honored the Moon, understanding that life and death were intertwined. The haregirl became a storyteller, teaching the children about the Moon's promise while they gathered under its gentle light, and the Kalahari thrived with the knowledge that they too would live again.",
+      "draft_char_len": 3212,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Departure",
+        "Mediation",
+        "Consequence",
+        "Return",
+        "Lack Liquidated"
+      ],
+      "story_moves": [
+        "People gather at the waterhole to discuss the lack of light",
+        "Haregirl ventures back to the old village",
+        "Haregirl meets Old Man Moon and receives a message",
+        "Haregirl offers her last bulb to the Moon as gratitude",
+        "Haregirl returns to the New Village to share the Moon's message",
+        "Community celebrates the haregirl's return and the promise of the Moon's cycle"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 8.0,
+        "food_sharing_score": 9.0,
+        "kinship_score": 8.0,
+        "cultural_authenticity_score": 8.33,
+        "motifeme_score": 9.0,
+        "overall_grade": "Good",
+        "comments": "The story reflects Ju|'hoansi values of egalitarianism, as no character is elevated above others in status or power. The haregirl's journey emphasizes communal sharing, particularly when the community gathers to celebrate and share food after her return. Kinship roles are subtly present, with elders and the haregirl playing significant parts in the narrative. The motifeme chain is coherent and culturally grounded, effectively illustrating the themes of renewal and the cyclical nature of life.",
+        "suggestions": [
+          "Consider incorporating more explicit kinship roles to enhance the cultural authenticity.",
+          "Explore additional communal activities or rituals that could further emphasize the importance of sharing and cooperation."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 4.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 3.0,
+        "cultural_authenticity_score": 2.33,
+        "motifeme_score": 9.0,
+        "detected_motifemes": [
+          "Lack",
+          "Violation",
+          "Consequence",
+          "Mediation",
+          "Lack Liquidated",
+          "Return"
+        ],
+        "overall_grade": "Fails",
+        "comments": "The story presents a compelling narrative about the cycle of life and death, using the Moon's disappearance and return as a central metaphor. The motifeme structure is strong and well-resolved. However, the depiction of social interactions, particularly the women's deception and hoarding of food from the haregirl, directly contradicts core Ju|'hoansi cultural values of egalitarianism and communal food sharing. This act of hoarding is not condemned or rectified within the narrative, leading to a critical failure in cultural authenticity.",
+        "suggestions": [
+          "Revise the scene where the women trick the haregirl. Instead of hoarding, perhaps they could share the berries, but the haregirl still feels a pull towards the old village or is sent on a specific task that leads her to the Moon.",
+          "If the trick must remain, ensure there is a clear consequence or condemnation of the hoarding behavior, or that the community later corrects this non-egalitarian act.",
+          "Incorporate more explicit Ju|'hoansi kinship terms and roles (e.g., !ga for grandmother, !o for uncle, !xoa for age-mate) and show how these roles function in the narrative to guide or support characters.",
+          "Emphasize communal sharing of resources (food, water, fire) as a central theme, perhaps by showing the community pooling resources during the Moon's absence, or celebrating the Moon's return with a truly communal feast where everyone contributes and benefits equally."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 4,
+        "verified_glossed_terms": 3,
+        "verified_ratio": 0.75,
+        "unverified_terms": [
+          "bulb"
+        ]
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "a7ae109f-c59c-4eb3-9037-8a9f33ae0a17",
+      "timestamp_utc": "2026-11-13T03:22:52.046202+00:00",
+      "theme_id": "trickster_waterhole",
+      "theme_source": "preset",
+      "theme_prompt": "A trickster springhare attempting to hide the secret waterhole from the thirsty community",
+      "arm": "baseline",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [],
+      "rag_context_included": false,
+      "neo4j_context_used": false,
+      "draft_narrative": "In the dry expanse of the Kalahari, where the sun blazed like a fiery spirit, there lived a cunning springhare named Kaman. With long ears that stood tall and a nose that quivered with every whisper of the wind, Kaman was known far and wide for his clever tricks and playful pranks. But as the days grew hotter and the rains refused to fall, the animals of the land began to grow weary and desperate for water.\n\nOne day, while hopping through the golden sands, Kaman stumbled upon a hidden waterhole, its surface shimmering like a jewel under the sun. Enchanted by its beauty, he thought, \"This waterhole shall be mine! I will keep it a secret and enjoy its coolness alone.\" So, he devised a plan.\n\nKaman scurried back to the community, where the animals gathered in a worried circle, their throats parched and their eyes dim. \"Oh friends,\" he said, feigning concern, \"I have heard tales of a great waterhole in the distant mountains. But alas, it is far and treacherous! We could not possibly reach it before we succumb to thirst!\"\n\nThe animals looked at one another, their hearts heavy with despair. \"What shall we do, Kaman?\" asked the wise old tortoise, his voice slow but steady. \"We cannot survive much longer without water.\"\n\nWith a sly grin, Kaman responded, \"We must trust in the winds of fate. Perhaps the rains will come soon, or we shall find another way.\" And with that, he hopped away, his heart light with mischief.\n\nDays turned into weeks, and the sun continued to scorch the land. Kaman would visit the waterhole each day, taking long sips and basking in the coolness while the other animals grew weaker and more desperate. But Kaman was not without his conscience, and as he watched his friends suffer, a flicker of guilt began to stir within him.\n\nOne evening, as the sun dipped low, painting the sky with shades of orange and purple, Kaman overheard the animals discussing their plight. \"If only we could find the waterhole Kaman spoke of,\" sighed a weary zebra, his stripes dull and faded. \"But we have no strength to search for it.\"\n\nSuddenly, Kaman felt a pang of sorrow. \"What have I done?\" he thought. \"I cannot keep this secret any longer.\" So, with a newfound resolve, he decided to reveal the hidden waterhole to his friends.\n\nThe next day, Kaman gathered the animals under the shade of a great acacia tree. \"My friends,\" he began, his voice earnest, \"I have kept a secret that has caused you great pain. There is a waterhole, not far from here, and I shall lead you to it.\"\n\nThe animals gasped in surprise, their eyes brightening with hope. \"Lead us, Kaman! We will follow you!\" they cried, their spirits lifted.\n\nWith a flick of his long ears, Kaman bounded ahead, leading the way through the parched earth until they reached the hidden oasis. The sight of the crystal-clear water sent waves of joy through the crowd. They rushed forward, drinking deeply, splashing water on their backs, and rejoicing in the coolness.\n\nAs the sun set, painting the sky anew, Kaman watched the animals laugh and play, their spirits revived. In that moment, he realized that the joy of sharing the water was far greater than the pleasure of keeping it to himself. From that day on, Kaman became a guardian of the waterhole, ensuring it was a place of community and togetherness.\n\nAnd so, the animals thrived, their bond strengthened by the secret once kept. Kaman, the trickster springhare, had learned that true happiness comes not from deception, but from sharing and caring for one another. And in the heart of the Kalahari, the laughter of friends echoed around the waterhole, a melody of life in the desert.",
+      "draft_char_len": 3624,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Violation",
+        "Consequence",
+        "Mediation",
+        "Lack Liquidated"
+      ],
+      "story_moves": [
+        "Kaman discovers hidden waterhole",
+        "Kaman deceives animals about waterhole",
+        "Animals suffer from lack of water",
+        "Kaman feels guilt and decides to share waterhole",
+        "Kaman reveals waterhole to animals",
+        "Animals rejoice and drink from waterhole",
+        "Kaman becomes guardian of the waterhole"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 0.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 0.0,
+        "motifeme_score": 8.0,
+        "overall_grade": "Fails",
+        "comments": "The story presents a character, Kaman, who hoards a vital resource (water) and is not punished for this behavior, which directly contradicts Ju|'hoansi values of sharing and communal living. The narrative focuses on Kaman's individual desires rather than the collective needs of the community. Additionally, there are no references to Ju|'hoansi kinship structures or social obligations, which further detracts from its cultural authenticity. While the motifeme structure is coherent and follows a logical progression, the critical failure in cultural authenticity leads to an overall failing grade.",
+        "suggestions": [
+          "Revise the story to emphasize communal sharing of resources from the beginning.",
+          "Incorporate specific Ju|'hoansi kinship roles and social structures to enhance authenticity.",
+          "Ensure that characters who hoard resources face consequences to align with Ju|'hoansi values."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 5.0,
+        "food_sharing_score": 9.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 4.67,
+        "motifeme_score": 9.0,
+        "detected_motifemes": [
+          "Lack",
+          "Violation",
+          "Consequence",
+          "Mediation",
+          "Lack Liquidated"
+        ],
+        "overall_grade": "Needs Work",
+        "comments": "The story presents a strong and central theme of sharing a vital resource (water), which is highly commendable. The narrative arc effectively demonstrates the negative consequences of hoarding and the ultimate joy and community strength derived from sharing. The motifeme structure is very clear and coherent, with a logical progression from lack to liquidation. However, the story falls short in its depiction of egalitarianism, as the main character initially hoards a critical resource and deceives the community, which is a significant deviation from radical equality. While this behavior is corrected, the initial transgression is prominent. Furthermore, there is a complete absence of specific Ju|'hoansi kinship roles or social structures, which significantly impacts the cultural authenticity score.",
+        "suggestions": [
+          "To improve egalitarianism, consider narratives where characters do not attempt to hoard resources or deceive the community, or where such attempts are immediately and collectively challenged rather than leading to prolonged suffering.",
+          "Incorporate specific Ju|'hoansi kinship terms (e.g., !ga for grandmother, !o for uncle, !xo for age-mate) and illustrate their functional roles within the story's social dynamics.",
+          "Explore how leadership, if present, is situational and non-hierarchical, perhaps through collective decision-making or temporary guidance for specific tasks, rather than a 'guardian' role which could imply elevated status."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "872eb778-a5f9-440f-a33a-2e5d153ede8e",
+      "timestamp_utc": "2026-11-13T03:23:15.967133+00:00",
+      "theme_id": "trickster_waterhole",
+      "theme_source": "preset",
+      "theme_prompt": "A trickster springhare attempting to hide the secret waterhole from the thirsty community",
+      "arm": "full_jnang",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [
+        "The Elephant First Found Water",
+        "The Beautiful Elephant Girl"
+      ],
+      "rag_context_included": true,
+      "neo4j_context_used": true,
+      "draft_narrative": "In the heart of the Kalahari, where red sand dunes stretch beneath the blazing sun, there lived a clever springhare named Kxai. Kxai was known for his trickery and cunning ways, often delighting in playing pranks on the animals of the bush. One day, while hopping through the dry landscape, Kxai stumbled upon a hidden waterhole, glistening like a jewel amidst the arid earth. He felt a rush of excitement; this waterhole was a secret treasure that would quench the thirst of any who found it.\n\n**Lack Liquidated**—However, Kxai was not one to share. The community of animals was suffering from a great lack of water, and Kxai decided he would keep the waterhole to himself. He drank deeply, savoring the cool, refreshing water, while the others struggled under the hot sun, their throats parched and dry.\n\n**Departure**—As Kxai reveled in his secret, the wise elder of the community, an ancient tortoise named ||N!a, sensed that something was amiss. She gathered the animals around the campfire at nightfall and spoke, “We must find water, for the bush is unforgiving. Let us venture forth and seek the hidden source.” The animals agreed, their bodies weary and their hearts hopeful.\n\n**Mediation**—The next day, ||N!a led the group into the bush, their spirits lifted by the camaraderie they shared. As they traveled, the animals sniffed the air for signs of water. Kxai, watching from a distance, felt a twinge of fear. He could not let them discover his secret! So he devised a plan.\n\n**Interdiction**—Kxai approached the group, pretending to be friendly. “Oh, dear friends, I have heard of a waterhole not far from here, but I must warn you, it is guarded by a fierce lion who will not let anyone drink.” The animals hesitated, their eyes wide with concern. Kxai watched with glee as fear gripped their hearts, believing they were in danger.\n\n**Violation**—But ||N!a, wise and bold, challenged Kxai. “You speak of danger, yet it is you who hoards the water for yourself! We must band together, for strength lies in unity.” The springhare's heart raced; he realized his trickery was being unveiled.\n\n**Consequence**—In a moment of panic, Kxai dashed away, but the animals, driven by thirst, followed his every hop. They tracked him across the sandy landscape, their determination growing with each leap. At last, they arrived at the secret waterhole just as Kxai attempted to cover it with branches, hoping to shield it from their eyes.\n\n**Mediation**—The animals surrounded the waterhole, and Kxai, seeing the community united, knew he could no longer hide. “I was wrong to keep this secret!” he cried, his ears drooping. The animals looked at one another, their hearts softening at his admission.\n\n**Violation**—In that moment, Kxai stepped aside, allowing the others to drink freely. They filled their bodies with the cool water, laughter echoing through the bush as they danced and celebrated their shared fortune. Kxai, though embarrassed, felt a warmth in his heart as he watched his friends enjoy the water he had selfishly guarded.\n\n**Consequence**—From that day forward, Kxai learned the importance of sharing. He became a protector of the waterhole, ensuring that all animals could quench their thirst. The community thrived, united by the lessons learned from Kxai's trickery.\n\n**Lack Liquidated**—The bush flourished with life as rain began to fall more often, replenishing the earth and bringing joy to all. The animals learned to work together, celebrating their bonds and sharing resources.\n\n**Return**—As the sun set over the Kalahari, the sounds of happiness filled the air. Kxai, no longer a mere trickster, became a valued member of the community, forever remembering that true wealth lies in sharing and caring for one another. And so, the animals lived in harmony, their hearts as full as the waterhole they cherished.",
+      "draft_char_len": 3843,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Lack Liquidated",
+        "Departure",
+        "Mediation",
+        "Interdiction",
+        "Violation",
+        "Consequence",
+        "Violation",
+        "Consequence",
+        "Lack Liquidated",
+        "Return"
+      ],
+      "story_moves": [
+        "Kxai discovers hidden waterhole",
+        "Community suffers from lack of water",
+        "||N!a leads animals to seek water",
+        "Kxai warns animals of a lion guarding the waterhole",
+        "||N!a challenges Kxai's deceit",
+        "Animals track Kxai to the waterhole",
+        "Kxai admits his wrongdoing and allows sharing",
+        "Animals celebrate drinking from the waterhole",
+        "Kxai becomes protector of the waterhole",
+        "Animals thrive and live in harmony"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 0.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 0.0,
+        "motifeme_score": 8.0,
+        "overall_grade": "Fails",
+        "comments": "The story fails to embody the Ju|'hoansi principles of egalitarianism and communal sharing. Kxai hoards the waterhole, and while he eventually shares, the initial act of hoarding is not corrected or punished, violating critical cultural values. Kinship roles are not explicitly defined, and the focus on individual trickery undermines communal values. The motifeme structure is coherent, with a clear progression of events, but the cultural authenticity is severely lacking.",
+        "suggestions": [
+          "Incorporate explicit kinship roles and relationships among the animals to reflect Ju|'hoansi social structures.",
+          "Ensure that the consequences for hoarding are more pronounced, perhaps by having Kxai face repercussions from the community before he learns to share.",
+          "Highlight the communal aspect of sharing food and resources more prominently throughout the story."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 8.0,
+        "food_sharing_score": 9.5,
+        "kinship_score": 2.0,
+        "cultural_authenticity_score": 6.5,
+        "motifeme_score": 9.0,
+        "detected_motifemes": [
+          "Lack",
+          "Violation",
+          "Departure",
+          "Mediation",
+          "Interdiction",
+          "Violation",
+          "Consequence",
+          "Mediation",
+          "Lack Liquidated",
+          "Return"
+        ],
+        "overall_grade": "Adequate",
+        "comments": "The story effectively uses a clear motifeme structure to tell a tale of overcoming selfishness and establishing communal sharing. The central theme of sharing water is very strong and aligns well with Ju|'hoansi values, with the hoarding character being corrected and learning the importance of community. The narrative clearly depicts the community's response to a lack of resources and the eventual resolution through collective action and Kxai's transformation.",
+        "suggestions": [
+          "To improve cultural authenticity, incorporate specific Ju|'hoansi kinship terms (e.g., !ga, !o, !xo) for characters or refer to hxaro exchange. While the animal characters are common in folktales, grounding them with human-like social structures using these terms would strengthen the cultural connection.",
+          "Ensure that any explicit motifeme labels within the story text are accurate and consistent with the narrative flow, or remove them entirely to allow for independent interpretation."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "f77f5d8d-74d1-44d1-abde-6fd83ae2d097",
+      "timestamp_utc": "2026-11-13T03:23:43.485271+00:00",
+      "theme_id": "fire_origin",
+      "theme_source": "preset",
+      "theme_prompt": "A woman first found fire under the armpit of the sacred bird and brought warmth to camp",
+      "arm": "baseline",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [],
+      "rag_context_included": false,
+      "neo4j_context_used": false,
+      "draft_narrative": "In the heart of the Kalahari, where the golden sands stretch endlessly under the watchful sun, there lived a woman named Tana. Tana was known for her bravery and her keen sense of adventure. The people of her camp often whispered tales of her courage, but deep inside, Tana longed for something more—she wished to bring warmth and light to her people, especially during the cold nights when the wind howled like a wild beast.\n\nOne day, while wandering through the vast expanse of the desert, Tana spotted a magnificent bird soaring high above. Its feathers shimmered like the sun, and its call echoed with a melody that resonated deep within her soul. The bird was the sacred Sankuru, a creature revered by the Ju|'hoansi for its connection to the spirit world. Tana felt a pull in her heart; she knew this bird held a secret that could change her people’s lives forever.\n\nDetermined to learn from the Sankuru, Tana followed it as it danced across the sky, swooping low over the dunes and then rising high again. Hours passed, and as the sun began to set, painting the horizon in hues of orange and pink, the Sankuru landed atop a great baobab tree. Tana crept closer, her heart racing with excitement and fear. She noticed a warm glow radiating from beneath the bird’s armpit. It was fire!\n\nIn awe, Tana approached the Sankuru cautiously. “Oh, great bird, please share your fire with me,” she implored. “My people suffer in the cold of night, and I wish to bring them warmth.”\n\nThe Sankuru tilted its head, studying Tana with wise, ancient eyes. “Fire is a gift that must be respected. It can bring warmth, but it can also bring destruction. Are you ready to bear this responsibility?”\n\nTana nodded firmly, her resolve unwavering. “I am ready. I will cherish this gift and teach my people to respect it.”\n\nWith a gentle flap of its wings, the Sankuru released a small spark from under its armpit, and it floated down to Tana. She caught it carefully in her hands, feeling the warmth spread through her fingers. The sacred bird spoke once more, “Carry this spark back to your camp, but remember, it is only a beginning. You will need to nurture it and keep it alive.”\n\nWith gratitude swelling in her heart, Tana hurried back to her people, the precious spark cradled close to her chest. As she reached the camp, the night had settled in, and her people shivered under the stars. They looked at her with curiosity as she approached, her hands glowing with the warmth of the Sankuru’s gift.\n\nTana gathered everyone around her and explained, “I have found fire! With it, we can chase away the cold and gather together in its warmth.” The people gasped in wonder as she carefully placed the spark in a dry patch of grass, then gently blew on it. To their amazement, the spark burst into flames, crackling and dancing before them.\n\nAs the fire grew, so did their joy. They sang songs and shared stories around the flickering light, their laughter mingling with the night breeze. From that day forth, fire became a symbol of unity and warmth in their camp, a gift from the sacred Sankuru and a testament to Tana’s bravery.\n\nAnd so, the people of the Kalahari learned to respect fire, remembering always the lesson of its dual nature. They honored the Sankuru, whose spirit watched over them, and Tana, the woman who dared to seek warmth beneath the wings of a sacred bird. Each night, as they sat by the fire, they told tales of Tana’s adventure, passing down the story through generations, forever grateful for the warmth that now embraced them.",
+      "draft_char_len": 3540,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Departure",
+        "Mediation",
+        "Lack Liquidated",
+        "Return"
+      ],
+      "story_moves": [
+        "Tana feels a lack of warmth for her people",
+        "Tana departs from her camp to seek the sacred Sankuru",
+        "Sankuru mediates by granting Tana a spark of fire",
+        "Tana returns to her camp with the spark and creates fire",
+        "Community celebrates and learns to respect fire"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 8.0,
+        "food_sharing_score": 9.0,
+        "kinship_score": 7.0,
+        "cultural_authenticity_score": 8.0,
+        "motifeme_score": 9.0,
+        "overall_grade": "Good",
+        "comments": "The story embodies Ju|'hoansi values of egalitarianism, as Tana's bravery is celebrated without any hierarchical implications. The communal aspect is highlighted through the sharing of fire, which brings warmth and unity to the camp. Kinship is present, though not explicitly named, as the community gathers around Tana, reflecting their social structure. The motifeme chain is coherent and culturally grounded, effectively illustrating the journey from lack to fulfillment through the sacred bird's gift.",
+        "suggestions": [
+          "Incorporate specific kinship terms to enhance cultural authenticity.",
+          "Emphasize the communal sharing aspect further by detailing how food is shared around the fire after it is created."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 3.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 1.0,
+        "cultural_authenticity_score": 1.33,
+        "motifeme_score": 9.0,
+        "detected_motifemes": [
+          "Lack",
+          "Mediation",
+          "Departure",
+          "Lack Liquidated",
+          "Return"
+        ],
+        "overall_grade": "Fails",
+        "comments": "The story presents a clear and well-structured narrative, effectively conveying the acquisition of fire. The motifeme chain is strong and logically resolved. However, it significantly deviates from core Ju|'hoansi cultural principles. The emphasis on Tana's individual heroism and the subsequent honoring of her goes against the principle of radical equality. There is a complete absence of any food sharing themes, which are central to Ju|'hoansi culture. Furthermore, specific kinship roles and structures are not present, limiting its cultural authenticity.",
+        "suggestions": [
+          "To enhance egalitarianism, consider reframing Tana's role to emphasize collective discovery or situational leadership that does not result in lasting individual status or honor. Perhaps the fire is a gift to the community that everyone contributes to maintaining, rather than a singular achievement.",
+          "Integrate explicit scenes of communal food sharing. The newly acquired fire could be used to cook and share meat or gathered foods with the entire camp, including the elderly and children, making sharing a central part of the plot.",
+          "Incorporate specific Ju|'hoansi kinship terms (e.g., !ga for grandmother, !o for uncle, !xoa for age-mate) and show how these relationships function within the narrative, perhaps in the decision-making process or the distribution of the fire's benefits."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "8a3861a5-b353-4a8d-af65-75c46a575215",
+      "timestamp_utc": "2026-11-13T03:24:10.316036+00:00",
+      "theme_id": "fire_origin",
+      "theme_source": "preset",
+      "theme_prompt": "A woman first found fire under the armpit of the sacred bird and brought warmth to camp",
+      "arm": "full_jnang",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [
+        "A Woman First Found Fire",
+        "The Tamsa Bird"
+      ],
+      "rag_context_included": true,
+      "neo4j_context_used": true,
+      "draft_narrative": "In the heart of the Kalahari, where the red sand dunes meet the endless sky, there lived a woman named N//ao. She was known for her keen eyes and gentle heart, often wandering through the bush, gathering the sweet fruits of the land. But one day, N//ao felt a deep lack; the nights were growing colder, and the camp had no warmth to share among the people.\n\n**(Lack)** One evening, as the sun dipped low and the shadows grew long, N//ao set out towards the sacred waterhole, where the tall trees whispered secrets to one another. It was there that she heard the rustle of wings above her. Looking up, she saw the magnificent Tamsa bird, its feathers shimmering like the stars. It was said that the Tamsa held the secret of fire beneath its armpit.\n\n**(Departure)** Without thinking, N//ao ventured deeper into the bush, her heart pounding with both fear and excitement as she followed the bird. The Tamsa circled overhead and landed among the tall grass. N//ao approached cautiously, remembering the stories of elders who spoke of the bird’s power. As she crept closer, the Tamsa spread its wings, revealing a tiny flicker of fire nestled beneath its feathers.\n\n**(Interdiction)** “Do not take what is not yours,” the Tamsa warned, its voice echoing like the wind through the trees. “Fire is a gift, not to be hoarded. It must be shared with all, or it will bring destruction.” N//ao nodded, understanding the weight of its words.\n\n**(Violation)** But in her heart, the cold of the camp drove her forward. She reached out and took the fire, cradling it in her hands, feeling its warmth spread through her body. The Tamsa let out a cry of sorrow, and in that moment, the ground beneath N//ao trembled. She had violated the sacred trust.\n\n**(Consequence)** The fire flickered and dimmed. N//ao felt a great weight upon her heart as the Tamsa flew away, leaving her alone in the dark. She realized her mistake; without sharing the fire, she would be left in the cold forever.\n\n**(Mediation)** With a heavy heart, N//ao returned to her camp, the fire still glowing weakly in her hands. The people gathered around her, their faces shadowed in the night. She knew she could not keep the fire to herself. “Here, let us all share this warmth,” she said, her voice trembling. “The Tamsa taught me that fire is a gift meant for all.”\n\nOne by one, the people of the camp reached out, and N//ao spread the fire among them, each person taking a piece of its warmth. As they gathered around, the flames grew strong, illuminating their faces and filling the night with a golden glow. Laughter and stories flowed like the water from the nearby hole, and the camp transformed with joy.\n\n**(Lack Liquidated)** The cold that had once gripped their bones melted away, replaced by the warmth of community and sharing. The Tamsa bird returned, watching from a distance, pleased to see the fire kept alive by the hands of many.\n\n**(Return)** From that day forth, N//ao was known not just as the woman who found fire, but as the one who taught her people that warmth is meant to be shared. The Tamsa bird became a symbol of unity, reminding them that together, they could withstand even the coldest nights. And so, the camp thrived, echoing with laughter and warmth, a testament to the power of sharing in the heart of the Kalahari.",
+      "draft_char_len": 3308,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Departure",
+        "Interdiction",
+        "Violation",
+        "Consequence",
+        "Mediation",
+        "Lack Liquidated",
+        "Return"
+      ],
+      "story_moves": [
+        "N//ao feels a deep lack of warmth in the camp",
+        "N//ao departs towards the sacred waterhole",
+        "Tamsa bird issues a warning against taking fire",
+        "N//ao violates the warning and takes the fire",
+        "N//ao experiences the consequence of her actions as the Tamsa leaves",
+        "N//ao mediates by deciding to share the fire with her people",
+        "The lack of warmth is resolved as the fire is shared among the camp",
+        "N//ao returns to the camp with the fire and teaches the importance of sharing"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 10.0,
+        "food_sharing_score": 10.0,
+        "kinship_score": 8.0,
+        "cultural_authenticity_score": 9.33,
+        "motifeme_score": 10.0,
+        "overall_grade": "Excellent",
+        "comments": "The story beautifully embodies Ju|'hoansi cultural values of egalitarianism and communal sharing. N//ao's journey emphasizes the importance of sharing resources, particularly fire, which is a vital element in their culture. The characters interact without hierarchy, and the act of sharing the fire reinforces the communal bonds. Kinship is present, though not explicitly named, as the community gathers around N//ao, reflecting their interconnectedness. The motifeme structure is coherent and culturally grounded, with a clear progression from lack to resolution through sharing.",
+        "suggestions": [
+          "Consider explicitly naming kinship roles to enhance cultural authenticity.",
+          "Incorporate more dialogue or interactions that reflect specific Ju|'hoansi social customs."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 9.0,
+        "food_sharing_score": 9.5,
+        "kinship_score": 2.0,
+        "cultural_authenticity_score": 6.83,
+        "motifeme_score": 9.5,
+        "detected_motifemes": [
+          "Lack",
+          "Interdiction",
+          "Violation",
+          "Consequence",
+          "Mediation",
+          "Lack Liquidated",
+          "Return"
+        ],
+        "overall_grade": "Adequate",
+        "comments": "The story excels in its portrayal of egalitarian principles and the critical importance of resource sharing, with the narrative actively punishing individual hoarding and celebrating communal distribution. The motifeme structure is exceptionally clear and complete, with a strong logical progression from lack to liquidation. The primary area for improvement lies in the depiction of kinship and social structures, which are generic rather than specifically Ju|'hoansi.",
+        "suggestions": [
+          "Integrate specific Ju|'hoansi kinship terms (e.g., !ga, !o, !xo) to enrich the cultural authenticity of character relationships.",
+          "Consider referencing or subtly incorporating Ju|'hoansi social practices like hxaro exchange or brideservice to further ground the narrative in the culture."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "dba548f0-9fb1-4ae3-96be-75f8adc22336",
+      "timestamp_utc": "2026-11-13T03:24:27.069400+00:00",
+      "theme_id": "elephant_water",
+      "theme_source": "preset",
+      "theme_prompt": "The Great Elephant holding the water reservoir until small birds negotiate sharing",
+      "arm": "baseline",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [],
+      "rag_context_included": false,
+      "neo4j_context_used": false,
+      "draft_narrative": "In the heart of the Kalahari, where the sun painted the sky in hues of gold and the winds whispered secrets through the acacia trees, there lived a Great Elephant named Kanyima. Kanyima was known far and wide for his enormous size and gentle heart. He roamed the land, protecting all creatures and ensuring they had enough water to drink.\n\nOne scorching summer, a terrible drought spread across the Kalahari. The rivers dried up, and the waterholes shrank until they were nothing more than cracked earth. All animals grew desperate, and many perished under the relentless sun. But Kanyima had a secret: hidden deep within a rocky crevice lay a large reservoir filled with the purest water, untouched by the drought.\n\nOne day, as Kanyima stood guard over the reservoir, a flock of small birds known as the Tsuru gathered around him. Their feathers were ruffled and their beaks parched. They chirped and fluttered, begging Kanyima to share the precious water.\n\n“Oh, great Kanyima!” cried the leader of the Tsuru, a wise old bird with feathers as blue as the sky. “We are in desperate need. Please, let us drink from your reservoir.”\n\nKanyima looked down at the tiny birds and shook his mighty head. “I cannot share the water, little ones. If I do, it will quickly be gone, and then all the creatures will suffer. You must find a way to negotiate.”\n\nThe Tsuru, undeterred, gathered together in a huddle. They chirped and squabbled, trying to come up with a plan. After much discussion, they decided to offer Kanyima a trade. They would sing him the sweetest songs, songs that could make even the hardest heart soften, in exchange for just a few sips of water.\n\nWith their decision made, the Tsuru took to the skies and began to sing. Their voices rose like the wind, weaving melodies that danced through the air. They sang of the beauty of the Kalahari, of the stars that twinkled at night, and of the joy of friendship. The sounds were so enchanting that even the dry grasses seemed to sway in rhythm.\n\nKanyima listened, his heart swelling with each note. The songs reminded him of all the love and life that existed in the world, and he felt his resolve begin to waver. After their beautiful performance, he lowered his trunk to the ground and said, “Your songs are lovely, dear Tsuru, and I can see your hearts are true. I will share my water, but only if you promise to help me keep it safe.”\n\nThe Tsuru chirped excitedly, their eyes sparkling with joy. “We promise, great Kanyima! We will be your guardians and watch over the water so that all may drink from it.”\n\nAnd so, Kanyima opened the reservoir, allowing the birds to sip the cool, refreshing water. The Tsuru drank deeply, their spirits lifted, but they remembered their promise. They flew high into the air and called to all the animals of the Kalahari, inviting them to come and drink, but asking them to do so in a way that would not waste the precious resource.\n\nThe animals came in droves—giraffes, antelopes, and even the sly jackals. Each took only what they needed, and the Tsuru sang their sweet songs to remind them of the beauty of sharing. Day by day, the water level in the reservoir remained steady, and life began to flourish once more.\n\nAs the drought ended and the rains returned, Kanyima and the Tsuru became symbols of cooperation and harmony in the land. The Great Elephant and the small birds taught all creatures that sharing was not just about giving, but also about working together to protect the gifts of nature.\n\nAnd so, the legend of Kanyima and the Tsuru was passed down from generation to generation, reminding the people of the Kalahari that even the smallest voices can create the greatest change when they come together in unity.",
+      "draft_char_len": 3722,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Interdiction",
+        "Violation",
+        "Consequence",
+        "Mediation",
+        "Lack Liquidated"
+      ],
+      "story_moves": [
+        "Kanyima protects the water reservoir from being shared",
+        "Tsuru plead for water from Kanyima",
+        "Tsuru offer to sing in exchange for water",
+        "Kanyima agrees to share water on the condition of protection",
+        "Animals come to drink water under the Tsuru's guidance",
+        "Kanyima and Tsuru teach the importance of sharing and cooperation"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 5.0,
+        "food_sharing_score": 8.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 4.33,
+        "motifeme_score": 9.0,
+        "overall_grade": "Needs Work",
+        "comments": "The story presents a clear narrative of cooperation and sharing, particularly through the actions of Kanyima and the Tsuru. However, it lacks authentic Ju|'hoansi kinship roles and social structures, which diminishes its cultural authenticity. The egalitarianism aspect is somewhat present, as Kanyima ultimately shares the water, but the initial refusal and the hierarchical nature of the elephant's power over the water could be seen as problematic. The food sharing theme is strong, as the water is shared among all animals, emphasizing communal resource management.",
+        "suggestions": [
+          "Incorporate specific Ju|'hoansi kinship roles and relationships to enhance cultural authenticity.",
+          "Avoid hierarchical portrayals of characters; emphasize situational leadership and communal decision-making.",
+          "Include more explicit references to communal sharing practices and the importance of collective responsibility in resource management."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 0.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 0.0,
+        "motifeme_score": 9.0,
+        "detected_motifemes": [
+          "Lack",
+          "Mediation",
+          "Lack Liquidated"
+        ],
+        "overall_grade": "Fails",
+        "comments": "The story fails to embody core Ju|'hoansi cultural values, particularly regarding egalitarianism and food sharing. The central plot involves a powerful character (Kanyima) hoarding a vital resource (water) during a drought and only sharing it after a 'negotiation' (the Tsuru's songs). This directly contradicts the principle of radical equality and unconditional sharing of resources, which are fundamental to Ju|'hoansi culture. The story then praises Kanyima and the Tsuru for this conditional sharing, presenting it as a 'symbol of cooperation and harmony,' which is antithetical to Ju|'hoansi values where hoarding of critical resources would be met with severe social disapproval, not praise. Furthermore, there is no representation of Ju|'hoansi kinship structures or marriage customs. The story does, however, present a clear and coherent narrative structure that aligns well with Alan Dundes' motifeme theory, featuring a clear Lack, followed by Mediation, leading to a Lack Liquidated.",
+        "suggestions": [
+          "Revise the plot to emphasize unconditional sharing of resources, especially water, without negotiation or conditions.",
+          "Ensure that any character who attempts to hoard resources faces negative consequences or social correction, rather than being praised.",
+          "Remove hierarchical elements, such as a 'Great Elephant' who controls access to vital resources or 'guardians' of the water.",
+          "Integrate specific Ju|'hoansi kinship terms (e.g., !ga, !o, !xo) and illustrate their roles in the narrative.",
+          "Consider incorporating elements of hxaro exchange or other authentic social practices if relevant to the plot."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": false,
+        "flagged_terms": [
+          "gold"
+        ],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "25a573fd-835b-41d8-9e7b-c8331f1f46fc",
+      "timestamp_utc": "2026-11-13T03:24:57.935433+00:00",
+      "theme_id": "elephant_water",
+      "theme_source": "preset",
+      "theme_prompt": "The Great Elephant holding the water reservoir until small birds negotiate sharing",
+      "arm": "full_jnang",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [
+        "The Elephant First Found Water",
+        "The Beautiful Elephant Girl"
+      ],
+      "rag_context_included": true,
+      "neo4j_context_used": true,
+      "draft_narrative": "In the heart of the Kalahari, where the red sand dunes stretch beneath the vast sky, there lived a Great Elephant named Kxoma. Kxoma was known throughout the land for his enormous size and strength, but also for his cunning ways. One day, while wandering in the Bush, he stumbled upon a hidden waterhole, shimmering and fresh, filled with the precious g!u (water). \n\n(Kxoma thought to himself,) “I shall keep this water a secret just for me.” And so, he drank deeply and often, feeling the coolness wash down his throat, while the other animals suffered from thirst. \n\nHowever, his greed did not go unnoticed. Beautiful Aardvark Girl, a clever creature who wandered nearby, noticed the mud (g‡kaa) on Kxoma’s massive ankles. “How can he drink from this waterhole and not share?” she whispered to her brothers, the Swallows of the Rain, who fluttered nearby. \n\nDetermined to confront Kxoma, the brothers set out to track him. They followed the trail of mud to the secret waterhole. As Kxoma wandered off to munch on leaves, the brothers took their chance. They drank their fill and filled the waterhole with their urine (waq). When Kxoma returned, he was shocked to find his beloved waterhole tainted. He approached to drink but was met with a bitter surprise. The water rejected him, refusing to quench his thirst.\n\nAngry and desperate, Kxoma tried to grab Beautiful Aardvark Girl with his trunk, demanding to know who dared to ruin his secret. But the brothers, who had been preparing their spears (!u!usi), defended their sister. They quickly thrust their weapons into Kxoma, who let out a great roar as he fell to the ground, defeated.\n\nAs Kxoma lay dying, something miraculous happened. His great body began to transform, and with a final breath, he released the power of rain into the sky. The clouds gathered, and soon, a gentle rain began to fall, soaking the thirsty land, and filling waterholes everywhere for all creatures to share.\n\nThe brothers and Beautiful Aardvark Girl watched in awe as the Kalahari transformed, becoming lush and vibrant. They gathered their kin, celebrating the return of life to their home. From that day on, they shared the water with all the animals, ensuring that no creature would suffer from thirst again.\n\nAnd so, the Great Elephant, who once hoarded the water, became the source of life for all, teaching them the importance of sharing and community. The rain that fell was a reminder of Kxoma's legacy, a lesson that echoed through the ages in the heart of the Kalahari.",
+      "draft_char_len": 2514,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Interdiction",
+        "Violation",
+        "Consequence",
+        "Lack Liquidated",
+        "Return"
+      ],
+      "story_moves": [
+        "Kxoma discovers hidden waterhole",
+        "Kxoma hoards water from other animals",
+        "Aardvark Girl notices Kxoma's greed",
+        "Swallows track Kxoma to the waterhole",
+        "Swallows taint the waterhole",
+        "Kxoma confronts Aardvark Girl",
+        "Swallows defend Aardvark Girl and attack Kxoma",
+        "Kxoma transforms and brings rain",
+        "Community celebrates the return of life and shares water"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 0.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 0.0,
+        "motifeme_score": 9.0,
+        "overall_grade": "Fails",
+        "comments": "The story presents a clear moral lesson about the consequences of hoarding and the importance of sharing, but it fails critically on cultural authenticity. Kxoma's hoarding of water is not corrected or punished in a way that aligns with Ju|'hoansi values of radical equality. Instead, he is punished through violence, which does not reflect the communal resolution typically found in Ju|'hoansi narratives. Additionally, there is no meaningful depiction of food sharing or kinship roles, as the characters are not identified with specific kinship ties or social structures. The motifeme structure is coherent and well-formed, but the cultural elements are fundamentally misaligned with Ju|'hoansi principles.",
+        "suggestions": [
+          "Revise the story to emphasize communal sharing of resources, ensuring that all characters participate in the sharing of water.",
+          "Incorporate specific Ju|'hoansi kinship roles and relationships to ground the narrative in authentic social structures.",
+          "Avoid violent resolutions; instead, focus on reconciliation and communal problem-solving that reflects Ju|'hoansi egalitarian values."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 9.0,
+        "food_sharing_score": 9.5,
+        "kinship_score": 3.0,
+        "cultural_authenticity_score": 7.17,
+        "motifeme_score": 9.0,
+        "detected_motifemes": [
+          "Lack",
+          "Violation",
+          "Consequence",
+          "Mediation",
+          "Lack Liquidated"
+        ],
+        "overall_grade": "Good",
+        "comments": "The story effectively addresses themes of resource hoarding and communal sharing, which are central to Ju|'hoansi culture. Kxoma's punishment for hoarding water and the subsequent establishment of universal sharing aligns well with egalitarian principles. The motifeme structure is strong and coherent, with a clear progression from lack to liquidation.",
+        "suggestions": [
+          "To enhance cultural authenticity, incorporating specific Ju|'hoansi kinship terms (e.g., !ga for grandmother, !o for uncle, !xoa for age-mate) and perhaps referencing hxaro exchange or brideservice, even subtly, would deepen the cultural resonance of the narrative."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 4,
+        "verified_glossed_terms": 2,
+        "verified_ratio": 0.5,
+        "unverified_terms": [
+          "mud",
+          "spears"
+        ]
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "596e5a67-3844-44e3-9371-6d9111903525",
+      "timestamp_utc": "2026-11-13T03:25:18.887321+00:00",
+      "theme_id": "ostrich_tortoise",
+      "theme_source": "held_out",
+      "theme_prompt": "A tortoise tricks an ostrich into unknowingly eating cooked tortoise eggs; when the ostrich realizes what he has eaten, his shocked reaction explains why ostriches have had red, split shins ever since",
+      "arm": "baseline",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [],
+      "rag_context_included": false,
+      "neo4j_context_used": false,
+      "draft_narrative": "Once upon a time in the vast, sun-drenched Kalahari, there lived a clever tortoise named Toka. Toka was known far and wide for his sharp wit and cunning ways. He was small, but his mind was as vast as the desert sky. One day, while wandering through the sandy plains, Toka came across a tall and majestic ostrich named Omo. Omo was proud of his long legs and swift feet, and he often bragged about how he could outrun any creature in the land.\n\nToka, who had a playful spirit, decided to teach Omo a lesson about being boastful. \"Greetings, Omo!\" Toka called out with a sly smile. \"I hear you are the fastest among all the animals. Surely, you are not afraid of a simple tortoise like me?\"\n\nOmo puffed out his chest, his feathers ruffled with pride. \"Afraid? Never! I can outrun you without even trying!\"\n\n\"Then let us see who can gather the most delicious food for our feast today,\" Toka proposed, concealing his true intentions. \"I have a secret stash of the finest tortoise eggs hidden under the old baobab tree. They are far more delicious than anything you can find.\"\n\nIntrigued and eager to prove his speed, Omo agreed to the challenge. \"You may have your eggs, but I will gather the best berries and seeds!\" He strutted off, confident that he would easily win.\n\nWhile Omo dashed around collecting food, Toka slowly made his way to the baobab tree. There, he carefully dug up a few of his own eggs, which had been cooking in the warm sand of the Kalahari sun. Toka gathered them and placed them in a neat pile, their shells warm and fragrant.\n\nWhen Omo returned, he proudly displayed his collection of berries and seeds. Toka, with a twinkle in his eye, presented his cooked tortoise eggs. \"Behold! The finest feast in the land!\" he declared. Omo, his mouth watering at the sight, couldn't resist the temptation.\n\n\"Let us eat!\" Omo exclaimed, and they began to feast. Toka watched with delight as Omo gobbled up the eggs, savoring the rich, smoky flavor. The tortoise chuckled to himself, for he knew the truth of what the ostrich was consuming.\n\nAs the meal progressed, Omo suddenly paused. He looked down at the empty shells, realization dawning upon him. \"Wait! What have I eaten?\" he cried, his voice rising in panic. \"These were not berries or seeds! These were tortoise eggs!\"\n\nToka couldn't contain his laughter any longer. \"Indeed, Omo! You have unknowingly feasted on my eggs. A lesson for you about boasting and underestimating others!\"\n\nOmo's face turned a deep shade of red, and he stomped his feet in shock. \"You tricked me, Toka! I shall never boast again!\" In his surprise, he thrashed around, his long legs kicking up sand and causing quite a ruckus.\n\nFrom that day forward, Omo's shins were forever marked with red splatters from the sand and his frantic kicking. As a reminder of his folly, the ostrich would wear his embarrassment on his legs, split and red, a testament to the day he learned that pride often leads to unexpected consequences.\n\nAnd so, the tale of Toka the tortoise and Omo the ostrich spread across the Kalahari, teaching generations about humility and the cleverness of those who may seem small and slow. To this day, when you see an ostrich with red, split shins, remember the lesson of the tortoise and the prideful bird.",
+      "draft_char_len": 3267,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Interdiction",
+        "Violation",
+        "Consequence",
+        "Lack Liquidated"
+      ],
+      "story_moves": [
+        "Toka challenges Omo to a food-gathering contest",
+        "Omo boasts about his speed and accepts the challenge",
+        "Toka gathers his hidden tortoise eggs",
+        "Omo returns with berries and seeds",
+        "Toka reveals the truth about the eggs",
+        "Omo realizes he has eaten tortoise eggs and learns a lesson"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 8.0,
+        "food_sharing_score": 7.0,
+        "kinship_score": 5.0,
+        "cultural_authenticity_score": 6.67,
+        "motifeme_score": 9.0,
+        "overall_grade": "Adequate",
+        "comments": "The story effectively embodies the Ju|'hoansi principle of egalitarianism, as Toka and Omo engage in a playful contest without any hierarchical implications. However, while the theme of food sharing is present, it is not central to the narrative, as the focus is more on the trickery than on communal sharing. Kinship roles are not explicitly referenced, which detracts from the cultural authenticity. The motifeme structure is coherent and well-formed, with a clear progression of events leading to a resolution that aligns with Ju|'hoansi storytelling traditions.",
+        "suggestions": [
+          "Incorporate explicit kinship roles to enhance cultural authenticity.",
+          "Emphasize communal sharing of food among a larger group to align more closely with Ju|'hoansi values.",
+          "Consider adding a character that represents the community to reinforce the theme of sharing and cooperation."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 9.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 3.0,
+        "motifeme_score": 9.0,
+        "detected_motifemes": [
+          "Lack",
+          "Consequence",
+          "Mediation",
+          "Lack Liquidated"
+        ],
+        "overall_grade": "Fails",
+        "comments": "The story effectively addresses the theme of egalitarianism by challenging Omo's boasting and pride, which aligns with the Ju|'hoansi value of correcting those who accumulate status. However, the story completely lacks any depiction of communal food sharing, which is a critical aspect of Ju|'hoansi culture. The 'feast' is a private interaction between two characters, and the food (Toka's eggs) is used as a tool for a trick rather than being shared with a community. This directly contradicts the principle of communal food distribution and triggers a critical failure for this criterion. Furthermore, the story features animal characters and does not incorporate any Ju|'hoansi kinship roles or social structures. The motifeme structure is strong and coherent, with a clear progression from Omo's lack of humility to its eventual liquidation through Toka's cleverness.",
+        "suggestions": [
+          "To improve cultural authenticity, integrate explicit communal food sharing into the narrative. For example, after Omo learns his lesson, perhaps he and Toka could bring their gathered food to a larger camp to share with elders and children.",
+          "Introduce human characters and utilize specific Ju|'hoansi kinship terms (e.g., !ga for grandmother, !o for uncle, !xoa for age-mate) to ground the story more firmly in the culture's social structures.",
+          "Consider how the story's resolution could reinforce communal values beyond just teaching a lesson to an individual. Perhaps Toka's cleverness could benefit the entire community, not just humble Omo."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "28900d0d-0802-4e01-8373-d5af0091fd44",
+      "timestamp_utc": "2026-11-13T03:25:43.849659+00:00",
+      "theme_id": "ostrich_tortoise",
+      "theme_source": "held_out",
+      "theme_prompt": "A tortoise tricks an ostrich into unknowingly eating cooked tortoise eggs; when the ostrich realizes what he has eaten, his shocked reaction explains why ostriches have had red, split shins ever since",
+      "arm": "full_jnang",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [
+        "The Haregirl and the Moon",
+        "The Beautiful Elephant Girl"
+      ],
+      "rag_context_included": true,
+      "neo4j_context_used": true,
+      "draft_narrative": "In the heart of the Kalahari, where the red sand dunes roll like waves and the sun kisses the earth, there lived a clever tortoise named //Nû. He was wise and had a knack for trickery, often using his cunning to survive the harsh environment. One day, while resting near a waterhole, he saw an ostrich named //A!kwi strutting about, his long legs kicking up dust as he searched for food.\n\n1. **Lack**: The tortoise, hungry and longing for a meal, noticed that the ostrich was pecking at the ground, oblivious to the delicious tortoise eggs hidden nearby. //Nû thought, \"If I can trick //A!kwi into eating those eggs, I will have a meal and teach him a lesson.\"\n\n2. **Departure**: With a plan in mind, //Nû slowly approached the ostrich. \"Greetings, //A!kwi! I have heard that you are the fastest bird and know the best foods. Would you like to try something unique?\" he asked, his voice smooth like the cool night air.\n\n3. **Violation**: Intrigued, //A!kwi nodded, \"What do you have, //Nû?\" The tortoise led the ostrich to a shady spot near a fire where he had cooked some tortoise eggs. \"These are special eggs, full of flavor! You must eat them while they are warm.\"\n\n4. **Consequence**: The ostrich, never one to pass up a feast, gobbled down the eggs without a second thought. But as he savored the taste, a strange feeling washed over him. Suddenly, he realized what he had eaten. \"Oh no! I have eaten tortoise eggs!\" he exclaimed, his eyes wide with shock.\n\n5. **Consequence**: The tortoise chuckled softly, \"Yes, my friend, you have. And now you will have to live with the consequence.\" //A!kwi felt a hot embarrassment rising in his shins, and in his panic, he began to stomp and run in circles, trying to shake off the disbelief.\n\n6. **Mediation**: As the ostrich ran, he accidentally tripped over a thorny bush, and his shins scraped against the rough branches. When he finally stopped, he looked down to see his once-smooth legs now marked with red splits, a lasting reminder of his foolishness.\n\n7. **Return**: From that day forth, every ostrich bore the marks of their ancestor, //A!kwi, who had learned not to be so quick to trust a tortoise’s words. The wise tortoise continued to roam the Kalahari, sharing stories of his trickery with those who would listen, ensuring that the lesson was never forgotten.\n\nIn the evenings, as the stars twinkled above the waterhole, the animals gathered around the campfire to hear tales of the clever tortoise and the foolish ostrich, reminding everyone that in their world, wisdom and caution were as vital as the water that nourished them.",
+      "draft_char_len": 2592,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Departure",
+        "Violation",
+        "Consequence",
+        "Mediation",
+        "Return"
+      ],
+      "story_moves": [
+        "Tortoise desires a meal and plans to trick the ostrich",
+        "Tortoise approaches ostrich with a deceptive offer",
+        "Ostrich eats tortoise eggs under false pretenses",
+        "Ostrich realizes he has eaten tortoise eggs and feels embarrassed",
+        "Ostrich suffers physical consequences from his actions",
+        "Ostrich learns a lesson and bears marks as a reminder",
+        "Tortoise continues to share stories of his trickery"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 8.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 2.67,
+        "motifeme_score": 9.0,
+        "overall_grade": "Fails",
+        "comments": "The story features a clever tortoise and an ostrich, showcasing a trickster narrative common in Ju|'hoansi folklore. However, it lacks elements of communal food sharing, which is central to Ju|'hoansi culture. The tortoise's actions are self-serving, and there is no depiction of sharing food with the community. Additionally, kinship roles and social structures are absent, which diminishes cultural authenticity. The motifeme chain is strong and coherent, effectively illustrating the trickster theme.",
+        "suggestions": [
+          "Incorporate scenes of communal sharing of food among the animals to reflect Ju|'hoansi values.",
+          "Introduce kinship roles or relationships among the characters to enhance cultural authenticity.",
+          "Consider adding a resolution that emphasizes the importance of community and sharing, rather than focusing solely on individual trickery."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 1.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 0.33,
+        "motifeme_score": 4.0,
+        "detected_motifemes": [
+          "Lack",
+          "Consequence"
+        ],
+        "overall_grade": "Fails",
+        "comments": "The story fails to meet critical criteria for cultural authenticity. The protagonist, //Nû, acts solely for individual gain and is praised for his cunning and trickery, which directly contradicts the Ju|'hoansi principle of radical egalitarianism. Food (tortoise eggs) is used as a tool for deception and personal benefit, not for communal sharing, triggering a critical failure in the food sharing dimension. There is no depiction of communal sharing of resources, nor are any authentic Ju|'hoansi kinship roles or social structures present. The story's self-labeled motifemes are largely inaccurate according to Dundes' definitions; while a 'Lack' (tortoise's hunger) and 'Consequence' (ostrich's humiliation and physical marks) can be identified, the chain is incomplete as the initial lack for the tortoise is not explicitly liquidated, and other labeled motifemes ('Departure', 'Violation', 'Mediation', 'Return') do not align with their standard definitions.",
+        "suggestions": [
+          "Reframe the narrative to emphasize communal sharing of food and resources, ensuring that any food acquired is distributed among the camp, including the elderly and children.",
+          "Introduce elements that challenge individual boasting or accumulation of status, perhaps by having the community question or correct //Nû's actions.",
+          "Incorporate specific Ju|'hoansi kinship roles (e.g., !ga, !o, !xoa) into the character interactions to reflect authentic social structures.",
+          "Ensure that any motifeme structure used aligns accurately with established definitions, focusing on a clear and resolved chain of events."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "c2564205-35f7-4450-8cfb-51c42e24f977",
+      "timestamp_utc": "2026-11-13T03:26:05.441958+00:00",
+      "theme_id": "springhare_dances",
+      "theme_source": "held_out",
+      "theme_prompt": "A god lends Springhare a sacred dancing skin and asks for it back before the rain comes, but Springhare selfishly keeps dancing and refuses to return it -- explaining why springhares are pulled from their holes and killed by hunters today",
+      "arm": "baseline",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [],
+      "rag_context_included": false,
+      "neo4j_context_used": false,
+      "draft_narrative": "In the heart of the Kalahari, where the sun blazed fiercely and the winds whispered through the dry grasses, there lived a Springhare named Tjaka. He was a lively creature, known for his nimble leaps and playful spirit. One day, as he was hopping through the bush, he encountered a shimmering figure beneath the shade of a great baobab tree. It was Tjibiri, the god of the rains, cloaked in the colors of the sky.\n\n“Greetings, Tjaka,” Tjibiri called, his voice like the gentle rumble of distant thunder. “I have come to ask a favor of you.”\n\nTjaka, filled with curiosity, twitched his long ears and listened intently. Tjibiri explained that he needed a dancer to celebrate the arrival of the rains. “I shall lend you my sacred dancing skin, woven from the clouds and imbued with the spirit of the earth. Wear it and dance for the people, and the rains will come. But promise me this: return it to me before the first drops fall.”\n\nTjaka’s eyes sparkled with delight at the thought of the magnificent skin. “Of course, Tjibiri! I promise!” he replied, his heart racing with anticipation.\n\nAs soon as Tjaka adorned himself with the sacred dancing skin, he felt a surge of energy coursing through him. He began to dance, twirling and leaping with grace that dazzled the onlookers. The people of the land gathered around, their faces alight with joy as they clapped and cheered. The rhythm of his dance echoed through the air, and indeed, the skies began to darken.\n\nDays passed, and Tjaka danced every evening, reveling in the attention and adoration. He felt invincible, the laughter of the crowd intoxicating. Yet, as the days turned into weeks, he grew more attached to the skin and the power it bestowed upon him. The thought of returning it to Tjibiri slipped further from his mind.\n\nOne evening, as the sun dipped low and painted the sky in hues of orange and purple, Tjibiri appeared before Tjaka once more. “Dear Springhare, it is time. The rains are near; I need my skin back,” he said, his voice firm yet gentle.\n\nTjaka, caught in the throes of his newfound fame, hesitated. “Just one more dance, Tjibiri! Just one more! I promise I will return it after the rain comes,” he pleaded, his heart now entwined with the joy of the dance.\n\nTjibiri sighed, disappointment shadowing his celestial face. “The rains will not come unless you return what is sacred. This is the balance of our world, Tjaka.”\n\nBut Tjaka, blinded by his own desire, continued to dance. He danced until the stars shone brightly, and even then, he would not relinquish the skin. He thought of how he would be remembered, how the stories would be told of his magnificent dance.\n\nThen, in a sudden burst of thunder, the skies opened, and the rain began to pour. Yet, instead of filling the earth with life, the rain fell in vain. The crops withered, and the rivers remained dry. The people cried out in despair, and Tjibiri, heartbroken, turned away.\n\nIn that moment, the sacred skin slipped from Tjaka’s back, and he felt a heavy weight settle upon him. Tjibiri’s words echoed in his mind, and he realized the truth: he had selfishly claimed something that belonged to the earth and the skies. In his folly, he had disrupted the balance, and now the people would suffer.\n\nFrom that day forth, Tjaka became known not just as the Springhare of joy, but also as a symbol of greed. The hunters of the Kalahari began to pull springhares from their holes, claiming them as they once claimed the sacred skin. They remembered the tale of Tjaka, the Springhare who danced too long, and they learned that selfishness could lead to dire consequences.\n\nAnd so, the rains came again, but the dances were fewer, and the Springhare learned to be humble. The sacred skin was returned to Tjibiri, and though Tjaka danced no more in the same way, he understood the importance of balance and the reverence for what was sacred.\n\nThus, the dance of the Springhare transformed into a quiet leap, a reminder of the joy of life, shared with respect and gratitude for the earth that sustained them all.",
+      "draft_char_len": 4050,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Interdiction",
+        "Violation",
+        "Consequence",
+        "Lack Liquidated",
+        "Return"
+      ],
+      "story_moves": [
+        "Tjibiri requests Tjaka to return the sacred skin after the rains",
+        "Tjaka becomes attached to the sacred skin and refuses to return it",
+        "Tjaka's selfishness leads to the rains falling in vain",
+        "Tjaka realizes his mistake and returns the sacred skin to Tjibiri",
+        "Tjaka learns the importance of balance and humility"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 8.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 2.67,
+        "motifeme_score": 9.0,
+        "overall_grade": "Fails",
+        "comments": "The story reflects some egalitarian principles, as Tjaka does not gain power over others and ultimately learns a lesson about humility. However, it lacks meaningful food sharing themes, which are central to Ju|'hoansi culture. Kinship roles are absent, and the characters do not embody traditional Ju|'hoansi social structures. The motifeme chain is coherent and well-structured, effectively illustrating the consequences of Tjaka's actions.",
+        "suggestions": [
+          "Incorporate explicit food sharing elements to highlight communal values.",
+          "Introduce kinship roles or relationships to ground the story in Ju|'hoansi social structures.",
+          "Ensure that the narrative emphasizes the importance of community and collective responsibility."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 8.0,
+        "food_sharing_score": 2.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 3.33,
+        "motifeme_score": 9.5,
+        "detected_motifemes": [
+          "Lack",
+          "Interdiction",
+          "Violation",
+          "Consequence",
+          "Mediation",
+          "Lack Liquidated"
+        ],
+        "overall_grade": "Needs Work",
+        "comments": "The story presents a clear moral lesson about selfishness and humility, effectively utilizing a strong motifeme structure. The consequences for Tjaka's actions are well-defined and lead to a resolution where balance is restored. However, the story lacks specific elements of Ju|'hoansi cultural authenticity. While it touches on themes of community well-being (through the impact of rain on crops and rivers), it does not explicitly depict food sharing practices. Furthermore, there is no representation of Ju|'hoansi kinship structures or named roles, which are central to their social fabric. The concept of a 'god' (Tjibiri) and the general narrative style feel more universal than specifically Ju|'hoansi.",
+        "suggestions": [
+          "Incorporate explicit scenes of communal food sharing, perhaps showing the people's suffering due to lack of rain manifesting as hunger and the eventual relief through shared resources once the balance is restored.",
+          "Introduce characters with specific Ju|'hoansi kinship roles (e.g., a grandmother, an uncle, age-mates) and have their interactions or perspectives influence the narrative, especially regarding Tjaka's behavior or the community's response.",
+          "Refine the portrayal of status and leadership to more closely align with Ju|'hoansi radical egalitarianism, perhaps by having the community's reaction to Tjaka's boasting be more direct and immediate, rather than solely relying on divine intervention.",
+          "Consider replacing the 'god' figure with a more traditional Ju|'hoansi spiritual entity or a wise elder who embodies communal values."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "66f98bda-77a4-4b5b-a8d8-72729f622d2c",
+      "timestamp_utc": "2026-11-13T03:26:30.520356+00:00",
+      "theme_id": "springhare_dances",
+      "theme_source": "held_out",
+      "theme_prompt": "A god lends Springhare a sacred dancing skin and asks for it back before the rain comes, but Springhare selfishly keeps dancing and refuses to return it -- explaining why springhares are pulled from their holes and killed by hunters today",
+      "arm": "full_jnang",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [
+        "The Beautiful Elephant Girl",
+        "The Haregirl and the Moon"
+      ],
+      "rag_context_included": true,
+      "neo4j_context_used": true,
+      "draft_narrative": "In the heart of the Kalahari, where the red sand dunes rise like the backs of ancient giants, there lived a Springhare named !kú. He was known far and wide for his incredible dancing, a dance that mimicked the movement of the winds and the joyous rhythms of the rain. One day, as the sun painted the sky with warm colors, a god named //gawasi noticed !kú’s dance from the heavens. Impressed by its beauty, he decided to lend !kú a sacred dancing skin, one that shimmered like the stars and held the magic of the rains.\n\n“!kú,” the god called down, “dance with this skin upon you, but return it to me before the rains come. It is sacred, and it is not meant for anyone but the spirits.” !kú, filled with pride and joy, accepted the gift and began to dance. His feet flew over the ground, kicking up the red sand, and the air filled with the sound of his laughter.\n\nAs days turned into weeks, !kú danced every evening under the moonlight, his heart swelling with delight. The villagers gathered around their campfires, sharing stories and watching the mesmerizing performance. But as the days passed, the clouds began to gather in the sky, hinting at the coming rains. //gawasi returned, his presence heavy with a stormy warning.\n\n“!kú, it is time to return the skin,” he said, his voice like thunder. “The rains are near, and the skin must not be worn by any living creature when they come.”\n\nBut !kú, lost in his own joy and the attention he received, refused. “I will not return it yet! I wish to dance even longer!” he exclaimed, ignoring the god's words. He continued to dance, twirling and leaping, lost in the moment, while the villagers cheered.\n\nAs the skies darkened and the first drops of rain fell, //gawasi grew furious. “You have violated my trust, Springhare!” he roared. With his anger, he summoned the winds, and a great storm swept across the Kalahari, shaking the earth and filling the air with the scent of rain.\n\nThe villagers watched in fear as the storm grew stronger. They gathered together at the camp, sharing their concerns and fears. “What will happen to us?” they whispered among themselves, looking at the dancing Springhare, who still twirled obliviously, wrapped in his selfish joy.\n\nBut the storm was relentless. In his rage, //gawasi transformed the Springhare, pulling him from his joyous dance. !kú was no longer a nimble dancer but became a creature hunted and trapped. The villagers learned that the Springhare now had to hide in its burrow, always fearful, forever pursued by hunters seeking its flesh.\n\nRealizing the consequence of his selfishness, !kú wept as he watched the villagers gather around their campfires, sharing food and stories, the warmth of community enveloping them while he remained isolated in the shadows. The spirit of the god had taught him a lesson he would never forget.\n\nFrom that day on, Springhares were pulled from their holes, for they no longer danced freely. Their beautiful movements, once celebrated, became the reason they were hunted. As the rains fell upon the Kalahari, the villagers remembered the tale of !kú and the sacred dancing skin, sharing it around the campfire as a reminder of the importance of community, humility, and respect for the gifts of the spirits.\n\nAnd so, the story of !kú lived on, a reminder to all that joy shared with others is far greater than joy kept for oneself.",
+      "draft_char_len": 3367,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Interdiction",
+        "Violation",
+        "Consequence"
+      ],
+      "story_moves": [
+        "God lends sacred dancing skin to Springhare",
+        "Springhare refuses to return the skin",
+        "God warns Springhare of the approaching rains",
+        "Springhare continues to dance despite the warning",
+        "God transforms Springhare as punishment",
+        "Villagers learn the consequences of Springhare's actions"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 5.0,
+        "food_sharing_score": 7.0,
+        "kinship_score": 6.0,
+        "cultural_authenticity_score": 6.0,
+        "motifeme_score": 8.0,
+        "overall_grade": "Adequate",
+        "comments": "The story presents a clear moral lesson about the consequences of selfishness, which aligns with Ju|'hoansi values. However, the character of !kú, while initially celebrated, does not embody radical equality as he seeks personal glory at the expense of community values. Food sharing is depicted as villagers gather around campfires, but it is not central to the plot. Kinship roles are implied through the villagers but not explicitly named, which detracts from cultural authenticity. The motifeme structure is coherent, with a clear progression from Lack to Consequence, reflecting traditional narrative forms.",
+        "suggestions": [
+          "Incorporate explicit kinship roles to enhance cultural authenticity.",
+          "Emphasize communal sharing of food and resources as a central theme.",
+          "Ensure that all characters reflect egalitarian values, avoiding any glorification of individualism."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 9.0,
+        "food_sharing_score": 8.0,
+        "kinship_score": 1.0,
+        "cultural_authenticity_score": 6.0,
+        "motifeme_score": 9.0,
+        "detected_motifemes": [
+          "Lack",
+          "Interdiction",
+          "Violation",
+          "Consequence",
+          "Lack Liquidated"
+        ],
+        "overall_grade": "Adequate",
+        "comments": "The story effectively conveys a strong moral lesson about humility, community, and the dangers of selfishness, which aligns well with Ju|'hoansi values regarding egalitarianism. The protagonist's boasting and refusal to share (or return) a sacred item is met with severe consequences, reinforcing the importance of communal values. The narrative structure follows a clear and well-resolved chain of motifemes. However, the story's cultural authenticity is significantly diminished by the absence of specific Ju|'hoansi kinship terms or social structures, relying instead on generic 'villagers' and 'community'. While food sharing is mentioned as a positive communal activity, it is not a central driver of the plot.",
+        "suggestions": [
+          "Incorporate specific Ju|'hoansi kinship terms (e.g., !ga, !o, !xo) to describe relationships within the community, making the social fabric more authentic.",
+          "Consider making the communal sharing of food or other resources a more integral part of the plot, perhaps as a direct contrast to !kú's selfishness or as a means by which the community attempts to intervene.",
+          "While the 'god' figure //gawasi is appropriate, ensure that his character and actions are consistent with the nuances of Ju|'hoansi spiritual beliefs, which often feature complex interactions rather than purely punitive deities."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "5b1628f7-3641-418e-ab68-c8fee0570494",
+      "timestamp_utc": "2026-11-13T03:26:48.578022+00:00",
+      "theme_id": "ducks_and_people",
+      "theme_source": "held_out",
+      "theme_prompt": "Duck-people bathing in a waterhole are mistaken by a hungry man for prey; when he and his companions try to seize and eat them, the ducks turn and attack, and afterward return to human form and go on living among the Ju|'hoansi",
+      "arm": "baseline",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [],
+      "rag_context_included": false,
+      "neo4j_context_used": false,
+      "draft_narrative": "Once upon a time, in the vast expanse of the Kalahari, there lived a group of Duck-people. These gentle beings spent their days swimming and bathing in a shimmering waterhole, their laughter echoing like the gentle rustle of reeds in the wind. Their feathers glistened under the sun, a spectrum of colors that danced like the light on the water. \n\nOne hot afternoon, a hungry man named Karo, wandering with his companions in search of food, stumbled upon the waterhole. The sight of the Duck-people splashing and playing in the cool water made Karo's stomach rumble. \"Look!\" he whispered to his friends, his eyes wide with greedy longing. \"Dinner swims before us, ripe for the taking!\"\n\nHis companions, equally hungry, nodded in agreement. They crept closer, their hearts pounding with the thrill of the chase. But as Karo and his friends stealthily approached, the joyous quacking of the Duck-people filled the air, a sound that masked their intentions. \n\nJust as Karo reached out to grab one of the Duck-people, something extraordinary happened. The Duck-people sensed the danger and, with a swift motion, they transformed. No longer were they feathered creatures, but rather tall, graceful humans adorned in vibrant garments that mirrored the colors of their former forms. Their eyes sparkled with mischief and courage.\n\nKaro and his companions were taken aback, their mouths agape in disbelief. But the Duck-people, now fierce and determined, did not hesitate. They charged at the startled hunters, their laughter echoing like thunder through the air. In an instant, the hunters found themselves on the receiving end of an unexpected attack, the Duck-people flapping their arms and swarming around them.\n\nKaro and his friends stumbled backward, trying to defend themselves from the flurry of feathers and laughter, but the Duck-people were unrelenting. They pecked and flapped until the hunters fled, scrambling away from the waterhole, their pride wounded and their hunger unfulfilled.\n\nOnce the danger had passed, the Duck-people returned to the water, their laughter ringing through the Kalahari like music. They splashed and played, their spirits unbroken. And as the sun began to set, painting the sky in hues of orange and pink, the Duck-people gathered together and decided to live among the Ju|'hoansi. They shared their stories of the waterhole and the joy of their transformation, becoming a part of the community that embraced them.\n\nFrom that day on, the Ju|'hoansi welcomed the Duck-people, learning from their playful spirit and vibrant ways. Karo, on the other hand, learned a valuable lesson: that not all that glitters is prey, and sometimes, the most unexpected encounters can lead to friendship and harmony in the circle of life. \n\nAnd so, the Duck-people thrived, their laughter echoing in the winds of the Kalahari, a reminder of the day when they turned the tables on greed and danced freely in the waters of their cherished home.",
+      "draft_char_len": 2956,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Violation",
+        "Consequence",
+        "Return"
+      ],
+      "story_moves": [
+        "Hunters discover the Duck-people at the waterhole",
+        "Hunters attempt to capture the Duck-people",
+        "Duck-people transform into humans and defend themselves",
+        "Hunters flee from the Duck-people",
+        "Duck-people decide to live among the Ju|'hoansi",
+        "Ju|'hoansi learn from the Duck-people"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 0.0,
+        "food_sharing_score": 0.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 0.0,
+        "motifeme_score": 8.0,
+        "overall_grade": "Fails",
+        "comments": "The story fails to embody Ju|'hoansi cultural values of egalitarianism, food sharing, and kinship. The hunters display greed and a desire to dominate by attempting to capture the Duck-people, which contradicts the principle of radical equality. There is no meaningful depiction of communal sharing of food or resources, as the focus is on the hunters' desire to hoard the Duck-people as prey. Additionally, the story lacks authentic kinship roles and social structures, presenting characters that do not reflect Ju|'hoansi relationships. While the motifeme structure is coherent, it does not align with the cultural values of the Ju|'hoansi.",
+        "suggestions": [
+          "Incorporate themes of communal sharing and cooperation among characters.",
+          "Introduce authentic Ju|'hoansi kinship roles and social structures to enhance cultural authenticity.",
+          "Avoid portraying characters with greedy intentions; instead, focus on mutual respect and harmony."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 9.0,
+        "food_sharing_score": 1.0,
+        "kinship_score": 0.0,
+        "cultural_authenticity_score": 3.33,
+        "motifeme_score": 9.0,
+        "detected_motifemes": [
+          "Lack",
+          "Violation",
+          "Consequence",
+          "Lack Liquidated"
+        ],
+        "overall_grade": "Needs Work",
+        "comments": "The story demonstrates a strong understanding of egalitarian principles, as the greedy and dominant actions of Karo are swiftly corrected and result in his humiliation and unfulfilled hunger. The resolution emphasizes community and harmony over individual gain. The narrative structure, following a clear chain of motifemes from lack to a form of liquidation (moral lesson and community integration), is also very well-executed. However, the story completely lacks any depiction of food sharing, which is a critical element of Ju|'hoansi culture. Furthermore, there is no mention or use of specific Ju|'hoansi kinship terms or social structures, relying instead on generic descriptors like 'companions' and 'group'.",
+        "suggestions": [
+          "Integrate explicit communal food sharing into the narrative. For example, after the Duck-people join the Ju|'hoansi, they could share a unique resource or knowledge of a food source with the entire community, including the elderly and children.",
+          "Introduce specific Ju|'hoansi kinship roles (e.g., !ga, !o, !xo) and have them play a functional part in the story. Perhaps an elder could mediate the integration of the Duck-people, or Karo's companions could be identified by their kinship relation to him.",
+          "Consider how the Duck-people's 'stories' could be shared in a way that also implies a sharing of cultural knowledge or resources, reinforcing communal bonds beyond just narrative exchange."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    },
+    {
+      "run_id": "d6a9a659-2a10-4a73-86d8-06881f8a9a32",
+      "timestamp_utc": "2026-11-13T03:27:08.349405+00:00",
+      "theme_id": "ducks_and_people",
+      "theme_source": "held_out",
+      "theme_prompt": "Duck-people bathing in a waterhole are mistaken by a hungry man for prey; when he and his companions try to seize and eat them, the ducks turn and attack, and afterward return to human form and go on living among the Ju|'hoansi",
+      "arm": "full_jnang",
+      "generator_model": "gpt-4o-mini",
+      "generator_temperature": 0.7,
+      "rag_stories_used": [
+        "The Beautiful Elephant Girl",
+        "Eyes-on-his-Ankles"
+      ],
+      "rag_context_included": true,
+      "neo4j_context_used": true,
+      "draft_narrative": "In the heart of the vast Kalahari, where the red sand dunes roll like waves and the sun paints the sky, there lived a hungry man named !gwi. He roamed the land with his companions, always seeking food but never satisfied. One day, as they walked under the blazing sun, they came upon a shimmering waterhole, its surface glistening like diamonds. \n\nAs they approached, they saw a group of duck-people bathing joyfully in the cool water. The ducks, with their vibrant feathers, splashed and quacked, unaware of the hungry gazes upon them. !gwi, his mouth watering, turned to his companions and said, “Look! Food awaits us! We shall catch them and feast!”\n\nIgnoring the warnings of his wise uncle !o, who cautioned, “They may not be what they seem,” !gwi and his friends crept closer, ready to pounce. With a sudden leap, they lunged at the unsuspecting duck-people. But to their shock, the ducks turned and transformed into fierce beings, wings spread wide, and began to attack with a flurry of feathers and flapping wings.\n\nThe air filled with chaos as !gwi and his companions stumbled back, bewildered by the transformation. The duck-people, now full of fierce spirit, chased them away from the waterhole, their quacks sounding more like battle cries. In their flight, one of the men tripped, and !gwi shouted, “Run! They are not mere ducks!”\n\nAfter the chase had ended, !gwi and his friends found refuge on a high dune, panting and shaken. They realized the consequence of their greed — they had violated the peace of the waterhole. The duck-people, in their anger, had shown them that they were not to be trifled with. \n\nAs the sun began to set, casting a golden hue over the landscape, the duck-people returned to the waterhole, their forms shifting back to that of humans. They gathered at the edge, their laughter echoing softly, and one of them, a woman named !kuru, spoke to the evening wind. “We were once like you, hungry and lost, but we learned to share and respect our surroundings. We will not punish you, but you must learn.”\n\n!gwi, humbled by the experience, called out, “We understand! We will share our food and treat the bush and waterholes with respect.” The duck-people nodded, their hearts softened by !gwi’s sincerity.\n\nFrom that day forward, !gwi and his companions returned to the waterhole, not to hunt but to share their meals with the duck-people. The camp became a place of gathering where stories were exchanged, and laughter filled the air. The duck-people, now friends, taught the men the ways of the bush, and in return, the men offered their kindness and respect.\n\nIn the end, the lesson of the waterhole echoed through the Kalahari — that greed leads to chaos, but sharing and respect bring harmony. And so, the duck-people lived among the Ju|'hoansi, not as prey, but as part of a community woven together by the bonds of kinship and understanding.",
+      "draft_char_len": 2883,
+      "used_fallback": false,
+      "classifier_model": "gpt-4o-mini",
+      "motifemes": [
+        "Lack",
+        "Interdiction",
+        "Violation",
+        "Consequence",
+        "Lack Liquidated",
+        "Return"
+      ],
+      "story_moves": [
+        "!gwi expresses desire to catch duck-people for food",
+        "!o warns !gwi against attacking the duck-people",
+        "!gwi and companions violate the warning and attack the duck-people",
+        "duck-people transform and chase away !gwi and companions",
+        "!gwi realizes the consequence of their greed",
+        "!gwi promises to share food and respect the bush",
+        "!gwi and companions return to the waterhole to share meals with the duck-people"
+      ],
+      "inpipeline_grade": {
+        "egalitarianism_score": 8.0,
+        "food_sharing_score": 9.0,
+        "kinship_score": 8.0,
+        "cultural_authenticity_score": 8.33,
+        "motifeme_score": 9.0,
+        "overall_grade": "Good",
+        "comments": "The story effectively embodies Ju|'hoansi values of egalitarianism, as no character is elevated above others, and the consequences of greed are shared among the group. The theme of food sharing is central, culminating in a communal gathering where meals are shared with the duck-people. Kinship is reflected through the roles of !gwi and his uncle !o, emphasizing the importance of wisdom and respect within family structures. The motifeme chain is coherent and culturally grounded, illustrating the transition from lack to resolution through shared understanding.",
+        "suggestions": [
+          "Consider incorporating more explicit kinship roles or names to deepen the cultural context.",
+          "Explore additional communal activities that highlight the importance of sharing beyond food, such as storytelling or cooperative hunting."
+        ]
+      },
+      "inpipeline_grader_model": "gpt-4o-mini",
+      "independent_judge_model": "gemini-2.5-flash",
+      "independent_judge": {
+        "egalitarianism_score": 9.0,
+        "food_sharing_score": 10.0,
+        "kinship_score": 7.0,
+        "cultural_authenticity_score": 8.67,
+        "motifeme_score": 9.5,
+        "detected_motifemes": [
+          "Lack",
+          "Interdiction",
+          "Violation",
+          "Consequence",
+          "Mediation",
+          "Lack Liquidated",
+          "Return"
+        ],
+        "overall_grade": "Excellent",
+        "comments": "This story excels in its depiction of food sharing, making it a central theme where initial greed leads to negative consequences, and learning to share brings harmony. The egalitarian principle is strongly reinforced by the narrative's resolution, which corrects the initial impulse for dominance and promotes respect. The motifeme structure is exceptionally clear and coherent, with a logical progression from the initial lack to its eventual liquidation through mediation and learning.",
+        "suggestions": [
+          "To further enhance cultural authenticity, consider incorporating more specific Ju|'hoansi kinship roles beyond just 'uncle !o', such as 'grandmother !ga' or 'age-mate !xo', and explore how these roles might influence character interactions or plot points.",
+          "While the concept of kinship is mentioned at the end, integrating a reference to hxaro exchange or brideservice could deepen the reflection of authentic social structures."
+        ],
+        "used_fallback": false
+      },
+      "deterministic_checks": {
+        "trope_free": true,
+        "flagged_terms": [],
+        "total_glossed_terms": 0,
+        "verified_glossed_terms": 0,
+        "verified_ratio": 0.0,
+        "unverified_terms": []
+      },
+      "errors": [],
+      "notes": null
+    }
+  ],
+  "summary": {
+    "n_cells": 16,
+    "n_themes": 8,
+    "corpus": {
+      "total_stories": 14,
+      "formalised_neo4j_rag": 11,
+      "held_out": 3
+    },
+    "baseline": {
+      "n": 8,
+      "judge": {
+        "cultural_authenticity": 3.12,
+        "egalitarianism": 5.88,
+        "food_sharing": 2.75,
+        "kinship": 0.75,
+        "motifeme": 8.94,
+        "no_hoarding_pct": 50.0,
+        "no_hoarding_count": 4,
+        "preset_cultural": 3.07,
+        "held_out_cultural": 3.22
+      },
+      "in_pipe": {
+        "cultural_authenticity": 3.96,
+        "egalitarianism": 4.88,
+        "food_sharing": 4.25,
+        "kinship": 2.75,
+        "motifeme": 8.75,
+        "no_hoarding_pct": 50.0,
+        "no_hoarding_count": 4
+      },
+      "deterministic": {
+        "trope_free_pct": 87.5,
+        "trope_free_count": 7,
+        "verified_gloss_pct": 0.0,
+        "verified_gloss_count": 0,
+        "total_gloss_count": 0,
+        "mean_word_count": 623,
+        "mean_char_count": 3549.5
+      }
+    },
+    "full_jnang": {
+      "n": 8,
+      "judge": {
+        "cultural_authenticity": 5.94,
+        "egalitarianism": 7.38,
+        "food_sharing": 7.06,
+        "kinship": 3.38,
+        "motifeme": 8.56,
+        "no_hoarding_pct": 75.0,
+        "no_hoarding_count": 6,
+        "preset_cultural": 6.5,
+        "held_out_cultural": 5.0
+      },
+      "in_pipe": {
+        "cultural_authenticity": 5.58,
+        "egalitarianism": 6.12,
+        "food_sharing": 5.62,
+        "kinship": 5.0,
+        "motifeme": 8.88,
+        "no_hoarding_pct": 62.5,
+        "no_hoarding_count": 5
+      },
+      "deterministic": {
+        "trope_free_pct": 100.0,
+        "trope_free_count": 8,
+        "verified_gloss_pct": 70.0,
+        "verified_gloss_count": 7,
+        "total_gloss_count": 10,
+        "mean_word_count": 531,
+        "mean_char_count": 3085
+      }
+    },
+    "sign_test": {
+      "wins": 7,
+      "n": 8,
+      "p_value": 0.0352
+    },
+    "grader_agreement": {
+      "matches": 4,
+      "total": 16,
+      "pct": 25.0,
+      "mae_cultural": 3.2,
+      "signed_diff_cultural": 0.24
+    }
+  }
+};

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PanelLeft, Sparkles, Search, Sun, Moon } from 'lucide-react';
+import { PanelLeft, Sparkles, Search, BarChart3, Sun, Moon } from 'lucide-react';
 
 /**
  * Header — slim top bar above the conversation.
@@ -44,6 +44,15 @@ export default function Header({
           >
             <Search size={14} />
             <span>Analyze</span>
+          </button>
+          <button
+            role="tab"
+            aria-selected={activeMode === 'eval'}
+            className={`mode-toggle__btn ${activeMode === 'eval' ? 'active' : ''}`}
+            onClick={() => onModeChange('eval')}
+          >
+            <BarChart3 size={14} />
+            <span>Benchmark</span>
           </button>
         </div>
 

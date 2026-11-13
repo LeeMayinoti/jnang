@@ -1,4 +1,8 @@
+import json
+import math
 import uuid
+from pathlib import Path
+from statistics import mean
 from typing import Any, Dict, List, Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -240,3 +244,91 @@ def run_grader_agent(req: GraderRequest):
         return GraderResponse(grade_report=res.get("grade_report", {}))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+def _summarize_eval_rows(rows: List[Dict[str, Any]]) -> Dict[str, Any]:
+    by_arm = {
+        "baseline": [r for r in rows if r.get("arm") == "baseline"],
+        "full_jnang": [r for r in rows if r.get("arm") == "full_jnang"],
+    }
+
+    def arm_stats(sub: List[Dict[str, Any]]) -> Dict[str, Any]:
+        if not sub:
+            return {}
+        tot_gloss = sum(r["deterministic_checks"]["total_glossed_terms"] for r in sub)
+        ver_gloss = sum(r["deterministic_checks"]["verified_glossed_terms"] for r in sub)
+        preset = [r for r in sub if r.get("theme_source") == "preset"]
+        held = [r for r in sub if r.get("theme_source") == "held_out"]
+        return {
+            "n": len(sub),
+            "judge": {
+                "cultural_authenticity": round(mean(r["independent_judge"]["cultural_authenticity_score"] for r in sub), 2),
+                "egalitarianism": round(mean(r["independent_judge"]["egalitarianism_score"] for r in sub), 2),
+                "food_sharing": round(mean(r["independent_judge"]["food_sharing_score"] for r in sub), 2),
+                "kinship": round(mean(r["independent_judge"]["kinship_score"] for r in sub), 2),
+                "motifeme": round(mean(r["independent_judge"]["motifeme_score"] for r in sub), 2),
+                "no_hoarding_pct": round(100.0 * sum(1 for r in sub if r["independent_judge"]["egalitarianism_score"] > 0 and r["independent_judge"]["food_sharing_score"] > 0) / len(sub), 1),
+                "no_hoarding_count": sum(1 for r in sub if r["independent_judge"]["egalitarianism_score"] > 0 and r["independent_judge"]["food_sharing_score"] > 0),
+                "preset_cultural": round(mean(r["independent_judge"]["cultural_authenticity_score"] for r in preset), 2) if preset else 0.0,
+                "held_out_cultural": round(mean(r["independent_judge"]["cultural_authenticity_score"] for r in held), 2) if held else 0.0,
+            },
+            "in_pipe": {
+                "cultural_authenticity": round(mean(r["inpipeline_grade"]["cultural_authenticity_score"] for r in sub), 2),
+                "egalitarianism": round(mean(r["inpipeline_grade"]["egalitarianism_score"] for r in sub), 2),
+                "food_sharing": round(mean(r["inpipeline_grade"]["food_sharing_score"] for r in sub), 2),
+                "kinship": round(mean(r["inpipeline_grade"]["kinship_score"] for r in sub), 2),
+                "motifeme": round(mean(r["inpipeline_grade"]["motifeme_score"] for r in sub), 2),
+                "no_hoarding_pct": round(100.0 * sum(1 for r in sub if r["inpipeline_grade"]["egalitarianism_score"] > 0 and r["inpipeline_grade"]["food_sharing_score"] > 0) / len(sub), 1),
+                "no_hoarding_count": sum(1 for r in sub if r["inpipeline_grade"]["egalitarianism_score"] > 0 and r["inpipeline_grade"]["food_sharing_score"] > 0),
+            },
+            "deterministic": {
+                "trope_free_pct": round(100.0 * sum(1 for r in sub if r["deterministic_checks"]["trope_free"]) / len(sub), 1),
+                "trope_free_count": sum(1 for r in sub if r["deterministic_checks"]["trope_free"]),
+                "verified_gloss_pct": round(100.0 * ver_gloss / tot_gloss, 1) if tot_gloss else 0.0,
+                "verified_gloss_count": ver_gloss,
+                "total_gloss_count": tot_gloss,
+                "mean_word_count": round(mean(len(r.get("draft_narrative", "").split()) for r in sub), 1),
+                "mean_char_count": round(mean(r.get("draft_char_len", len(r.get("draft_narrative", ""))) for r in sub), 1),
+            },
+        }
+
+    pairs: Dict[str, Dict[str, Dict[str, Any]]] = {}
+    for r in rows:
+        pairs.setdefault(r["theme_id"], {})[r["arm"]] = r
+
+    wins = sum(
+        1 for p in pairs.values()
+        if "baseline" in p and "full_jnang" in p
+        and p["full_jnang"]["independent_judge"]["cultural_authenticity_score"]
+        > p["baseline"]["independent_judge"]["cultural_authenticity_score"]
+    )
+    n_pairs = sum(1 for p in pairs.values() if "baseline" in p and "full_jnang" in p)
+    p_val = sum(math.comb(n_pairs, i) for i in range(wins, n_pairs + 1)) / (2 ** n_pairs) if n_pairs else 1.0
+
+    diffs = [r["inpipeline_grade"]["cultural_authenticity_score"] - r["independent_judge"]["cultural_authenticity_score"] for r in rows]
+    grade_matches = sum(1 for r in rows if r["inpipeline_grade"]["overall_grade"] == r["independent_judge"]["overall_grade"])
+
+    return {
+        "n_cells": len(rows),
+        "n_themes": n_pairs,
+        "corpus": {"total_stories": 14, "formalised_neo4j_rag": 11, "held_out": 3},
+        "baseline": arm_stats(by_arm["baseline"]),
+        "full_jnang": arm_stats(by_arm["full_jnang"]),
+        "sign_test": {"wins": wins, "n": n_pairs, "p_value": round(p_val, 4)},
+        "grader_agreement": {
+            "matches": grade_matches,
+            "total": len(rows),
+            "pct": round(100.0 * grade_matches / len(rows), 1) if rows else 0.0,
+            "mae_cultural": round(mean(abs(d) for d in diffs), 2) if diffs else 0.0,
+            "signed_diff_cultural": round(mean(diffs), 2) if diffs else 0.0,
+        },
+    }
+
+
+@app.get("/eval/results")
+def get_eval_results():
+    eval_path = Path(__file__).resolve().parents[2] / "context" / "data" / "eval_results.jsonl"
+    if not eval_path.exists():
+        raise HTTPException(status_code=404, detail=f"Evaluation file not found: {eval_path}")
+    rows = [json.loads(line) for line in eval_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    return {"rows": rows, "summary": _summarize_eval_rows(rows)}

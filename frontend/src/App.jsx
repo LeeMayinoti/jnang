@@ -6,6 +6,7 @@ import PipelineBeads from './components/PipelineBeads';
 import NarrativeConstellation from './components/NarrativeConstellation';
 import StoryCard from './components/StoryCard';
 import EvaluationCard from './components/EvaluationCard';
+import { EvaluationDashboard } from './components/EvaluationDashboard';
 import { PRESET_THEMES, SAMPLE_STORIES } from './data/themes';
 
 const WELCOME_MESSAGE = {
@@ -511,7 +512,9 @@ export default function App() {
           onToggleTheme={toggleTheme}
         />
 
-        {isEmpty ? (
+        {activeMode === 'eval' ? (
+          <EvaluationDashboard />
+        ) : isEmpty ? (
           <div className="empty">
             <div className="empty__inner">
               <h1 className="empty__title">

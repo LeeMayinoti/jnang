@@ -1,0 +1,217 @@
+[
+  {
+    "slot": "Story B",
+    "id": "sharing_honey",
+    "theme": "sharing wild honey (zo) found in a hollow baobab tree",
+    "word_count": 320,
+    "char_count": 1913,
+    "draft_narrative": "Kha||’an, the elder, sat by the campfire with his age-mate, Tci!xo. They watched the sun set behind the red sand dunes. \"I can smell the sweet zo (honey),\" Kha||’an said, his eyes sparkling. \"It’s time to gather some from the baobab tree!\" Tci!xo nodded, excited. \"Let’s go!\" They grabbed their carrying pole (!aro) and flat dishes (tan-l’osi) and set off into the Bush.\n\nWhen they reached the baobab tree, they saw the cardinal woodpecker (!’aun!’aun) skillfully tapping away at the hollow trunk. \"Look how he gathers the honey!\" Tci!xo exclaimed. Kha||’an admired the woodpecker’s whistling as he lifted the dishes up to collect the precious zo. \"We must learn from him,\" Kha||’an said, and they watched closely.\n\nBut as they imitated the woodpecker, they could not make the same magic sounds. Tci!xo grew frustrated. \"I can do it!\" he shouted, trying to climb the tree. He slipped and fell hard onto the ground. Kha||’an rushed to his side. \"Tci!xo, are you hurt?\" Tci!xo groaned, rubbing his arm. \"No, but we need that honey!\"\n\nJust then, a swarm of flies (zoaqzoaq) buzzed around them, drawn to the fallen honeycomb. \"Look!\" Kha||’an pointed. \"They can help us!\" The flies landed on Tci!xo’s arm, biting him lightly. \"Ouch!\" he yelped, but the buzzing grew louder, and they circled around the baobab. Suddenly, they lifted the dishes into the hollow tree, and honey began to pour out.\n\nWith the flies’ help, the brothers filled their dishes with the sweet zo. \"Let’s hurry back to camp and share this with the others!\" Tci!xo said. They dashed back to the fire, their hearts light with excitement. \n\nKha||’an called out to the others, \"We have honey!\" They gathered around, eager to taste. Tci!xo served the honey, and everyone laughed and shared stories as they enjoyed the sweet treat together. They celebrated the feast, grateful for the flies and the woodpecker, knowing that true joy comes from sharing.",
+    "motifemes": [
+      "Lack",
+      "Departure",
+      "Violation",
+      "Consequence",
+      "Mediation",
+      "Lack Liquidated",
+      "Return"
+    ],
+    "story_moves": [
+      "Kha||’an and Tci!xo decide to gather honey from the baobab tree",
+      "Tci!xo attempts to imitate the woodpecker and falls",
+      "Flies help Kha||’an and Tci!xo gather honey",
+      "Kha||’an and Tci!xo return to camp with honey",
+      "Community shares and celebrates the honey feast"
+    ],
+    "inpipeline_grade": {
+      "egalitarianism_score": 9.0,
+      "food_sharing_score": 10.0,
+      "kinship_score": 8.0,
+      "cultural_authenticity_score": 9.0,
+      "motifeme_score": 9.0,
+      "overall_grade": "Excellent",
+      "comments": "The story exemplifies Ju|'hoansi values of egalitarianism and communal sharing. Kha||’an and Tci!xo do not seek personal gain from the honey; instead, they prioritize sharing it with their community, which is celebrated in the narrative. The punishment of Tci!xo's initial failure to gather honey is not punitive but rather a learning experience, reinforcing the community's supportive nature. Kinship is evident as they are referred to as brothers, and their cooperative efforts reflect Ju|'hoansi social structures. The motifeme chain is coherent and culturally grounded, effectively illustrating the journey from lack to fulfillment through community support.",
+      "suggestions": [
+        "Consider adding more dialogue that emphasizes the values of sharing and cooperation among the community.",
+        "Incorporate additional elements of kinship roles to further enhance the depiction of social structure."
+      ]
+    },
+    "independent_judge": {
+      "egalitarianism_score": 9.5,
+      "food_sharing_score": 10.0,
+      "kinship_score": 7.0,
+      "cultural_authenticity_score": 8.83,
+      "motifeme_score": 9.0,
+      "detected_motifemes": [
+        "Lack",
+        "Mediation",
+        "Violation",
+        "Consequence",
+        "Mediation",
+        "Lack Liquidated",
+        "Return"
+      ],
+      "overall_grade": "Excellent",
+      "comments": "The story strongly embodies Ju|'hoansi cultural values, particularly radical egalitarianism and the central importance of food sharing. The narrative effectively uses the 'elder' and 'age-mate' relationship and shows how individual ambition (Tci!xo's 'I can do it!') is corrected, leading to a communal, humble resolution. The motifeme structure is clear and well-developed, with a logical progression from lack to liquidation, aided by multiple instances of mediation. The use of specific Ju|'hoansi terms like 'zo', '!aro', 'tan-l’osi', '!’aun!’aun', and 'zoaqzoaq' adds to the authenticity.",
+      "suggestions": [
+        "To further enhance kinship authenticity, the story could have explicitly named more specific kinship roles (e.g., a grandmother '!ga' receiving a share, or an uncle '!o' being present).",
+        "While 'brothers' is acceptable for age-mates, using a more specific Ju|'hoansi term for that relationship if one exists and is appropriate could be considered."
+      ],
+      "used_fallback": false,
+      "judge_model": "gemini-2.5-flash"
+    },
+    "deterministic_checks": {
+      "trope_free": true,
+      "flagged_terms": [],
+      "total_glossed_terms": 5,
+      "verified_glossed_terms": 2,
+      "verified_ratio": 0.4,
+      "unverified_terms": [
+        "dishes",
+        "woodpecker",
+        "flies"
+      ]
+    }
+  },
+  {
+    "slot": "Story C",
+    "id": "drought_rain_animal",
+    "theme": "A great drought dries the waterholes and the community holds a healing trance dance to honour the sacred rain-animal (!gà!n) while a lone hunter learns respect and water is shared by all",
+    "word_count": 326,
+    "char_count": 1906,
+    "draft_narrative": "N!aici, the hunter, walked and walked under the blazing sun, searching for waterholes. The drought had come, drying up the g!u (water), and all the animals and people suffered. He heard the whispers of the wind, carrying the cries of his kin at camp. They were preparing for a healing trance dance to honor the sacred rain-animal, !gà!n. “I must join them,” he thought.\n\nAs he approached the camp, he heard his age-mate, Di||xao, calling out, “N!aici, come! We need your strength for the dance!” They gathered around the warm fire, and the elders began to sing, their voices rising like the dust of the dry earth. The community came together, their hearts united in hope for rain. N!aici felt a stirring inside him, a longing for connection and respect for the land and its spirits.\n\nBut N!aici thought, “Why should I join? I can hunt alone and find water.” He wandered into the Bush, searching for hidden springs. There, he stumbled upon a small pool, shimmering under the sunlight. He drank deeply, but the water was bitter and dark. “This water is mine!” he declared, feeling powerful, but as he turned to leave, he saw a shadow, the spirit of !gà!n watching him closely. \n\nThe spirit spoke, “You take without giving. The rain belongs to all.” N!aici's heart sank, realizing his violation. He hurried back to camp, where the trance dance was in full swing. The rhythms echoed through the night, calling the rain-animals to the people. N!aici joined in, feeling the power of the dance, feeling the healing energy flow through him.\n\nAs dawn broke, the clouds gathered. The community danced and sang, and soon, raindrops began to fall. N!aici, filled with humility, shared the water he had found with everyone. They laughed and celebrated, drinking together from the shared bucket, their spirits lifted. That is why, to this day, the rain-animals are honored and the water is shared by all in the Kalahari.",
+    "motifemes": [
+      "Lack",
+      "Interdiction",
+      "Violation",
+      "Consequence",
+      "Departure",
+      "Return",
+      "Lack Liquidated"
+    ],
+    "story_moves": [
+      "N!aici searches for waterholes during drought",
+      "Community prepares for healing trance dance",
+      "N!aici decides to hunt alone instead of joining the dance",
+      "N!aici finds a hidden pool of water",
+      "Spirit of !gà!n warns N!aici about taking without giving",
+      "N!aici returns to camp and joins the trance dance",
+      "Community dances and calls for rain",
+      "N!aici shares the water he found with the community"
+    ],
+    "inpipeline_grade": {
+      "egalitarianism_score": 8.0,
+      "food_sharing_score": 10.0,
+      "kinship_score": 9.0,
+      "cultural_authenticity_score": 9.0,
+      "motifeme_score": 9.0,
+      "overall_grade": "Excellent",
+      "comments": "The story effectively embodies Ju|'hoansi cultural values, particularly through the character of N!aici, who initially hoards water but ultimately learns the importance of sharing and community. The punishment from the spirit of !gà!n serves as a strong reminder of the consequences of selfishness, reinforcing egalitarian principles. The communal dance and the sharing of water at the end highlight the importance of reciprocity and kinship. The motifeme chain is coherent and culturally grounded, reflecting authentic Ju|'hoansi narrative structure.",
+      "suggestions": [
+        "Consider adding more dialogue among characters to enhance kinship interactions.",
+        "Explore deeper emotional responses from N!aici during his realization to strengthen the narrative arc."
+      ]
+    },
+    "independent_judge": {
+      "egalitarianism_score": 9.0,
+      "food_sharing_score": 9.5,
+      "kinship_score": 7.0,
+      "cultural_authenticity_score": 8.5,
+      "motifeme_score": 9.0,
+      "detected_motifemes": [
+        "Lack",
+        "Violation",
+        "Consequence",
+        "Mediation",
+        "Return",
+        "Lack Liquidated"
+      ],
+      "overall_grade": "Excellent",
+      "comments": "The story effectively uses N!aici's initial transgression to highlight and reinforce core Ju|'hoansi values of sharing and egalitarianism. His attempt to hoard water is explicitly condemned by a spirit, and his subsequent act of sharing leads to the resolution of the community's suffering. The motifeme structure is well-defined, presenting a clear problem, a violation of social norms, a consequence, and a mediated resolution that liquidates the initial lack.",
+      "suggestions": [
+        "To further enhance kinship authenticity, more specific Ju|'hoansi kinship terms (beyond 'age-mate') could be integrated into the narrative, or a subtle reference to hxaro exchange could be included if appropriate to the plot."
+      ],
+      "used_fallback": false,
+      "judge_model": "gemini-2.5-flash"
+    },
+    "deterministic_checks": {
+      "trope_free": true,
+      "flagged_terms": [],
+      "total_glossed_terms": 1,
+      "verified_glossed_terms": 1,
+      "verified_ratio": 1.0,
+      "unverified_terms": []
+    }
+  },
+  {
+    "slot": "Story F",
+    "id": "eland_hunt_arrow",
+    "theme": "During a time of scarce water, hunters track a great eland using a blessed arrow; an impatient young hunter tries to claim the hunt alone before learning humility and sharing the meat with the whole camp",
+    "word_count": 425,
+    "char_count": 2389,
+    "draft_narrative": "Kgao, the young hunter, stood by the waterhole, his eyes scanning the horizon. The land was dry, and the animals were scarce. His uncle (!o) |'Oma had told him to wait for the right moment, but Kgao's impatience gnawed at him. \"I will track the great eland alone,\" he boasted to the other hunters, gripping his blessed arrow tightly. \"I will bring back meat for myself!\"\n\nHis age-mate (!xo) Toma shook his head. \"You must not go alone, Kgao. The Bush is wild, and the eland is cunning.\" But Kgao was determined. He left the camp with a fierce spirit, walking and walking into the vastness of the Kalahari.\n\nAs he ventured deeper into the Bush, Kgao found the fresh tracks of the great eland. He followed them, his heart pounding with excitement. Suddenly, he spotted the magnificent animal grazing beneath a thorn tree. He drew back his arrow, remembering the blessing it had received. But just as he was about to release it, a rustle in the grass startled the eland, and it bolted away. Frustrated, Kgao chased after it, running and running until he was far from the camp.\n\nThe sun began to set, and Kgao realized he had lost his way. He called out for Toma, for his uncle, but only silence answered him. Alone in the darkening Bush, he felt fear creep into his heart. The shadows danced around him, and he remembered the stories of the g//awasi, the ancestral spirits. He sat beneath a great baobab tree, humbled and shivering.\n\nJust then, he heard a voice, soft and soothing. \"Kgao, you must share your hunt with your kin. Only then will you find your way home.\" It was the voice of a wise spirit. Understanding washed over him. He had acted selfishly, thinking only of himself.\n\nWith renewed determination, Kgao rose and retraced his steps. Following the tracks again, he spotted the eland once more. This time, he took a deep breath, steadied his heart, and aimed carefully. The arrow flew true, and the eland fell. Kgao felt joy, but it was not for him alone; he thought of his uncle, his age-mate, and the camp.\n\nKgao returned to the camp, bringing the meat with him. \"I hunted this eland for all of us,\" he declared, sharing the meat around the fire. Everyone gathered and rejoiced. They sang songs of the hunt, and the camp was filled with laughter and gratitude. That is why, to this day, the hunters always share their catch, remembering Kgao's lesson of humility and community.",
+    "motifemes": [
+      "Lack",
+      "Interdiction",
+      "Violation",
+      "Consequence",
+      "Mediation",
+      "Lack Liquidated",
+      "Departure",
+      "Return"
+    ],
+    "story_moves": [
+      "Kgao boasts about hunting alone",
+      "Kgao's uncle warns him not to go alone",
+      "Kgao leaves the camp to track the eland",
+      "Kgao loses his way in the Bush",
+      "Ancestral spirit advises Kgao to share his hunt",
+      "Kgao hunts the eland successfully",
+      "Kgao returns to the camp with the meat",
+      "Kgao shares the meat with the community"
+    ],
+    "inpipeline_grade": {
+      "egalitarianism_score": 8.0,
+      "food_sharing_score": 10.0,
+      "kinship_score": 9.0,
+      "cultural_authenticity_score": 9.0,
+      "motifeme_score": 9.0,
+      "overall_grade": "Excellent",
+      "comments": "The story effectively embodies Ju|'hoansi cultural values, particularly through Kgao's initial boastfulness and subsequent realization of the importance of sharing and kinship. The punishment for his selfishness comes in the form of his disorientation in the Bush, leading to a moment of humility and reflection. The communal sharing of the eland meat at the end reinforces the value of reciprocity and community. The kinship terms used, such as 'uncle' and 'age-mate,' highlight the social structure and obligations within the Ju|'hoansi culture. The motifeme chain is coherent and follows a logical progression, aligning well with canonical structures.",
+      "suggestions": [
+        "Consider adding more dialogue or interactions that emphasize the communal values and kinship ties further.",
+        "Explore additional consequences for Kgao's initial selfishness to deepen the moral lesson.",
+        "Incorporate more specific Ju|'hoan terms or cultural references to enhance authenticity."
+      ]
+    },
+    "independent_judge": {
+      "egalitarianism_score": 9.0,
+      "food_sharing_score": 9.5,
+      "kinship_score": 9.5,
+      "cultural_authenticity_score": 9.33,
+      "motifeme_score": 9.5,
+      "detected_motifemes": [
+        "Lack",
+        "Interdiction",
+        "Violation",
+        "Consequence",
+        "Mediation",
+        "Lack Liquidated"
+      ],
+      "overall_grade": "Excellent",
+      "comments": "This story effectively portrays key Ju|'hoansi cultural values. Kgao's initial boasting and selfish intent are clearly presented as a transgression, which is then corrected through a humbling experience and spiritual guidance. The explicit emphasis on sharing meat with the entire camp and the lesson of humility are central to the narrative. The use of specific kinship terms like '!o' (uncle) and '!xo' (age-mate) adds significant cultural authenticity. The narrative follows a clear and well-resolved motifeme chain, demonstrating a strong plot structure where Kgao's initial 'Lack' of community spirit is 'Liquidated' through his journey and learning.",
+      "suggestions": [
+        "The story is quite strong as is. A minor suggestion could be to briefly elaborate on the nature of the 'g//awasi' or the wise spirit, if appropriate, to deepen the spiritual context, but this is not a significant flaw."
+      ],
+      "used_fallback": false,
+      "judge_model": "gemini-2.5-flash"
+    },
+    "deterministic_checks": {
+      "trope_free": true,
+      "flagged_terms": [],
+      "total_glossed_terms": 2,
+      "verified_glossed_terms": 2,
+      "verified_ratio": 1.0,
+      "unverified_terms": []
+    }
+  }
+]

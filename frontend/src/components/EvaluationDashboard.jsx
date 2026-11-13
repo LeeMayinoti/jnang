@@ -396,7 +396,7 @@ export function EvaluationDashboard() {
               </div>
               <div className="eval-memo__item">
                 <h3>3. Three Evaluation Instruments</h3>
-                <p>(i) In-pipeline same-family Grader (<code>gpt-4o-mini</code>); (ii) Blind cross-vendor Judge (<code>gemini-2.5-flash</code>, <code>temp = 0</code>, arm labels stripped); (iii) Deterministic checks for 8 European tropes and <code>ju_dictionary.xls</code> parenthetical glosses.</p>
+                <p>(i) In-pipeline same-family Grader (<code>gpt-4o-mini</code>); (ii) Blind cross-vendor Judge (<code>gemini-2.5-flash</code>, <code>temp = 0</code>, arm labels stripped); (iii) Deterministic checks for 7 European tropes (<code>king, castle, gold, sword, crown, kingdom, throne</code>) and <code>ju_dictionary.xls</code> parenthetical glosses.</p>
               </div>
             </div>
           </section>

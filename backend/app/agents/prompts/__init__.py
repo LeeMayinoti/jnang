@@ -29,10 +29,29 @@ Follow this workflow strictly:
    Entering the Bush may trigger metamorphosis or spirit encounters.
 5. RESOLUTION: Stories resolve through communal restoration and sharing — NOT individual glory.
    Hoarding or individualistic greed must be corrected, not rewarded.
-6. KINSHIP: Name kinship roles explicitly — grandmother (!ga), uncle (!o), age-mate (!xo).
-   Social obligations flow along kinship lines.
+6. KINSHIP & NAMING: Anchor the characters in explicit kin relationships using accurate
+   Ju|'hoan terms such as grandmother (!ga), uncle (!o), or age-mate (!xo) paired with a
+   distinct personal name — e.g. "his uncle (!o) Kxao", "his grandmother (!ga) Bau", or
+   "his age-mate (!xo) Dxao". NEVER use kinship nouns (!ga, !o, !xo, n!ama, !n!ama) alone
+   as personal names (NEVER write "named !xo" or "said !n!ama"), and do not invent unverified
+   click words for relatives. Reserve G!ara strictly for myths about the trickster/creator god —
+   NEVER cast G!ara as an ordinary hunter, uncle, or human villager. Pick fresh human names
+   from Suggested Human Character Names in the context. Use hxaro only for formal, delayed
+   gift-exchange partnerships, not casual meal sharing.
+7. ORAL VOICE & LENGTH: Write 250–360 words across 4–6 brisk paragraphs matching transcribed
+   Ju|'hoansi oral tellings:
+   - Open directly with characters, dialogue, or concrete action — skip scenic Western openers
+     ("In a time long ago...", "where red sand dunes stretched endlessly...", "scorched the dunes").
+   - Use plain, concrete diction and brief oral action repetition ("walked and walked",
+     "chopped and chopped") with lively spoken dialogue rather than literary prose.
+   - Show consequences externally through social, animal, spirit, or bodily events (mockery,
+     injury, kinsfolk taking action, flight) — NOT private inner epiphanies ("he realized the
+     true meaning of...").
+   - End cleanly with the action, communal event, or etiological fact ("That is why...",
+     "Then they shared it at camp") — NEVER a preaching moral sentence.
+   - Enact motifemes covertly; NEVER print motifeme labels or outline tags inside the story.
 
-Return ONLY the story text — no JSON, no code fences, no meta-commentary."""
+Return ONLY the story text — no title, no JSON, no code fences, no meta-commentary."""
 
 GENERATOR_USER_PROMPT = """Write a Ju|'hoansi folktale.
 
@@ -103,27 +122,36 @@ This dimension has three equally-weighted sub-criteria. Average them for the fin
 
 1a. EGALITARIANISM (0–10)
    Does the story embody the Ju|'hoansi principle of radical equality?
-   - Full marks: No character accumulates status, power, or resources unchallenged.
-     Leadership is situational, not hierarchical. Boasting is absent or corrected.
-   - Deduct heavily: Any character is praised for dominance, hoarding, or hierarchy.
-   - [CRITICAL]: If a character hoards food, water, or fire and is rewarded → score = 0.
+   - Full marks (8–10): No character accumulates status, power, or resources unchallenged.
+     Boasting or hoarding is absent, mocked, thwarted, or punished (including killing/expelling
+     a hoarder by the community or relatives, which strongly enforces egalitarian norms).
+   - Deduct heavily: A character is praised for dominance, hierarchy, or unpunished hoarding.
+   - [CRITICAL]: ONLY assign score = 0 if a character hoards food/water/fire/goods AND goes
+     unpunished or is rewarded. Never score 0 when the hoarder is punished or killed for it!
 
-1b. FOOD SHARING THEMES (0–10)
-   Is communal sharing of food and resources depicted meaningfully?
-   - Full marks: Meat, water, honey (zo), or gathered food is explicitly shared with
-     the whole camp including elderly, children, and visitors. Sharing drives the plot.
-   - Partial marks: Sharing is implied but not central.
-   - Deduct heavily: Sharing is absent, or a character eats/keeps food alone without consequence.
-   - [CRITICAL]: If food is hoarded and the story treats this as acceptable → score = 0.
+1b. FOOD SHARING & RECIPROCITY (0–10)
+   Is communal sharing, anti-hoarding, or reciprocity upheld properly?
+   - Full marks (8–10): Resources are shared openly with camp/relatives, OR selfish hoarding/
+     refusal to share/return a borrowed item is clearly punished or overturned.
+   - Good marks (6–8): Non-food tales (e.g., dance, ritual, cosmological or etiological stories)
+     that depict mutual aid, respect, or consequences for greed/stubbornness without a meal.
+   - Deduct heavily: A character keeps food or scarce water alone with no social/narrative penalty.
+   - [CRITICAL]: ONLY assign score = 0 if selfish hoarding is treated as acceptable/unpunished.
+     If food/water does not appear in a ritual or etiological tale, do NOT assign 0.
 
-1c. KINSHIP & MARRIAGE (0–10)
-   Does the story reflect authentic Ju|'hoansi kinship and social structures?
-   - Full marks: Kinship roles (grandmother/!ga, uncle/!o, age-mate/!xo) are named and
-     function in the story. Marriage customs (hxaro exchange, brideservice) may be referenced.
-     Social obligations flow along kinship lines.
-   - Partial marks: Family members appear but their specific kinship role is not used narratively.
-   - Zero marks: No kinship relations present at all, or roles are European in character
-     (kings, lords, noble lineages).
+1c. KINSHIP & SOCIAL STRUCTURE (0–10)
+   Does the story reflect authentic Ju|'hoansi kinship and social obligations?
+   - Full marks (8–10): Kinship relationships (in Ju|'hoan terms such as !ga, !o, !xo, OR clear
+     English kin terms like brothers, sister, wife, husband, grandmother, uncle, nephew, son,
+     granddaughter) actively drive mutual protection, warning, repair, or exchange.
+   - Partial marks (5–7): Relatives or mythical/animal peers interact cooperatively with implied
+     social ties, or a god/trickster tale centres on non-human actors cleanly without European roles.
+   - Zero marks: Roles are European/feudal in character (kings, lords, noble lineages).
+
+IMPORTANT CORPUS CHECK: If the user prompt provides "Closest Canonical Folklore Stories in Neo4j"
+and the candidate story clearly aligns with or retells one of those canonical Ju|'hoansi folktales
+(S1–S14), recognise its structural and cultural authenticity directly instead of penalising it for
+lacking modern textbook explanations or parenthetical Ju|'hoan dictionary glosses.
 
 ────────────────────────────────────────────
 DIMENSION 2 — MOTIFEME & STRUCTURAL COVERAGE (0–10)

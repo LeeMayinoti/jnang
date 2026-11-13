@@ -16,8 +16,10 @@ from backend.app.utils.dictionary import JuDictionary
 # Default European-trope keywords the Generator's system prompt explicitly
 # forbids (castles, swords, gold coins, kingdoms, roads -- see
 # GENERATOR_SYSTEM_PROMPT step 2). Word-boundary, case-insensitive.
+# Note: "execute" is excluded because punitive/communal execution of
+# transgressors is an authentic motif in canonical Ju|'hoansi tales (e.g. S4).
 DEFAULT_TROPE_KEYWORDS = [
-    "king", "castle", "gold", "sword", "crown", "kingdom", "throne", "execute",
+    "king", "castle", "gold", "sword", "crown", "kingdom", "throne",
 ]
 
 # Ju|'hoansi click consonants and apostrophe are typed as ASCII punctuation

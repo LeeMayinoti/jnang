@@ -115,6 +115,7 @@ def _fetch_canonical_story_arcs(theme: str, limit: int = 2) -> List[dict]:
                 "id": st["id"],
                 "title": st["title"],
                 "theme": st["theme"],
+                "score": st.get("score", 0),
                 "moves": ordered,
             })
 
@@ -242,10 +243,11 @@ def get_classifier_graph_context() -> str:
         return ""
 
 
-def get_grader_graph_context(motifemes: List[str]) -> str:
+def get_grader_graph_context(motifemes: List[str], draft_narrative: str = "") -> str:
     """
-    Retrieves canonical motifeme transition patterns and Camp/Bush spatial
-    reference data from Neo4j to ground Agent 3 (Grader).
+    Retrieves canonical motifeme transition patterns, Camp/Bush spatial
+    reference data, and the closest canonical :Story records stored in Neo4j
+    to ground Agent 3 (Grader).
     """
     try:
         session = _get_neo4j_session()
@@ -272,7 +274,9 @@ def get_grader_graph_context(motifemes: List[str]) -> str:
                 """
             ).data()
 
-        if not transitions and not camp_bush:
+        matched_arcs = _fetch_canonical_story_arcs(draft_narrative, limit=2) if draft_narrative else []
+
+        if not transitions and not camp_bush and not matched_arcs:
             return ""
 
         lines = ["## Canonical Structural Reference (Neo4j)"]
@@ -284,6 +288,25 @@ def get_grader_graph_context(motifemes: List[str]) -> str:
                 lines.append(f"Spatial domain [{row['domain']}]: {', '.join(row['samples'])}")
         if motifemes:
             lines.append(f"Candidate story motifeme chain: {' → '.join(motifemes)}")
+
+        strong_matches = [a for a in matched_arcs if a.get("score", 0) >= 2]
+        if strong_matches:
+            lines.append("\n## Closest Canonical Folklore Stories in Neo4j")
+            for arc in strong_matches:
+                chain = " → ".join(m["motifeme"] for m in arc["moves"] if m.get("motifeme"))
+                actors = []
+                for m in arc["moves"]:
+                    for act in (m.get("actors") or []):
+                        if act and act not in actors:
+                            actors.append(act)
+                moves_preview = "; ".join(m["label"] for m in arc["moves"][:6] if m.get("label"))
+                lines.append(
+                    f"- **{arc['id']}: {arc['title']}** (token overlap={arc['score']}; "
+                    f"theme: {arc['theme']}; actors: {', '.join(actors[:5]) or '—'})\n"
+                    f"  Canonical chain: {chain}\n"
+                    f"  Canonical events: {moves_preview}"
+                )
+
         return "\n".join(lines)
 
     except Exception as e:
@@ -419,12 +442,46 @@ def get_vocabulary_sample(n: int = 20) -> str:
 
 
 # ---------------------------------------------------------------------------
+# 4. Character name cast sampler (avoids repeating G!ara across runs)
+# ---------------------------------------------------------------------------
+
+_HUMAN_NAME_POOL = [
+    "|'Oma", "Bau", "Dxao", "/Asa", "Kha||'an", "!Xuma", "Dahm",
+    "Di||xao", "Tci!xo", "N!aici", "/Kunta", "Kxao", "Toma", "N||hakxa",
+    "N!xao", "Kgao",
+]
+_NAME_BAG: List[str] = []
+
+
+def get_character_name_cast(k: int = 4) -> str:
+    """
+    Deals a fresh non-overlapping set of traditional Ju|'hoansi human names
+    per run so consecutive stories do not repeat G!ara or share identical casts.
+    """
+    import random
+
+    global _NAME_BAG
+    picks: List[str] = []
+    while len(picks) < k:
+        if not _NAME_BAG:
+            _NAME_BAG = random.sample(_HUMAN_NAME_POOL, k=len(_HUMAN_NAME_POOL))
+        cand = _NAME_BAG.pop()
+        if cand not in picks:
+            picks.append(cand)
+    return (
+        "## Suggested Human Character Names for This Telling\n"
+        f"Pick names from this fresh cast and pair with kin roles: {', '.join(picks)}.\n"
+        "Do NOT cast the trickster god G!ara as a generic human hunter or uncle."
+    )
+
+
+# ---------------------------------------------------------------------------
 # Combined context builder
 # ---------------------------------------------------------------------------
 
 def build_generator_context(theme: str) -> str:
     """
-    Assembles the full context block (Neo4j + RAG + vocabulary) to inject
+    Assembles the full context block (Neo4j + RAG + vocabulary + cast) to inject
     into the Generator's user prompt.
     """
     parts: List[str] = []
@@ -440,6 +497,10 @@ def build_generator_context(theme: str) -> str:
     vocab_ctx = get_vocabulary_sample()
     if vocab_ctx:
         parts.append(vocab_ctx)
+
+    cast_ctx = get_character_name_cast()
+    if cast_ctx:
+        parts.append(cast_ctx)
 
     if not parts:
         return "(No external context available — rely on trained knowledge.)"

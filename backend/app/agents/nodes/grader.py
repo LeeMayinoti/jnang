@@ -27,22 +27,26 @@ class GradeReport(BaseModel):
     egalitarianism_score: float = Field(
         ge=0.0, le=10.0,
         description=(
-            "Score 0–10: Does the story embody radical equality and communal non-hierarchy? "
-            "CRITICAL: hoarding rewarded with no consequence → 0."
+            "Score 0–10: Does the story embody egalitarianism? Punishing, humiliating, or "
+            "killing a hoarder IS strong egalitarian enforcement (score 8–10); do NOT penalise "
+            "a story for showing an initial hoarding transgression that gets punished. "
+            "CRITICAL: hoarding goes completely unpunished/rewarded -> 0."
         )
     )
     food_sharing_score: float = Field(
         ge=0.0, le=10.0,
         description=(
-            "Score 0–10: Is communal sharing of food, water, or honey meaningfully central? "
-            "CRITICAL: hoarding goes unpunished → 0."
+            "Score 0–10: Communal sharing OR community retaliation/punishment against hoarding, "
+            "or reciprocity in non-food tales (6–8). Do NOT deduct for the villain's initial "
+            "hoarding beat when community/kin later stop or kill them. CRITICAL: hoarding goes unpunished -> 0."
         )
     )
     kinship_score: float = Field(
         ge=0.0, le=10.0,
         description=(
-            "Score 0–10: Are Ju|'hoansi kinship roles (!ga grandmother, !o uncle, !xo age-mate) "
-            "and marriage customs (hxaro, brideservice) present and functionally active?"
+            "Score 0–10: Are kinship roles (Ju|'hoan terms !ga, !o, !xo OR English kin terms "
+            "such as brothers, wife, husband, grandmother, uncle, nephew, son) active in mutual aid, "
+            "warning, or protection?"
         )
     )
     cultural_authenticity_score: float = Field(
@@ -155,7 +159,7 @@ def grader_node(state: NarrativeState) -> dict:
         structured_llm = llm.with_structured_output(GradeReport)
 
         moves_str = "\n- ".join(story_moves) if story_moves else "None detected"
-        graph_ctx = get_grader_graph_context(motifemes)
+        graph_ctx = get_grader_graph_context(motifemes, draft)
         user_prompt = GRADER_USER_PROMPT.format(
             draft_narrative=draft,
             motifemes=", ".join(motifemes) if motifemes else "None detected",
